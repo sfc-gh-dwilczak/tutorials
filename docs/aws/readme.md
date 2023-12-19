@@ -2,7 +2,8 @@
 This tutorial assumes you have nothing in your snowflake account. Like starting a new trial but the tutorial can be started at any step.
 
 
-## Part 1: Snowflake:
+## Part 1:
+
 0. Setup in snowflake before we jump to aws:  
 Create a worksheet in snowflake and add the code below with your information and hit run:
 
@@ -44,7 +45,7 @@ Create a worksheet in snowflake and add the code below with your information and
 
 ![select and run](images/0_select_and_run.png)
 
-## Part 2 S3:
+## Part 2:
 1. Create the bucket you intend to use. In our case we'll call it danielwilczak.
 ![Create S3](images/0_create_bucket.png)
 
@@ -153,7 +154,7 @@ Output:
 | STORAGE_AWS_EXTERNAL_ID   | String        | GGB82720_SFCRole=2_vcN2MIiC7PW0OMOyA82W5BLJrqY=   |                  |   |
 | COMMENT                   | String        |                                                   |                  |   |
 
-## Part 4 S3:
+## Part 4:
 16. Navigate back to the role:
 ![Click role](images/10_click_role.png)
 
@@ -187,7 +188,7 @@ Output:
   }
 ```
 
-## Part 5 Snowflake (Finally):
+## Part 5:
 20. FINAL STEP. Lets create a stage, file format, warehouse and table and copy data into it. Copy the code below and run it in a new worksheet.
 
 ![Final step](images/15_final_step.png)
@@ -242,7 +243,7 @@ YOU HAVE LOADED DATA FROM S3!
 | s3://danielwilczak/json/sample.json | LOADED | 1           | 1           | 1           | 0           |
 
 
-## Snow Pipe (Bonus):
+## (Bonus) Snow Pipe:
 Lets create a pipe to automate copying data into a table.
 
 1. Create the file format, table and pipe in snowflake. This approach automates the process so you don't have to manually name all the columns.
