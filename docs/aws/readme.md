@@ -61,37 +61,37 @@ create schema if not exists warehouse.aws;
 ![Policy](images/04_create_policy.png)
 
 7. Add the template policy json code below and add your arn we copied from step 3 and click create policy:
-![Add policy json ](images/05_enter_policy.png)
+  ![Add policy json ](images/05_enter_policy.png)
 
-```json
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-              "s3:GetObject",
-              "s3:GetObjectVersion"
-            ],
-            "Resource": "<COPY ARN HERE>/*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:ListBucket",
-                "s3:GetBucketLocation"
-            ],
-            "Resource": "<COPY ARN HERE>",
-            "Condition": {
-                "StringLike": {
-                    "s3:prefix": [
-                        "*"
-                    ]
-                }
-            }
-        }
-    ]
-}
+  ```json
+  {
+      "Version": "2012-10-17",
+      "Statement": [
+          {
+              "Effect": "Allow",
+              "Action": [
+                "s3:GetObject",
+                "s3:GetObjectVersion"
+              ],
+              "Resource": "<COPY ARN HERE>/*"
+          },
+          {
+              "Effect": "Allow",
+              "Action": [
+                  "s3:ListBucket",
+                  "s3:GetBucketLocation"
+              ],
+              "Resource": "<COPY ARN HERE>",
+              "Condition": {
+                  "StringLike": {
+                      "s3:prefix": [
+                          "*"
+                      ]
+                  }
+              }
+          }
+      ]
+  }
 ```
 
 8. Lets create a role! Navigate back to **IAM**:
