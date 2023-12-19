@@ -186,7 +186,7 @@ Output:
   }
 ```
 
-# Part 5 Snowflake (Finally):
+## Part 5 Snowflake (Finally):
 20. FINAL STEP. Lets create a stage, file format, warehouse and table and copy data into it. Copy the code below and run it in a new worksheet.
 
 ![Final step](images/15_final_step.png)
