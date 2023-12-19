@@ -25,6 +25,8 @@ theme:
 
 nav:
   - Home: index.md
+  - Blob Storage Integration:
+    - AWS: aws/readme.md
 
 markdown_extensions:
   - pymdownx.highlight:
