@@ -5,42 +5,43 @@ This tutorial assumes you have nothing in your snowflake account. Like starting 
 0. Setup in snowflake before we jump to aws:  
 Create a worksheet in snowflake and add the code below with your information and hit run:
 
-![Worksheet](images/0_worksheet.png)
+  ![Worksheet](images/0_worksheet.png)
+
+  ```sql
+  use useradmin;
+
+  -- Create our first user.
+  CREATE USER "daniel.wilczak@snowflake.com"
+      PASSWORD='Password12'
+      MUST_CHANGE_PASSWORD = False;
+
+  use ACCOUNTADMIN;
+  grant role sysadmin to user "daniel.wilczak@snowflake.com";
+
+  -- Roles and role hierachy.
+  use securityadmin;
+
+  create role if not exists analyst comment='Anaylst have access to the data warehouse. (cleaned raw data)';
+  grant role analyst to role sysadmin;
+
+  -- Grant roles to users.
+  grant role analyst to user "daniel.wilczak@snowflake.com";
+
+  /* Create the objects needed to store the data. This is the database and schema.
+  -- Databases
+      -- The reason we switch to system admin is so that everything we create is owned by it.
+  */
+
+  use role sysadmin;
+  create database if not exists raw comment='This is only raw data from your source.';
+  create database if not exists warehouse comment='This is only cleaned and standardized raw data for people to use.';
+
+  -- Create the schema. The schema stores all objectss.
+  create schema if not exists raw.aws;
+  create schema if not exists warehouse.aws;
+  ```
+
 ![select and run](images/0_select_and_run.png)
-
-```sql
-use useradmin;
-
--- Create our first user.
-CREATE USER "daniel.wilczak@snowflake.com"
-    PASSWORD='Password12'
-    MUST_CHANGE_PASSWORD = False;
-
-use ACCOUNTADMIN;
-grant role sysadmin to user "daniel.wilczak@snowflake.com";
-
--- Roles and role hierachy.
-use securityadmin;
-
-create role if not exists analyst comment='Anaylst have access to the data warehouse. (cleaned raw data)';
-grant role analyst to role sysadmin;
-
--- Grant roles to users.
-grant role analyst to user "daniel.wilczak@snowflake.com";
-
-/* Create the objects needed to store the data. This is the database and schema.
--- Databases
-    -- The reason we switch to system admin is so that everything we create is owned by it.
-*/
-
-use role sysadmin;
-create database if not exists raw comment='This is only raw data from your source.';
-create database if not exists warehouse comment='This is only cleaned and standardized raw data for people to use.';
-
--- Create the schema. The schema stores all objectss.
-create schema if not exists raw.aws;
-create schema if not exists warehouse.aws;
-```
 
 1. Create the bucket you intend to use. In our case we'll call it danielwilczak.
 ![Create S3](images/0_create_bucket.png)
@@ -63,7 +64,7 @@ create schema if not exists warehouse.aws;
 7. Add the template policy json code below and add your arn we copied from step 3 and click create policy:
   ![Add policy json ](images/05_enter_policy.png)
 
-  ```json
+  ```
   {
       "Version": "2012-10-17",
       "Statement": [
@@ -159,27 +160,27 @@ Output:
 ![Edit trust policy](images/13_click_edit_trust_policy.png)
 
 19. Copy the policy json template code below and add your "STORAGE_AWS_IAM_USER_ARN" and "STORAGE_AWS_EXTERNAL_ID" from step 15.
-![Edit trust policy](images/14_edit_trust_policy.png)
+  ![Edit trust policy](images/14_edit_trust_policy.png)
 
-```json
-{
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Sid": "",
-        "Effect": "Allow",
-        "Principal": {
-          "AWS": "<STORAGE_AWS_IAM_USER_ARN>"
-        },
-        "Action": "sts:AssumeRole",
-        "Condition": {
-          "StringEquals": {
-            "sts:ExternalId": "<STORAGE_AWS_EXTERNAL_ID>"
+  ```
+  {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "",
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "<STORAGE_AWS_IAM_USER_ARN>"
+          },
+          "Action": "sts:AssumeRole",
+          "Condition": {
+            "StringEquals": {
+              "sts:ExternalId": "<STORAGE_AWS_EXTERNAL_ID>"
+            }
           }
         }
-      }
-    ]
-  }
+      ]
+    }
 ```
 
 20. FINAL STEP. Lets create a stage, file format, warehouse and table and copy data into it. Copy the code below and run it in a new worksheet.
