@@ -141,6 +141,7 @@ desc integration s3_integration;
 ```
 
 Output:
+
 | property                  | property_type | property_value                                    | property_default |   |
 |---------------------------|---------------|---------------------------------------------------|------------------|---|
 | ENABLED                   | Boolean       | TRUE                                              | FALSE            |   |
