@@ -28,7 +28,9 @@ nav:
   - Blob Storage Integration:
     - AWS: aws/readme.md
 
+  
 markdown_extensions:
+  - tables
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
