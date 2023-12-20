@@ -6,6 +6,7 @@ theme:
   features:
     - navigation.expand
     - navigation.sections
+    - navigation.tabs
   
   palette: 
     # Palette toggle for light mode
