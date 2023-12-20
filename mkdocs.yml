@@ -6,8 +6,7 @@ theme:
   features:
     - navigation.expand
     - navigation.sections
-    - navigation.tabs
-    - navigation.tabs.sticky
+
   
   palette: 
     # Palette toggle for light mode
@@ -31,7 +30,6 @@ theme:
 
 nav:
   - Home: index.md
-
   - Storage bucket: 
     - AWS: snowflake/aws/readme.md
     - Azure: snowflake/azure/readme.md
