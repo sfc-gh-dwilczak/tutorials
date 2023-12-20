@@ -1,4 +1,3 @@
-# Daniel Wilczak - Snowflake Tutorials
 Tutorials built by me to help snowflake users on snowflake.
 
 # Sections:
