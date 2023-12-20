@@ -38,9 +38,11 @@ nav:
       - JDBC: snowflake/connection/jdbc.md
       - R: snowflake/connection/r.md
   - Fivetran:
+    - Setup: index.md
     - RDS Postgres: snowflake/fivetran/rds_postgres.md
     - RDS SQL Server: snowflake/fivetran/rds_sql_server.md
-  - DBT: index.md
+  - DBT: 
+    - Setup: index.md
   - Github:
     - Github Docs: github/docs.md
   - Okta:
