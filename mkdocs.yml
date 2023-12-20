@@ -1,4 +1,4 @@
-site_name: Daniel Wilczak (Tutorials)
+site_name: Tutorials
 repo_url: https://github.com/sfc-gh-dwilczak/tutorials/
 
 theme:
@@ -36,7 +36,7 @@ nav:
     - Connection:
       - JDBC: snowflake/connection/jdbc.md
       - R: snowflake/connection/r.md
-  - Fivetran -> Snowflake:
+  - Fivetran to Snowflake:
     - RDS Postgres: snowflake/fivetran/rds_postgres.md
     - RDS SQL Server: snowflake/fivetran/rds_sql_server.md
   - Github:
