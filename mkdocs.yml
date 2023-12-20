@@ -31,9 +31,11 @@ nav:
       - AWS: snowflake/aws/readme.md
       - Azure: snowflake/azure/readme.md
       - GCP: snowflake/gcp/readme.md
-    - Jupyter Notebok:
+    - Jupyter Notebook:
       - Basics: snowflake/jupyter/basics.md
       - ML Model: snowflake/jupyter/ml_models.md
+    - Container Services:
+      - Jupyter Notebook: index.md
     - Connection:
       - JDBC: snowflake/connection/jdbc.md
       - R: snowflake/connection/r.md
