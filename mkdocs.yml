@@ -45,10 +45,7 @@ nav:
     - Fivetran:
       - RDS Postgres: snowflake/fivetran/rds_postgres.md
       - RDS SQL Server: snowflake/fivetran/rds_sql_server.md
-  - Github:
-    - Github Docs: github/docs.md
-  - Okta:
-    - Snowflake: okta/snowflake.md
+
     
   
 markdown_extensions:
