@@ -1,4 +1,4 @@
-site_name: Tutorials
+site_name: Daniel Wilczak - Tutorials
 repo_url: https://github.com/sfc-gh-dwilczak/tutorials/
 
 theme:
@@ -25,8 +25,7 @@ theme:
         name: Switch to light mode
 
 nav:
-  - Home: index.md
-  - Snowflake:
+  - Snowflake: index.md
     - Storage bucket: 
       - AWS: snowflake/aws/readme.md
       - Azure: snowflake/azure/readme.md
@@ -37,7 +36,7 @@ nav:
     - Connection:
       - JDBC: snowflake/connection/jdbc.md
       - R: snowflake/connection/r.md
-  - Fivetran:
+  - Fivetran -> Snowflake:
     - RDS Postgres: snowflake/fivetran/rds_postgres.md
     - RDS SQL Server: snowflake/fivetran/rds_sql_server.md
   - Github:

@@ -1,7 +1,7 @@
 # Okta - Snowflake.
 
 Images to come soon.
-
+```
 Signup for okta
 	- Create a user with your email in snowflake. IT HAS TO BE IN QUOTES. Example - create user 'daniel.wilczak@snowflake.com';
 	- Go to admin page on top right navbar.
@@ -41,3 +41,4 @@ create security integration <name>
   SAML2_X509_CERT = 'LONGER ASS CERTIFICATE'
   saml2_snowflake_acs_url = ' https://<Account>.snowflakecomputing.com/fed/login';
   saml2_snowflake_issuer_url = ' https://<account>.snowflakecomputing.com';
+```
