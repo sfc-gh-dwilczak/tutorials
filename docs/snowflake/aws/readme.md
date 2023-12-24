@@ -154,7 +154,7 @@ Output:
 | STORAGE_AWS_EXTERNAL_ID   | String        | GGB82720_SFCRole=2_vcN2MIiC7PW0OMOyA82W5BLJrqY=   |                  |   |
 | COMMENT                   | String        |                                                   |                  |   |
 
-## 4. S3 authentication:
+## 4. S3 setup (Part 2):
 16. Navigate back to the role:
 ![Click role](images/10_click_role.png)
 
