@@ -25,8 +25,7 @@ theme:
         name: Switch to light mode
 
 nav:
-  - Snowflake: 
-    - Home: snowflake/index.md
+  - Snowflake: index.md
     - Storage buckets: 
       - AWS: snowflake/aws/readme.md
       - Azure: snowflake/azure/readme.md
