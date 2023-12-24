@@ -27,10 +27,11 @@ theme:
 nav:
   - Home: index.md
   - Snowflake: 
-    - Storage bucket: 
+    - Storage buckets: 
       - AWS: snowflake/aws/readme.md
       - Azure: snowflake/azure/readme.md
       - GCP: snowflake/gcp/readme.md
+      - SFTP: index.md
     - Jupyter Notebook:
       - Basics: snowflake/jupyter/basics.md
       - ML Model: snowflake/jupyter/ml_models.md

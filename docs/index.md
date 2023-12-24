@@ -1,11 +1,3 @@
 Tutorials built by me to help snowflake users on snowflake.
 
-# Sections:
-
-## Blob Storage integration (Stage / Snowpipe):
-- AWS
-- Azure
-- GCP
-
-## Snowflake connector:
--
+This tutorial might still be in work. Please use the navbar.
