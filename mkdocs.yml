@@ -1,4 +1,4 @@
-site_name: Tutorials
+site_name: Daniel Wilczak - Snowflake
 repo_url: https://github.com/sfc-gh-dwilczak/tutorials/
 
 theme:
@@ -27,7 +27,7 @@ theme:
 
 nav:
   - Snowflake:
-    - Directory: index.md
+    - Tutorials: index.md
     - Storage buckets:
       - AWS: snowflake/aws/readme.md
       - Azure: snowflake/azure/readme.md
@@ -35,7 +35,7 @@ nav:
       - SFTP: snowflake/sftp/setup.md
     - Jupyter Notebook:
       - Basics: snowflake/jupyter/basics.md
-      - ML Model: snowflake/jupyter/ml_models.md
+      - ML Model: snowflake/jupyter/models.md
     - Container Services:
       - CPU Jupyter Notebook: snowflake/container/cpu_jupyter.md
       - GPU Jupyter Notebook: snowflake/container/gpu_jupyter.md
