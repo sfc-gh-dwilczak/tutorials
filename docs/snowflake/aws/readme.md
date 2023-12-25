@@ -2,9 +2,9 @@
 This tutorial assumes you have nothing in your snowflake account (Started Trial) but, the tutorial can be started at any step.
 
 
-## 1. Snowflake Setup:
+## 1. Snowflake - ßSetup:
 
-Setup in snowflake before we jump to aws. Lets create a worksheet in snowflake and add the code below with your information and hit run:
+Let's start by setting up snowflake before we jump to aws. Lets create a worksheet in snowflake and add the code below with your information and hit run:
 
 === ":octicons-image-16: Worksheet"
     ![Worksheet](images/0_worksheet.png)
@@ -23,7 +23,7 @@ Setup in snowflake before we jump to aws. Lets create a worksheet in snowflake a
     Schema AWS successfully created.
     ```
 
-## 2. S3 Setup (Part 1):
+### S3 Setup (Part 1):
 1. Create the bucket you intend to use. In our case we'll call the bucket **danielwilczak**.
 ![Create S3](images/0_create_bucket.png)
 
@@ -102,7 +102,7 @@ Setup in snowflake before we jump to aws. Lets create a worksheet in snowflake a
 14. Copy your role ARN, this will be used in step 15:
 ![Copy arn](images/11_copy_arn.png)
 
-## 3. Snowflake integration:
+## 3. Snowflake - Integration:
 15. Create the integration in snowflake by running the code below with **your copied role arn** and **bucket name**:
 
 
@@ -137,7 +137,7 @@ Setup in snowflake before we jump to aws. Lets create a worksheet in snowflake a
     | STORAGE_AWS_IAM_USER_ARN | arn:aws:iam::001782626159:user/8pbb0000-s       |
     | STORAGE_AWS_EXTERNAL_ID  | GGB82720_SFCRole=2_vcN2MIiC7PW0OMOyA82W5BLJrqY= |
 
-## 4. S3 setup (Part 2):
+### S3 setup (Part 2):
 16. Navigate back to the role:
 ![Click role](images/10_click_role.png)
 
@@ -176,7 +176,7 @@ Setup in snowflake before we jump to aws. Lets create a worksheet in snowflake a
     }
     ```
 
-## 5. Snowflake - Stage, Format, and Load:
+## 5. Snowflake - Stage and Load:
 FINAL STEP. Lets create a stage, file format, warehouse and table and copy data into it. Copy the code below and run it in a new worksheet.
 
 === ":octicons-image-16: Code"
