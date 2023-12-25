@@ -13,9 +13,11 @@ If your like me, you hate reading tutorials. Just show me the full code. So here
     Long code block
     ```
 
-=== ":octicons-sign-out-16: Output"
+=== ":octicons-sign-out-16: Result"
 
-    Update
+   ```
+   Update
+   ``` 
 
 ### Breakdown:
 
@@ -49,14 +51,23 @@ Creating a new user might be the first think you do on snowflake. The code below
         MUST_CHANGE_PASSWORD = True;
     ```
 
-=== ":octicons-sign-out-16: Output"
+=== ":octicons-sign-out-16: Result"
 
+    ```
     User daniel.wilczak@snowflake.com successfully created.
+    ```
 
 #### 3. Databases
 There should be three primary databases in your Snowflake account. They are **Raw**, **Warehouse**, **Reporting**.
 
-```sql
-Code goes here.
+=== ":octicons-image-16: Code"
 
-```
+    ```sql
+    Code here
+    ```
+
+=== ":octicons-sign-out-16: Result"
+
+    ```
+    Result here.
+    ```
