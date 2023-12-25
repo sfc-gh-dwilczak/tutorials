@@ -10,18 +10,18 @@ Create a worksheet in snowflake and add the code below with your information and
   ![Worksheet](images/0_worksheet.png)
 
   ```sql
-  use useradmin;
+  use role useradmin;
 
   -- Create our first user.
   CREATE USER "daniel.wilczak@snowflake.com"
       PASSWORD='Password12'
       MUST_CHANGE_PASSWORD = False;
 
-  use ACCOUNTADMIN;
+  use role ACCOUNTADMIN;
   grant role sysadmin to user "daniel.wilczak@snowflake.com";
 
   -- Roles and role hierachy.
-  use securityadmin;
+  use role securityadmin;
 
   create role if not exists analyst comment='Anaylst have access to the data warehouse. (cleaned raw data)';
   grant role analyst to role sysadmin;

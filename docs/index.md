@@ -6,9 +6,16 @@ In all of my tutorials, I like to use a standard architecture for what I believe
 
 ### Code
 If your like me, you hate reading tutorials. Just show me the full code. So here is my full one file code to setup my snowflake architecture in one shot. This does not include integration:
-```sql
-One large code that can be copied but it has to have max height.
-``` 
+
+=== ":octicons-image-16: Code"
+
+    ```sql
+    Long code block
+    ```
+
+=== ":octicons-sign-out-16: Output"
+
+    Update
 
 ### Breakdown:
 
@@ -29,14 +36,22 @@ IMAGE IMAGE IMAGE.
 #### 2. Users:
 Creating a new user might be the first think you do on snowflake. The code below shows how to user **useradmin** and how to create a user. In these tutorials I will always use my snowflake email. Please don't add me to your account. I already have plenty of work to do lol.
 
-```sql
-use useradmin;
 
--- Create our first user.
-CREATE USER "daniel.wilczak@snowflake.com"
-    PASSWORD='Password12'
-    MUST_CHANGE_PASSWORD = True;
-```
+
+=== ":octicons-image-16: Code"
+
+    ```sql
+    use role useradmin;
+
+    -- Create our first user.
+    CREATE USER "daniel.wilczak@snowflake.com"
+        PASSWORD='Password12'
+        MUST_CHANGE_PASSWORD = True;
+    ```
+
+=== ":octicons-sign-out-16: Output"
+
+    User daniel.wilczak@snowflake.com successfully created.
 
 #### 3. Databases
 There should be three primary databases in your Snowflake account. They are **Raw**, **Warehouse**, **Reporting**.
