@@ -102,7 +102,7 @@ Let's start by setting up snowflake before we jump to aws. Lets create a workshe
 14. Copy your role ARN, this will be used in step 15:
 ![Copy arn](images/11_copy_arn.png)
 
-## 3. Snowflake - Integration:
+## 2. Snowflake - Integration:
 15. Create the integration in snowflake by running the code below with **your copied role arn** and **bucket name**:
 
 
@@ -176,7 +176,7 @@ Let's start by setting up snowflake before we jump to aws. Lets create a workshe
     }
     ```
 
-## 5. Snowflake - Stage and Load:
+## 3. Snowflake - Stage and Load:
 FINAL STEP. Lets create a stage, file format, warehouse and table and copy data into it. Copy the code below and run it in a new worksheet.
 
 === ":octicons-image-16: Code"
@@ -223,7 +223,7 @@ FINAL STEP. Lets create a stage, file format, warehouse and table and copy data 
   | s3://danielwilczak/json/sample.json | LOADED | 1           | 1           | 1           | 0           |
 
 
-## (Bonus) Snow Pipe:
+## 4. (Bonus) Snow Pipe:
 Lets create a pipe to automate copying data into a table.
 
 1. Create the file format, table and pipe in snowflake. This approach automates the process so you don't have to manually name all the columns.
