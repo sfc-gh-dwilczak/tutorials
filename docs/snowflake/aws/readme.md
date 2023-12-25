@@ -2,7 +2,7 @@
 This tutorial assumes you have nothing in your snowflake account (Started Trial) but, the tutorial can be started at any step.
 
 
-## 1. Snowflake - ßSetup:
+## 1. Snowflake - Setup:
 
 Let's start by setting up snowflake before we jump to aws. Lets create a worksheet in snowflake and add the code below with your information and hit run:
 
@@ -177,7 +177,7 @@ Let's start by setting up snowflake before we jump to aws. Lets create a workshe
     ```
 
 ## 3. Snowflake - Stage and Load:
-FINAL STEP. Lets create a stage, file format, warehouse and table and copy data into it. Copy the code below and run it in a new worksheet.
+Final step, lets create a stage, file format, warehouse and table and copy data into it. Copy the code below and run it in a new worksheet.
 
 === ":octicons-image-16: Code"
 
@@ -192,9 +192,11 @@ FINAL STEP. Lets create a stage, file format, warehouse and table and copy data 
     url = 's3://danielwilczak/'
     directory = ( enable = true);
 
+    -- Create a file format so the "copy into" know how to copy the data.
     create or replace file format json
     type = 'json';
 
+    -- Create a warehouse to do the compute/processing.
     create or replace warehouse developer 
         WAREHOUSE_SIZE=XSMALL
         INITIALLY_SUSPENDED=TRUE;
@@ -224,9 +226,7 @@ FINAL STEP. Lets create a stage, file format, warehouse and table and copy data 
 
 
 ## 4. (Bonus) Snow Pipe:
-Lets create a pipe to automate copying data into a table.
-
-1. Create the file format, table and pipe in snowflake. This approach automates the process so you don't have to manually name all the columns.
+Lets create a pipe to automate copying data into a table. Create the file format, table and pipe in snowflake. This approach automates the process so you don't have to manually name all the columns.
 
 === ":octicons-image-16: Code"
 
