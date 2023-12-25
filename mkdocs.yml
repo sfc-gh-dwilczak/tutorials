@@ -28,9 +28,6 @@ theme:
 nav:
   - Home: index.md
    - Snowflake: 
-    - Trial: snowflake/version/trial.md
-    - On-demand: snowflake/version/on_demand.md
-    - Capacity: snowflake/version/capacity.md
     - Storage buckets: 
       - AWS: snowflake/aws/readme.md
       - Azure: snowflake/azure/readme.md
