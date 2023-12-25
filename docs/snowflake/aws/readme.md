@@ -9,7 +9,6 @@ This tutorial assumes you have nothing in your snowflake account (Started Trial)
 ![Worksheet](images/0_worksheet.png)
 
 === ":octicons-image-16: SQL"
-
   ```sql
   use role sysadmin;
   create database if not exists raw comment='This is only raw data from your source.';
@@ -19,7 +18,6 @@ This tutorial assumes you have nothing in your snowflake account (Started Trial)
   ```
 
 === ":octicons-sign-out-16: Result"
-
   ```
   Schema AWS successfully created.
   ```
@@ -46,36 +44,37 @@ This tutorial assumes you have nothing in your snowflake account (Started Trial)
 7. Add the template policy json code below and add your arn we copied from step 3 and click create policy:
   ![Add policy json ](images/05_enter_policy.png)
 
-```json
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-              "s3:GetObject",
-              "s3:GetObjectVersion"
-            ],
-            "Resource": "<COPY ARN HERE>/*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:ListBucket",
-                "s3:GetBucketLocation"
-            ],
-            "Resource": "<COPY ARN HERE>",
-            "Condition": {
-                "StringLike": {
-                    "s3:prefix": [
-                        "*"
-                    ]
-                }
-            }
-        }
-    ]
-}
-```
+=== ":octicons-image-16: Json"
+  ```json
+  {
+      "Version": "2012-10-17",
+      "Statement": [
+          {
+              "Effect": "Allow",
+              "Action": [
+                "s3:GetObject",
+                "s3:GetObjectVersion"
+              ],
+              "Resource": "<COPY ARN HERE>/*"
+          },
+          {
+              "Effect": "Allow",
+              "Action": [
+                  "s3:ListBucket",
+                  "s3:GetBucketLocation"
+              ],
+              "Resource": "<COPY ARN HERE>",
+              "Condition": {
+                  "StringLike": {
+                      "s3:prefix": [
+                          "*"
+                      ]
+                  }
+              }
+          }
+      ]
+  }
+  ```
 
 8. Lets create a role! Navigate back to **IAM**:
 ![Create S3](images/02_iam.png)
