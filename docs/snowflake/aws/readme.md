@@ -6,9 +6,10 @@ This tutorial assumes you have nothing in your snowflake account (Started Trial)
 
 0. Setup in snowflake before we jump to aws. Lets create a worksheet in snowflake and add the code below with your information and hit run:
 
-![Worksheet](images/0_worksheet.png)
+=== ":octicons-image-16: Worksheet"
+    ![Worksheet](images/0_worksheet.png)
 
-=== ":octicons-image-16: SQL"
+=== ":octicons-image-16: Code"
     ```sql
     use role sysadmin;
     create database if not exists raw comment='This is only raw data from your source.';
@@ -29,7 +30,7 @@ This tutorial assumes you have nothing in your snowflake account (Started Trial)
 2. Upload the sample data (json/csv) provided in the data folder.
 ![Upload example data](images/0_upload_data.png)
 
-3. Copy your ARN name. This wil be used in step 7.
+3. Copy your **ARN**\ name. This wil be used in step 7.
 ![Copy ARN name](images/01_get_arn_name.png)
 
 4. Go to IAM:
@@ -106,7 +107,7 @@ This tutorial assumes you have nothing in your snowflake account (Started Trial)
 
 
 
-=== ":octicons-image-16: SQL"
+=== ":octicons-image-16: Code"
 
     ```sql
     use role ACCOUNTADMIN;
@@ -151,9 +152,12 @@ This tutorial assumes you have nothing in your snowflake account (Started Trial)
 ![Edit trust policy](images/13_click_edit_trust_policy.png)
 
 19. Copy the policy json template code below and add your "STORAGE_AWS_IAM_USER_ARN" and "STORAGE_AWS_EXTERNAL_ID" from step 15.
-![Edit trust policy](images/14_edit_trust_policy.png)
 
-=== ":octicons-image-16: Json"
+=== ":octicons-image-16: Policy"
+
+    ![Edit trust policy](images/14_edit_trust_policy.png)
+    
+=== ":octicons-sign-out-16: Json Template"
 
     ```json
     {
@@ -179,9 +183,7 @@ This tutorial assumes you have nothing in your snowflake account (Started Trial)
 ## 5. Snowflake Create Stage:
 20. FINAL STEP. Lets create a stage, file format, warehouse and table and copy data into it. Copy the code below and run it in a new worksheet.
 
-![Final step](images/15_final_step.png)
-
-=== ":octicons-image-16: SQL"
+=== ":octicons-image-16: Code"
 
     ```sql
     use role sysadmin;
@@ -230,7 +232,7 @@ Lets create a pipe to automate copying data into a table.
 
 1. Create the file format, table and pipe in snowflake. This approach automates the process so you don't have to manually name all the columns.
 
-=== ":octicons-image-16: SQL"
+=== ":octicons-image-16: Code"
 
     ```sql
     -- Copy CSV data using a pipe without having to write out the column names.
@@ -284,9 +286,18 @@ Lets create a pipe to automate copying data into a table.
 ![Properties](images/20_enter_sqs.png)
 
 6. Almost done, in snowflake lets refresh the pipe so that we ingest all the current files.
-```sql
-alter pipe csv refresh;
-```
+
+=== ":octicons-image-16: Code"
+
+    ```sql
+    alter pipe csv refresh;
+    ```
+
+=== ":octicons-sign-out-16: Result"
+
+    ```
+    Update me.
+    ```
 
 7. Lets add a copy of the sample data into the s3 bucket folder with a new name and see it added in snowflake ~1 minutes later. We can see this by doing a count on our table and see 2k records where the csv only has 1k records.
 ![Results](images/21_results.png)
