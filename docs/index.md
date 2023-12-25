@@ -10,18 +10,18 @@ If your like me, you hate reading tutorials. Just show me the full code. So here
 === ":octicons-image-16: Code"
 
     ```sql
-    Long code block
+    -- Long code bloc.
     ```
 
 === ":octicons-sign-out-16: Result"
 
-   ```
-   Update
-   ``` 
+    ```
+    Update
+    ``` 
 
 ### Breakdown:
 
-#### 1. ADMIN ADMIN ADMIN!
+#### 1. ADMIN!
 You must understadn the admin in snowflake or you're snowflake is doomed from the get go and will end up being disorginized.
 
 IMAGE IMAGE IMAGE.
