@@ -176,7 +176,7 @@ Setup in snowflake before we jump to aws. Lets create a worksheet in snowflake a
     }
     ```
 
-## 5. Snowflake Create Stage:
+## 5. Snowflake - Stage, Format, and Load:
 FINAL STEP. Lets create a stage, file format, warehouse and table and copy data into it. Copy the code below and run it in a new worksheet.
 
 === ":octicons-image-16: Code"
