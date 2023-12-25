@@ -4,46 +4,25 @@ This tutorial assumes you have nothing in your snowflake account (Started Trial)
 
 ## 1. Snowflake Setup:
 
-0. Setup in snowflake before we jump to aws:  
-Create a worksheet in snowflake and add the code below with your information and hit run:
+0. Setup in snowflake before we jump to aws. Lets create a worksheet in snowflake and add the code below with your information and hit run:
 
-  ![Worksheet](images/0_worksheet.png)
+![Worksheet](images/0_worksheet.png)
+
+=== ":octicons-image-16: SQL"
 
   ```sql
-  use role useradmin;
-
-  -- Create our first user.
-  CREATE USER "daniel.wilczak@snowflake.com"
-      PASSWORD='Password12'
-      MUST_CHANGE_PASSWORD = False;
-
-  use role ACCOUNTADMIN;
-  grant role sysadmin to user "daniel.wilczak@snowflake.com";
-
-  -- Roles and role hierachy.
-  use role securityadmin;
-
-  create role if not exists analyst comment='Anaylst have access to the data warehouse. (cleaned raw data)';
-  grant role analyst to role sysadmin;
-
-  -- Grant roles to users.
-  grant role analyst to user "daniel.wilczak@snowflake.com";
-
-  /* Create the objects needed to store the data. This is the database and schema.
-  -- Databases
-      -- The reason we switch to system admin is so that everything we create is owned by it.
-  */
-
   use role sysadmin;
   create database if not exists raw comment='This is only raw data from your source.';
-  create database if not exists warehouse comment='This is only cleaned and standardized raw data for people to use.';
 
   -- Create the schema. The schema stores all objectss.
   create schema if not exists raw.aws;
-  create schema if not exists warehouse.aws;
   ```
 
-![select and run](images/0_select_and_run.png)
+=== ":octicons-sign-out-16: Result"
+
+  ```
+  Schema AWS successfully created.
+  ```
 
 ## 2. S3 Setup (Part 1):
 1. Create the bucket you intend to use. In our case we'll call it danielwilczak.
@@ -122,37 +101,41 @@ Create a worksheet in snowflake and add the code below with your information and
 ## 3. Snowflake integration:
 15. Create the integration in snowflake by running the code below with your copied role arn and bucket name:
 
-```sql
-use role ACCOUNTADMIN;
 
-create or replace storage integration s3_integration
-  type = external_stage
-  storage_provider = 's3'
-  enabled = true
-  storage_aws_role_arn = 'arn:aws:iam::484577546576:role/danielwilczak-role'
-  storage_allowed_locations = ('s3://danielwilczak/');
 
--- Give the sysadmin access to use the integration.
-grant usage on integration s3_integration to role sysadmin;
+=== ":octicons-image-16: SQL"
 
--- Note the two below we will put them back into AWS later:
---   STORAGE_AWS_IAM_USER_ARN
---   STORAGE_AWS_EXTERNAL_ID 
-desc integration s3_integration;
-```
+  ```sql
+  use role ACCOUNTADMIN;
 
-Output:
+  create or replace storage integration s3_integration
+    type = external_stage
+    storage_provider = 's3'
+    enabled = true
+    storage_aws_role_arn = 'arn:aws:iam::484577546576:role/danielwilczak-role'
+    storage_allowed_locations = ('s3://danielwilczak/');
 
-| property                  | property_type | property_value                                    | property_default |   |
-|---------------------------|---------------|---------------------------------------------------|------------------|---|
-| ENABLED                   | Boolean       | TRUE                                              | FALSE            |   |
-| STORAGE_PROVIDER          | String        | S3                                                |                  |   |
-| STORAGE_ALLOWED_LOCATIONS | List          | s3://danielwilczak/                               | []               |   |
-| STORAGE_BLOCKED_LOCATIONS | List          |                                                   | []               |   |
-| STORAGE_AWS_IAM_USER_ARN  | String        | arn:aws:iam::001782626159:user/8pbb0000-s         |                  |   |
-| STORAGE_AWS_ROLE_ARN      | String        | arn:aws:iam::484577546576:role/danielwilczak-role |                  |   |
-| STORAGE_AWS_EXTERNAL_ID   | String        | GGB82720_SFCRole=2_vcN2MIiC7PW0OMOyA82W5BLJrqY=   |                  |   |
-| COMMENT                   | String        |                                                   |                  |   |
+  -- Give the sysadmin access to use the integration.
+  grant usage on integration s3_integration to role sysadmin;
+
+  -- Note the two below we will put them back into AWS later:
+  --   STORAGE_AWS_IAM_USER_ARN
+  --   STORAGE_AWS_EXTERNAL_ID 
+  desc integration s3_integration;
+  ```
+
+=== ":octicons-sign-out-16: Result"
+
+  | property                  | property_type | property_value                                    | property_default |   |
+  |---------------------------|---------------|---------------------------------------------------|------------------|---|
+  | ENABLED                   | Boolean       | TRUE                                              | FALSE            |   |
+  | STORAGE_PROVIDER          | String        | S3                                                |                  |   |
+  | STORAGE_ALLOWED_LOCATIONS | List          | s3://danielwilczak/                               | []               |   |
+  | STORAGE_BLOCKED_LOCATIONS | List          |                                                   | []               |   |
+  | STORAGE_AWS_IAM_USER_ARN  | String        | arn:aws:iam::001782626159:user/8pbb0000-s         |                  |   |
+  | STORAGE_AWS_ROLE_ARN      | String        | arn:aws:iam::484577546576:role/danielwilczak-role |                  |   |
+  | STORAGE_AWS_EXTERNAL_ID   | String        | GGB82720_SFCRole=2_vcN2MIiC7PW0OMOyA82W5BLJrqY=   |                  |   |
+  | COMMENT                   | String        |                                                   |                  |   |
 
 ## 4. S3 setup (Part 2):
 16. Navigate back to the role:
@@ -167,80 +150,76 @@ Output:
 19. Copy the policy json template code below and add your "STORAGE_AWS_IAM_USER_ARN" and "STORAGE_AWS_EXTERNAL_ID" from step 15.
 ![Edit trust policy](images/14_edit_trust_policy.png)
 
-```json
-{
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Sid": "",
-        "Effect": "Allow",
-        "Principal": {
-          "AWS": "<STORAGE_AWS_IAM_USER_ARN>"
-        },
-        "Action": "sts:AssumeRole",
-        "Condition": {
-          "StringEquals": {
-            "sts:ExternalId": "<STORAGE_AWS_EXTERNAL_ID>"
+=== ":octicons-image-16: Json"
+
+  ```json
+  {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "",
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "<STORAGE_AWS_IAM_USER_ARN>"
+          },
+          "Action": "sts:AssumeRole",
+          "Condition": {
+            "StringEquals": {
+              "sts:ExternalId": "<STORAGE_AWS_EXTERNAL_ID>"
+            }
           }
         }
-      }
-    ]
-  }
-```
+      ]
+    }
+  ```
 
 ## 5. Snowflake Create Stage:
 20. FINAL STEP. Lets create a stage, file format, warehouse and table and copy data into it. Copy the code below and run it in a new worksheet.
 
 ![Final step](images/15_final_step.png)
 
-```sql
-use role sysadmin;
-use database raw;
-use schema aws;
+=== ":octicons-image-16: SQL"
 
--- Stages are synonymous with the idea of folders that can be either internal or external.
-create or replace stage s3
-  storage_integration = s3_integration
-  url = 's3://danielwilczak/'
-  directory = ( enable = true);
+  ```sql
+  use role sysadmin;
+  use database raw;
+  use schema aws;
 
-create or replace file format json
-  type = 'json';
+  -- Stages are synonymous with the idea of folders that can be either internal or external.
+  create or replace stage s3
+    storage_integration = s3_integration
+    url = 's3://danielwilczak/'
+    directory = ( enable = true);
 
-create or replace warehouse developer 
-    WAREHOUSE_SIZE=XSMALL
-    INITIALLY_SUSPENDED=TRUE;
+  create or replace file format json
+    type = 'json';
 
-create or replace warehouse analyst 
-    WAREHOUSE_SIZE=XSMALL
-    INITIALLY_SUSPENDED=TRUE;
+  create or replace warehouse developer 
+      WAREHOUSE_SIZE=XSMALL
+      INITIALLY_SUSPENDED=TRUE;
 
--- Give our role "analyst" access to use the warehouse.
-grant usage on warehouse analyst to role analyst;
-
--- Load json data
-create or replace table data (
-	file_name varchar,
-  data variant
-);
-
-copy into data(file_name,data)
-  from (
-    select 
-        metadata$filename,
-        $1
-    from
-        @s3/json
-        (file_format => json)
+  -- Load json data
+  create or replace table data (
+    file_name varchar,
+    data variant
   );
 
-```
+  copy into data(file_name,data)
+    from (
+      select 
+          metadata$filename,
+          $1
+      from
+          @s3/json
+          (file_format => json)
+    );
+  ```
 
-YOU HAVE LOADED DATA FROM S3!
+=== ":octicons-sign-out-16: Result"
 
-| file                                | status | rows_parsed | rows_loaded | error_limit | errors_seen |
-|-------------------------------------|--------|-------------|-------------|-------------|-------------|
-| s3://danielwilczak/json/sample.json | LOADED | 1           | 1           | 1           | 0           |
+  | file                                | status | rows_parsed | rows_loaded | error_limit | errors_seen |
+  |-------------------------------------|--------|-------------|-------------|-------------|-------------|
+  | s3://danielwilczak/json/sample.json | LOADED | 1           | 1           | 1           | 0           |
 
 
 ## (Bonus) Snow Pipe:
@@ -248,43 +227,46 @@ Lets create a pipe to automate copying data into a table.
 
 1. Create the file format, table and pipe in snowflake. This approach automates the process so you don't have to manually name all the columns.
 
-```sql
--- Copy CSV data using a pipe without having to write out the column names.
-create or replace file format infer
-  type = csv
-  parse_header = true
-  skip_blank_lines = true
-  field_optionally_enclosed_by ='"'
-  trim_space = true
-  error_on_column_count_mismatch = false;
+=== ":octicons-image-16: SQL"
 
-create or replace table csv
-    using template (
-        select array_agg(object_construct(*))
-          within group (order by order_id)
-        from table(
-            infer_schema(        
-            LOCATION=>'@s3/csv'
-        , file_format => 'infer')
-        )
-    );
+  ```sql
+  -- Copy CSV data using a pipe without having to write out the column names.
+  create or replace file format infer
+    type = csv
+    parse_header = true
+    skip_blank_lines = true
+    field_optionally_enclosed_by ='"'
+    trim_space = true
+    error_on_column_count_mismatch = false;
 
-create pipe csv auto_ingest=true as
-    COPY into
-        csv
-    from
-        @s3/csv
-        
-    FILE_FORMAT = (FORMAT_NAME= 'infer')
-    MATCH_BY_COLUMN_NAME=CASE_INSENSITIVE;
+  create or replace table csv
+      using template (
+          select array_agg(object_construct(*))
+            within group (order by order_id)
+          from table(
+              infer_schema(        
+              LOCATION=>'@s3/csv'
+          , file_format => 'infer')
+          )
+      );
 
--- Get the arn for the pipe. We will add this to aws in step #5.
-show pipes;
-select "name", "notification_channel" from TABLE(RESULT_SCAN(LAST_QUERY_ID()));
-```
+  create pipe csv auto_ingest=true as
+      COPY into
+          csv
+      from
+          @s3/csv
+          
+      FILE_FORMAT = (FORMAT_NAME= 'infer')
+      MATCH_BY_COLUMN_NAME=CASE_INSENSITIVE;
 
-Result:
-![Get ARN](images/19_get_arn.png)
+  -- Get the arn for the pipe. We will add this to aws in step #5.
+  show pipes;
+  select "name", "notification_channel" from TABLE(RESULT_SCAN(LAST_QUERY_ID()));
+  ```
+
+=== ":octicons-sign-out-16: Result"
+
+  ![Get ARN](images/19_get_arn.png)
 
 2. Navigate to your bucket and click properties:
 ![Properties](images/16_pipe_properties.png)
