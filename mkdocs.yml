@@ -24,6 +24,7 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
 
+
 nav:
   - Home: index.md
   - Snowflake: 
