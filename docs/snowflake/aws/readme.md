@@ -4,7 +4,7 @@ This tutorial assumes you have nothing in your snowflake account (Started Trial)
 
 ## 1. Snowflake Setup:
 
-0. Setup in snowflake before we jump to aws. Lets create a worksheet in snowflake and add the code below with your information and hit run:
+Setup in snowflake before we jump to aws. Lets create a worksheet in snowflake and add the code below with your information and hit run:
 
 === ":octicons-image-16: Worksheet"
     ![Worksheet](images/0_worksheet.png)
@@ -103,7 +103,7 @@ This tutorial assumes you have nothing in your snowflake account (Started Trial)
 ![Copy arn](images/11_copy_arn.png)
 
 ## 3. Snowflake integration:
-15. Create the integration in snowflake by running the code below with your copied role arn and bucket name:
+15. Create the integration in snowflake by running the code below with **your copied role arn** and **bucket name**:
 
 
 
@@ -136,7 +136,7 @@ This tutorial assumes you have nothing in your snowflake account (Started Trial)
     |--------------------------|-------------------------------------------------|
     | STORAGE_AWS_IAM_USER_ARN | arn:aws:iam::001782626159:user/8pbb0000-s       |
     | STORAGE_AWS_EXTERNAL_ID  | GGB82720_SFCRole=2_vcN2MIiC7PW0OMOyA82W5BLJrqY= |
-    
+
 ## 4. S3 setup (Part 2):
 16. Navigate back to the role:
 ![Click role](images/10_click_role.png)
@@ -177,7 +177,7 @@ This tutorial assumes you have nothing in your snowflake account (Started Trial)
     ```
 
 ## 5. Snowflake Create Stage:
-20. FINAL STEP. Lets create a stage, file format, warehouse and table and copy data into it. Copy the code below and run it in a new worksheet.
+FINAL STEP. Lets create a stage, file format, warehouse and table and copy data into it. Copy the code below and run it in a new worksheet.
 
 === ":octicons-image-16: Code"
 
