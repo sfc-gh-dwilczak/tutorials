@@ -1,3 +1,3 @@
-# SFTP to Snowflake:
+# Snowflake - SFTP:
 
 TBC - To be created.

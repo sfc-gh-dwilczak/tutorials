@@ -1,4 +1,5 @@
-# Azure Storage -> Snowflake
+# Snowflake - Azure Blob Storage:
+This tutorial assumes you have nothing in your snowflake account (Started Trial) but, the tutorial can be started at any step.
 
-Working on this tutorial. The code can be located here:   
+For now use these files as I build the tutorial:  
 https://github.com/sfc-gh-dwilczak/tutorials/tree/main/docs/azure

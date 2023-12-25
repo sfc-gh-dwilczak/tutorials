@@ -1,5 +1,5 @@
-# Snowflake AWS S3 bucket:
-This tutorial assumes you have nothing in your snowflake account. Like starting a new trial but the tutorial can be started at any step.
+# Snowflake - AWS S3 bucket:
+This tutorial assumes you have nothing in your snowflake account (Started Trial) but, the tutorial can be started at any step.
 
 
 ## 1. Snowflake Setup:

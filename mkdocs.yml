@@ -48,11 +48,14 @@ nav:
       - Capacity: snowflake/versions/capacity.md
   - Fivetran:
       - Setup: snowflake/fivetran/setup.md
-      - RDS Postgres: snowflake/fivetran/rds_postgres.md
-      - RDS SQL Server: snowflake/fivetran/rds_sql_server.md
+      - Databases:
+        - RDS Postgres: snowflake/fivetran/rds_postgres.md
+        - RDS SQL Server: snowflake/fivetran/rds_sql_server.md
   - DBT:
-    - Cloud Setup: dbt/cloud.md
-    - Core Setup: dbt/core.md
+    - Cloud:
+      - Setup: dbt/cloud.md
+    - Core: 
+      - Setup: dbt/core.md
   - Github:
     - Github Docs: github/docs.md
   - Okta:
