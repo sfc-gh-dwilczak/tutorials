@@ -26,38 +26,35 @@ theme:
 
 
 nav:
-	- Home: index.md
-	- Snowflake:
-		- Storage buckets:
-			- AWS: snowflake/aws/readme.md
-			- Azure: snowflake/azure/readme.md
-			- GCP: snowflake/gcp/readme.md
-			- SFTP: snowflake/sftp/setup.md
-		- Jupyter Notebook:
-			- Basics: snowflake/jupyter/basics.md
-			- ML Model: snowflake/jupyter/ml_models.md
-		- Container Services:
-			- CPU Jupyter Notebook: snowflake/container/cpu_jupyter.md
-			- GPU Jupyter Notebook: snowflake/container/gpu_jupyter.md
-		- Connection:
-			- JDBC: snowflake/connection/jdbc.md
-			- R: snowflake/connection/r.md
-	- Fivetran:
-		- Setup: snowflake/fivetran/setup.md
-		- RDS Postgres: snowflake/fivetran/rds_postgres.md
-		- RDS SQL Server: snowflake/fivetran/rds_sql_server.md
-	- DBT:
-		- Cloud Setup: dbt/cloud.md
-		- Core Setup: dbt/core.md
-	- Github:
-		- Github Docs: github/docs.md
-	- Okta:
-		- Snowflake: okta/snowflake.md
+  - Home: index.md
+  - Snowflake:
+    - Storage buckets:
+      - AWS: snowflake/aws/readme.md
+      - Azure: snowflake/azure/readme.md
+      - GCP: snowflake/gcp/readme.md
+      - SFTP: snowflake/sftp/setup.md
+    - Jupyter Notebook:
+      - Basics: snowflake/jupyter/basics.md
+      - ML Model: snowflake/jupyter/ml_models.md
+    - Container Services:
+      - CPU Jupyter Notebook: snowflake/container/cpu_jupyter.md
+      - GPU Jupyter Notebook: snowflake/container/gpu_jupyter.md
+    - Connection:
+      - JDBC: snowflake/connection/jdbc.md
+      - R: snowflake/connection/r.md
+    - Fivetran:
+      - Setup: snowflake/fivetran/setup.md
+      - RDS Postgres: snowflake/fivetran/rds_postgres.md
+      - RDS SQL Server: snowflake/fivetran/rds_sql_server.md
+    - DBT:
+      - Cloud Setup: dbt/cloud.md
+      - Core Setup: dbt/core.md
+    - Github:
+      - Github Docs: github/docs.md
+    - Okta:
+      - Snowflake: okta/snowflake.md
 
 
-
-    
-  
 markdown_extensions:
   - tables
   - pymdownx.highlight:
