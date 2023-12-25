@@ -27,7 +27,7 @@ Let's start by setting up snowflake before we jump to aws. Lets create a workshe
 1. Create the bucket you intend to use. In our case we'll call the bucket **danielwilczak**.
 ![Create S3](images/0_create_bucket.png)
 
-2. Upload the sample data (json/csv) provided in the data folder.
+2. (Turn into gif??) Upload the sample data (json/csv) provided in the data folder.
 ![Upload example data](images/0_upload_data.png)
 
 3. Copy your **ARN** name. This wil be used in step 7.
@@ -147,7 +147,7 @@ Let's start by setting up snowflake before we jump to aws. Lets create a workshe
 18. Click edit trust policy:
 ![Edit trust policy](images/13_click_edit_trust_policy.png)
 
-19. Copy the policy json template code below and add your "STORAGE_AWS_IAM_USER_ARN" and "STORAGE_AWS_EXTERNAL_ID" from [part 3](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/aws/readme/#3-snowflake-integration).
+19. Copy the policy json template code below and add your "STORAGE_AWS_IAM_USER_ARN" and "STORAGE_AWS_EXTERNAL_ID" from [part 2](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/aws/readme/#2-snowflake-integration).
 
 === ":octicons-image-16: Policy"
 
@@ -291,9 +291,9 @@ Lets create a pipe to automate copying data into a table. Create the file format
 
 === ":octicons-sign-out-16: Result"
 
-    ```
-    Update me.
-    ```
+    | File          | Status |
+    |---------------|--------|
+    | /samplev2.csv | SENT   |
 
 7. Lets add a copy of the sample data into the s3 bucket folder with a new name and see it added in snowflake ~1 minutes later. We can see this by doing a count on our table and see 2k records where the csv only has 1k records.
 
