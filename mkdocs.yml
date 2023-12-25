@@ -27,7 +27,7 @@ theme:
 
 nav:
   - Snowflake:
-    - Architecture: index.md
+    - Getting Started: index.md
     - Storage buckets:
       - AWS: snowflake/aws/readme.md
       - Azure: snowflake/azure/readme.md
