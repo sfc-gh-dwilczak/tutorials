@@ -28,9 +28,7 @@ theme:
 nav:
   - Home: index.md
   - Snowflake:
-    - Trial: snowflake/version/trial.md
-    - On-demand: snowflake/version/on_demand.md
-    - Capacity: snowflake/version/capacity.md
+    Directory: snowflake/directory.md
     - Storage buckets:
       - AWS: snowflake/aws/readme.md
       - Azure: snowflake/azure/readme.md
@@ -49,6 +47,10 @@ nav:
       - Setup: snowflake/fivetran/setup.md
       - RDS Postgres: snowflake/fivetran/rds_postgres.md
       - RDS SQL Server: snowflake/fivetran/rds_sql_server.md
+    - Versions:
+      - Trial: snowflake/versions/trial.md
+      - On-demand: snowflake/versions/on_demand.md
+      - Capacity: snowflake/versions/capacity.md
   - DBT:
     - Cloud Setup: dbt/cloud.md
     - Core Setup: dbt/core.md
