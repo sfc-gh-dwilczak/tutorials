@@ -30,7 +30,7 @@ This tutorial assumes you have nothing in your snowflake account (Started Trial)
 2. Upload the sample data (json/csv) provided in the data folder.
 ![Upload example data](images/0_upload_data.png)
 
-3. Copy your **ARN**\ name. This wil be used in step 7.
+3. Copy your **ARN** name. This wil be used in step 7.
 ![Copy ARN name](images/01_get_arn_name.png)
 
 4. Go to IAM:
@@ -126,21 +126,17 @@ This tutorial assumes you have nothing in your snowflake account (Started Trial)
     --   STORAGE_AWS_IAM_USER_ARN
     --   STORAGE_AWS_EXTERNAL_ID 
     desc integration s3_integration;
+    select "property", "property_value" from TABLE(RESULT_SCAN(LAST_QUERY_ID()))
+    where "property" = 'STORAGE_AWS_IAM_USER_ARN' or "property" = 'STORAGE_AWS_EXTERNAL_ID';
     ```
 
 === ":octicons-sign-out-16: Result"
 
-    | property                  | property_type | property_value                                    | property_default |   |
-    |---------------------------|---------------|---------------------------------------------------|------------------|---|
-    | ENABLED                   | Boolean       | TRUE                                              | FALSE            |   |
-    | STORAGE_PROVIDER          | String        | S3                                                |                  |   |
-    | STORAGE_ALLOWED_LOCATIONS | List          | s3://danielwilczak/                               | []               |   |
-    | STORAGE_BLOCKED_LOCATIONS | List          |                                                   | []               |   |
-    | STORAGE_AWS_IAM_USER_ARN  | String        | arn:aws:iam::001782626159:user/8pbb0000-s         |                  |   |
-    | STORAGE_AWS_ROLE_ARN      | String        | arn:aws:iam::484577546576:role/danielwilczak-role |                  |   |
-    | STORAGE_AWS_EXTERNAL_ID   | String        | GGB82720_SFCRole=2_vcN2MIiC7PW0OMOyA82W5BLJrqY=   |                  |   |
-    | COMMENT                   | String        |                                                   |                  |   |
-
+    | property                 | property_value                                  |
+    |--------------------------|-------------------------------------------------|
+    | STORAGE_AWS_IAM_USER_ARN | arn:aws:iam::001782626159:user/8pbb0000-s       |
+    | STORAGE_AWS_EXTERNAL_ID  | GGB82720_SFCRole=2_vcN2MIiC7PW0OMOyA82W5BLJrqY= |
+    
 ## 4. S3 setup (Part 2):
 16. Navigate back to the role:
 ![Click role](images/10_click_role.png)
@@ -151,7 +147,7 @@ This tutorial assumes you have nothing in your snowflake account (Started Trial)
 18. Click edit trust policy:
 ![Edit trust policy](images/13_click_edit_trust_policy.png)
 
-19. Copy the policy json template code below and add your "STORAGE_AWS_IAM_USER_ARN" and "STORAGE_AWS_EXTERNAL_ID" from step 15.
+19. Copy the policy json template code below and add your "STORAGE_AWS_IAM_USER_ARN" and "STORAGE_AWS_EXTERNAL_ID" from [part 3](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/aws/readme/#3-snowflake-integration).
 
 === ":octicons-image-16: Policy"
 
@@ -300,5 +296,8 @@ Lets create a pipe to automate copying data into a table.
     ```
 
 7. Lets add a copy of the sample data into the s3 bucket folder with a new name and see it added in snowflake ~1 minutes later. We can see this by doing a count on our table and see 2k records where the csv only has 1k records.
-![Results](images/21_results.png)
+
+=== ":octicons-sign-out-16: Result"
+
+    ![Results](images/21_results.png)
 
