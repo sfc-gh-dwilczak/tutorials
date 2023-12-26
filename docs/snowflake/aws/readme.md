@@ -50,8 +50,8 @@ Add the template policy json code below and add your arn we copied from step 3 a
 === ":octicons-image-16: Policy"
 
     ![Add policy json ](images/05_enter_policy.png)
-    
-=== ":octicons-sign-out-16: Json Template"
+
+=== ":octicons-image-16: Template"
 
     ```json
         {
@@ -84,6 +84,40 @@ Add the template policy json code below and add your arn we copied from step 3 a
         }
     ```
 
+=== ":octicons-sign-out-16: Example"
+
+    ```json
+            {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Effect": "Allow",
+                        "Action": [
+                        "s3:GetObject",
+                        "s3:GetObjectVersion"
+                        ],
+                        "Resource": "arn:aws:s3:::danielwilczak/*"
+                    },
+                    {
+                        "Effect": "Allow",
+                        "Action": [
+                            "s3:ListBucket",
+                            "s3:GetBucketLocation"
+                        ],
+                        "Resource": "arn:aws:s3:::danielwilczak",
+                        "Condition": {
+                            "StringLike": {
+                                "s3:prefix": [
+                                    "*"
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+    ```
+
+
 Lets create a role! Navigate back to **IAM**:
 ![Create S3](images/02_iam.png)
 
@@ -102,13 +136,36 @@ Add the role name and click "create role":
 Once created click your role:
 ![Click role](images/10_click_role.png)
 
-Copy your role ARN, this will be used in step 15:
+Copy your **role ARN**, this will be used in the next step:
 ![Copy arn](images/11_copy_arn.png)
 
 ## 2. Snowflake - Integration:
 Create the integration in snowflake by running the code below with **your copied role arn** and **bucket name**:
 
-=== ":octicons-image-16: Code"
+=== ":octicons-image-16: Template"
+
+    ```sql
+    use role ACCOUNTADMIN;
+
+    create or replace storage integration s3_integration
+    type = external_stage
+    storage_provider = 's3'
+    enabled = true
+    storage_aws_role_arn = '<ROLE ARN HERE>'
+    storage_allowed_locations = ('s3://<BUKCET NAME>/');
+
+    -- Give the sysadmin access to use the integration.
+    grant usage on integration s3_integration to role sysadmin;
+
+    -- Note the two below we will put them back into AWS later:
+    --   STORAGE_AWS_IAM_USER_ARN
+    --   STORAGE_AWS_EXTERNAL_ID 
+    desc integration s3_integration;
+    select "property", "property_value" from TABLE(RESULT_SCAN(LAST_QUERY_ID()))
+    where "property" = 'STORAGE_AWS_IAM_USER_ARN' or "property" = 'STORAGE_AWS_EXTERNAL_ID';
+    ```
+
+=== ":octicons-image-16: Example"
 
     ```sql
     use role ACCOUNTADMIN;
@@ -153,8 +210,8 @@ Copy the policy json template code below and add your "STORAGE_AWS_IAM_USER_ARN"
 === ":octicons-image-16: Policy"
 
     ![Edit trust policy](images/14_edit_trust_policy.png)
-    
-=== ":octicons-sign-out-16: Json Template"
+
+=== ":octicons-image-16: Template"
 
     ```json
     {
@@ -176,6 +233,30 @@ Copy the policy json template code below and add your "STORAGE_AWS_IAM_USER_ARN"
         ]
     }
     ```
+
+=== ":octicons-sign-out-16: Example"
+
+    ```json
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+        {
+            "Sid": "",
+            "Effect": "Allow",
+            "Principal": {
+            "AWS": "arn:aws:iam::001782626159:user/8pbb0000-s"
+            },
+            "Action": "sts:AssumeRole",
+            "Condition": {
+            "StringEquals": {
+                "sts:ExternalId": "GGB82720_SFCRole=2_vcN2MIiC7PW0OMOyA82W5BLJrqY="
+            }
+            }
+        }
+        ]
+    }
+    ```
+
 
 ## 3. Snowflake - Stage and Load:
 Final step, lets create a stage, file format, warehouse and table and copy data into it. Copy the code below and run it in a new worksheet.
