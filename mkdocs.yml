@@ -42,7 +42,7 @@ nav:
       - CPU Jupyter Notebook: snowflake/container/cpu_jupyter.md
       - GPU Jupyter Notebook: snowflake/container/gpu_jupyter.md
     - Connection:
-      - JDBC: snowflake/connection/jdbc.md
+      - JDBC: snowflake/connection/jdbc/jdbc.md
       - R: snowflake/connection/r.md
     - Versions:
       - Trial: snowflake/versions/trial.md
