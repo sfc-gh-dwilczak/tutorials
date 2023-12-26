@@ -30,7 +30,7 @@ Let's start by setting up snowflake before we jump to aws. Lets create a workshe
 Create the bucket you intend to use. In our case we'll call the bucket **danielwilczak**.
 ![Create S3](images/0_create_bucket.png)
 
-Upload the [sample data](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/aws/data/sample.zip) (json/csv) provided in the data folder.
+Upload the [sample data](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/aws/data/sample.zip) to your s3 bucket (json/csv) provided in the data folder.
 ![Upload example data](images/uploadv2.gif)
 
 Copy your **ARN** name. This wil be used in step 7.
@@ -226,7 +226,7 @@ Final step, lets create a stage, file format, warehouse and table and copy data 
     | s3://danielwilczak/json/sample.json | LOADED | 1           | 1           | 1           | 0           |
 
 
-## 4. (Bonus) Snow Pipe:
+## 4. (Bonus) SnowPipe:
 Lets create a pipe to automate copying data into a table. Create the file format, table and pipe in snowflake. This approach automates the process so you don't have to manually name all the columns.
 
 === ":octicons-image-16: Code"
