@@ -28,6 +28,8 @@ theme:
 nav:
   - Snowflake:
     - Getting Started: index.md
+    - Setup:
+      - Basic: snowflake/setup/basic.md
     - Storage buckets:
       - AWS: snowflake/aws/readme.md
       - Azure: snowflake/azure/readme.md
