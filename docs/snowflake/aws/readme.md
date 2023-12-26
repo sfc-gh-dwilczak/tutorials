@@ -189,13 +189,13 @@ Final step, lets create a stage, file format, warehouse and table and copy data 
 
     -- Stages are synonymous with the idea of folders that can be either internal or external.
     create or replace stage s3
-    storage_integration = s3_integration
-    url = 's3://danielwilczak/'
-    directory = ( enable = true);
+        storage_integration = s3_integration
+        url = 's3://danielwilczak/'
+        directory = ( enable = true);
 
     -- Create a file format so the "copy into" know how to copy the data.
     create or replace file format json
-    type = 'json';
+        type = 'json';
 
     -- Create a warehouse to do the compute/processing.
     create or replace warehouse developer 
@@ -204,8 +204,8 @@ Final step, lets create a stage, file format, warehouse and table and copy data 
 
     -- Load json data
     create or replace table data (
-    file_name varchar,
-    data variant
+        file_name varchar,
+        data variant
     );
 
     copy into data(file_name,data)
@@ -234,13 +234,14 @@ Lets create a pipe to automate copying data into a table. Create the file format
     ```sql
     -- Copy CSV data using a pipe without having to write out the column names.
     create or replace file format infer
-    type = csv
-    parse_header = true
-    skip_blank_lines = true
-    field_optionally_enclosed_by ='"'
-    trim_space = true
-    error_on_column_count_mismatch = false;
+        type = csv
+        parse_header = true
+        skip_blank_lines = true
+        field_optionally_enclosed_by ='"'
+        trim_space = true
+        error_on_column_count_mismatch = false;
 
+    -- Creat the table with the column names generated for us.
     create or replace table csv
         using template (
             select array_agg(object_construct(*))
@@ -252,6 +253,7 @@ Lets create a pipe to automate copying data into a table. Create the file format
             )
         );
 
+    -- Create the pipe to load any new data.
     create pipe csv auto_ingest=true as
         COPY into
             csv
@@ -261,14 +263,16 @@ Lets create a pipe to automate copying data into a table. Create the file format
         FILE_FORMAT = (FORMAT_NAME= 'infer')
         MATCH_BY_COLUMN_NAME=CASE_INSENSITIVE;
 
-    -- Get the arn for the pipe. We will add this to aws in step #5.
+    -- Get the arn for the pipe. We will add this to aws in step the next aws step.
     show pipes;
     select "name", "notification_channel" from TABLE(RESULT_SCAN(LAST_QUERY_ID()));
     ```
 
 === ":octicons-sign-out-16: Result"
 
-    ![Get ARN](images/19_get_arn.png)
+    | name | notification_channel                                                                        |
+    |------|---------------------------------------------------------------------------------------------|
+    | CSV  | arn:aws:sqs:us-west-2:001782626159:sf-snowpipe-AIDAQA2SAW5XRW6XL6U34-jhWVvR4Mod-EuXdJBwygJQ |
 
 Navigate to your bucket and click properties:
 ![Properties](images/16_pipe_properties.png)
