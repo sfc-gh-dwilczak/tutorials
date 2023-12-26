@@ -54,67 +54,67 @@ Add the template policy json code below and add your arn we copied from step 3 a
 === ":octicons-image-16: Template"
 
     ```json
-        {
-            "Version": "2012-10-17",
-            "Statement": [
-                {
-                    "Effect": "Allow",
-                    "Action": [
-                    "s3:GetObject",
-                    "s3:GetObjectVersion"
-                    ],
-                    "Resource": "<COPY ARN HERE>/*"
-                },
-                {
-                    "Effect": "Allow",
-                    "Action": [
-                        "s3:ListBucket",
-                        "s3:GetBucketLocation"
-                    ],
-                    "Resource": "<COPY ARN HERE>",
-                    "Condition": {
-                        "StringLike": {
-                            "s3:prefix": [
-                                "*"
-                            ]
-                        }
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Action": [
+                "s3:GetObject",
+                "s3:GetObjectVersion"
+                ],
+                "Resource": "<COPY ARN HERE>/*"
+            },
+            {
+                "Effect": "Allow",
+                "Action": [
+                    "s3:ListBucket",
+                    "s3:GetBucketLocation"
+                ],
+                "Resource": "<COPY ARN HERE>",
+                "Condition": {
+                    "StringLike": {
+                        "s3:prefix": [
+                            "*"
+                        ]
                     }
                 }
-            ]
-        }
+            }
+        ]
+    }
     ```
 
 === ":octicons-sign-out-16: Example"
 
     ```json
+    {
+        "Version": "2012-10-17",
+        "Statement": [
             {
-                "Version": "2012-10-17",
-                "Statement": [
-                    {
-                        "Effect": "Allow",
-                        "Action": [
-                        "s3:GetObject",
-                        "s3:GetObjectVersion"
-                        ],
-                        "Resource": "arn:aws:s3:::danielwilczak/*"
-                    },
-                    {
-                        "Effect": "Allow",
-                        "Action": [
-                            "s3:ListBucket",
-                            "s3:GetBucketLocation"
-                        ],
-                        "Resource": "arn:aws:s3:::danielwilczak",
-                        "Condition": {
-                            "StringLike": {
-                                "s3:prefix": [
-                                    "*"
-                                ]
-                            }
-                        }
+                "Effect": "Allow",
+                "Action": [
+                "s3:GetObject",
+                "s3:GetObjectVersion"
+                ],
+                "Resource": "arn:aws:s3:::danielwilczak/*"
+            },
+            {
+                "Effect": "Allow",
+                "Action": [
+                    "s3:ListBucket",
+                    "s3:GetBucketLocation"
+                ],
+                "Resource": "arn:aws:s3:::danielwilczak",
+                "Condition": {
+                    "StringLike": {
+                        "s3:prefix": [
+                            "*"
+                        ]
                     }
-                ]
+                }
             }
+        ]
+    }
     ```
 
 
