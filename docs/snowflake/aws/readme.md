@@ -7,7 +7,7 @@ This tutorial assumes you have nothing in your snowflake account (Started Trial)
 Let's start by setting up snowflake before we jump to aws. Lets create a worksheet in snowflake and add the code below with your information and hit run:
 
 === ":octicons-image-16: Worksheet"
-    ![Worksheet](images/0_worksheet.png)
+    ![Worksheet](images/0_worksheet.gif)
 
 === ":octicons-image-16: Code"
     ```sql
