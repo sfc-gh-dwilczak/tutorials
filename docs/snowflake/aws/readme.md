@@ -24,25 +24,25 @@ Let's start by setting up snowflake before we jump to aws. Lets create a workshe
     ```
 
 ### S3 Setup (Part 1):
-1. Create the bucket you intend to use. In our case we'll call the bucket **danielwilczak**.
+Create the bucket you intend to use. In our case we'll call the bucket **danielwilczak**.
 ![Create S3](images/0_create_bucket.png)
 
-2. (Turn into gif??) Upload the sample data (json/csv) provided in the data folder.
+(Turn into gif??) Upload the sample data (json/csv) provided in the data folder.
 ![Upload example data](images/0_upload_data.png)
 
-3. Copy your **ARN** name. This wil be used in step 7.
+Copy your **ARN** name. This wil be used in step 7.
 ![Copy ARN name](images/01_get_arn_name.png)
 
-4. Go to IAM:
+Go to IAM:
 ![Create S3](images/02_iam.png)
 
-5. Create a policy:
+Create a policy:
 ![Policy](images/03_policy.png)
 
-6. Give the policy a name:
+Give the policy a name:
 ![Policy](images/04_create_policy.png)
 
-7. Add the template policy json code below and add your arn we copied from step 3 and click create policy:
+Add the template policy json code below and add your arn we copied from step 3 and click create policy:
 
 === ":octicons-image-16: Policy"
 
@@ -81,31 +81,29 @@ Let's start by setting up snowflake before we jump to aws. Lets create a workshe
         }
     ```
 
-8. Lets create a role! Navigate back to **IAM**:
+Lets create a role! Navigate back to **IAM**:
 ![Create S3](images/02_iam.png)
 
-9. Lets create a role:
+Lets create a role:
 ![Navigate to role](images/06_roles.png)
 
-10. Select AWS account, This account(#), Require external ID and enter 0000 for now. We will update this later.
+Select AWS account, This account(#), Require external ID and enter 0000 for now. We will update this later.
 ![Trusted entity](images/07_trusted_relationship.png)
 
-11. Add the policy to the role:
+Add the policy to the role:
 ![Policy to role](images/08_policy_to_role.png)
 
-12. Add the role name and click "create role":
+Add the role name and click "create role":
 ![Add role name](images/09_role_name.png)
 
-13. Once created click your role:
+Once created click your role:
 ![Click role](images/10_click_role.png)
 
-14. Copy your role ARN, this will be used in step 15:
+Copy your role ARN, this will be used in step 15:
 ![Copy arn](images/11_copy_arn.png)
 
 ## 2. Snowflake - Integration:
-15. Create the integration in snowflake by running the code below with **your copied role arn** and **bucket name**:
-
-
+Create the integration in snowflake by running the code below with **your copied role arn** and **bucket name**:
 
 === ":octicons-image-16: Code"
 
@@ -138,16 +136,16 @@ Let's start by setting up snowflake before we jump to aws. Lets create a workshe
     | STORAGE_AWS_EXTERNAL_ID  | GGB82720_SFCRole=2_vcN2MIiC7PW0OMOyA82W5BLJrqY= |
 
 ### S3 setup (Part 2):
-16. Navigate back to the role:
+Navigate back to the role:
 ![Click role](images/10_click_role.png)
 
-17. Click trusted relationship:
+Click trusted relationship:
 ![Click trusted relationship](images/12_click_trusted_relationship.png)
 
-18. Click edit trust policy:
+Click edit trust policy:
 ![Edit trust policy](images/13_click_edit_trust_policy.png)
 
-19. Copy the policy json template code below and add your "STORAGE_AWS_IAM_USER_ARN" and "STORAGE_AWS_EXTERNAL_ID" from [part 2](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/aws/readme/#2-snowflake-integration).
+Copy the policy json template code below and add your "STORAGE_AWS_IAM_USER_ARN" and "STORAGE_AWS_EXTERNAL_ID" from [part 2](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/aws/readme/#2-snowflake-integration).
 
 === ":octicons-image-16: Policy"
 
@@ -269,19 +267,19 @@ Lets create a pipe to automate copying data into a table. Create the file format
 
     ![Get ARN](images/19_get_arn.png)
 
-2. Navigate to your bucket and click properties:
+Navigate to your bucket and click properties:
 ![Properties](images/16_pipe_properties.png)
 
-3. Scroll down to "Create event notification":
+Scroll down to "Create event notification":
 ![Create event notification](images/17_create_event.png)
 
-4. Add a name to the notification and select all object create notification:
+Add a name to the notification and select all object create notification:
 ![Properties](images/18_notification_settings.png)
 
-5. Scroll down and enter your sqs and click "save changes":
+Scroll down and enter your sqs and click "save changes":
 ![Properties](images/20_enter_sqs.png)
 
-6. Almost done, in snowflake lets refresh the pipe so that we ingest all the current files.
+Almost done, in snowflake lets refresh the pipe so that we ingest all the current files.
 
 === ":octicons-image-16: Code"
 
@@ -295,7 +293,7 @@ Lets create a pipe to automate copying data into a table. Create the file format
     |---------------|--------|
     | /samplev2.csv | SENT   |
 
-7. Lets add a copy of the sample data into the s3 bucket folder with a new name and see it added in snowflake ~1 minutes later. We can see this by doing a count on our table and see 2k records where the csv only has 1k records.
+Lets add a copy of the sample data into the s3 bucket folder with a new name and see it added in snowflake ~1 minutes later. We can see this by doing a count on our table and see 2k records where the csv only has 1k records.
 
 === ":octicons-sign-out-16: Result"
 
