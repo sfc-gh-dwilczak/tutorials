@@ -1,4 +1,9 @@
 # Snowflake - AWS S3 bucket:
+
+<video controls>
+<source src="videos/test_recording.mov" type="video/mp4">
+</video>
+
 This tutorial assumes you have nothing in your snowflake account (Started Trial) but, the tutorial can be started at any step.
 
 
