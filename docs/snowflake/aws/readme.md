@@ -308,7 +308,7 @@ Final step, lets create a stage, file format, warehouse and table and copy data 
 
 
 ## 4. (Bonus) SnowPipe:
-Lets create a pipe to automate copying data into a table. Create the file format, table and pipe in snowflake. This approach automates the process so you don't have to manually name all the columns.
+Lets create a pipe to automate copying data into a table. Create the file format, table and pipe in snowflake. This approach automates the process so you don't have to manually name all the columns. This code will also give you your **SQS queue** string to be entered into AWS later.
 
 === ":octicons-image-16: Code"
 
