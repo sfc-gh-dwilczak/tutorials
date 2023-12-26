@@ -2,7 +2,7 @@
 
 <iframe width="850px" height="478px" src="https://www.youtube.com/embed/KYRlISpJx_E?si=_c4N9_GejASpxsZm" style="display:block;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-This tutorial assumes you have nothing in your snowflake account (Started Trial) but, the tutorial can be started at any step.
+This tutorial assumes you have nothing in your snowflake account ([Trial](https://signup.snowflake.com/)) but, the tutorial can be started at any step.
 
 
 ## 1. Snowflake - Setup:
@@ -221,9 +221,9 @@ Final step, lets create a stage, file format, warehouse and table and copy data 
 
 === ":octicons-sign-out-16: Result"
 
-  | file                                | status | rows_parsed | rows_loaded | error_limit | errors_seen |
-  |-------------------------------------|--------|-------------|-------------|-------------|-------------|
-  | s3://danielwilczak/json/sample.json | LOADED | 1           | 1           | 1           | 0           |
+    | file                                | status | rows_parsed | rows_loaded | error_limit | errors_seen |
+    |-------------------------------------|--------|-------------|-------------|-------------|-------------|
+    | s3://danielwilczak/json/sample.json | LOADED | 1           | 1           | 1           | 0           |
 
 
 ## 4. (Bonus) Snow Pipe:
