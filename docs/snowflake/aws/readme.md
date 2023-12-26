@@ -30,8 +30,8 @@ Let's start by setting up snowflake before we jump to aws. Lets create a workshe
 Create the bucket you intend to use. In our case we'll call the bucket **danielwilczak**.
 ![Create S3](images/0_create_bucket.png)
 
-(Turn into gif??) Upload the sample data (json/csv) provided in the data folder.
-![Upload example data](images/0_upload_data.png)
+Upload the [sample data](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/aws/data/sample.zip) (json/csv) provided in the data folder.
+![Upload example data](images/upload.gif)
 
 Copy your **ARN** name. This wil be used in step 7.
 ![Copy ARN name](images/01_get_arn_name.png)
