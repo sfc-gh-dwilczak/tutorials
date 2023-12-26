@@ -33,7 +33,7 @@ Create the bucket you intend to use. In our case we'll call the bucket **danielw
 Upload the [sample data](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/aws/data/sample.zip) to your s3 bucket (json/csv) provided in the data folder.
 ![Upload example data](images/uploadv2.gif)
 
-Copy your **ARN** name. This wil be used in step 7.
+Copy your **ARN** name. This wil be used in the policy step.
 ![Copy ARN name](images/01_get_arn_name.png)
 
 Go to IAM:
