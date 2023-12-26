@@ -379,7 +379,7 @@ Almost done, in snowflake lets refresh the pipe so that we ingest all the curren
 
     | File          | Status |
     |---------------|--------|
-    | /samplev2.csv | SENT   |
+    | /sample.csv | SENT   |
 
 Lets add a copy of the sample data into the s3 bucket folder with a new name and see it added in snowflake ~1 minutes later. We can see this by doing a count on our table and see 2k records where the csv only has 1k records.
 
