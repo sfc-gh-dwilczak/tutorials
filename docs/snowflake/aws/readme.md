@@ -31,7 +31,7 @@ Create the bucket you intend to use. In our case we'll call the bucket **danielw
 ![Create S3](images/0_create_bucket.png)
 
 Upload the [sample data](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/aws/data/sample.zip) (json/csv) provided in the data folder.
-![Upload example data](images/upload.gif)
+![Upload example data](images/uploadv2.gif)
 
 Copy your **ARN** name. This wil be used in step 7.
 ![Copy ARN name](images/01_get_arn_name.png)
