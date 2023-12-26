@@ -1,8 +1,6 @@
 # Snowflake - AWS S3 bucket:
 
-<video controls>
-<source src="videos/test_recording.mov" type="video/mp4">
-</video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KYRlISpJx_E?si=_c4N9_GejASpxsZm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 This tutorial assumes you have nothing in your snowflake account (Started Trial) but, the tutorial can be started at any step.
 
