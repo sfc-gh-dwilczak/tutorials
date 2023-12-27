@@ -4,7 +4,6 @@ repo_url: https://github.com/sfc-gh-dwilczak/tutorials/
 theme:
   name: material
   features:
-    - navigation.expand
     - navigation.tabs
   
   palette: 
