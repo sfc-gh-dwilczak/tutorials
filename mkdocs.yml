@@ -28,6 +28,7 @@ theme:
 nav:
   - Snowflake:
     - Getting Started: index.md
+    - Payment / Versions: snowflake/versions/versions.md
     - Setup:
       - Basic: snowflake/setup/basic.md
     - AWS: 
@@ -49,10 +50,6 @@ nav:
     - Connection:
       - JDBC: snowflake/connection/jdbc/jdbc.md
       - R: snowflake/connection/r.md
-    - Versions:
-      - Trial: snowflake/versions/trial.md
-      - On-demand: snowflake/versions/on_demand.md
-      - Capacity: snowflake/versions/capacity.md
   - Fivetran:
       - Setup: snowflake/fivetran/setup.md
       - Databases:
