@@ -26,9 +26,12 @@ theme:
 nav:
   - Snowflake:
     - Getting Started: index.md
-    - Payment / Versions: snowflake/versions/versions.md
+    - Information:
+      - Versions: snowflake/information/versions.md
+      - Payment: snowflake/information/payment.md
     - Setup:
       - Basic: snowflake/setup/basic.md
+      - Advanced: snowflake/setup/advanced.md
     - AWS: 
       - S3: snowflake/aws/s3.md
       - Private Link: snowflake/aws/privatelink.md
