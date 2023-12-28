@@ -8,23 +8,27 @@ The fastest way I get jupyter notebooks up and running is by installing [VsCode]
 ![Worksheet](images/basic_vscode.gif)
 
 ### File
-You can either enter the jupyter notebook code below or download the notebook [here](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/jupyter/basics/notebooks/basic.ipynb). **You will still have to run the snowflake code below.**
+You can either enter the jupyter notebook code below or download the notebook [here](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/jupyter/basics/notebooks/basic.ipynb). You will still have to run the snowflake code below.
 
 ## Code
 
 === ":octicons-image-16: Snowflake - Code"
 
     ```sql
-    
-    ---- The code we are going to use below will generate some random data for us. -------
+    /* 
+        The code we are going to use below will
+        generate some random data for us. 
+    */
 
     use role sysadmin;
 
     -- Create the raw database for our data and a science database for our models.
-    create database if not exists raw comment='This is only raw data from your source.';
+    create database if not exists 
+        raw comment='This is only raw data from your source.';
 
     -- Create the schema. The schema stores all objects that we will need later.
-    create schema if not exists raw.training;
+    create schema if not exists
+        raw.training comment='Store training data in this schema.';
 
     CREATE TABLE xy (
         x INT,
