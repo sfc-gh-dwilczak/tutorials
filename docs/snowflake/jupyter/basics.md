@@ -110,7 +110,7 @@ If you run into an issue where you install the dependencies but when you run the
 
 ![Restart Kernal](images/restart_kernal.png)
 
-#### Solution 1
+#### Solution 2
 If restarting the kernal did not work then you might have to change your envirement to a "virtual envirement". Steps shown below.
 
 ![Venv 1](images/venv_1.png)
