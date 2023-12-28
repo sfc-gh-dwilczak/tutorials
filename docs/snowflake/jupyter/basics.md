@@ -77,6 +77,8 @@ You can either enter the jupyter notebook code below or download the notebook [h
     session = SnowflakeSession.builder.configs(connection_parameters).create() 
 
     dataframe = session.table('raw.training.xy').to_pandas()
+
+    print(dataframe)
     ```
 
 === ":octicons-sign-out-16: Jupyter - Result"
