@@ -73,7 +73,7 @@ You can either enter the jupyter notebook code below or download the notebook [h
     ```
 
 === ":octicons-sign-out-16: Jupyter - Result"
-    | X  | Y  |    |
+    |    | X  |  Y  |
     |----|----|----|
     | 0  | 1  | 10 |
     | 1  | 2  | 15 |
