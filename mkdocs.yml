@@ -29,7 +29,7 @@ nav:
     - Getting Started: index.md
     - Information:
       - Versions: snowflake/information/versions.md
-      - Payment: snowflake/information/payment.md
+      - Payment: snowflake/information/pricing.md
     - Setup:
       - Basic: snowflake/setup/basic.md
       - Advanced: snowflake/setup/advanced.md
