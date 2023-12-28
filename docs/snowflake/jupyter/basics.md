@@ -1,6 +1,7 @@
 # Snowflake - Basic Jupyter Notebook Setup
 
-Lets start with the basics by getting data from snowflake into our local jupyter notebook.
+## Objective: 
+Getting data from snowflake into our local jupyter notebook.
 
 ### Installing Jupyter Notebook
 The fastest way I get jupyter notebooks up and running is by installing [VsCode](https://code.visualstudio.com/) and then creating a new file with the extension ".ipynb".
