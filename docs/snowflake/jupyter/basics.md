@@ -8,7 +8,7 @@ The fastest way I get jupyter notebooks up and running is by installing [VsCode]
 ![Worksheet](images/basic_vscode.gif)
 
 ### File
-You can either enter the code below or download the notebook [here](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/jupyter/basics/notebooks/basic.ipynb).
+You can either enter the jupyter notebook code below or download the notebook [here](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/jupyter/basics/notebooks/basic.ipynb). **You will still have to run the snowflake code below.**
 
 ## Code
 
