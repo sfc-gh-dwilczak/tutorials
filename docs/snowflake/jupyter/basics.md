@@ -7,10 +7,10 @@ The fastest way I get jupyter notebooks up and running is by installing [VsCode]
 
 ![Worksheet](images/basic_vscode.gif)
 
-### File:
+### File
 You can either enter the code below or download the notebook [here](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/jupyter/basics/notebooks/basic.ipynb).
 
-## Code:
+## Code
 
 === ":octicons-image-16: Snowflake - Code"
 
@@ -87,6 +87,6 @@ You can either enter the code below or download the notebook [here](https://sfc-
     | 9  | 10 | 52 |
     | 10 | 11 | 60 |
 
-### Results:
+### Results
 
 ![Worksheet](images/basic_result.png)
