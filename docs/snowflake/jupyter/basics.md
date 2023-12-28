@@ -5,16 +5,19 @@ Lets start with the basics by getting data from snowflake into our local jupyter
 ### Installing Jupyter Notebook
 The fastest way I get jupyter notebooks up and running is by installing [VsCode](https://code.visualstudio.com/) and then creating a new file with the extension ".ipynb".
 
-![Worksheet](images/vscode.gif)
+![Worksheet](images/basic_vscode.gif)
 
 ### Code:
-You can either enter the code below or download the notebook [here]().
+You can either enter the code below or download the notebook [here](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/jupyter/basics/notebooks/basic.ipynb).
 
-## Snowflake code:
-The code we are going to use below will generate some random data for us.
-=== ":octicons-image-16: Snowflake"
+## Code:
+
+=== ":octicons-image-16: Snowflake - Code"
 
     ```sql
+    
+    ---- The code we are going to use below will generate some random data for us. -------
+
     use role sysadmin;
 
     -- Create the raw database for our data and a science database for our models.
@@ -40,16 +43,10 @@ The code we are going to use below will generate some random data for us.
         (7, 40),
         (8, 43),
         (9, 50),
-        (10, 52),
-        (11, 60),
-        (12, 44),
-        (13, 55),
-        (14, 57),
-        (15, 33);
+        (10, 52);
     ```
 
-## Jupyter notebook code:
-=== ":octicons-image-16: Dependencies"
+=== ":octicons-image-16: Jupyter - Dependencies"
 
     ```bash
     !pip install snowflake-snowpark-python
@@ -57,7 +54,7 @@ The code we are going to use below will generate some random data for us.
     !pip install "snowflake-connector-python[pandas]"
     ```
 
-=== ":octicons-image-16: Code"
+=== ":octicons-image-16: Jupyter- Connect"
 
     ```python
     from snowflake.snowpark import Session as SnowflakeSession
@@ -75,7 +72,7 @@ The code we are going to use below will generate some random data for us.
     dataframe = session.table('raw.training.xy').to_pandas()
     ```
 
-=== ":octicons-sign-out-16: Result"
+=== ":octicons-sign-out-16: Jupyter - Result"
     | X  | Y  |    |
     |----|----|----|
     | 0  | 1  | 10 |
@@ -89,11 +86,7 @@ The code we are going to use below will generate some random data for us.
     | 8  | 9  | 50 |
     | 9  | 10 | 52 |
     | 10 | 11 | 60 |
-    | 11 | 12 | 44 |
-    | 12 | 13 | 55 |
-    | 13 | 14 | 57 |
-    | 14 | 15 | 33 |
 
 ### Results:
 
-IMAGE HERE.
+![Worksheet](images/basic_result.png)
