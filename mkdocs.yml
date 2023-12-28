@@ -5,6 +5,7 @@ theme:
   name: material
   features:
     - navigation.tabs
+    - navigation.expand
   
   palette: 
     # Palette toggle for light mode
