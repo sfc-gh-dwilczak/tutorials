@@ -99,3 +99,20 @@ You can either enter the jupyter notebook code below or download the notebook [h
 ### Results
 
 ![Worksheet](images/basic_result.png)
+
+## Troubleshooting
+
+### Can't find module
+![Problem](images/problem.png)
+
+#### Solution 1
+If you run into an issue where you install the dependencies but when you run the snowflake connect code it doesn't work. Try restarting the kernal.
+
+![Restart Kernal](images/restart_kernal.png)
+
+#### Solution 1
+If restarting the kernal did not work then you might have to change your envirement to a "virtual envirement". Steps shown below.
+
+![Venv 1](images/venv_1.png)
+
+![Venv 2](images/venv_2.png)
