@@ -13,7 +13,7 @@ You can either enter the jupyter notebook code below or download the notebook [h
 ### Snowflake file
 For those who hate reading tutorials (me) I have put all the the Snowflake code into [one file](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/jupyter/basics/sql/code.ipynb) seperated by block comments.
 
-## Prcoess
+## Example
 TDU
 
 ### Setup
