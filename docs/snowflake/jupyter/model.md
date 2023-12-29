@@ -4,7 +4,7 @@
 Train a model locally and then productionize it in snowflake so that it can be train and used as a function in any SQL enabled tool.
 
 ## Basics
-If you have never ran a model locally on jupyter notebook. I suggest trying the basic tutorial first.
+If you have never ran a model locally on jupyter notebook. I suggest trying the [basic tutorial](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/jupyter/basics/) first.
 
 ## Code
 ### Notebook file
