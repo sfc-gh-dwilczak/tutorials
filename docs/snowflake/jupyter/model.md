@@ -6,6 +6,7 @@ Train a model locally and then productionize it in snowflake so that it can be t
 ## Basics
 If you have never ran a model locally on jupyter notebook. I suggest trying the basic tutorial first.
 
+## Code
 ### Notebook file
 You can either enter the jupyter notebook code below or download the notebook [here](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/jupyter/basics/notebooks/model.ipynb). You will still have to run the snowflake code below.
 
