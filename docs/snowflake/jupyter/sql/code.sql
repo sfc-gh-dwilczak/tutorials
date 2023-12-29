@@ -38,12 +38,7 @@ INSERT INTO xy (x, y)
     (7, 40),
     (8, 43),
     (9, 50),
-    (10, 52),
-    (11, 60),
-    (12, 44),
-    (13, 55),
-    (14, 57),
-    (15, 33);
+    (10, 52);
 
 -- Create a warehouse to do the training
 create or replace warehouse scientist 
