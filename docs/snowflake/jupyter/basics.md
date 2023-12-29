@@ -102,7 +102,7 @@ You can either enter the jupyter notebook code below or download the notebook [h
 
 ## Troubleshooting
 
-### Can't find module
+### Can't find module - Snowflake
 ![Problem](images/problem.png)
 
 #### Solution 1
