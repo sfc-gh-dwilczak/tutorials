@@ -72,7 +72,9 @@ Lets setup the objects for the example.
     ```
 
 ### Run locally
-Train and run the model locally. A [jupyter notebook](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/jupyter/basics/notebooks/model.ipynb) file is provided for this step.
+Train and run the model locally. A [jupyter notebook](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/jupyter/basics/notebooks/model.ipynb) file is provided for this step. If you have never connected to snowflake via jupyter notebook. I suggest trying the [basic tutorial](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/jupyter/basics/) first.
+
+![Local run](images/model_local.png)
 
 ### Save Model on Snowflake
 Lets transition our local model to a snowflake stored procedure so that we can call on it to train and save the model to a stage.
@@ -140,7 +142,7 @@ Lets transition our local model to a snowflake stored procedure so that we can c
 === ":octicons-image-16: Result"
 
     ```
-    Update
+    Function TRAIN successfully created.
     ```
 
 
@@ -158,8 +160,12 @@ Lets transition our local model to a snowflake stored procedure so that we can c
 
 === ":octicons-image-16: Result"
 
-    ```
-    Update
+    ```json
+    TRAIN {
+        "Prediction(1)=": 19.65025906735751,
+        "R2 score on Test": 0.39521017373294376,
+        "R2 score on Train": 0.5841447127694137
+    }
     ```
 
 #### Train on schedule using task
@@ -174,15 +180,16 @@ Lets transition our local model to a snowflake stored procedure so that we can c
     AS
         call science.linear.train();
 
-    -- Execute it immediately. 
-    execute task train_model_24h;
+    -- If you want to execute it immediately. 
+    -- execute task train_model_24h;
     ```
 
 === ":octicons-image-16: Result"
 
     ```
-    Update
+    Task TRAIN_MODEL_24H successfully created.
     ```
+
 ### Function
 
 === ":octicons-image-16: Sql"
@@ -225,7 +232,7 @@ Lets transition our local model to a snowflake stored procedure so that we can c
 === ":octicons-image-16: Result"
 
     ```
-    Update
+    Function PREDICT successfully created.
     ```
 
 ### Use
@@ -239,5 +246,5 @@ Lets transition our local model to a snowflake stored procedure so that we can c
 === ":octicons-image-16: Result"
 
     ```
-    Update
+    52
     ```
