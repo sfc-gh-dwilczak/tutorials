@@ -87,6 +87,9 @@ This is an example where the user would give you the string values for connectio
             /* 
                 Snowflake login information and object to be used. This would be
                 given to you once the user runs the connector code.
+
+                For documentation on what the account url will be use our snowflake docs:
+                https://docs.snowflake.com/en/user-guide/admin-account-identifier#non-vps-account-locator-formats-by-cloud-platform-and-region
             */ 
             String account_url = "GGB82720.snowflakecomputing.com";
             String role        = "service_jdbc";
