@@ -105,7 +105,7 @@ Let's start by setting up snowflake before we jump to docker. Lets create a work
 
 ## 2. Docker
 
-### 1. Run Locally 
+### Run Locally 
 Our goal is to run the application locally and check it works and then upload the dockerfile / image to our snowflake image repository so it can be hosted on Snowflake container services.
 
 Please install docker desktop - https://www.docker.com/products/docker-desktop/
@@ -124,7 +124,7 @@ Using terminal, **navigate to the folder that has the docker file you downloaded
     GIF of running it on terminal.
     ```
 
-### 2. Upload to Snowflake
+### Upload to Snowflake
 
 Tag the image with our repository_url we got from **step 1**. Log into docker and upload the image. We will use the login name **container_jupyter** and the password **Password12**.
 
