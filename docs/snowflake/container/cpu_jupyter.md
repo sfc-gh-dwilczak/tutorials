@@ -110,7 +110,8 @@ Our goal is to run the application locally and check it works and then upload th
 
 Please install docker desktop - https://www.docker.com/products/docker-desktop/
 
-Using terminal, navigate to the folder and build the image:
+Using terminal, navigate to the folder build and run the locally. Go to [http://localhost:8080/lab](http://localhost:8080/lab) to see the application. Ctrl+c to exit the application.
+
 
 === ":octicons-image-16: Code"
     ```bash
@@ -121,20 +122,6 @@ Using terminal, navigate to the folder and build the image:
 === ":octicons-image-16: Result"
     ```
     GIF of running it on terminal.
-    ```
-
-
-Test the application by running it locally. Go to [http://localhost:8080/lab](http://localhost:8080/lab) to see the application. Ctrl+c to exit the application.
-
-
-=== ":octicons-image-16: Code"
-    ```bash
-    docker run --rm -p 8080:8888 jupyter:tutorial
-    ```
-
-=== ":octicons-sign-out-16: Result"
-    ```
-    GIF OF IT RUNNING
     ```
 
 ### 2. Docker - Upload to Snowflake
