@@ -110,7 +110,7 @@ Our goal is to run the application locally and check it works and then upload th
 
 Please install docker desktop - https://www.docker.com/products/docker-desktop/
 
-Using terminal, navigate to the folder build and run the locally. Go to [http://localhost:8080/lab](http://localhost:8080/lab) to see the application. Ctrl+c to exit the application.
+Using terminal, **navigate to the folder that has the docker file you downloaded. Build and run the docker file locally. Once built, go to [http://localhost:8080/lab](http://localhost:8080/lab) to see the application. Ctrl+c to exit the application.
 
 
 === ":octicons-image-16: Code"
