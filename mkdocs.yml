@@ -51,7 +51,7 @@ nav:
       - GPU Jupyter Notebook: snowflake/container/gpu_jupyter.md
     - Connection:
       - JDBC: snowflake/connection/jdbc/jdbc.md
-      - R: snowflake/connection/r.md
+      - R: snowflake/connection/r/r.md
   - Fivetran:
       - Setup: snowflake/fivetran/setup.md
       - Databases:

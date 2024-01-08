@@ -91,39 +91,43 @@ Let's start by setting up snowflake before we jump to docker. Lets create a work
     create or replace image repository identifier($repo_name);
     create or replace stage identifier($stage_name) directory = ( enable = true ) ENCRYPTION = (type = 'SNOWFLAKE_SSE');
 
-    -- FIX TO GIVE hostname!!
-    SHOW IMAGE REPOSITORIES;
+    -- Tell us where to upload our docker image to. This will be used later.
+    show image repositories;
+    select "repository_url" from table(result_scan(last_query_id()));
     ```
 
 === ":octicons-sign-out-16: Result"
     ```
-    Update
+    | repository_url                                                                                 |
+    |------------------------------------------------------------------------------------------------|
+    | sfsenorthamerica-smorriscontainer.registry.snowflakecomputing.com/container/jupyter/image_repo |
     ```
 
-### Docker - Local Setup and Testing
+## 2. Docker
 
+### 1. Docker - Local Setup and Testing
 Our goal is to run the application locally and check it works and then upload the dockerfile / image to our snowflake image repository so it can be hosted on Snowflake container services.
 
 Please install docker desktop - https://www.docker.com/products/docker-desktop/
 
 Using terminal, navigate to the folder and build the image:
 
-
-=== ":octicons-image-16: Terminal"
+=== ":octicons-image-16: Code"
     ```bash
-    docker build --rm -t jupyter:tutorial .
+    docker build --rm -t jupyter:tutorial . &&
+    docker run --rm -p 8080:8888 jupyter:tutorial
     ```
 
-=== ":octicons-sign-out-16: Result"
+=== ":octicons-image-16: Result"
     ```
-    Update
+    GIF of running it on terminal.
     ```
 
 
-Test the application by running it locally. Go to http://localhost:8080/lab to see the application. Ctrl+c to exit the application.
+Test the application by running it locally. Go to [http://localhost:8080/lab](http://localhost:8080/lab) to see the application. Ctrl+c to exit the application.
 
 
-=== ":octicons-image-16: Termial"
+=== ":octicons-image-16: Code"
     ```bash
     docker run --rm -p 8080:8888 jupyter:tutorial
     ```
@@ -133,42 +137,50 @@ Test the application by running it locally. Go to http://localhost:8080/lab to s
     GIF OF IT RUNNING
     ```
 
-### Docker - Upload to Snowflake
+### 2. Docker - Upload to Snowflake
 
-Tag the image with our repository_url we got from ``SHOW IMAGE REPOSITORIES;`` .Log into docker and upload the image. We will use the login name **USERNAME** and the password we set. The default is **PASSWORD**.
+Tag the image with our repository_url we got from **step 1**. Log into docker and upload the image. We will use the login name **container_jupyter** and the password **Password12**.
 
-=== ":octicons-image-16: TAG"
+=== ":octicons-image-16: TAG - Template"
 
     ```bash
     docker tag jupyter:tutorial \
     sfsenorthamerica-smorriscontainer.registry.snowflakecomputing.com/container/jupyter/image_repo/jupyter:tutorial
     ```
 
-=== ":octicons-image-16: LOGIN"
+=== ":octicons-image-16: TAG - Example"
+
+    ```bash
+    docker tag jupyter:tutorial \
+    sfsenorthamerica-smorriscontainer.registry.snowflakecomputing.com/container/jupyter/image_repo/jupyter:tutorial
+    ```
+
+=== ":octicons-image-16: Login"
 
     ```bash
     docker login sfsenorthamerica-smorriscontainer.registry.snowflakecomputing.com/ -u container_jupyter
     ```
 
-=== ":octicons-sign-out-16: PUSH"
+=== ":octicons-sign-out-16: Push"
     ```bash
     docker push sfsenorthamerica-smorriscontainer.registry.snowflakecomputing.com/container/jupyter/image_repo/jupyter:tutorial
     ```
-=== ":octicons-image-16: Worksheet"
+
+=== ":octicons-image-16: Result"
     ```sql
     RESULT HERE
     ```
 
 
-## 2. Snowflake - Upload Service File
+## 3. Snowflake - Upload Service File
 Upload the service specification file to the stage. We will use snowflake UI to do this. An example can be seen below.
 
 GIF GOES HERE.
 
 
 
-## 3. Snowflake - Run
-Final step, Create the service from the service specification file.
+## 4. Snowflake - Run
+Final step, Create the service from the service specification file and go to the URL given.
 
 === ":octicons-image-16: SQL"
 
@@ -179,21 +191,22 @@ Final step, Create the service from the service specification file.
         SPEC='service.yaml'
         MIN_INSTANCES=1
         MAX_INSTANCES=1;
-
-
-    -- Get the application URL and login to use your jupyter notebook.
-    DESCRIBE SERVICE identifier($service_name);
-    /* 
-    FIX TO GIVE COLUMN!!!!
-    */
     ```
+
+=== ":octicons-sign-out-16: Status"
+
+    ```sql
+    DESCRIBE SERVICE identifier($service_name);
+    
+    ```
+
 
 === ":octicons-sign-out-16: Result"
     ```
-    Update
+    GIF
     ```
 
-WAIT for public endpoint to NOT say: Endpoints provisioning in progress... check back in a few minutes.
+WAIT for public endpoint to **NOT** say: Endpoints provisioning in progress... check back in a few minutes. It will give you a url.
 
 
 
