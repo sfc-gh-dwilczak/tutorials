@@ -128,14 +128,8 @@ Using terminal, **navigate to the folder that has the docker file you downloaded
 
 Tag the image with our repository_url we got from **step 1**. Log into docker and upload the image. We will use the login name **container_jupyter** and the password **Password12**.
 
-=== ":octicons-image-16: TAG - Template"
 
-    ```bash
-    docker tag jupyter:tutorial \
-    sfsenorthamerica-smorriscontainer.registry.snowflakecomputing.com/container/jupyter/image_repo/jupyter:tutorial
-    ```
-
-=== ":octicons-image-16: TAG - Example"
+=== ":octicons-image-16: TAG"
 
     ```bash
     docker tag jupyter:tutorial \
