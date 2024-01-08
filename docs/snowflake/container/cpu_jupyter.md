@@ -126,8 +126,9 @@ Using terminal, **navigate to the folder that has the docker file you downloaded
 
 ### Upload to Snowflake
 
-Tag the image with our repository_url we got from **step 1**. Log into docker and upload the image. We will use the login name **container_jupyter** and the password **Password12**.
-
+- Tag the image with your repository_url we got from **step 1**.
+- Log into docker and upload the image. We will use the login name **container_jupyter** and the password **Password12**.
+- Upload/push your image to snowflake.
 
 === ":octicons-image-16: TAG"
 
