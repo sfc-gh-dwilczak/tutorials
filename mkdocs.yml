@@ -1,0 +1,85 @@
+site_name: Daniel Wilczak - Tutorials
+repo_url: https://github.com/sfc-gh-dwilczak/tutorials/
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - content.code.select
+    - content.code.copy
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    
+  palette: 
+    # Palette toggle for light mode
+    - scheme: default
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+nav:
+  - Snowflake:
+    - Getting Started: index.md
+    - AWS: 
+      - S3: snowflake/aws/s3.md
+      - Private Link: snowflake/aws/privatelink.md
+    - Azure:
+      - Blob: snowflake/azure/blob.md
+    - Google Cloud: 
+      - Cloud Storage: snowflake/google/cloud_storage.md
+    - SFTP: 
+      - Load: snowflake/sftp/load.md
+      - Unload: snowflake/sftp/unload.md
+    - Jupyter Notebook:
+      - Basics: snowflake/jupyter/basics.md
+      - ML Model: snowflake/jupyter/model.md
+    - Container Services:
+      - CPU Jupyter Notebook: snowflake/container/cpu_jupyter.md
+    - Connection:
+      - JDBC: snowflake/connection/jdbc/jdbc.md
+      - R: snowflake/connection/r/r.md
+
+
+
+markdown_extensions:
+  - tables
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - abbr
+  - pymdownx.highlight:
+      anchor_linenums: true
+  
+  # Icons
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+  # Content Tabs
+  - pymdownx.tabbed:
+      alternate_style: true 
+
+# Plugins
+plugins:
+  - glightbox
+  - typeset
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+
+  
+

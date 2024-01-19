@@ -1,0 +1,42 @@
+nav:
+  - Snowflake:
+    - Getting Started: index.md
+    - Information:
+      - Versions: snowflake/information/versions.md
+      - Payment: snowflake/information/pricing.md
+    - Setup:
+      - Basic: snowflake/setup/basic.md
+      - Advanced: snowflake/setup/advanced.md
+    - AWS: 
+      - S3: snowflake/aws/s3.md
+      - Private Link: snowflake/aws/privatelink.md
+    - Azure:
+      - Blob: snowflake/azure/blob.md
+    - Google Cloud: 
+      - Cloud Storage: snowflake/google/cloud_storage.md
+    - SFTP: 
+      - Load: snowflake/sftp/load.md
+      - Unload: snowflake/sftp/unload.md
+    - Jupyter Notebook:
+      - Basics: snowflake/jupyter/basics.md
+      - ML Model: snowflake/jupyter/model.md
+    - Container Services:
+      - CPU Jupyter Notebook: snowflake/container/cpu_jupyter.md
+      - GPU Jupyter Notebook: snowflake/container/gpu_jupyter.md
+    - Connection:
+      - JDBC: snowflake/connection/jdbc/jdbc.md
+      - R: snowflake/connection/r/r.md
+  - Fivetran:
+      - Setup: snowflake/fivetran/setup.md
+      - Databases:
+        - RDS Postgres: snowflake/fivetran/rds_postgres.md
+        - RDS SQL Server: snowflake/fivetran/rds_sql_server.md
+  - DBT:
+    - Cloud:
+      - Setup: dbt/cloud.md
+    - Core: 
+      - Setup: dbt/core.md
+  - Github:
+    - Github Docs: github/docs.md
+  - Okta:
+    - Snowflake: okta/snowflake.md
