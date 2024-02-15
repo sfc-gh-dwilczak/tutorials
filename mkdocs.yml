@@ -81,5 +81,8 @@ plugins:
   - search:
       separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
 
-  
+  extra:
+  analytics:
+    provider: google
+    property: G-F9NYLFWP3W
 
