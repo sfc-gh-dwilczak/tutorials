@@ -186,7 +186,7 @@ Upload the service specification file to the stage. We will use snowflake UI to 
 ### Run the container
 Final step, create the service from the service specification file and go to the URL given.
 
-!!! Caution
+!!! warning
     Login with the user we created. Username: "container_jupyter" and the password you gave to the setup script.
 
 === ":octicons-image-16: SQL"
