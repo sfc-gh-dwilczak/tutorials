@@ -105,13 +105,13 @@ Let's start by setting up Snowflake before we jump to docker. Create a worksheet
 Lets [download the files](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/container/cpu/files.zip) we'll need for the docker file and service file later.
 
 ### Run Locally 
-Our goal is to run the application locally and check it works and then upload the dockerfile / image to our snowflake image repository so it can be hosted on Snowflake container services.
+Our goal is to run the application locally and check if it works and then upload the dockerfile / image to our snowflake image repository so it can be hosted on Snowflake container services.
 
 !!! Note
-    Please install docker desktop - https://www.docker.com/products/docker-desktop/
+    Please install docker desktop - [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
 
 
-Using terminal, navigate to the folder that has the docker file you downloaded. Build and run the docker file locally. Once built, go to [http://localhost:8080/lab](http://localhost:8080/lab) to see the application. Press Ctrl+c to stop the application in terminal.
+Using terminal, navigate to the folder that has the docker file you downloaded. Build and run the docker file locally. 
 
 === ":octicons-image-16: Build and Run"
     ```bash
@@ -119,7 +119,7 @@ Using terminal, navigate to the folder that has the docker file you downloaded. 
     docker run --rm -p 8080:8888 jupyter:tutorial
     ```
 
-You can also see the image was create by going into docker desktop / images tab. 
+Once built, go to [http://localhost:8080/lab](http://localhost:8080/lab) to see the application. Press Ctrl+c to stop the application in terminal.
 
 #### Result
 ![Run locally](images/1.gif)
@@ -185,6 +185,7 @@ Upload the service specification file to the stage. We will use snowflake UI to 
 
 ### Run the container
 Final step, create the service from the service specification file and go to the URL given.
+
 !!! Caution
     Login with the user we created. Username: "container_jupyter" and the password you gave to the setup script.
 
