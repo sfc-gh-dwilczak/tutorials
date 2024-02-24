@@ -4,12 +4,8 @@ Goal of this tutorial is to get a [Jupyter Notebook](https://jupyter.org/) insta
 ## Video
 Video coming soon.
 
-## Snowflake
-Let's start by setting up snowflake before we jump to docker.
-
-### Setup
-
-Create a worksheet in snowflake and add the code below. Please fill in a password and hit run:
+## Setup
+Let's start by setting up snowflake before we jump to docker. Create a worksheet in snowflake and add the code below. Please fill in a password and hit run:
 
 === ":octicons-image-16: Code"
 
@@ -115,13 +111,15 @@ Our goal is to run the application locally and check it works and then upload th
     Please install docker desktop - https://www.docker.com/products/docker-desktop/
 
 
-Using terminal, navigate to the folder that has the docker file you downloaded. Build and run the docker file locally. Once built, go to [http://localhost:8080/lab](http://localhost:8080/lab) to see the application. You can also see the image was create by going into docker desktop / images tab. Press Ctrl+c to stop the application in terminal.
+Using terminal, navigate to the folder that has the docker file you downloaded. Build and run the docker file locally. Once built, go to [http://localhost:8080/lab](http://localhost:8080/lab) to see the application. Press Ctrl+c to stop the application in terminal.
 
 === ":octicons-image-16: Build and Run"
     ```bash
     docker build --rm -t jupyter:tutorial . &&
     docker run --rm -p 8080:8888 jupyter:tutorial
     ```
+
+You can also see the image was create by going into docker desktop / images tab. 
 
 #### Result
 ![Run locally](images/1.gif)
