@@ -5,7 +5,7 @@ Goal of this tutorial is to get a [Jupyter Notebook](https://jupyter.org/) insta
 Video coming soon.
 
 ## Setup
-Let's start by setting up snowflake before we jump to docker. Create a worksheet in snowflake and add the code below. Please fill in a password and hit run:
+Let's start by setting up Snowflake before we jump to docker. Create a worksheet in snowflake and add the code below. Please fill in a password and hit run:
 
 === ":octicons-image-16: Code"
 
@@ -127,6 +127,7 @@ You can also see the image was create by going into docker desktop / images tab.
 ### Upload
 
 Using terminal and the file / folder from the prior step, tag the image with your repository_url we get from step 1. (1)  Once tagged you can go into docker desktop and see the image that is properly tagged. (2)
+{ .annotate }
 
 1.  | repository_url                                                                                 |
     |------------------------------------------------------------------------------------------------|
