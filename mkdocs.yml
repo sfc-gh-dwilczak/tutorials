@@ -45,7 +45,7 @@ nav:
       - Basics: snowflake/jupyter/basics.md
       - ML Model: snowflake/jupyter/model.md
     - Container Services:
-      - CPU Jupyter Notebook: snowflake/container/cpu_jupyter.md
+      - CPU Jupyter Notebook: snowflake/container/cpu/jupyter.md
     - Connection:
       - JDBC: snowflake/connection/jdbc/jdbc.md
       - R: snowflake/connection/r/r.md

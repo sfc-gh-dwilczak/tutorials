@@ -53,9 +53,10 @@ Create a worksheet in snowflake and add the code below. Please fill in a passwor
     instance_family = standard_1
     comment='Container compute that will be used for juypter notebooks.';
 
-    -- Grant role required services (https://docs.snowflake.com/en/sql-reference/sql/create-service#access-control-requirements):
-    grant usage                 on compute pool identifier($pool_name) to role identifier($role_name);
-    grant monitor               on compute pool identifier($pool_name) to role identifier($role_name);
+    -- Grant role required services 
+    -- (https://docs.snowflake.com/en/sql-reference/sql/create-service#access-control-requirements):
+    grant usage   on compute pool identifier($pool_name) to role identifier($role_name);
+    grant monitor on compute pool identifier($pool_name) to role identifier($role_name);
     grant bind service endpoint on account to role identifier($role_name);
 
     -- Create the warehouse. this will be the warehouse used if any snowflake data is queried.
