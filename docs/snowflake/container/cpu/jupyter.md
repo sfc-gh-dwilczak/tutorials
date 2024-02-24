@@ -122,7 +122,7 @@ Using terminal, navigate to the folder that has the docker file you downloaded. 
 Once built, go to [http://localhost:8080/lab](http://localhost:8080/lab) to see the application. Press Ctrl+c to stop the application in terminal.
 
 #### Result
-![Run locally](images/1.gif)
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/JUV44zIJELY?si=ROd0JMU9IqPvepTZ" style="display:block;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Upload
 
@@ -173,8 +173,7 @@ Finally push the image to your image repository living on Snowflake.
     ```
 
 #### Result
-![Docker Upload](images/4.png)
-
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/UrUKbfL-jNM?si=PYPgElk__XNg6Rae" style="display:block;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Snowflake 
 
@@ -229,6 +228,4 @@ Final step, create the service from the service specification file and go to the
     ```
 
 ### Result
-YOUTUBE VIDEO HERE.
-
-
+<iframe width="850px" height="478px" src="ttps://www.youtube.com/embed/BEt6EQELotU?si=__6cHvDrJ1L26Wrl" style="display:block;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
