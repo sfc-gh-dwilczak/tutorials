@@ -212,20 +212,14 @@ Final step, create the service from the service specification file and go to the
     ```
 
 === ":octicons-image-16: Result"
-    | ingress_url                                                                                |
-    |------------------------------------------------------------------------------------------------|
-    | zwxbye-sfsenorthamerica-demo-dwilczak.snowflakecomputing.app    |
+    | ingress_url                                                        |
+    |--------------------------------------------------------------------|
+    | zwxbye-sfsenorthamerica-demo-dwilczak.snowflakecomputing.app       |
 
 
 !!! Note
     WAIT for public endpoint to **NOT** say: Endpoints provisioning in progress... check back in a few minutes. It will give you a url.
 
-=== ":octicons-sign-out-16: Status"
-
-    ```sql
-    show endpoints in service identifier($service_name);
-    select "ingress_url" from table(result_scan(last_query_id()));
-    ```
 
 ### Result
 
