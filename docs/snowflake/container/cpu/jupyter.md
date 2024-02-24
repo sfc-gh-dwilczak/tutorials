@@ -228,4 +228,4 @@ Final step, create the service from the service specification file and go to the
     ```
 
 ### Result
-<iframe width="850px" height="478px" src="ttps://www.youtube.com/embed/BEt6EQELotU?si=__6cHvDrJ1L26Wrl" style="display:block;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/BEt6EQELotU?si=__6cHvDrJ1L26Wrl" style="display:block;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
