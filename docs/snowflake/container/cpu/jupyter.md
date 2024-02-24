@@ -126,7 +126,7 @@ You can also see the image was create by going into docker desktop / images tab.
 
 ### Upload
 
-Using terminal and the file / folder from the prior step, tag the image with your repository_url we get from step 1. (1)  Once tagged you can go into docker desktop and see the image that is properly tagged. (2)
+Using terminal and the file / folder from the prior step, tag the image with your repository_url we get from step 1. (1)  Once tagged you can go into docker desktop and see the image (2) that is properly tagged. 
 { .annotate }
 
 1.  | repository_url                                                                                 |
@@ -184,7 +184,7 @@ Upload the service specification file to the stage. We will use snowflake UI to 
 ![Docker Upload](images/3.gif)
 
 ### Run the container
-Final step, Create the service from the service specification file and go to the URL given.
+Final step, create the service from the service specification file and go to the URL given.
 !!! Caution
     Login with the user we created. Username: "container_jupyter" and the password you gave to the setup script.
 
