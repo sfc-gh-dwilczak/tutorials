@@ -105,7 +105,7 @@ Create a worksheet in snowflake and add the code below. Please fill in a passwor
 
 ## Docker
 
-### Download files
+### Download tutorial files
 Lets [download the files](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/container/cpu/files.zip) we'll need for the docker file and service file later.
 
 ### Run Locally 
@@ -179,13 +179,15 @@ Finally push the image to your image repository living on Snowflake.
 
 ## Snowflake 
 
-### Upload Service File
+### Upload service file
 Upload the service specification file to the stage. We will use snowflake UI to do this. An example can be seen below.
 
 ![Docker Upload](images/3.gif)
 
-### Run the Container
+### Run the container
 Final step, Create the service from the service specification file and go to the URL given.
+!!! Caution
+    Login with the user we created. Username: "container_jupyter" and the password you gave to the setup script.
 
 === ":octicons-image-16: SQL"
 
