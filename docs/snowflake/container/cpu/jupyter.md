@@ -124,17 +124,17 @@ Using terminal, navigate to the folder that has the docker file you downloaded. 
     ```
 
 #### Result
-![Run locally](images/01.gif)
+![Run locally](images/1.gif)
 
 ### Upload
 
-Using terminal and the file / folder from the prior step, tag the image with your repository_url we get from step 1. (1)!  Once tagged you can go into docker desktop and see the image that is properly tagged. (2)!
+Using terminal and the file / folder from the prior step, tag the image with your repository_url we get from step 1. (1)  Once tagged you can go into docker desktop and see the image that is properly tagged. (2)
 
-    1.  | repository_url                                                                                 |
-        |------------------------------------------------------------------------------------------------|
-        | sfsenorthamerica-demo-dwilczak.registry.snowflakecomputing.com/container/jupyter/image_repo    |
-    
-    2.  ![Tagged image](images/05.png)
+1.  | repository_url                                                                                 |
+    |------------------------------------------------------------------------------------------------|
+    | sfsenorthamerica-demo-dwilczak.registry.snowflakecomputing.com/container/jupyter/image_repo    |
+
+2.  ![Tagged image](images/5.png)
 
 
 === ":octicons-image-16: Code"
@@ -174,7 +174,7 @@ Finally push the image to your image repository living on Snowflake.
     ```
 
 #### Result
-![Docker Upload](images/04.png)
+![Docker Upload](images/4.png)
 
 
 ## Snowflake 
@@ -182,7 +182,7 @@ Finally push the image to your image repository living on Snowflake.
 ### Upload Service File
 Upload the service specification file to the stage. We will use snowflake UI to do this. An example can be seen below.
 
-![Docker Upload](images/03.gif)
+![Docker Upload](images/3.gif)
 
 ### Run the Container
 Final step, Create the service from the service specification file and go to the URL given.
