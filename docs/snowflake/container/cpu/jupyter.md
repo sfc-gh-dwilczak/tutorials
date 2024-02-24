@@ -103,7 +103,7 @@ Create a worksheet in snowflake and add the code below. Please fill in a passwor
     | sfsenorthamerica-demo-dwilczak.registry.snowflakecomputing.com/container/jupyter/image_repo    |
     ```
 
-## 2. Docker
+## Docker
 
 ### Download files
 Lets [download the files](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/container/cpu/files.zip) we'll need for the docker file and service file later.
@@ -177,7 +177,7 @@ Finally push the image to your image repository living on Snowflake.
 ![Docker Upload](images/04.png)
 
 
-## 3. Snowflake 
+## Snowflake 
 
 ### Upload Service File
 Upload the service specification file to the stage. We will use snowflake UI to do this. An example can be seen below.
