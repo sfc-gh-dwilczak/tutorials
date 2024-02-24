@@ -182,7 +182,7 @@ Upload the service specification file to the stage. We will use snowflake UI to 
 
 ![Docker Upload](images/3.gif)
 
-### Run the container
+### Run the container service
 Final step, create the service from the service specification file and go to the URL given.
 
 !!! warning
