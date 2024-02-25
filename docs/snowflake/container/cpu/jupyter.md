@@ -101,8 +101,8 @@ Let's start by setting up Snowflake before we jump to docker. Create a worksheet
 
 ## Docker
 
-### Download tutorial files
-Lets [download the files](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/container/cpu/files.zip) we'll need for the docker file and service file later.
+### Download
+Lets first [download the files](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/container/cpu/files.zip) we'll need for the docker file and service file later.
 
 ### Run Locally 
 Our goal is to run the application locally and check if it works and then upload the dockerfile / image to our snowflake image repository so it can be hosted on Snowflake container services.
@@ -111,13 +111,17 @@ Our goal is to run the application locally and check if it works and then upload
     Please install docker desktop - [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
 
 
-Using terminal, navigate to the folder that has the docker file you downloaded. Build and run the docker file locally. 
+Using terminal, navigate to the folder that has the docker file you downloaded. Build and run the docker file locally. For those not familiar with terminal you can right click the folder on MAC and click "New Terminal at folder". (1)
+{ .annotate }
+
+1.  ![Terminal](images/6.png)
 
 === ":octicons-image-16: Build and Run"
     ```bash
     docker build --rm -t jupyter:tutorial . &&
     docker run --rm -p 8080:8888 jupyter:tutorial
     ```
+    
 
 Once built, go to [http://localhost:8080/lab](http://localhost:8080/lab) to see the application. Press Ctrl+c to stop the application in terminal.
 
