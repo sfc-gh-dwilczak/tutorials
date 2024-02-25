@@ -197,7 +197,13 @@ Final step, create the service from the service specification file and go to the
     Login with the user we created. Username: "container_jupyter" and the password you gave to the setup script.
 
 !!! Note
-    WAIT for public endpoint to **NOT** say: Endpoints provisioning in progress... check back in a few minutes. It will give you a url.
+    Continue to refresh the result by **running the last two commands** (1) until Snowflake give you a proper URL.
+    { .annotate }
+
+    1.  ```sql
+        show endpoints in service identifier($service_name);
+        select "ingress_url" from table(result_scan(last_query_id()));
+        ```
 
 
 === ":octicons-image-16: SQL"
