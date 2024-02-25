@@ -193,6 +193,10 @@ Final step, create the service from the service specification file and go to the
 !!! warning
     Login with the user we created. Username: "container_jupyter" and the password you gave to the setup script.
 
+!!! Note
+    WAIT for public endpoint to **NOT** say: Endpoints provisioning in progress... check back in a few minutes. It will give you a url.
+
+
 === ":octicons-image-16: SQL"
 
     ```sql
@@ -220,10 +224,6 @@ Final step, create the service from the service specification file and go to the
     | ingress_url                                                        |
     |--------------------------------------------------------------------|
     | zwxbye-sfsenorthamerica-demo-dwilczak.snowflakecomputing.app       |
-
-
-!!! Note
-    WAIT for public endpoint to **NOT** say: Endpoints provisioning in progress... check back in a few minutes. It will give you a url.
 
 
 ### Result
