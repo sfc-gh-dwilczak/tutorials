@@ -128,7 +128,7 @@ Using terminal, navigate to the folder that has the docker file you downloaded. 
 
 Once built, go to [http://localhost:8080/lab](http://localhost:8080/lab) to see the application. Press Ctrl+c to stop the application in terminal.
 
-#### Result
+#### Video walkthrough
 <iframe width="850px" height="478px" src="https://www.youtube.com/embed/UrUKbfL-jNM?si=PYPgElk__XNg6Rae" style="display:block;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
@@ -180,7 +180,7 @@ Finally push the image to your image repository living on Snowflake.
     docker push sfsenorthamerica-demo-dwilczak.registry.snowflakecomputing.com/container/jupyter/image_repo/jupyter:tutorial
     ```
 
-#### Result
+#### Video walkthrough
 <iframe width="850px" height="478px" src="https://www.youtube.com/embed/JUV44zIJELY?si=ROd0JMU9IqPvepTZ" style="display:block;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Snowflake :octicons-feed-tag-16:
