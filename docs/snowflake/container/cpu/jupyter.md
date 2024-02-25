@@ -4,6 +4,9 @@ Goal of this tutorial is to get a [Jupyter Notebook](https://jupyter.org/) insta
 ## Video
 Video coming soon.
 
+## Requirements
+As of now, you need to have an account that is in a [container services enabled region](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview#available-regions).
+
 ## Setup :octicons-feed-tag-16:
 Let's start by setting up Snowflake before we jump to docker. Create a worksheet in snowflake and add the code below. Please fill in a password and hit run:
 
