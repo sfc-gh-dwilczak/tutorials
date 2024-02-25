@@ -134,7 +134,7 @@ Once built, go to [http://localhost:8080/lab](http://localhost:8080/lab) to see 
 
 ### Upload
 
-Using terminal and the file / folder from the prior step, tag the image with your repository_url we get from step 1. (1)  Once tagged you can go into docker desktop and see the image (2) that is properly tagged. 
+Using terminal and the file / folder from the prior step, tag the image with your repository_url we get from the setup step. (1)  Once tagged you can go into docker desktop and see the image (2) that is properly tagged. 
 { .annotate }
 
 1.  | repository_url                                                                                 |
@@ -186,7 +186,7 @@ Finally push the image to your image repository living on Snowflake.
 ## Snowflake :octicons-feed-tag-16:
 
 ### Upload service file
-Upload the service specification file to the stage. We will use snowflake UI to do this. An example can be seen below.
+Upload the service specification file we [downloaded earlier](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/container/cpu/jupyter/#download) to the stage. We will use snowflake UI to do this. An example can be seen below.
 
 ![Docker Upload](images/3.gif)
 
@@ -204,14 +204,11 @@ Final step, create the service from the service specification file and go to the
 
     ```sql
     set role_name       = 'container_jupyter';
+    set pool_name       = 'container_jupyter';
+    set service_name    = 'jupyter';
 
     use role identifier($role_name);
 
-    set pool_name       = 'container_jupyter';
-    set stage_name      = 'image_stage';
-    set service_name    = 'jupyter';
-    set service_file    = 'service.yaml';
-        
     CREATE SERVICE identifier($service_name)
         IN COMPUTE POOL identifier($pool_name)
         FROM @image_stage
