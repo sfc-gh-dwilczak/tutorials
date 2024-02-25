@@ -1,10 +1,10 @@
-# Container Services - CPU Jupyter Notebook Setup:
+# Container Services - CPU Jupyter Notebook:
 Goal of this tutorial is to get a [Jupyter Notebook](https://jupyter.org/) instance running on Snowflake's container services and have the capability to saving files to a stage. This tutorial assumes you have nothing in your Snowflake account ([Trial](https://signup.snowflake.com/)) and no complex security needs.
 
 ## Video
 Video coming soon.
 
-## Requirements
+## Requirements 
 As of now, you need to have an account that is in a [container services enabled region](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview#available-regions).
 
 ## Setup :octicons-feed-tag-16:
