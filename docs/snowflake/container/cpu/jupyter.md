@@ -4,7 +4,7 @@ Goal of this tutorial is to get a [Jupyter Notebook](https://jupyter.org/) insta
 ## Video
 Video coming soon.
 
-## Setup
+## Setup :octicons-feed-tag-16:
 Let's start by setting up Snowflake before we jump to docker. Create a worksheet in snowflake and add the code below. Please fill in a password and hit run:
 
 === ":octicons-image-16: Code"
@@ -99,7 +99,7 @@ Let's start by setting up Snowflake before we jump to docker. Create a worksheet
     | sfsenorthamerica-demo-dwilczak.registry.snowflakecomputing.com/container/jupyter/image_repo    |
     ```
 
-## Docker
+## Docker :octicons-feed-tag-16:
 
 ### Download
 Lets first [download the files](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/container/cpu/files.zip) we'll need for the docker file and service file later.
@@ -180,7 +180,7 @@ Finally push the image to your image repository living on Snowflake.
 #### Result
 <iframe width="850px" height="478px" src="https://www.youtube.com/embed/JUV44zIJELY?si=ROd0JMU9IqPvepTZ" style="display:block;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-## Snowflake 
+## Snowflake :octicons-feed-tag-16:
 
 ### Upload service file
 Upload the service specification file to the stage. We will use snowflake UI to do this. An example can be seen below.
