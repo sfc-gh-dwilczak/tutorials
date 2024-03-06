@@ -6,7 +6,7 @@ To change your service level in snowflake to Standard, Enterprise, or Busniess C
 
 Video is still in development.
 
-## Snowflake
+## Walk Through
 
 To start we will click on our profile name in the bottom left corner and click on support.
 ![Navigate](images/1.png)
