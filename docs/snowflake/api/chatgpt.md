@@ -10,9 +10,9 @@ This tutorial assume you have an account with [openai.com](openai.com). You will
 ## Setup
 In this section we will do the setup to create our user-defined function by:
 
-- Creating a database and schema
-- Allowing snowflake to talk with openai's api
-- Add our api key secret
+- Creating a database and schema.
+- Allowing snowflake to talk with openai's api.
+- Add our api key secret.
 - Granting access to the integration to our sysadmin role.
 
 === ":octicons-image-16: Setup"
@@ -45,7 +45,8 @@ Let's create the user defined function and then use it.
 
 === ":octicons-image-16: Function"
 
-    ```sql linenums="1"
+    ```python linenums="1"
+
     create or replace function raw.api.chatgpt("question" varchar(16777216))
         returns varchar(16777216)
         language python
@@ -54,7 +55,8 @@ Let's create the user defined function and then use it.
         handler = 'ask_chatgpt'
         external_access_integrations = (openai_integration)
         secrets = ('cred'=chatgpt_api_key)
-    as '
+    as
+    $$
     import _snowflake
     import requests
 
@@ -63,7 +65,7 @@ Let's create the user defined function and then use it.
     session = requests.Session()
 
     def ask_chatGPT(question):
-        openai_api_key = _snowflake.get_generic_secret_string(''cred'')
+        openai_api_key = _snowflake.get_generic_secret_string('cred')
 
         client = OpenAI(api_key=openai_api_key)
         completion = client.chat.completions.create(
@@ -71,7 +73,7 @@ Let's create the user defined function and then use it.
             messages=[{"role": "user", "content": question}]
         )    
         return completion.choices[0].message.content
-    ';
+    $$;
 
 === ":octicons-image-16: Use"
 
