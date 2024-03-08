@@ -1,4 +1,4 @@
-# SFTP - Using SSH key:
+# SFTP - Using SSH key
 In this tutorial we will show how to:
  
  - Unload a table from snowflake to sftp server.
@@ -14,11 +14,4 @@ Video coming soon.
 This tutorial assumes you have a snowflake warehouse, database, schema and table that you want to export to the sftp server.
 
 ## Setup 
-Lets open a worksheet and run the following code with your SFTP username, password and SFTP host url.
-
-
-=== ":octicons-image-16: Setup Code"
-
-    ```sql linenums="1"
-    -- Update coming soon.
-    ```
+Tutorial is still in progress of being finalized.

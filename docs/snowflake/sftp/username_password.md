@@ -1,4 +1,4 @@
-# SFTP - Using Username and Password:
+# SFTP - Using Username and Password
 In this tutorial we will show how to:
  
  - Unload a table from snowflake to sftp server.
