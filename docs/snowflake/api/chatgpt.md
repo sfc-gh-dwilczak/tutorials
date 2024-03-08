@@ -47,16 +47,15 @@ Let's create the user defined function and then use it.
 
     ```python linenums="1"
 
-    create or replace function raw.api.chatgpt("question" varchar(16777216))
-        returns varchar(16777216)
-        language python
-        runtime_version = '3.8'
-        packages = ('requests','openai')
-        handler = 'ask_chatgpt'
-        external_access_integrations = (openai_integration)
-        secrets = ('cred'=chatgpt_api_key)
-    as
-    $$
+    CREATE OR REPLACE FUNCTION RAW.API.CHATGPT("QUESTION" VARCHAR(16777216))
+        RETURNS VARCHAR(16777216)
+        LANGUAGE PYTHON
+        RUNTIME_VERSION = '3.8'
+        PACKAGES = ('requests','openai')
+        HANDLER = 'ask_chatGPT'
+        EXTERNAL_ACCESS_INTEGRATIONS = (OPENAI_INTEGRATION)
+        SECRETS = ('cred'=CHATGPT_API_KEY)
+    AS '
     import _snowflake
     import requests
 
@@ -65,7 +64,7 @@ Let's create the user defined function and then use it.
     session = requests.Session()
 
     def ask_chatGPT(question):
-        openai_api_key = _snowflake.get_generic_secret_string('cred')
+        openai_api_key = _snowflake.get_generic_secret_string(''cred'')
 
         client = OpenAI(api_key=openai_api_key)
         completion = client.chat.completions.create(
@@ -73,7 +72,7 @@ Let's create the user defined function and then use it.
             messages=[{"role": "user", "content": question}]
         )    
         return completion.choices[0].message.content
-    $$;
+    ';
 
 === ":octicons-image-16: Use"
 
