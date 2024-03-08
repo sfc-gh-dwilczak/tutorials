@@ -5,7 +5,7 @@ In this tutorial we will show how to:
  - Load a csv file from sftp server and land it in a snowflake table.
  - Takes a file from an SFTP Server and writes it to a Snowflake Internal Stage.
 
-Credit: Credit for the code goes to [brockcooper](https://github.com/brockcooper/snowflake_sftp/blob/main/README.md). Thank you!
+Credit for the code goes to [brockcooper](https://github.com/brockcooper/snowflake_sftp/blob/main/README.md). Thank you!
 
 ## Video
 Video coming soon.
