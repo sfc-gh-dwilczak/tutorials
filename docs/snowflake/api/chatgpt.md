@@ -30,13 +30,23 @@ In this section we will do the setup to create our user-defined function by:
 
     create or replace secret chatgpt_api_key
         type = generic_string
-        secret_string='OPENAI API KEY HERE';
+        secret_string='OPENAI API KEY HERE';  /* (1)! */
 
     create or replace external access integration openai_integration
         allowed_network_rules = (chatgpt_network_rule)
         allowed_authentication_secrets = (chatgpt_api_key)
         enabled=true;
     ```
+    { .annotate }
+
+    1.  Go to [openai.com](openai.com) and log in.
+        ![Openai key](images/01.png)
+        
+        Click on Api Keys.
+        ![Openai key](images/02.png)
+
+        Click create new secret key and then copy it into your code.
+        ![Openai key](images/03.png)
 
 
 ## Example
