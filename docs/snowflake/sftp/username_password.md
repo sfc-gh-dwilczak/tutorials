@@ -39,12 +39,9 @@ Lets open a worksheet and run the following code with your SFTP username, passwo
 
 
 ### Table to SFTP
-In this section we will show how to dump a table from snowflake into sftp.
+In this section we will show how to dump a table from snowflake into sftp. Lets create a user-defined function so we can refrence it with a smaller script. Lets call that function and see the result. 
 
-#### User-defind function
-Lets first create a user-defined function so we can refrence it later with a smaller script.
-
-=== ":octicons-image-16: Code"
+=== ":octicons-image-16: Function"
 
     ```python linenums="1"
     CREATE OR REPLACE PROCEDURE table_to_sftp(database_name string
@@ -121,10 +118,7 @@ Lets first create a user-defined function so we can refrence it later with a sma
     $$;
     ```
 
-#### Call the function
-We will now use the function.
-
-=== ":octicons-image-16: Template"
+=== ":octicons-image-16: Call"
 
     ```sql linenums="1"
     CALL table_to_sftp('DATABASE_NAME'
@@ -160,10 +154,7 @@ We will now use the function.
 
 
 ### SFTP File to Snowflake Table
-In this section we will show how to load a csv file from sftp into a snowflake table
-
-#### User-defind function
-Lets first create a user-defined function so we can refrence it later with a smaller script.
+In this section we will show how to load a csv file from sftp into a snowflake table. Lets create a user-defined function so we can refrence it with a smaller script. Lets call that function and see the result. 
 
 === ":octicons-image-16: Code"
 
@@ -229,9 +220,6 @@ Lets first create a user-defined function so we can refrence it later with a sma
     $$;
     ```
 
-#### Call the function
-We will now use the function.
-
 === ":octicons-image-16: Template"
 
     ```sql linenums="1"
@@ -250,10 +238,7 @@ We will now use the function.
 
 
 ### SFTP to Snowflake Internal Stage
-In this section we will show how to load a file from sftp into a snowflake stage.
-
-#### User-defind function
-Lets first create a user-defined function so we can refrence it later with a smaller script.
+In this section we will show how to load a file from sftp into a snowflake stage. Lets create a user-defined function so we can refrence it with a smaller script. Lets call that function and see the result. 
 
 === ":octicons-image-16: Code"
 
@@ -319,9 +304,6 @@ Lets first create a user-defined function so we can refrence it later with a sma
         return message
     $$;
     ```
-
-#### Call the function
-We will now use the function.
 
 === ":octicons-image-16: Template"
 
