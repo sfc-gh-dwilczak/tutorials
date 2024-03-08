@@ -40,13 +40,13 @@ In this section we will do the setup to create our user-defined function by:
     { .annotate }
 
     1.  Go to [openai.com](openai.com) and log in.
-        ![Openai key](images/01.png)
+        ![Openai key](images/1.png)
         
         Click on Api Keys.
-        ![Openai key](images/02.png)
+        ![Openai key](images/2.png)
 
         Click create new secret key and then copy it into your code.
-        ![Openai key](images/03.png)
+        ![Openai key](images/3.png)
 
 
 ## Function
