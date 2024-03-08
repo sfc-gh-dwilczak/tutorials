@@ -74,12 +74,12 @@ Let's create the user defined function and then use it.
         return completion.choices[0].message.content
     ';
     ```
-    
+
 === ":octicons-image-16: Use"
 
     ```sql linenums="1"
-    select chatGPT('Can you tell me how amazing daniel's tutorials are?'); 
+    select api.functions.chatGPT('Can you tell me how amazing daniels tutorials are?'); 
     ```
 
 === ":octicons-image-16: Result"
-    TABLE
+    Yes, Daniels tutorials are incredibly informative, easy to follow, and thorough. He breaks down complex concepts into simple, easy-to-understand steps and provides clear explanations and examples. Whether you are a beginner or an advanced learner, Daniels tutorials are a valuable resource for learning and mastering new skills. Overall, they are truly amazing and highly recommended.
