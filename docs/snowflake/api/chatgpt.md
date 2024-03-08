@@ -73,7 +73,8 @@ Let's create the user defined function and then use it.
         )    
         return completion.choices[0].message.content
     ';
-
+    ```
+    
 === ":octicons-image-16: Use"
 
     ```sql linenums="1"
