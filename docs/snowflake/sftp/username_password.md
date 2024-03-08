@@ -153,7 +153,7 @@ In this section we will show how to dump a table from snowflake into sftp. Lets 
     | Successfully uploaded /tmp/data_1709882914875.csv to /examples/ |
 
 
-### SFTP File to Snowflake Table
+### SFTP file to table
 In this section we will show how to load a csv file from sftp into a snowflake table. Lets create a user-defined function so we can refrence it with a smaller script. Lets call that function and see the result. 
 
 === ":octicons-image-16: Code"
@@ -237,7 +237,7 @@ In this section we will show how to load a csv file from sftp into a snowflake t
     Still working on running.
 
 
-### SFTP to Snowflake Internal Stage
+### SFTP to internal stage
 In this section we will show how to load a file from sftp into a snowflake stage. Lets create a user-defined function so we can refrence it with a smaller script. Lets call that function and see the result. 
 
 === ":octicons-image-16: Code"
