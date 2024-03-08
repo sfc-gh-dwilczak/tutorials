@@ -49,9 +49,9 @@ In this section we will do the setup to create our user-defined function by:
         ![Openai key](images/03.png)
 
 
-## Example
+## Function
 
-Let's create the user defined function and then use it.
+Let's create the python user defined function to make it easy to access later.
 
 === ":octicons-image-16: Function"
 
@@ -85,10 +85,13 @@ Let's create the user defined function and then use it.
     ';
     ```
 
+## Use
+Lets use the function. Chatgpt's comments are so nice.
+
 === ":octicons-image-16: Use"
 
     ```sql linenums="1"
-    select api.functions.chatGPT('Can you tell me how amazing daniels tutorials are?'); 
+    select api.functions.chatgpt('Can you tell me how amazing daniels tutorials are?'); 
     ```
 
 === ":octicons-image-16: Result"
