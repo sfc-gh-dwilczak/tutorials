@@ -18,31 +18,31 @@ In this section we will do the setup to create our user-defined function by:
 
 ??? Note "If you don't have a database, schema or warehouse yet."
 
-=== ":octicons-image-16: Setup"
+    === ":octicons-image-16: Database, schema and warehouse"
 
-    ```sql
-    use role accountadmin;
-    
-    -- Create a database to store our schemas.
-    create database if not exists 
-        api comment='This is only api data from our sources.';
+        ```sql
+        use role accountadmin;
+        
+        -- Create a database to store our schemas.
+        create database if not exists 
+            api comment='This is only api data from our sources.';
 
-    -- Create the schema. The schema stores all our objectss.
-    create schema if not exists api.functions;
+        -- Create the schema. The schema stores all our objectss.
+        create schema if not exists api.functions;
 
-    /*
-        Warehouses are synonymous with the idea of compute
-        resources in other systems. We will use this
-        warehouse to query our integration and to load data.
-    */
-    create warehouse if not exists developer 
-        warehouse_size = xsmall
-        initially_suspended = true;
+        /*
+            Warehouses are synonymous with the idea of compute
+            resources in other systems. We will use this
+            warehouse to query our integration and to load data.
+        */
+        create warehouse if not exists developer 
+            warehouse_size = xsmall
+            initially_suspended = true;
 
-    use database api;
-    use schema functions;
-    use warehouse developer;
-    ```
+        use database api;
+        use schema functions;
+        use warehouse developer;
+        ```
 
 === ":octicons-image-16: Setup"
 
