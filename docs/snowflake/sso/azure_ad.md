@@ -94,11 +94,12 @@ Lets open a worksheet in snowflake and enter the code below by entering in the n
     If you've chosen to use a different URL format such as Organization, Connection or one of the Privatelink URLs, follow the steps below. 
 
 Review the current integration configuration. Confirm the values of the SAML2_SNOWFLAKE_ACS_URL and SAML_SNOWFLAKE_ISSUER_URL parameters are using the Regional Locator URL (ANNOTATION NEEDED HERE). 
+
 === ":octicons-image-16: Check"
 
     ```sql linenums="1"
-desc security integration azureadintegration;
-```
+    desc security integration azureadintegration;
+    ```
 
 If they are not, alter the security integration for the values of SAML2_SNOWFLAKE_ACS_URL and SAML_SNOWFLAKE_ISSUER_URL to reflect the Azure application's Basic SAML configuration.
 
