@@ -5,6 +5,9 @@ In this tutorial we will show how to setup authenticate to Snowflake using SSO w
 Video is still in developemnt.
 
 ## Azure
+Lets start in azure by setting up the SSO and the adding the users to the approved list.
+
+### Setup
 Lets start in azure by logging into our [azure](https://portal.azure.com/) and navigate to Microsoft Entra ID.
 ![Microsoft entra ID](images/08.png)
 
@@ -38,6 +41,10 @@ Next take your snowflake account url and enter it into the basic saml configurat
 
 Click save and go back to the application's SAML-based Sign-on page, scroll down to the SAML Certificates section. Click Download to download the Federation Metadata XML.
 ![Download federation metadata XML](images/7.jpeg)
+
+### Add Users
+Show to add users into the group.
+
 
 ## Snowflake
 Next we will setup Snowflake with the information we got from our ``federation metadata xml`` file. To make this process easier I suggest formatting your XML file so it's easier to look through. I used [VS code](#) and an [xml formatter](#) to accomplish this.
