@@ -38,7 +38,7 @@ In the middle pane under the Basic SAML configuration section, click the Edit bu
 In the Basic SAML Configuration section, configure the Snowflake URL your users use to access your Snowflake account and also again but follow it with ``/fed/login``.
 ![Edit SAML config](images/08.jpeg)
 
-Click save and go back to the application's SAML-based Sign-on page, scroll down to the SAML Certificates section. Click Download to download the Federation Metadata XML.
+Click save and go back to the application's SAML-based Sign-on page, scroll down to the SAML Certificates section. Click Download to download the Federation Metadata XML. We will use this file in our Snowflake steps.
 ![Download federation metadata XML](images/09.jpeg)
 
 ### Add users
