@@ -1,4 +1,4 @@
-# Azure AD to Snowflake
+# Azure Active Directory (SSO) to Snowflake
 In this tutorial we will show how to setup authenticate to Snowflake using SSO with Azure Active Directory Identity Provider. 
 
 ## Video
