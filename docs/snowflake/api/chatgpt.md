@@ -7,7 +7,7 @@ Video still in development.
 ## Requirement
 This tutorial assume you have an account with [openai.com](openai.com). You will need to get an api token from it.
 
-## Setup
+## Setup :octicons-feed-tag-16:
 In this section we will do the setup to create our user-defined function by:
 
 - Creating a database and schema.
@@ -74,7 +74,7 @@ In this section we will do the setup to create our user-defined function by:
         ![Openai key](images/3.png)
 
 
-## Function
+### Function
 
 Let's create the python user defined function to make it easy to access later.
 
@@ -110,7 +110,7 @@ Let's create the python user defined function to make it easy to access later.
     ';
     ```
 
-## Use
+### Use
 Lets use the function. Chatgpt's comments are so nice.
 
 === ":octicons-image-16: Use"

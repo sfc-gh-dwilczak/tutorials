@@ -1,21 +1,16 @@
 # Snowflake - JDBC connection
-
-## Video
-
 This tutorial will show you how to create a connector to load data into snowflake from your java application using our jdbc library.
 
-## Prequestes:
+## Video
+Video still in development
 
-### Snowflake account url
-We will need our account url. This can be found in the url bar when you log into Snowflake. It will end with ``.snowflakecomputing.com``.
+## Requirements
+- We will need our account url. This can be found in the url bar when you log into Snowflake. It will end with ``.snowflakecomputing.com``.
 
-### Add JDBC library
-Add the jdbc library (.jar) file into your java project / application. This will depend on the application and IDE. I have linked the [.jar I used](#) in the tutorial. A list can be found here. I used the most recent (closest to current date).
+- Add the jdbc library (.jar) file into your java project / application. This will depend on the application and IDE. A [list](https://repo1.maven.org/maven2/net/snowflake/snowflake-jdbc/) can be found here. **I used the most recent (closest to current date).**
 
-https://repo1.maven.org/maven2/net/snowflake/snowflake-jdbc/
 
-## Code 
-
+## Example :octicons-feed-tag-16:
 Get your customer to run this sql in there snowflake account and then have them tell you what they used as variables:
 
 This is an example where the user would give you the string values for connection, role, warehouse and database. It creates a schema called products and a table called customers in products schema. I have also inserted some sample data. 

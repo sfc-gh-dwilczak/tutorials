@@ -1,7 +1,5 @@
 # Snowflake - ML Model Jupyter Notebook
-
-## Objective 
-Train a model locally and then productionize it in snowflake so that it can be train and used as a function in any SQL enabled tool.
+In this tutorial we will learn how to train a model locally and then productionize it in snowflake so that it can be train and used as a function in any SQL enabled tool.
 
 ## Video
 Video in development.
@@ -9,14 +7,15 @@ Video in development.
 ## Basics
 If you have never ran a model locally on jupyter notebook. I suggest trying the [basic tutorial](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/jupyter/basics/) first.
 
-## Code
-### [Notebook file](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/jupyter/notebooks/model.ipynb)
-You can either enter the jupyter notebook code below or download the notebook here. You will still have to run the snowflake code below.
+## Files 
 
-### [SQL file](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/jupyter/sql/code.ipynb)
-For those who hate reading tutorials (me) I have put all the the Snowflake code into one file seperated by block comments.
+You can either enter the jupyter notebook code below or download the notebook here. You will still have to run the snowflake code below. Also for those who hate reading tutorials (me) I have put all the the Snowflake code into one file seperated by block comments.
 
-## Example
+- [Notebook file](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/jupyter/notebooks/model.ipynb)
+- [SQL file](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/jupyter/sql/code.ipynb)
+
+
+## Example :octicons-feed-tag-16:
 
 ### Setup
 Lets setup the objects for the example.

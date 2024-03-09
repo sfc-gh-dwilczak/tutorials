@@ -13,5 +13,5 @@ Video coming soon.
 ## Requirements
 This tutorial assumes you have a snowflake warehouse, database, schema and table that you want to export to the sftp server.
 
-## Setup 
+## Setup :octicons-feed-tag-16:
 Tutorial is still in progress of being finalized.

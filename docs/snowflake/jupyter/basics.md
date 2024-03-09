@@ -1,18 +1,18 @@
 # Snowflake - Basic Jupyter Notebook Setup
+In this tutorial you will learn how to get data from snowflake into our local jupyter notebook.
 
-## Objective 
-Getting data from snowflake into our local jupyter notebook.
+## Video
+Video is still in development
 
-## Installing Jupyter Notebook
+## Installing Jupyter Notebook :octicons-feed-tag-16:
 The fastest way I get jupyter notebooks up and running is by installing [VsCode](https://code.visualstudio.com/) and then creating a new file with the extension ".ipynb".
 
 ![Worksheet](images/basic_vscode.gif)
 
-## Example
-
-### Code
+## Files
 You can either enter the jupyter notebook code below or download the notebook [here](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/jupyter/notebooks/basic.ipynb). You will still have to run the snowflake code below.
 
+## Example :octicons-feed-tag-16:
 
 ### Snowflake / Jupyter Notebook
 === ":octicons-image-16: Snowflake - Code"

@@ -13,7 +13,7 @@ Video coming soon.
 ## Requirements
 This tutorial assumes you have a snowflake warehouse, database, schema and table that you want to export to the sftp server.
 
-## Setup 
+## Setup :octicons-feed-tag-16:
 Lets open a worksheet and run the following code with your SFTP username, password and SFTP host url.
 
 === ":octicons-image-16: Setup Code"

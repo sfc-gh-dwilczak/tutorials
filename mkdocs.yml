@@ -33,7 +33,6 @@ nav:
     - Getting Started: index.md
     - AWS: 
       - S3: snowflake/aws/s3.md
-      - Private Link: snowflake/aws/privatelink.md
     - Azure:
       - Blob: snowflake/azure/blob.md
     - Google Cloud: 
@@ -48,11 +47,12 @@ nav:
       - CPU Jupyter Notebook: snowflake/container/cpu/jupyter.md
     - Connection:
       - JDBC: snowflake/connection/jdbc/jdbc.md
-      - R: snowflake/connection/r/r.md
     - API's:
       - Chatgpt: snowflake/api/chatgpt.md
     - Account:
       - Change Service Level: snowflake/account/service_level.md
+    - SSO:
+      - Azure Active Directory: snowflake/sso/azure_ad.md
 
 
 
