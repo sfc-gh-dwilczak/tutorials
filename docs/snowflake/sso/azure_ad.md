@@ -20,21 +20,21 @@ Click on new application.
 In the Browse Azure AD Gallery search bar, search for Snowflake, and choose the Snowflake for AAD application.
 ![Snowflake application](images/04.png)
 
-Give your Snowflake application a name, then click the Create button at the bottom
+Give your Snowflake application a name, then click the Create button at the bottom.
 ![Name application](images/05.png)
 
-Once the application is created, on the left side choose Single sign-on, then choose SAML in the middle pane
+Once the application is created, on the left side choose Single sign-on, then choose SAML in the middle panel.
 ![SAML](images/06.jpeg)
 
-In the middle pane under the Basic SAML configuration section, click the Edit button
+In the middle pane under the Basic SAML configuration section, click the Edit button.
 ![Edit SAML config](images/07.jpeg)
-
-!!! warning
-    If you format your URL incorrectly the SSO login will not work. Please read the [Account Identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier#non-vps-account-locator-formats-by-cloud-platform-and-regionr) documentation to learn how to format your URL based on your snowflake service provider and location. 
 
 In the Basic SAML Configuration section, configure the Snowflake URL your users use to access your Snowflake account. This can be found in your url when you log into snowflake. An example can be seen below that comes from ``AWS US West (Oregon)``.
 ![Snowflake URL](images/10.png)
 
+!!! warning
+    If you format your URL incorrectly the SSO login will not work. Please read the [Account Identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier#non-vps-account-locator-formats-by-cloud-platform-and-regionr) documentation to learn how to format your URL based on your snowflake service provider and location. 
+    
 Next take your snowflake account url and enter it into the basic saml configuration in the format shown.
 ![Edit SAML config](images/08.jpeg)
 
