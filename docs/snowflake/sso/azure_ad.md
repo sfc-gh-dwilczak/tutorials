@@ -14,19 +14,19 @@ Next lets click on Enterprise Applications on the left navbar.
 IMAGE OF THIS STEPP
 
 Click on new application.
-![New application](images/1.png)
+![New application](images/1.jpeg)
 
 In the Browse Azure AD Gallery search bar, search for Snowflake, and choose the Snowflake for AAD application.
-![Snowflake application](images/2.png)
+![Snowflake application](images/2.jpeg)
 
 Give your Snowflake application a name, then click the Create button at the bottom
-![Name application](images/3.png)
+![Name application](images/3.jpeg)
 
 Once the application is created, on the left side choose Single sign-on, then choose SAML in the middle pane
-![SAML](images/4.png)
+![SAML](images/4.jpeg)
 
 In the middle pane under the Basic SAML configuration section, click the Edit button
-![Edit SAML config](images/5.png)
+![Edit SAML config](images/5.jpeg)
 
 !!! warning
     If you format your URL incorrectly the SSO login will not work. Please read the [Account Identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier#non-vps-account-locator-formats-by-cloud-platform-and-regionr) documentation to learn how to format your URL based on your snowflake service provider and location. 
@@ -36,10 +36,10 @@ In the Basic SAML Configuration section, configure the Snowflake URL your users 
 IMAGE OF URL IN SNOWFLAKE.
 
 Next take your snowflake account url and enter it into the basic saml configuration in the format shown.
-![Edit SAML config](images/6.png)
+![Edit SAML config](images/6.jpeg)
 
 Click save and go back to the application's SAML-based Sign-on page, scroll down to the SAML Certificates section. Click Download to download the Federation Metadata XML.
-![Download federation metadata XML](images/7.png)
+![Download federation metadata XML](images/7.jpeg)
 
 ## Snowflake
 Next we will setup Snowflake with the information we got from our ``federation metadata xml`` file. To make this process easier I suggest formatting your XML file so it's easier to look through. I used [VS code](#) and an [xml formatter](#) to accomplish this.
