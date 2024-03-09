@@ -35,10 +35,10 @@ In the middle pane under the Basic SAML configuration section, click the Edit bu
 !!! warning
     If you format your URL incorrectly the SSO login will not work. Please read the [Account Identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier#non-vps-account-locator-formats-by-cloud-platform-and-regionr) documentation to learn how to format your URL based on your snowflake service provider and server location. 
 
-In the Basic SAML Configuration section, configure your Identifier (Entity ID) with your snowflake account identifier URL and also again for your Reply URL (Assertion consumer service URL) but follow it with ``/fed/login``.
+In the Basic SAML Configuration section, configure your Identifier (Entity ID) with your snowflake account identifier URL and also again for your Reply URL (Assertion consumer service URL) but follow it with ``/fed/login`` and click save.
 ![Edit SAML config](images/08.jpeg)
 
-Click save and go back to the application's SAML-based Sign-on page, scroll down to the SAML Certificates section. Download the Federation Metadata XML. We will use this file in our Snowflake steps.
+Go back to the application's SAML-based Sign-on page, scroll down to the SAML Certificates section. Download the Federation Metadata XML. We will use this file in our Snowflake steps.
 ![Download federation metadata XML](images/09.jpeg)
 
 ### Add users
