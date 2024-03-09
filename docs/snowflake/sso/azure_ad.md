@@ -93,7 +93,7 @@ Lets open a worksheet in snowflake and enter the code below by entering in the n
     Update text.
 
 !!! success
-    If you configured the Basic SAML configuration in the azure section using the Regional Locator Snowflake URL  (ADD ANOTATION HERE), your SSO configuration is completed. Next lets add some users.
+    If you configured the Basic SAML configuration in the azure section using the Regional Locator Snowflake URL  (ADD ANOTATION HERE), you can move on to the next step by adding users and testing your login.
 
 ??? caution "If you've chosen to use a different URL format then regional locator"
     If you've chosen to use a different URL format such as Organization, Connection or one of the Privatelink URLs, follow the steps below. 
