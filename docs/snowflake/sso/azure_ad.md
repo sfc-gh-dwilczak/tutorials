@@ -42,7 +42,7 @@ Go back to the application's SAML-based Sign-on page, scroll down to the SAML Ce
 ![Download federation metadata XML](images/09.jpeg)
 
 ### Add users
-Show to add users into the group.
+Show to add users into th azure AD group.
 
 
 ## Snowflake :octicons-feed-tag-16:
