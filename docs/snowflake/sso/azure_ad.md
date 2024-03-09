@@ -33,7 +33,7 @@ In the middle pane under the Basic SAML configuration section, click the Edit bu
 ![Snowflake URL](images/10.png)
 
 !!! warning
-    If you format your URL incorrectly the SSO login will not work. Please read the [Account Identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier#non-vps-account-locator-formats-by-cloud-platform-and-regionr) documentation to learn how to format your URL based on your snowflake service provider and location. 
+    If you format your URL incorrectly the SSO login will not work. Please read the [Account Identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier#non-vps-account-locator-formats-by-cloud-platform-and-regionr) documentation to learn how to format your URL based on your snowflake service provider and server location. 
 
 In the Basic SAML Configuration section, configure the Snowflake URL your users use to access your Snowflake account and also again but follow it with ``/fed/login``.
 ![Edit SAML config](images/08.jpeg)
