@@ -29,13 +29,13 @@ Once the application is created, on the left side choose Single sign-on, then ch
 In the middle pane under the Basic SAML configuration section, click the Edit button.
 ![Edit SAML config](images/07.jpeg)
 
-In the Basic SAML Configuration section, configure the Snowflake URL your users use to access your Snowflake account. This can be found in your url when you log into snowflake. An example can be seen below that comes from ``AWS US West (Oregon)``.
+ Next we'll want to get our Snowflake [account identifier](). An example can be seen below that comes from ``AWS US West (Oregon)`` or you can use this chart (ADD ANNOTATION HERE).
 ![Snowflake URL](images/10.png)
 
 !!! warning
     If you format your URL incorrectly the SSO login will not work. Please read the [Account Identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier#non-vps-account-locator-formats-by-cloud-platform-and-regionr) documentation to learn how to format your URL based on your snowflake service provider and location. 
-    
-Next take your snowflake account url and enter it into the basic saml configuration in the format shown.
+
+In the Basic SAML Configuration section, configure the Snowflake URL your users use to access your Snowflake account and also again but follow it with ``/fed/login``.
 ![Edit SAML config](images/08.jpeg)
 
 Click save and go back to the application's SAML-based Sign-on page, scroll down to the SAML Certificates section. Click Download to download the Federation Metadata XML.
