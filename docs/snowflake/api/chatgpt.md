@@ -64,6 +64,7 @@ In this section we will do the setup to create our user-defined function by:
     { .annotate }
 
     1.  Go to [openai.com](openai.com) and log in.
+    
         ![Openai key](images/1.png)
         
         Click on Api Keys.
