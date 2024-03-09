@@ -110,7 +110,7 @@ Lets open a worksheet in snowflake and enter the code below by entering in the n
     === ":octicons-image-16: Alter integration"
 
         ```sql linenums="1"
-        USE ROLE ACCOUNTADMIN;
+        use role accountadmin;
 
         alter security integration azureadintegration 
             set SAML2_SNOWFLAKE_ACS_URL = 'https://<organization name>-<account name>.snowflakecomputing.com/fed/login';
