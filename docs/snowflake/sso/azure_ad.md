@@ -4,7 +4,7 @@ In this tutorial we will show how to setup authenticate to Snowflake using SSO w
 ## Video
 Video is still in developemnt.
 
-## Azure
+## Azure :octicons-feed-tag-16:
 Lets start in azure by setting up the SSO and the adding the users to the approved list.
 
 ### Setup
@@ -46,9 +46,10 @@ Click save and go back to the application's SAML-based Sign-on page, scroll down
 Show to add users into the group.
 
 
-## Snowflake
+## Snowflake :octicons-feed-tag-16:
 Next we will setup Snowflake with the information we got from our ``federation metadata xml`` file. To make this process easier I suggest formatting your XML file so it's easier to look through. I used [VS code](#) and an [xml formatter](#) to accomplish this.
 
+### Setup
 Lets open a worksheet in snowflake and enter the code below by entering in the nessery areas from our federation metadata xml file..
 
 === ":octicons-image-16: Template"
@@ -95,36 +96,43 @@ Lets open a worksheet in snowflake and enter the code below by entering in the n
 !!! success
     If you configured the Basic SAML configuration in the azure section using the Regional Locator Snowflake URL  (ADD ANOTATION HERE), your SSO configuration is completed.
 
-!!! caution
+??? caution "If you've chosen to use a different URL format then regional locator"
     If you've chosen to use a different URL format such as Organization, Connection or one of the Privatelink URLs, follow the steps below. 
 
-Review the current integration configuration. Confirm the values of the 
-- SAML2_SNOWFLAKE_ACS_URL
-- SAML_SNOWFLAKE_ISSUER_URL
-parameters are using the Regional Locator URL (ANNOTATION NEEDED HERE). 
+    Review the current integration configuration. Confirm the values of the 
+    - SAML2_SNOWFLAKE_ACS_URL
+    - SAML_SNOWFLAKE_ISSUER_URL
+    parameters are using the Regional Locator URL (ANNOTATION NEEDED HERE). 
 
-=== ":octicons-image-16: Check"
+    === ":octicons-image-16: Check"
 
-    ```sql linenums="1"
-    desc security integration azureadintegration;
-    ```
+        ```sql linenums="1"
+        desc security integration azureadintegration;
+        ```
 
-If they are not, alter the security integration by using the code below.
-=== ":octicons-image-16: Alter integration"
+    If they are not, alter the security integration by using the code below.
+    === ":octicons-image-16: Alter integration"
 
-    ```sql linenums="1"
-    USE ROLE ACCOUNTADMIN;
+        ```sql linenums="1"
+        USE ROLE ACCOUNTADMIN;
 
-    alter security integration azureadintegration 
-        set SAML2_SNOWFLAKE_ACS_URL = 'https://<organization name>-<account name>.snowflakecomputing.com/fed/login';
-    
-    -- OR
+        alter security integration azureadintegration 
+            set SAML2_SNOWFLAKE_ACS_URL = 'https://<organization name>-<account name>.snowflakecomputing.com/fed/login';
+        
+        -- OR
 
-    alter security integration azureadintegration
-        set SAML2_SNOWFLAKE_ISSUER_URL = 'https://<organization name>-<account name>.snowflakecomputing.com';
-    ```
+        alter security integration azureadintegration
+            set SAML2_SNOWFLAKE_ISSUER_URL = 'https://<organization name>-<account name>.snowflakecomputing.com';
+        ```
 
-Notes:
-- The above statement uses the Organization URL as an example. You should use the URL format the Azure Single sign on application was configured with. 
-- The value for the parameter SAML2_SNOWFLAKE_ACS_URL ends with /fed/login.
-- The value for the parameter SAML2_SNOWFLAKE_ISSUER_URL is only the Snowflake account URL, in the format matching the Azure application configuration.
+    Notes:
+    - The above statement uses the Organization URL as an example. You should use the URL format the Azure Single sign on application was configured with. 
+    - The value for the parameter SAML2_SNOWFLAKE_ACS_URL ends with /fed/login.
+    - The value for the parameter SAML2_SNOWFLAKE_ISSUER_URL is only the Snowflake account URL, in the format matching the Azure application configuration.
+
+### Add or modify users.
+Show how to add users with their email or if you need to alter an existing user to use an email for login.
+
+### Testing
+
+Show how to test your azure AD login.
