@@ -83,7 +83,7 @@ Lets open a worksheet in snowflake and enter the code below by entering in the n
     SAML2_ENABLE_SP_INITIATED = TRUE;
     ```
 
-=== ":octicons-image-16: Template"
+=== ":octicons-image-16: Result"
 
     Update text.
 
@@ -93,7 +93,10 @@ Lets open a worksheet in snowflake and enter the code below by entering in the n
 !!! caution
     If you've chosen to use a different URL format such as Organization, Connection or one of the Privatelink URLs, follow the steps below. 
 
-Review the current integration configuration. Confirm the values of the ``SAML2_SNOWFLAKE_ACS_URL`` and ``SAML_SNOWFLAKE_ISSUER_URL`` parameters are using the Regional Locator URL (ANNOTATION NEEDED HERE). 
+Review the current integration configuration. Confirm the values of the 
+- SAML2_SNOWFLAKE_ACS_URL
+- SAML_SNOWFLAKE_ISSUER_URL
+parameters are using the Regional Locator URL (ANNOTATION NEEDED HERE). 
 
 === ":octicons-image-16: Check"
 
@@ -101,8 +104,7 @@ Review the current integration configuration. Confirm the values of the ``SAML2_
     desc security integration azureadintegration;
     ```
 
-If they are not, alter the security integration for the values of SAML2_SNOWFLAKE_ACS_URL and SAML_SNOWFLAKE_ISSUER_URL to reflect the Azure application's Basic SAML configuration.
-
+If they are not, alter the security integration by using the code below.
 === ":octicons-image-16: Alter integration"
 
     ```sql linenums="1"
