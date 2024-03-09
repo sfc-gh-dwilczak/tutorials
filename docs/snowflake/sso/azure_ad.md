@@ -15,13 +15,13 @@ Next lets click on Enterprise Applications on the left navbar.
 ![Microsoft entra ID](images/09.png)
 
 Click on new application.
-![New application](images/2.jpeg)
+![New application](images/1.jpeg)
 
 In the Browse Azure AD Gallery search bar, search for Snowflake, and choose the Snowflake for AAD application.
-![Snowflake application](images/10.png)
+![Snowflake application](images/11.png)
 
 Give your Snowflake application a name, then click the Create button at the bottom
-![Name application](images/11.png)
+![Name application](images/10.png)
 
 Once the application is created, on the left side choose Single sign-on, then choose SAML in the middle pane
 ![SAML](images/4.jpeg)
