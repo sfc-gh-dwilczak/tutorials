@@ -41,7 +41,7 @@ Next take your snowflake account url and enter it into the basic saml configurat
 Click save and go back to the application's SAML-based Sign-on page, scroll down to the SAML Certificates section. Click Download to download the Federation Metadata XML.
 ![Download federation metadata XML](images/09.jpeg)
 
-### Add Users
+### Add users
 Show to add users into the group.
 
 
