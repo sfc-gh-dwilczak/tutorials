@@ -29,7 +29,18 @@ Once the application is created, on the left side choose Single sign-on, then ch
 In the middle pane under the Basic SAML configuration section, click the Edit button.
 ![Edit SAML config](images/07.jpeg)
 
- Next we'll want to get our Snowflake [account identifier url](). An example can be seen below that comes from ``AWS US West (Oregon)`` or you can use this chart (ADD ANNOTATION HERE).
+ Next we'll want to get our Snowflake [account identifier url](). An example can be seen below that comes from ``AWS US West (Oregon)`` or you can use this chart (1).
+{ .annotate }
+
+1.  | URL type                 | URL format                                                         |
+    |--------------------------|--------------------------------------------------------------------|
+    | Regional                 | https://locator.region.snowflakecomputing.com                      |
+    | Organization             | https://organization-name.snowflakecomputing.com                   |
+    | Connection               | https://organization-connection.snowflakecomputing.com             |
+    | Regional Privatelink     | https://locator.region.privatelink.snowflakecomputing.com          |
+    | Organization Privatelink | https://organization-name.privatelink.snowflakecomputing.com       |
+    | Connection Privatelink   | https://organization-connection.privatelink.snowflakecomputing.com |
+
 ![Snowflake URL](images/10.png)
 
 !!! warning
@@ -42,11 +53,24 @@ Go back to the application's SAML-based Sign-on page, scroll down to the SAML Ce
 ![Download federation metadata XML](images/09.jpeg)
 
 ### Add users
-Show to add users into th azure AD group.
+!!! caution
+    If you don't add the user in the Azure AD group they will not be able to use the SSO login on Snowflake. 
+
+Lets add users into the azure AD group for the application. First click on "Users and groups" on the left side nav bar and then "add user/group". 
+![Navigate to users and groups](images/11.png)
+
+Select Users and groups.
+![Select users and groups](images/12.png)
+
+Select the user or groups you want to add. The search bar can be very helpful when you have alot of users/groups.
+![Select](images/13.png)
+
+Finally click assign.
+![Click assign](images/14.png)
 
 
 ## Snowflake :octicons-feed-tag-16:
-Next we will setup Snowflake with the information we got from our ``federation metadata xml`` file. To make this process easier I suggest formatting your XML file so it's easier to look through. I used [VS code](#) and an [xml formatter](#) to accomplish this.
+Next we will setup Snowflake with the information we got from our ``federation metadata xml`` file. To make this process easier I suggest formatting your XML file so it's easier to look through. I used [VS code](https://code.visualstudio.com/) and an [xml formatter](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml) to accomplish this.
 
 ### Setup
 Lets open a worksheet in snowflake and enter the code below by entering in the necessary areas from our federation metadata xml file..
@@ -67,11 +91,16 @@ Lets open a worksheet in snowflake and enter the code below by entering in the n
     ```
     { .annotate }
 
-    1. Put images of filtered text here
+    1. <EntityDescriptor ID="_8416250f-50fb-...8bcd335e92" entityID="https://sts.windows.net/9a2d78cb-73...fc1ac5ef57a7/"
+    xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
 
-    2. Put images of filtered text here
+    2. <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.microsoftonline.com/9a2d78c...-fc1ac5ef57a7/saml2" />
 
-    3. Put images of filtered text here
+    3.  <X509Certificate>
+        MIIC8DCCAdigAwIBAgIQQH4r9rnBiKlPEFVEjpdNhTANBgkqhkiG9w0BAQ
+        .......
+        Y9B1uSBpb4OmtWZ/LRNzHBDcDNbR oQ6PiPd2yWhtUfbYClOoNcMFOkk8E
+        </X509Certificate>`
 
 === ":octicons-image-16: Example"
 
@@ -80,10 +109,12 @@ Lets open a worksheet in snowflake and enter the code below by entering in the n
     CREATE SECURITY INTEGRATION AZUREADINTEGRATION
     TYPE = SAML2
     ENABLED = TRUE
-    SAML2_ISSUER = 'https://sts.windows.net/[...]]/' 
-    SAML2_SSO_URL = 'https://login.microsoftonline.com/[...]/saml2'
+    SAML2_ISSUER = 'https://sts.windows.net/9a2d78cb-73e9-40ee-a55...1ac5ef57a7/' 
+    SAML2_SSO_URL = 'https://login.microsoftonline.com/9a2d78cb-73e...ac5ef57a7/saml2'
     SAML2_PROVIDER = 'CUSTOM'
-    SAML2_X509_CERT = '<Base64 encoded IdP certificate>' 
+    SAML2_X509_CERT = 'MIIC8DCCAdigAwIBAgIQQH4r9rnBiKlPEFVEjpdNhTANBgkqhkiG9w0BAQsFADA0MTIwMAYDVQQDEylNaWNyb3NvZnQgQXp1
+    ......
+    oQ6PiPd2yWhtUfbYClOoNcMFOkk8E6n48T33KIVtvurwWta52oLBT2eoRZbvWaglT8DLKfhpzzd0SZFYSTjyVd5k2tEzSQy8HQLfH33m6+SA2e74X1Yj' 
     SAML2_SP_INITIATED_LOGIN_PAGE_LABEL = 'AzureADSSO'
     SAML2_ENABLE_SP_INITIATED = TRUE;
     ```
