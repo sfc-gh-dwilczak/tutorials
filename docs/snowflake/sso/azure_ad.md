@@ -5,7 +5,7 @@ In this tutorial we will show how to setup authenticate to Snowflake using SSO w
 Video is still in developemnt.
 
 ## Azure :octicons-feed-tag-16:
-Lets start in azure by setting up the SSO and the adding the users to the approved list.
+Lets start in azure by setting up the SSO and then adding the users to the approved list.
 
 ### Setup
 Lets start in azure by logging into our [azure](https://portal.azure.com/) and navigate to Microsoft Entra ID.
@@ -29,16 +29,16 @@ Once the application is created, on the left side choose Single sign-on, then ch
 In the middle pane under the Basic SAML configuration section, click the Edit button.
 ![Edit SAML config](images/07.jpeg)
 
- Next we'll want to get our Snowflake [account identifier](). An example can be seen below that comes from ``AWS US West (Oregon)`` or you can use this chart (ADD ANNOTATION HERE).
+ Next we'll want to get our Snowflake [account identifier url](). An example can be seen below that comes from ``AWS US West (Oregon)`` or you can use this chart (ADD ANNOTATION HERE).
 ![Snowflake URL](images/10.png)
 
 !!! warning
     If you format your URL incorrectly the SSO login will not work. Please read the [Account Identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier#non-vps-account-locator-formats-by-cloud-platform-and-regionr) documentation to learn how to format your URL based on your snowflake service provider and server location. 
 
-In the Basic SAML Configuration section, configure the Snowflake URL your users use to access your Snowflake account and also again but follow it with ``/fed/login``.
+In the Basic SAML Configuration section, configure your Identifier (Entity ID) with your snowflake account identifier URL and also again for your Reply URL (Assertion consumer service URL) but follow it with ``/fed/login``.
 ![Edit SAML config](images/08.jpeg)
 
-Click save and go back to the application's SAML-based Sign-on page, scroll down to the SAML Certificates section. Click Download to download the Federation Metadata XML. We will use this file in our Snowflake steps.
+Click save and go back to the application's SAML-based Sign-on page, scroll down to the SAML Certificates section. Download the Federation Metadata XML. We will use this file in our Snowflake steps.
 ![Download federation metadata XML](images/09.jpeg)
 
 ### Add users
@@ -49,7 +49,7 @@ Show to add users into the group.
 Next we will setup Snowflake with the information we got from our ``federation metadata xml`` file. To make this process easier I suggest formatting your XML file so it's easier to look through. I used [VS code](#) and an [xml formatter](#) to accomplish this.
 
 ### Setup
-Lets open a worksheet in snowflake and enter the code below by entering in the nessery areas from our federation metadata xml file..
+Lets open a worksheet in snowflake and enter the code below by entering in the necessary areas from our federation metadata xml file..
 
 === ":octicons-image-16: Template"
 
@@ -98,10 +98,7 @@ Lets open a worksheet in snowflake and enter the code below by entering in the n
 ??? caution "If you've chosen to use a different URL format then regional locator"
     If you've chosen to use a different URL format such as Organization, Connection or one of the Privatelink URLs, follow the steps below. 
 
-    Review the current integration configuration. Confirm the values of the 
-    - SAML2_SNOWFLAKE_ACS_URL
-    - SAML_SNOWFLAKE_ISSUER_URL
-    parameters are using the Regional Locator URL (ANNOTATION NEEDED HERE). 
+    Review the current integration configuration. Confirm the values of the ``SAML2_SNOWFLAKE_ACS_URL`` and ``SAML_SNOWFLAKE_ISSUER_URL`` parameters are using the Regional Locator URL (ANNOTATION NEEDED HERE). 
 
     === ":octicons-image-16: Check"
 
@@ -125,9 +122,9 @@ Lets open a worksheet in snowflake and enter the code below by entering in the n
         ```
 
     Notes:
-    - The above statement uses the Organization URL as an example. You should use the URL format the Azure Single sign on application was configured with. 
-    - The value for the parameter SAML2_SNOWFLAKE_ACS_URL ends with /fed/login.
-    - The value for the parameter SAML2_SNOWFLAKE_ISSUER_URL is only the Snowflake account URL, in the format matching the Azure application configuration.
+    - The above statement uses the Organization URL as an example. You should use the URL format the Azure Single sign on application was configured with.  
+    - The value for the parameter SAML2_SNOWFLAKE_ACS_URL ends with /fed/login.  
+    - The value for the parameter SAML2_SNOWFLAKE_ISSUER_URL is only the Snowflake account URL, in the format matching the Azure application configuration.  
 
 ### Add or modify users.
 Show how to add users with their email or if you need to alter an existing user to use an email for login.
