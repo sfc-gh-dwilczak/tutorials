@@ -32,9 +32,8 @@ In the middle pane under the Basic SAML configuration section, click the Edit bu
 !!! warning
     If you format your URL incorrectly the SSO login will not work. Please read the [Account Identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier#non-vps-account-locator-formats-by-cloud-platform-and-regionr) documentation to learn how to format your URL based on your snowflake service provider and location. 
 
-In the Basic SAML Configuration section, configure the Snowflake URL your users use to access your Snowflake account. This can be found in your url when you log into snowflake. An example of this url is ``URL1``, ``URL2`` or ``URL3``
-
-IMAGE OF URL IN SNOWFLAKE.
+In the Basic SAML Configuration section, configure the Snowflake URL your users use to access your Snowflake account. This can be found in your url when you log into snowflake. An example can be seen below that comes from ``AWS US West (Oregon)``.
+![Snowflake URL](images/10.png)
 
 Next take your snowflake account url and enter it into the basic saml configuration in the format shown.
 ![Edit SAML config](images/08.jpeg)
