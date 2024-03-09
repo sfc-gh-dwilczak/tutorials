@@ -33,7 +33,7 @@ In this section we will do the setup to create our user-defined function by:
         /*
             Warehouses are synonymous with the idea of compute
             resources in other systems. We will use this
-            warehouse to query our integration and to load data.
+            warehouse to call our user defined function.
         */
         create warehouse if not exists developer 
             warehouse_size = xsmall
