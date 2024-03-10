@@ -1,5 +1,5 @@
 # Azure Active Directory (SSO) to Snowflake
-In this tutorial we will show how to setup authenticate to Snowflake using SSO with Azure Active Directory Identity Provider. 
+In this tutorial we will show how to setup authentication to Snowflake using SSO with Azure Active Directory Identity Provider. 
 
 ## Video
 Video is still in developemnt.
@@ -17,7 +17,7 @@ Next lets click on Enterprise Applications on the left navbar.
 Click on new application.
 ![New application](images/03.jpeg)
 
-In the Browse Azure AD Gallery search bar, search for Snowflake, and choose the Snowflake for AAD application.
+In the Browse Azure AD Gallery search bar, search for Snowflake, and choose Snowflake for Microsoft Entra ID application.
 ![Snowflake application](images/04.png)
 
 Give your Snowflake application a name, then click the Create button at the bottom.
@@ -53,7 +53,7 @@ Go back to the application's SAML-based Sign-on page, scroll down to the SAML Ce
 ![Download federation metadata XML](images/09.jpeg)
 
 ### Add users
-!!! caution
+!!! warning
     If you don't add the user in the Azure AD group they will not be able to use the SSO login on Snowflake. 
 
 Lets add users into the azure AD group for the application. First click on "Users and groups" on the left side navbar and then "add user/group". 
@@ -78,16 +78,16 @@ Lets open a worksheet in snowflake and enter the code below by entering in the n
 === ":octicons-image-16: Template"
 
     ```sql linenums="1"
-    USE ROLE ACCOUNTADMIN;
-    CREATE SECURITY INTEGRATION AZUREADINTEGRATION
-    TYPE = SAML2
-    ENABLED = TRUE
-    SAML2_ISSUER = 'https://sts.windows.net/[...]]/'  /* (1)! */
-    SAML2_SSO_URL = 'https://login.microsoftonline.com/[...]/saml2' /* (2)! */
-    SAML2_PROVIDER = 'CUSTOM'
-    SAML2_X509_CERT = '<IdP certificate>'  /* (3)! */
-    SAML2_SP_INITIATED_LOGIN_PAGE_LABEL = 'AzureADSSO'
-    SAML2_ENABLE_SP_INITIATED = TRUE;
+    use role accountadmin;
+    create security integration azureadintegration
+        type = saml2
+        enabled = true
+        saml2_issuer = 'https://sts.windows.net/[...]]/'  /* (1)! */
+        saml2_sso_url = 'https://login.microsoftonline.com/[...]/saml2' /* (2)! */
+        saml2_provider = 'CUSTOM'
+        saml2_x509_cert = '<idp certificate>'  /* (3)! */
+        saml2_sp_initiated_login_page_label = 'AzureADSSO'
+        saml2_enable_sp_initiated = true;
     ```
     { .annotate }
 
@@ -105,31 +105,40 @@ Lets open a worksheet in snowflake and enter the code below by entering in the n
 === ":octicons-image-16: Example"
 
     ```sql linenums="1"
-    USE ROLE ACCOUNTADMIN;
-    CREATE SECURITY INTEGRATION AZUREADINTEGRATION
-    TYPE = SAML2
-    ENABLED = TRUE
-    SAML2_ISSUER = 'https://sts.windows.net/9a2d78cb-73e9-40ee-a55...1ac5ef57a7/' 
-    SAML2_SSO_URL = 'https://login.microsoftonline.com/9a2d78cb-73e...ac5ef57a7/saml2'
-    SAML2_PROVIDER = 'CUSTOM'
-    SAML2_X509_CERT = 'MIIC8DCCAdigAwIBAgIQQH4r9rnBiKlPEFVEjpdNhTANBgkqhkiG9w0BAQsFADA0MTIwMAYDVQQDEylNaWNyb3NvZnQgQXp1
-    ......
-    oQ6PiPd2yWhtUfbYClOoNcMFOkk8E6n48T33KIVtvurwWta52oLBT2eoRZbvWaglT8DLKfhpzzd0SZFYSTjyVd5k2tEzSQy8HQLfH33m6+SA2e74X1Yj' 
-    SAML2_SP_INITIATED_LOGIN_PAGE_LABEL = 'AzureADSSO'
-    SAML2_ENABLE_SP_INITIATED = TRUE;
+    use role accountadmin;
+    create security integration azureadintegration
+        type = saml2
+        enabled = true
+        saml2_issuer = 'https://sts.windows.net/9a2d78cb-73e9-40ee-a55...1ac5ef57a7/' 
+        saml2_sso_url = 'https://login.microsoftonline.com/9a2d78cb-73e...ac5ef57a7/saml2'
+        saml2_provider = 'CUSTOM'
+        saml2_x509_cert = 'miic8dccadigawibagiqqh4r9rnbiklpefvejpdnhtanbgkqhkig9w0baqsfada0mtiwmaydvqqdeylnawnyb3nvznqgqxp1
+        ......
+        oq6pipd2ywhtufbyclooncmfokk8e6n48t33kivtvurwwta52olbt2eorzbvwaglt8dlkfhpzzd0szfystjyvd5k2tezsqy8hqlfh33m6+sa2e74x1yj' 
+        saml2_sp_initiated_login_page_label = 'AzureADSSO'
+        saml2_enable_sp_initiated = true;
     ```
 
 === ":octicons-image-16: Result"
 
-    Update text.
+    | status                                               |
+    |------------------------------------------------------|
+    | Integration AZUREADINTEGRATION successfully created. |
 
 !!! success
-    If you configured the Basic SAML configuration in the azure section using the Regional Locator Snowflake URL  (ADD ANOTATION HERE), you can move on to the next step by adding users and testing your login.
+    If you configured the Basic SAML configuration in the azure section using the Regional Locator Snowflake URL (1), you can move on to the next step by adding users and testing your login.
+    { .annotate }
+
+    1. This is an example of a regional locator URL: https://mbb41651.snowflakecomputing.com/
 
 ??? warning "If you've chosen to use a different URL format then regional locator"
     If you've chosen to use a different URL format such as Organization, Connection or one of the Privatelink URLs, follow the steps below. 
 
-    Review the current integration configuration. Confirm the values of the ``SAML2_SNOWFLAKE_ACS_URL`` and ``SAML_SNOWFLAKE_ISSUER_URL`` parameters are using the Regional Locator URL (ANNOTATION NEEDED HERE). 
+    Review the current integration configuration. Confirm the values of the ``SAML2_SNOWFLAKE_ACS_URL`` and ``SAML_SNOWFLAKE_ISSUER_URL`` parameters are using the Regional Locator URL (1).
+    { .annotate }
+
+    1. This is an example of a regional locator URL: https://mbb41651.snowflakecomputing.com/
+
 
     === ":octicons-image-16: Check"
 
@@ -152,7 +161,7 @@ Lets open a worksheet in snowflake and enter the code below by entering in the n
             set SAML2_SNOWFLAKE_ISSUER_URL = 'https://<organization name>-<account name>.snowflakecomputing.com';
         ```
 
-    Notes:
+    Notes:  
     - The above statement uses the Organization URL as an example. You should use the URL format the Azure Single sign on application was configured with.  
     - The value for the parameter SAML2_SNOWFLAKE_ACS_URL ends with /fed/login.  
     - The value for the parameter SAML2_SNOWFLAKE_ISSUER_URL is only the Snowflake account URL, in the format matching the Azure application configuration.  
@@ -160,36 +169,62 @@ Lets open a worksheet in snowflake and enter the code below by entering in the n
 ### Add or modify users.
 
 !!! warning
-    Your users must use their email for loggin into Snowflake that matches in Azure AD or it will not work.
+    Your users must use their email for logging into Snowflake that matches in Azure AD or it will not work.
 
 !!! note
-    If you already have users in Snowflake and they alreay are using their email for logging in then you can skip this section. 
+    If you already have users in Snowflake and they already are using their email for logging in then you can skip this section. 
 
 Lets add the user to snowflake using the users email. It is also suggested to give that user a role at this point.
 
 === ":octicons-image-16: Add user with email"
 
     ```sql linenums="1"
-    use accountadmin;
+    use role accountadmin;
+    
+    create user "<USER EMAIL>";
+    ```
+
+=== ":octicons-image-16: Example"
+
+    ```sql linenums="1"
+    use role accountadmin;
     
     create user "daniel.wilczak@snowflake.com";
-
-    grant role sysadmin to user "daniel.wilczak@snowflake.com";
     ```
 
 === ":octicons-image-16: Result"
-    Add result here.
+    | status                                                  |
+    |---------------------------------------------------------|
+    | User daniel.wilczak@snowflake.com successfully created. |
 
 If you already have users in snowflake but when they were created they didn't use their email.
+
 === ":octicons-image-16: Modify user to set email"
 
     ```sql linenums="1"
-    -- Update code.
+    use role accountadmin;
+    
+    alter user <CURRENT USERNAME rename to "<USER EMAIL";
+    ```
+
+=== ":octicons-image-16: Example"
+
+    ```sql linenums="1"
+    use role accountadmin;
+
+    alter user danielw rename to "hi@hi.com";
     ```
 
 === ":octicons-image-16: Result"
-    Add result here.
+    | status                           |
+    |----------------------------------|
+    | Statement executed successfully. |
 
-### Testing
+### Test login
+!!! note
+    If you get an error stating the user doesnt exist, you either forgot to add the user in Azure or Snowflake.
 
-Show how to test your azure AD login.
+Lets make sure your Azure AD is working. Logout of your Snowflake account and you should new see the Azure AD login button.
+![Login](images/15.png)
+
+
