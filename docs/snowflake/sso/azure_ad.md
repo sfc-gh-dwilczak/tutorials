@@ -56,7 +56,7 @@ Go back to the application's SAML-based Sign-on page, scroll down to the SAML Ce
 !!! caution
     If you don't add the user in the Azure AD group they will not be able to use the SSO login on Snowflake. 
 
-Lets add users into the azure AD group for the application. First click on "Users and groups" on the left side nav bar and then "add user/group". 
+Lets add users into the azure AD group for the application. First click on "Users and groups" on the left side navbar and then "add user/group". 
 ![Navigate to users and groups](images/11.png)
 
 Select Users and groups.
@@ -70,7 +70,7 @@ Finally click assign.
 
 
 ## Snowflake :octicons-feed-tag-16:
-Next we will setup Snowflake with the information we got from our ``federation metadata xml`` file. To make this process easier I suggest formatting your XML file so it's easier to look through. I used [VS code](https://code.visualstudio.com/) and an [xml formatter](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml) to accomplish this.
+Next we will setup Snowflake with the information we got from our ``federation metadata xml`` file. To make this process easier I suggest formatting your XML file so it's easier to look through. I used [VS code](https://code.visualstudio.com/) and an [xml formatter](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml) to accomplish this. Once you have the file open in vs code and the xml extension installed, select all the code and right clicl -> "Format Document". 
 
 ### Setup
 Lets open a worksheet in snowflake and enter the code below by entering in the necessary areas from our federation metadata xml file..
@@ -126,7 +126,7 @@ Lets open a worksheet in snowflake and enter the code below by entering in the n
 !!! success
     If you configured the Basic SAML configuration in the azure section using the Regional Locator Snowflake URL  (ADD ANOTATION HERE), you can move on to the next step by adding users and testing your login.
 
-??? caution "If you've chosen to use a different URL format then regional locator"
+??? warning "If you've chosen to use a different URL format then regional locator"
     If you've chosen to use a different URL format such as Organization, Connection or one of the Privatelink URLs, follow the steps below. 
 
     Review the current integration configuration. Confirm the values of the ``SAML2_SNOWFLAKE_ACS_URL`` and ``SAML_SNOWFLAKE_ISSUER_URL`` parameters are using the Regional Locator URL (ANNOTATION NEEDED HERE). 
@@ -158,7 +158,34 @@ Lets open a worksheet in snowflake and enter the code below by entering in the n
     - The value for the parameter SAML2_SNOWFLAKE_ISSUER_URL is only the Snowflake account URL, in the format matching the Azure application configuration.  
 
 ### Add or modify users.
-Show how to add users with their email or if you need to alter an existing user to use an email for login.
+
+!!! note
+    If you already have users in Snowflake and they alreay are using their email for logging in then you can skip this section. 
+
+Lets add the user to snowflake using the users email. It is also suggested to give that user a role at this point.
+
+=== ":octicons-image-16: Add user with email"
+
+    ```sql linenums="1"
+    use accountadmin;
+    
+    create user "daniel.wilczak@snowflake.com";
+
+    grant role sysadmin to user "daniel.wilczak@snowflake.com";
+    ```
+
+=== ":octicons-image-16: Result"
+    Add result here.
+
+If you already have users in snowflake but when they were created they didn't use their email.
+=== ":octicons-image-16: Modify user to set email"
+
+    ```sql linenums="1"
+    -- Update code.
+    ```
+
+=== ":octicons-image-16: Result"
+    Add result here.
 
 ### Testing
 
