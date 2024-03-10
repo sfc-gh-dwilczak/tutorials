@@ -159,7 +159,7 @@ Lets open a worksheet in snowflake and enter the code below by entering in the n
 
 ### Add or modify users.
 
-!! warning
+!!! warning
     Your users must use their email for loggin into Snowflake that matches in Azure AD or it will not work.
 
 !!! note
