@@ -8,13 +8,7 @@ Video still in development.
 This tutorial assume you have an account with [openai.com](openai.com). You will need to get an api token from it.
 
 ## Setup :octicons-feed-tag-16:
-In this section we will do the setup to create our user-defined function by:
-
-- Creating a database and schema.
-- Allowing snowflake to talk with openai's api.
-- Add our api key secret.
-- Granting access to the integration to our sysadmin role.
-
+In this section we will do the setup to support our user-defined function by:
 
 ??? Note "If you don't have a database, schema or warehouse yet."
 
