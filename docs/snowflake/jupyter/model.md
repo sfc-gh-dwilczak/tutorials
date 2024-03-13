@@ -63,8 +63,8 @@ Lets setup the objects for the example.
 
     -- Create a warehouse to do the training
     create or replace warehouse scientist 
-        WAREHOUSE_SIZE=XSMALL
-        INITIALLY_SUSPENDED=TRUE;
+        warehouse_size = xsmall
+        initially_suspended = true;
     ```
 
 === ":octicons-image-16: Result"
@@ -154,7 +154,7 @@ Lets transition our local model to a snowflake stored procedure so that we can c
     ```sql
     use warehouse scientist;
 
-    -- Train the model and save it to our stage(folder) we created during setup.
+    -- Train the model and save it to our model stage we created during setup.
     call science.linear.train();
     
     ```
@@ -170,7 +170,7 @@ Lets transition our local model to a snowflake stored procedure so that we can c
     ```
 
 ### Function
-
+Lets create a sql function that will load our model in and make the preciction using our loaded model.
 === ":octicons-image-16: Sql"
 
     ```sql
@@ -215,7 +215,7 @@ Lets transition our local model to a snowflake stored procedure so that we can c
     ```
 
 ### Use
-
+Finally lets use our model like a user would.
 === ":octicons-image-16: Sql"
 
     ```sql
