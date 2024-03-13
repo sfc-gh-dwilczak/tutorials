@@ -149,7 +149,6 @@ Lets transition our local model to a snowflake stored procedure so that we can c
 
 
 ### Train
-#### Train immediately
 === ":octicons-image-16:  Sql"
 
     ```sql
@@ -168,28 +167,6 @@ Lets transition our local model to a snowflake stored procedure so that we can c
         "R2 score on Test": 0.39521017373294376,
         "R2 score on Train": 0.5841447127694137
     }
-    ```
-
-#### Train on schedule using task
-
-=== ":octicons-image-16: Sql"
-
-    ```sql
-    -- Training the model every 24 hours.
-    CREATE TASK train_model_24h
-        schedule = 'USING CRON 0 2 * * * UTC' -- Run every night at 2 AM. UTC time zone.
-        warehouse = scientist
-    AS
-        call science.linear.train();
-
-    -- If you want to execute it immediately. 
-    -- execute task train_model_24h;
-    ```
-
-=== ":octicons-image-16: Result"
-
-    ```
-    Task TRAIN_MODEL_24H successfully created.
     ```
 
 ### Function
