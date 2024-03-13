@@ -71,7 +71,7 @@ Train and run the model locally. A [jupyter notebook](https://sfc-gh-dwilczak.gi
 
 ![Local run](images/model_local.png)
 
-### Transition model to sSnowflake
+### Transition model to Snowflake
 Lets transition our local model to a Snowflake stored procedure so that we can call on it to train and save the model to a stage.
 
 === ":octicons-image-16:  Sql"
