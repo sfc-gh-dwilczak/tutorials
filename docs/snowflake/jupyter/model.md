@@ -142,14 +142,13 @@ Lets transition our local model to a snowflake stored procedure so that we can c
 
 
 ### Train
+Lets call the stored procedure to train the model and save it to our model stage we created during setup.
 === ":octicons-image-16:  Sql"
 
     ```sql
     use warehouse scientist;
 
-    -- Train the model and save it to our model stage we created during setup.
     call science.linear.train();
-    
     ```
 
 === ":octicons-image-16: Result"
