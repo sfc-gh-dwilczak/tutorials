@@ -7,13 +7,6 @@ Video in development.
 ## Basics
 If you have never ran a model locally on jupyter notebook. I suggest trying the [basic tutorial](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/jupyter/basics/) first.
 
-## Files 
-
-You can either enter the jupyter notebook code below or download the notebook here. You will still have to run the snowflake code below. Also for those who hate reading tutorials (me) I have put all the the Snowflake code into one file seperated by block comments.
-
-- [Notebook file](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/jupyter/notebooks/model.ipynb)
-- [SQL file](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/jupyter/sql/code.ipynb)
-
 
 ## Example :octicons-feed-tag-16:
 
