@@ -48,12 +48,21 @@ Let's setup snowflake by creating a worksheet in snowflake and add the code belo
     */
     use role sysadmin;
 
-    -- Databases
+    --- Create a database to store our schemas.
     create database if not exists raw 
         comment='This is only raw data from your source.';
 
-    -- Schemas in the databases.
+   -- Create the schema. The schema stores all objectss.
     create schema if not exists raw.gcp;
+
+    /*
+    Warehouses are synonymous with the idea of compute
+    resources in other systems. We will use this
+    warehouse to query our integration and to load data.
+    */
+    create warehouse developer 
+        warehouse_size = xsmall
+        initially_suspended = true;
 
     /*
         Integrations are on of those important features that
@@ -61,6 +70,7 @@ Let's setup snowflake by creating a worksheet in snowflake and add the code belo
         snowflake connections to your data.
     */
     use role accountadmin;
+    use warehouse developer;
 
     create storage integration gcp_integration
         type = external_stage
@@ -89,12 +99,21 @@ Let's setup snowflake by creating a worksheet in snowflake and add the code belo
     */
     use role sysadmin;
 
-    -- Databases
+    --- Create a database to store our schemas.
     create database if not exists raw 
         comment='This is only raw data from your source.';
 
-    -- Schemas in the databases.
+   -- Create the schema. The schema stores all objectss.
     create schema if not exists raw.gcp;
+
+    /*
+    Warehouses are synonymous with the idea of compute
+    resources in other systems. We will use this
+    warehouse to query our integration and to load data.
+    */
+    create warehouse developer 
+        warehouse_size = xsmall
+        initially_suspended = true;
 
     /*
         Integrations are on of those important features that
@@ -102,6 +121,7 @@ Let's setup snowflake by creating a worksheet in snowflake and add the code belo
         snowflake connections to your data.
     */
     use role accountadmin;
+    use warehouse developer;
 
     create storage integration gcp_integration
         type = external_stage
@@ -152,7 +172,7 @@ Click `Save` and your finished with Google Cloud for manual loading.
 
 ### Load the data
 
-Lets setup the stage, file format, warehouse and finally load some json data.
+Lets setup the stage, file format and finally load some json data.
 
 === ":octicons-image-16: Template"
 
@@ -177,16 +197,6 @@ Lets setup the stage, file format, warehouse and finally load some json data.
     create or replace file format json
         type = 'json';
 
-    /*
-        Warehouses are synonymous with the idea of
-        compute resources in other systems.
-    */
-    create or replace warehouse developer 
-        warehouse_size=xsmall
-        initially_suspended=true;
-
-    -- Lets use that warehouse to load our json data.
-    use warehouse developer;
 
     -- Create the table to load into.
     create or replace table json (
