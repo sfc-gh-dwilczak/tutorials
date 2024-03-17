@@ -69,7 +69,7 @@ In this section we will do the setup to support our user-defined function by set
         enabled = true;
     ```
 
-    === ":octicons-image-16: Example"
+=== ":octicons-image-16: Example"
 
     ```sql linenums="1"
     use role accountadmin;
@@ -99,7 +99,7 @@ In this section we will do the setup to support our user-defined function by set
         enabled = true;
     ```
 
-     === ":octicons-image-16: Result"
+=== ":octicons-image-16: Result"
 
     | status                                                    |
     |-----------------------------------------------------------|
