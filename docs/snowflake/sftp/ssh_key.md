@@ -317,7 +317,7 @@ In this section we will show how to load a csv file from sftp into a snowflake t
     ```
 
 === ":octicons-image-16: Result"
-    Still working on running.
+    UPDATE
 
 
 ### SFTP to internal stage
