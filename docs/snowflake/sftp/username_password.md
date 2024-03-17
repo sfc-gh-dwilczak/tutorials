@@ -11,12 +11,42 @@ Credit for the code goes to [brockcooper](https://github.com/brockcooper/snowfla
 Video coming soon.
 
 ## Requirements
-This tutorial assumes you have a snowflake warehouse, database, schema and table that you want to export to the sftp server.
+This tutorial assumes you have a sftp server with username and password authentication.
 
 ## Setup :octicons-feed-tag-16:
 Lets open a worksheet and run the following code with your SFTP username, password and SFTP host url.
 
-=== ":octicons-image-16: Setup Code"
+??? note "If you don't have a database, schema or warehouse yet."
+
+    === ":octicons-image-16: Setup"
+
+        ```sql
+        use role accountadmin;
+        
+        -- Create a database to store our schemas.
+        create database if not exists 
+            raw comment='This is only api data from our sources.';
+
+        -- Create the schema. The schema stores all our objectss.
+        create schema if not exists raw.sftp;
+
+        /*
+            Warehouses are synonymous with the idea of compute
+            resources in other systems. We will use this
+            warehouse to call our user defined function.
+        */
+        create warehouse if not exists developer 
+            warehouse_size = xsmall
+            initially_suspended = true;
+
+        use database raw;
+        use schema sftp;
+        use warehouse developer;
+        ```
+
+In this section we will do the setup to support our user-defined function by setting up a [secret](https://docs.snowflake.com/en/sql-reference/sql/create-secret), [netwrok rule](https://docs.snowflake.com/en/user-guide/network-rules), and [external access](https://docs.snowflake.com/en/developer-guide/external-network-access/external-network-access-overview):
+
+=== ":octicons-image-16: Template"
 
     ```sql linenums="1"
     use role accountadmin;
@@ -28,14 +58,49 @@ Lets open a worksheet and run the following code with your SFTP username, passwo
 
     create network rule sftp_external_access_rule
         type = host_port
-        value_list = ('your-sftp-server.com', 'your-sftp-server.com:22') -- port 22 is the default for sftp
-        mode= egress;
+        value_list = (
+            'your-sftp-server.com',
+            'your-sftp-server.com:22'
+        ) -- port 22 is the default for sftp
+        mode = egress;
 
     create or replace external access integration sftp_access_integration
         allowed_network_rules = (sftp_external_access_rule)
         allowed_authentication_secrets = (sftp_pw)
         enabled = true;
     ```
+
+=== ":octicons-image-16: Example"
+
+    ```sql linenums="1"
+    use role accountadmin;
+
+    create secret sftp_pw
+        type = password
+        username = 'danielwilczak'
+        password = '....';
+
+    create network rule sftp_external_access_rule
+        type = host_port
+        value_list = (
+            'danielwilczakv2.blob.core.windows.net',
+            'danielwilczakv2.blob.core.windows.net:22'
+        ) -- port 22 is the default for sftp
+        mode = egress;
+
+    create or replace external access integration sftp_access_integration
+        allowed_network_rules = (sftp_external_access_rule)
+        allowed_authentication_secrets = (sftp_pw)
+        enabled = true;
+    ```
+
+=== ":octicons-image-16: Result"
+
+    | status                                                    |
+    |-----------------------------------------------------------|
+    | Integration SFTP_ACCESS_INTEGRATION successfully created. |
+
+
 
 
 ### Table to SFTP
@@ -233,8 +298,14 @@ In this section we will show how to load a csv file from sftp into a snowflake t
     );
     ```
 
+=== ":octicons-image-16: Example"
+
+    ```sql linenums="1"
+    Update
+    ```
+
 === ":octicons-image-16: Result"
-    Still working on running.
+    Update
 
 
 ### SFTP to internal stage
@@ -318,6 +389,11 @@ In this section we will show how to load a file from sftp into a snowflake stage
         , 22 -- Port 22 is the default for SFTP, change if your port is different
     );
     ```
+=== ":octicons-image-16: Example"
+
+    ```sql linenums="1"
+    UPDATE
+    ```
 
 === ":octicons-image-16: Result"
-    Still working on running.
+    UPDATE

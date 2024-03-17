@@ -10,7 +10,7 @@ This tutorial assume you have an account with [openai.com](openai.com). You will
 ## Setup :octicons-feed-tag-16:
 In this section we will do the setup to support our user-defined function by:
 
-??? Note "If you don't have a database, schema or warehouse yet."
+??? note "If you don't have a database, schema or warehouse yet."
 
     === ":octicons-image-16: Database, schema and warehouse"
 
