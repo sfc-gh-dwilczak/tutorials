@@ -191,7 +191,7 @@ In this section we will show how to dump a table from snowflake into sftp. Lets 
     $$;
     ```
 
-=== ":octicons-image-16: Call"
+=== ":octicons-image-16: Use"
 
     ```sql linenums="1"
     CALL table_to_sftp('DATABASE_NAME'
@@ -229,7 +229,7 @@ In this section we will show how to dump a table from snowflake into sftp. Lets 
 ### SFTP file to table
 In this section we will show how to load a csv file from sftp into a snowflake table. Lets create a user-defined function so we can refrence it with a smaller script. Lets call that function and see the result. 
 
-=== ":octicons-image-16: Code"
+=== ":octicons-image-16: Function"
 
     ```python linenums="1"
     CREATE OR REPLACE PROCEDURE sftp_to_table(database_name string
@@ -298,7 +298,7 @@ In this section we will show how to load a csv file from sftp into a snowflake t
     $$;
     ```
 
-=== ":octicons-image-16: Template"
+=== ":octicons-image-16: Use"
 
     ```sql linenums="1"
     CALL sftp_to_table('EXAMPLE'
@@ -323,7 +323,7 @@ In this section we will show how to load a csv file from sftp into a snowflake t
 ### SFTP to internal stage
 In this section we will show how to load a file from sftp into a snowflake stage. Lets create a user-defined function so we can refrence it with a smaller script. Lets call that function and see the result. 
 
-=== ":octicons-image-16: Code"
+=== ":octicons-image-16: Function"
 
     ```python linenums="1"
     CREATE OR REPLACE PROCEDURE sftp_to_internal_stage(stage_name string
@@ -393,7 +393,7 @@ In this section we will show how to load a file from sftp into a snowflake stage
     $$;
     ```
 
-=== ":octicons-image-16: Template"
+=== ":octicons-image-16: Use"
 
     ```sql linenums="1"
     CALL sftp_to_internal_stage(
