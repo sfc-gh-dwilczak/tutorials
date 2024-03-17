@@ -201,7 +201,7 @@ In this section we will show how to dump a table from snowflake into sftp. Lets 
 
     ```sql linenums="1"
     CALL table_to_sftp('RAW'
-                    , 'AWS'
+                    , 'SFTP'
                     , 'CSV'
                     , 'data'
                     ,'/examples/' -- Example remote dir path
