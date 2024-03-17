@@ -58,19 +58,27 @@ Let's transition to Snowflake by creating a worksheet and adding the code below 
     */
     use role sysadmin;
 
-    -- Databases
+    -- Create a database to store our schemas.
     create database if not exists raw 
         comment='This is only raw data from your source.';
 
-    -- Schemas in the databases.
+    -- Create the schema. The schema stores all objects.
     create schema if not exists raw.azure;
 
     /*
-        Integrations are on of those important features that
-        account admins should do because it's allowing outside 
-        snowflake connections to your data.
+        Warehouses are synonymous with the idea of
+        compute resources in other systems.
+    */
+    create or replace warehouse developer 
+        warehouse_size = xsmall
+        initially_suspended = true;
+
+    /*
+        Integrations are on of those important features that account admins
+        should do because it's allowing outside snowflake connections to your data.
     */
     use role accountadmin;
+    use warehouse developer;
 
     create or replace storage integration azure_integration
         type = external_stage
@@ -110,18 +118,27 @@ Let's transition to Snowflake by creating a worksheet and adding the code below 
     */
     use role sysadmin;
 
-    -- Databases
+    -- Create a database to store our schemas.
     create database if not exists raw 
         comment='This is only raw data from your source.';
 
-    -- Schemas in the databases.
+    -- Create the schema. The schema stores all objects.
     create schema if not exists raw.azure;
+
+    /*
+        Warehouses are synonymous with the idea of
+        compute resources in other systems.
+    */
+    create or replace warehouse developer 
+        warehouse_size = xsmall
+        initially_suspended = true;
 
     /*
         Integrations are on of those important features that account admins
         should do because it's allowing outside snowflake connections to your data.
     */
     use role accountadmin;
+    use warehouse developer;
 
     create or replace storage integration azure_integration
         type = external_stage
@@ -196,17 +213,6 @@ Lets setup the stage, file format, warehouse and finally load some json data.
     create or replace file format raw.azure.json
         type = 'json';
 
-    /*
-        Warehouses are synonymous with the idea of
-        compute resources in other systems.
-    */
-    create or replace warehouse developer 
-        warehouse_size=xsmall
-        initially_suspended=true;
-
-    -- Lets use that warehouse to load our json data.
-    use warehouse developer;
-
     -- Create the table to load into.
     create or replace table json (
         file_name varchar,
@@ -252,17 +258,6 @@ Lets setup the stage, file format, warehouse and finally load some json data.
     */
     create or replace file format raw.azure.json
         type = 'json';
-
-    /*
-        Warehouses are synonymous with the idea of
-        compute resources in other systems.
-    */
-    create or replace warehouse developer 
-        warehouse_size=xsmall
-        initially_suspended=true;
-
-    -- Lets use that warehouse to load our json data.
-    use warehouse developer;
 
     -- Create the table to load into.
     create or replace table json (

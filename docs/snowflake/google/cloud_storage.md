@@ -52,7 +52,7 @@ Let's setup snowflake by creating a worksheet in snowflake and add the code belo
     create database if not exists raw 
         comment='This is only raw data from your source.';
 
-   -- Create the schema. The schema stores all objectss.
+   -- Create the schema. The schema stores all objects.
     create schema if not exists raw.gcp;
 
     /*
