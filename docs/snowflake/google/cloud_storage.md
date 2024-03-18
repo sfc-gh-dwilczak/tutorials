@@ -242,13 +242,6 @@ Lets setup the stage, file format and finally load some json data.
     create or replace file format raw.gcp.json
         type = 'json';
 
-    /*
-        Warehouses are synonymous with the idea of
-        compute resources in other systems.
-    */
-    create or replace warehouse developer 
-        warehouse_size=xsmall
-        initially_suspended=true;
 
     -- Lets use that warehouse to load our json data.
     use warehouse developer;
