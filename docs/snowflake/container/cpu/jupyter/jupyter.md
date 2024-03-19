@@ -105,7 +105,7 @@ Let's start by setting up Snowflake before we jump to docker. Create a worksheet
 ## Docker :octicons-feed-tag-16:
 
 ### Download
-Lets first [download the files](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/container/cpu/files.zip) we'll need for the docker file and service file later.
+Lets first [download the files](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/container/cpu/jupyter/files.zip) we'll need for the docker file and service file later.
 
 ### Run Locally 
 Our goal is to run the application locally and check if it works and then upload the dockerfile / image to our snowflake image repository so it can be hosted on Snowflake container services.

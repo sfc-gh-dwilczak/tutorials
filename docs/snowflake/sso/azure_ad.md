@@ -224,7 +224,7 @@ If you already have users in snowflake but when they were created they didn't us
 !!! note
     If you get an error stating the user doesnt exist, you either forgot to add the user in Azure or Snowflake.
 
-Lets make sure your Azure AD is working. Logout of your Snowflake account and you should new see the Azure AD login button.
+Lets make sure your Azure AD is working. Logout of your Snowflake account and you should now see the Azure AD login button.
 ![Login](images/15.png)
 
 
