@@ -278,7 +278,7 @@ Finally lets use our llama 2 llm user defined function. The result will come bac
     ```
 
 === ":octicons-image-16: Result"
-    ```
+
     Of course! Here are five funny dog names that might suit your furry friend:
 
     1. Barnaby Barkinstein - This name has a bit of a play on words, with "Barnaby" being a old-fashioned name and "Barkinstein" being a pun on the word "Bark". It's sure to bring some laughs when you introduce your dog to friends and family.
@@ -288,9 +288,9 @@ Finally lets use our llama 2 llm user defined function. The result will come bac
     3. Puddles McFluffin - This name plays on the idea of a dog having a "fluffy" coat, while also incorporating a cute and quirky nickname like "Puddles". It's sure to bring a smile to everyone's face when you introduce your dog with this name.
 
     4. Rufus McSnuggles - This name combines two cute and playful nicknames to create a fun and silly moniker for your pup. "Rufus" is a classic name with a fun twist, while "McSnuggles" adds a playful touch to the end of the name.
-    ```
 
-## Clean up script
+
+## Clean up script :octicons-feed-tag-16:
 If you don't plan to keep this running. Which I don't reccomend considering it's using 1.66 credits per hour. Here is a clean up script.
 
 === ":octicons-image-16: SQL"
