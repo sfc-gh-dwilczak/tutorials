@@ -131,7 +131,7 @@ Using terminal, navigate to the folder that has the docker file you downloaded. 
     ```
     
 
-This is where you can use a tool like Postman to query the api or use termal directly.
+This is where you can use a tool like Postman to query the api or use terminal directly.
 
 #### Postman
 EITHER ADD A VIDEO OF ME DOING IT OR GIF.
