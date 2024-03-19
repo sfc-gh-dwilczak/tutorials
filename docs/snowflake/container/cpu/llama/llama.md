@@ -203,7 +203,7 @@ UPDATE SERVICE FILE UPLOAD GIF
 Create the service from the service specification file and go to the URL given.
 
 !!! warning
-    Login with the user we created. Username: "container_jupyter" and the password you gave to the setup script.
+    Login with the user we created. Username: "service_llm" and the password you gave to the setup script.
 
 !!! Note
     Continue to refresh the result by **running the last two commands** (1) until Snowflake give you a proper URL.
