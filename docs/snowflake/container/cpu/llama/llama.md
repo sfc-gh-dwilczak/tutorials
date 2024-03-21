@@ -12,7 +12,7 @@ Let's start by setting up Snowflake before we jump to docker. Create a worksheet
 
 === ":octicons-image-16: Code"
 
-    ```sql
+    ```sql linenums="1"
     set role_name       = 'service_llm';
     set user_name       = 'service_llm';
     set user_password   = '....';
@@ -130,11 +130,44 @@ Using terminal, navigate to the folder that has the docker file you downloaded. 
     docker run --rm -p 8080:8080 llama:endpoint
     ```
     
-
-This is where you can use a tool like Postman to query the api or use terminal directly.
+This is where you can use a tool like Postman or Terminal to query the api or use terminal directly.
 
 #### Postman
-EITHER ADD A VIDEO OF ME DOING IT OR GIF.
+!!! note "Download"
+    To use Postman you will have to download their [free desktop application](https://www.postman.com/downloads/).
+
+Here is a screenshot of the way you will have to configure to send the json to the application.
+![Postman](images/7.png)
+
+Here is a smaple request to send to the endpoint.
+=== ":octicons-image-16: Example Request"
+
+    ```json linenums="1"
+    {
+        "data": [
+            [0, "You are a helpful assistant", "Generate a list of 5 funny dog names, keep it to just the names.", 100],
+            [1, "You are a helpful assistant", "Generate a list of 5 funny cat names, keep it to just the names.", 100]
+        ]
+    }
+    ```
+
+=== ":octicons-image-16:Result"
+
+    ```json linenums="1"
+    {
+        "data": [
+            [
+                0,
+                "Sure, here are 5 funny dog names that might make you and your furry friend giggle:\n1. Barky McBarkface\n2. Paw-cifer Jackpot\n3. Rufus McFluffers\n4. Droolius Paws-a-ton\n5. Pupper Nutterbutt"
+            ],
+            [
+                1,
+                "Of course! Here are five funny cat names that I came up with:\n1. Purrfect Storm - This name combines the word \"purrfect,\" which is a common term used to describe cats and their purring abilities, with the word \"storm.\" It's a clever play on words that will have your friends and family chuckling.\n2. Mr. Whiskers - This name is simple yet effective in conveying the"
+            ]
+        ]
+    }
+    ```
+
 
 #### Curl
 ```bash
@@ -155,13 +188,13 @@ Using terminal and the file / folder from the prior step, tag the image with you
 
 === ":octicons-image-16: Code"
 
-    ```bash
+    ```bash linenums="1"
     docker tag llama:endpoint <URL GOES HERE>/llama:endpoint
     ```
 
 === ":octicons-image-16: Example"
 
-    ```bash
+    ```bash linenums="1"
     docker tag llama:endpoint \
     sfsenorthamerica-demo-dwilczak.registry.snowflakecomputing.com/llm/llama/image/llama:endpoint
     ```
@@ -169,23 +202,25 @@ Using terminal and the file / folder from the prior step, tag the image with you
 Next docker login to our snowflake image repo and upload the image. We will use the login name **service_llm** and the **password you specified at the start** of the tutorial.
 === ":octicons-image-16: Code"
 
-    ```bash
+    ```bash linenums="1"
     docker login <FIRST PART OF THE URL> -u service_llm
     ```
 === ":octicons-image-16: Example"
 
-    ```bash
+    ```bash linenums="1"
     docker login sfsenorthamerica-demo-dwilczak.registry.snowflakecomputing.com/ -u service_llm
     ```
 
 
 Finally push the image to your image repository living on Snowflake.
 === ":octicons-sign-out-16: Code"
-    ```bash
+
+    ```bash linenums="1"
     docker push <URL GOES HERE>/llama:endpoint
     ```
 === ":octicons-sign-out-16: Example"
-    ```bash
+
+    ```bash linenums="1"
     docker push sfsenorthamerica-demo-dwilczak.registry.snowflakecomputing.com/llm/llama/image/llama:endpoint
     ```
 
@@ -217,7 +252,7 @@ Create the service from the service specification file and go to the URL given.
 
 === ":octicons-image-16: SQL"
 
-    ```sql
+    ```sql linenums="1"
     set role_name       = 'service_llm';
     set pool_name       = 'service_llm';
     set service_name    = 'llama';
@@ -247,7 +282,7 @@ Lets create a user defined funciton to access our llama 2 llm endpoint.
 
 === ":octicons-image-16: SQL"
 
-    ```sql
+    ```sql linenums="1"
     create or replace function llama(
         system_message varchar,
         user_message varchar,
@@ -269,7 +304,7 @@ Finally lets use our llama 2 llm user defined function. The result will come bac
 
 === ":octicons-image-16: SQL"
 
-    ```sql
+    ```sql linenums="1"
     select llama(
         'You are a helpful assistant',
         'Generate a list of 5 funny dog names',
@@ -295,7 +330,7 @@ If you don't plan to keep this running. Which I don't reccomend considering it's
 
 === ":octicons-image-16: SQL"
 
-    ```sql
+    ```sql linenums="1"
     use role accountadmin;
 
     alter compute pool service_llm stop all;

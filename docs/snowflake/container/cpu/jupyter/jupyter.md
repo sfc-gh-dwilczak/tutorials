@@ -12,7 +12,7 @@ Let's start by setting up Snowflake before we jump to docker. Create a worksheet
 
 === ":octicons-image-16: Code"
 
-    ```sql
+    ```sql linenums="1"
     set role_name       = 'container_jupyter';
     set user_name       = 'container_jupyter';
     set user_password   = '';
@@ -120,7 +120,7 @@ Using terminal, navigate to the folder that has the docker file you downloaded. 
 1.  ![Terminal](images/6.png)
 
 === ":octicons-image-16: Build and Run"
-    ```bash
+    ```bash linenums="1"
     docker build --rm -t jupyter:tutorial . &&
     docker run --rm -p 8080:8888 jupyter:tutorial
     ```
@@ -146,13 +146,13 @@ Using terminal and the file / folder from the prior step, tag the image with you
 
 === ":octicons-image-16: Code"
 
-    ```bash
+    ```bash linenums="1"
     docker tag jupyter:tutorial <URL GOES HERE>/jupyter:tutorial
     ```
 
 === ":octicons-image-16: Example"
 
-    ```bash
+    ```bash linenums="1"
     docker tag jupyter:tutorial \
     sfsenorthamerica-demo-dwilczak.registry.snowflakecomputing.com/container/jupyter/image_repo/jupyter:tutorial
     ```
@@ -160,23 +160,23 @@ Using terminal and the file / folder from the prior step, tag the image with you
 Next docker login to our snowflake image repo and upload the image. We will use the login name **container_jupyter** and the **password you specified at the start** of the tutorial.
 === ":octicons-image-16: Code"
 
-    ```bash
+    ```bash linenums="1"
     docker login <FIRST PART OF THE URL> -u container_jupyter
     ```
 === ":octicons-image-16: Example"
 
-    ```bash
+    ```bash linenums="1"
     docker login sfsenorthamerica-demo-dwilczak.registry.snowflakecomputing.com/ -u container_jupyter
     ```
 
 
 Finally push the image to your image repository living on Snowflake.
 === ":octicons-sign-out-16: Code"
-    ```bash
+    ```bash linenums="1"
     docker push <URL GOES HERE>/jupyter:tutorial
     ```
 === ":octicons-sign-out-16: Example"
-    ```bash
+    ```bash linenums="1"
     docker push sfsenorthamerica-demo-dwilczak.registry.snowflakecomputing.com/container/jupyter/image_repo/jupyter:tutorial
     ```
 
@@ -208,7 +208,7 @@ Final step, create the service from the service specification file and go to the
 
 === ":octicons-image-16: SQL"
 
-    ```sql
+    ```sql linenums="1"
     set role_name       = 'container_jupyter';
     set pool_name       = 'container_jupyter';
     set service_name    = 'jupyter';
