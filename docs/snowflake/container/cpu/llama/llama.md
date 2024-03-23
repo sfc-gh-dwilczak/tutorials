@@ -166,7 +166,7 @@ The simplest approach to send a request to the endpoint is to use terminal with 
     ```
 
 
-#### Postman (Option 1)
+#### Postman (Option 2)
 !!! note "Download"
     To use Postman you will have to download their [free desktop application](https://www.postman.com/downloads/).
 
