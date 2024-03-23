@@ -1,0 +1,19 @@
+spec:
+  container:  
+  - name: jupyter
+    image: /container/jupyter/image_repo/jupyter:tutorial
+    volumeMounts: 
+      - name: stage
+        mountPath: /workspace/stage
+  endpoint:
+  - name: jupyter
+    port: 8888
+    public: true
+  volume:
+  - name: stage
+    source: '@image_stage'
+    uid: 1000
+    gid: 100
+
+
+

@@ -124,12 +124,13 @@ Using terminal, navigate to the folder that has the docker file you downloaded. 
 1.  ![Terminal](images/6.png)
 
 === ":octicons-image-16: Build and Run"
-    ```bash
+
+    ```bash linenums="1"
     docker build --rm -t llama:endpoint .
     docker run --rm -p 8080:8080 llama:endpoint
     ```
     
-This is where you can use a tool like Postman or Terminal to query the api or use terminal directly.
+This is where you can use a tool like Postman or Terminal send a request to the api.
 
 #### Curl (Option 1)
 
@@ -141,10 +142,10 @@ The simplest approach to send a request to the endpoint is to use terminal with 
     curl -X POST http://127.0.0.1:8080/llama \
     -H "Content-Type: application/json" \
     -d '{
-    "data": [
-        [0, "You are a helpful assistant", "Generate a list of 5 funny dog names, keep it to just the names.", 100],
-        [1, "You are a helpful assistant", "Generate a list of 5 funny cat names, keep it to just the names.", 100]
-    ]
+        "data": [
+            [0, "You are a helpful assistant", "Generate a list of 5 funny dog names, keep it to just the names.", 100],
+            [1, "You are a helpful assistant", "Generate a list of 5 funny cat names, keep it to just the names.", 100]
+        ]
     }'
     ``` 
 === ":octicons-image-16:Result"
@@ -172,7 +173,7 @@ The simplest approach to send a request to the endpoint is to use terminal with 
 Here is a screenshot of the way you will have to configure to send the json to the application.
 ![Postman](images/7.png)
 
-Here is a smaple request to send to the endpoint.
+Here is a sample request to send to the endpoint.
 === ":octicons-image-16: Example Request"
 
     ```json linenums="1"
@@ -261,7 +262,7 @@ UPDATE WALKTHROUGH VIDEO HERE
 Lets switch back to snowflake.
 
 ### Run the container service
-Create the service from with our inline service specification and go to the URL given.
+Create the service with our inline service specification and go to the URL given.
 
 !!! Note
     Continue to refresh the result by **running the last two commands** (1) until Snowflake give you a proper URL.
@@ -276,7 +277,7 @@ Create the service from with our inline service specification and go to the URL 
 === ":octicons-image-16: SQL"
 
     ```sql linenums="1"
-    set role_name       = 'service_llm';
+   set role_name       = 'service_llm';
     set pool_name       = 'service_llm';
     set service_name    = 'llama';
 
@@ -288,22 +289,23 @@ Create the service from with our inline service specification and go to the URL 
         spec:
             container:  
             - name: llama
-                image: /llm/llama/image/llama:endpoint 
-                volumeMounts: 
+            image: /llm/llama/image/llama:endpoint 
+            volumeMounts: 
                 - name: stage
-                    mountPath: /app/stage
+                mountPath: /app/stage
+            
             endpoint:
             - name: llama
-                port: 8080
-                public: true
+            port: 8080
+            public: true
+            
             volume:
             - name: stage
-                source: '@service'
-                uid: 1000
-                gid: 100
+            source: '@service'
+            uid: 1000
+            gid: 100
         $$;
 
- 
     show endpoints in service identifier($service_name);
     select "ingress_url" from table(result_scan(last_query_id()));
     ```
