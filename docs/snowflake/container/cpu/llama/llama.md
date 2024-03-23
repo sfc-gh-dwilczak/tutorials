@@ -107,7 +107,7 @@ Let's start by setting up Snowflake before we jump to docker. Create a worksheet
 ### Download
 
 #### Docker and services files
-Lets first [download the files](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/container/cpu/llm/files.zip) we'll need for the docker file and service file later.
+Lets first [download the files](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/container/cpu/llama/files.zip) we'll need for the docker file and service file later.
 
 #### Llama 2 Model
 You will want to select and download your [Llama model](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF/tree/main). For this tutorial I downloaded the "[llama-2-7b-chat.Q2_K.gguf](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF/resolve/main/llama-2-7b-chat.Q2_K.gguf?download=true)" model due to it being the smallest model.
@@ -132,7 +132,41 @@ Using terminal, navigate to the folder that has the docker file you downloaded. 
     
 This is where you can use a tool like Postman or Terminal to query the api or use terminal directly.
 
-#### Postman
+#### Curl (Option 1)
+
+The simplest approach to send a request to the endpoint is to use terminal with a curl command.
+
+=== ":octicons-image-16: Example Request"
+
+    ```bash linenums="1"
+    curl -X POST http://127.0.0.1:8080/llama \
+    -H "Content-Type: application/json" \
+    -d '{
+    "data": [
+        [0, "You are a helpful assistant", "Generate a list of 5 funny dog names, keep it to just the names.", 100],
+        [1, "You are a helpful assistant", "Generate a list of 5 funny cat names, keep it to just the names.", 100]
+    ]
+    }'
+    ``` 
+=== ":octicons-image-16:Result"
+
+    ```json linenums="1"
+    {
+        "data": [
+            [
+                0,
+                "Sure, here are 5 funny dog names that might make you and your furry friend giggle:\n1. Barky McBarkface\n2. Paw-cifer Jackpot\n3. Rufus McFluffers\n4. Droolius Paws-a-ton\n5. Pupper Nutterbutt"
+            ],
+            [
+                1,
+                "Of course! Here are five funny cat names that I came up with:\n1. Purrfect Storm - This name combines the word \"purrfect,\" which is a common term used to describe cats and their purring abilities, with the word \"storm.\" It's a clever play on words that will have your friends and family chuckling.\n2. Mr. Whiskers - This name is simple yet effective in conveying the"
+            ]
+        ]
+    }
+    ```
+
+
+#### Postman (Option 1)
 !!! note "Download"
     To use Postman you will have to download their [free desktop application](https://www.postman.com/downloads/).
 
@@ -169,10 +203,7 @@ Here is a smaple request to send to the endpoint.
     ```
 
 
-#### Curl
-```bash
-UPDATE WITH CURL CODE FOR TERMINAL
-``` 
+
 
 ### Upload
 
@@ -183,7 +214,7 @@ Using terminal and the file / folder from the prior step, tag the image with you
     |-----------------------------------------------------------------------------------|
     | sfsenorthamerica-demo-dwilczak.registry.snowflakecomputing.com/llm/llama/image    |
 
-2.  UPDATE WITH IMAGE OF TAGGED CONTAINER
+2.  ![Tag](images/8.png)
 
 
 === ":octicons-image-16: Code"
@@ -228,17 +259,10 @@ Finally push the image to your image repository living on Snowflake.
 UPDATE WALKTHROUGH VIDEO HERE
 
 ## Snowflake :octicons-feed-tag-16:
-
-### Upload service file
-Upload the service specification file we [downloaded earlier](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/container/cpu/llama/#download) to the stage. We will use snowflake UI to do this. An example can be seen below.
-
-UPDATE SERVICE FILE UPLOAD GIF
+Lets switch back to snowflake.
 
 ### Run the container service
-Create the service from the service specification file and go to the URL given.
-
-!!! warning
-    Login with the user we created. Username: "service_llm" and the password you gave to the setup script.
+Create the service from with our inline service specification and go to the URL given.
 
 !!! Note
     Continue to refresh the result by **running the last two commands** (1) until Snowflake give you a proper URL.
@@ -261,10 +285,24 @@ Create the service from the service specification file and go to the URL given.
 
     create service identifier($service_name)
         in compute pool identifier($pool_name)
-        from @service
-        spec='service.yml'
-        min_instances=1
-        max_instances=1;
+        from specification $$
+        spec:
+            container:  
+            - name: llama
+                image: /llm/llama/image/llama:endpoint 
+                volumeMounts: 
+                - name: stage
+                    mountPath: /app/stage
+            endpoint:
+            - name: llama
+                port: 8080
+                public: true
+            volume:
+            - name: stage
+                source: '@service'
+                uid: 1000
+                gid: 100
+        $$;
 
  
     show endpoints in service identifier($service_name);
