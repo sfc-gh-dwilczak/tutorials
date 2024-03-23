@@ -25,7 +25,6 @@ Let's start by setting up Snowflake before we jump to docker. Create a worksheet
     set repo_name       = 'image';
     set stage_name      = 'service';
     set service_name    = 'llama';
-    set service_file    = 'service.yaml';
 
     use role accountadmin; 
 
