@@ -274,10 +274,11 @@ Create the service with our inline service specification and go to the URL given
         ```
 
 Here we will use an in-line service to provide snowflake ith the endpoint.
+
 === ":octicons-image-16: SQL"
 
     ```sql linenums="1"
-   set role_name       = 'service_llm';
+    set role_name       = 'service_llm';
     set pool_name       = 'service_llm';
     set service_name    = 'llama';
 
