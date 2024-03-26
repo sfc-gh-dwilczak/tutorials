@@ -273,7 +273,7 @@ Create the service with our inline service specification and go to the URL given
         select "ingress_url" from table(result_scan(last_query_id()));
         ```
 
-
+Here we will use an in-line service to provide snowflake ith the endpoint.
 === ":octicons-image-16: SQL"
 
     ```sql linenums="1"
