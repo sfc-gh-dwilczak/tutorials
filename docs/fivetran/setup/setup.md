@@ -21,72 +21,68 @@ Let's setup up the necessary resources to have fivetran function correctly. In t
 - Role: service_fivetran
 - Warehouse (XS): service_fivetran
 
-And finish it off by providring the necessary permission for fivetran. All we have to do is provide a password to the script.
+And finish it off by providring the necessary permission for fivetran. All we have to do is provide a password to the script. To run all the code, you will want to select and hit run in the top right.
 
 === ":octicons-image-16: Setup"
 
     ```sql linenums="1"
-    begin;
-        -- create variables for user / password / role / warehouse / database (needs to be uppercase for objects)
-        set role_name = 'service_fivetran';
-        set user_name = 'service_fivetran';
-        set user_password = '...'; -- UPDATE PASSWORD
-        set warehouse_name = 'service_fivetran';
-        set database_name = 'RAW';
+    -- create variables for user / password / role / warehouse / database 
+      -- Everything (other than the password) needs to be uppercase for it to work.
+    set role_name = 'SERVICE_FIVETRAN';
+    set user_name = 'SERVICE_FIVETRAN';
+    set user_password = 'Password12'; -- UPDATE PASSWORD
+    set warehouse_name = 'SERVICE_FIVETRAN';
+    set database_name = 'RAW';
 
-        -- change role to securityadmin for user / role steps
-        use role securityadmin;
+    -- change role to securityadmin for user / role steps
+    use role securityadmin;
 
-        -- create role for fivetran
-        create role if not exists identifier($role_name);
-        grant role identifier($role_name) to role SYSADMIN;
+    -- create role for fivetran
+    create role if not exists identifier($role_name);
+    grant role identifier($role_name) to role SYSADMIN;
 
-        -- create a user for fivetran
-        create user if not exists identifier($user_name)
-        password = $user_password
-        default_role = $role_name
-        default_warehouse = $warehouse_name;
+    -- change role to sysadmin for warehouse / database steps
+    use role sysadmin;
 
-        grant role identifier($role_name) to user identifier($user_name);
+    -- create a warehouse for fivetran
+    create warehouse if not exists identifier($warehouse_name)
+    warehouse_size = xsmall
+    warehouse_type = standard
+    auto_suspend = 60
+    auto_resume = true
+    initially_suspended = true;
 
-        -- set binary_input_format to BASE64
-        ALTER USER identifier($user_name) SET BINARY_INPUT_FORMAT = 'BASE64';
+    -- create database for fivetran
+    create database if not exists identifier($database_name);
 
-        -- change role to sysadmin for warehouse / database steps
-        use role sysadmin;
+    -- grant fivetran role access to warehouse
+    grant USAGE
+    on warehouse identifier($warehouse_name)
+    to role identifier($role_name);
 
-        -- create a warehouse for fivetran
-        create warehouse if not exists identifier($warehouse_name)
-        warehouse_size = xsmall
-        warehouse_type = standard
-        auto_suspend = 60
-        auto_resume = true
-        initially_suspended = true;
+    -- grant fivetran access to database
+    grant CREATE SCHEMA, MONITOR, USAGE
+    on database identifier($database_name)
+    to role identifier($role_name);
 
-        -- create database for fivetran
-        create database if not exists identifier($database_name);
+    -- change role to securityadmin for user / role steps
+    use role securityadmin;
 
-        -- grant fivetran role access to warehouse
-        grant USAGE
-        on warehouse identifier($warehouse_name)
-        to role identifier($role_name);
+    -- create a user for fivetran
+    create user if not exists identifier($user_name)
+    password = $user_password
+    default_role = $role_name
+    default_warehouse = $warehouse_name;
 
-        -- grant fivetran access to database
-        grant CREATE SCHEMA, MONITOR, USAGE
-        on database identifier($database_name)
-        to role identifier($role_name);
+    grant role identifier($role_name) to user identifier($user_name);
 
-        -- change role to ACCOUNTADMIN for STORAGE INTEGRATION support (only needed for Snowflake on GCP)
-        use role ACCOUNTADMIN;
-        grant CREATE INTEGRATION on account to role identifier($role_name);
-        use role sysadmin; 
-        
-    commit;
+    -- set binary_input_format to BASE64
+    ALTER USER identifier($user_name) SET BINARY_INPUT_FORMAT = 'BASE64';
     ```
 === ":octicons-image-16: Result"
 
     ```sql linenums="1"
-    UPDATE RESULT
+    Statement executed successfully.
     ```
 
 ### Account Locator
@@ -119,12 +115,14 @@ Next we'll want to select Snowflake as the destination of choice.
 ![Select Snowflake](images/3.png)
 
 We will want to fill out all the sections marked with arrows using the information we got from the setup and our account locator we copied. We will not need the ``https://`` part to be added into fivetran.
-![Select Snowflake](images/4.png)
+![Account Locator](images/4.png)
 
 ### Testing
 Finally we will click "Save and Test" and fivetran will test our connection.
+![Testing](images/7.png)
 
-ADD PHOTO HERE FOR TESTING.
+We can then see our destination and start adding sources to it.
+![Done](images/8.png)
 
 ### Troubleshooting
 If you get an error with regard to your host, it is likely you incorrectly have your account locator. Here is some [documentation](https://docs.snowflake.com/en/user-guide/admin-account-identifier#non-vps-account-locator-formats-by-cloud-platform-and-regionr) regarding the account locator.
