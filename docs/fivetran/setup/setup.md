@@ -8,7 +8,10 @@ Video is still in developemnt.
 You will need to have a fivetran account or [sign up for a free trial](https://fivetran.com/signup).
 
 ## Snowflake :octicons-feed-tag-16:
-Lets start in Snowflake by opening a worksheet.
+Lets start in Snowflake by opening a worksheet (1).
+{ .annotate }
+
+1. ![Worksheet](images/6.png)
 
 ### Setup
 Let's setup up the necessary resources to have fivetran function correctly. In this example we are going to create:
@@ -86,6 +89,7 @@ And finish it off by providring the necessary permission for fivetran. All we ha
     UPDATE RESULT
     ```
 
+### Account Locator
 Before we move to setting up Fivetran we will want to copy our "account identifier url". This is a unique url to your account that will be used in the setup process of fivetran. The url is unique (1) to a few different type os snowflake account but the copy link feature should work for this tutorial.
 { .annotate }
 
@@ -98,7 +102,7 @@ Before we move to setting up Fivetran we will want to copy our "account identifi
     | Organization Privatelink | https://organization-name.privatelink.snowflakecomputing.com       |
     | Connection Privatelink   | https://organization-connection.privatelink.snowflakecomputing.com |
 
-![Account URL](images/1.png)
+![Account URL](images/5.png)
 
 
 ## Fivetran :octicons-feed-tag-16:
@@ -117,6 +121,10 @@ Next we'll want to select Snowflake as the destination of choice.
 We will want to fill out all the sections marked with arrows using the information we got from the setup and our account locator we copied. We will not need the ``https://`` part to be added into fivetran.
 ![Select Snowflake](images/4.png)
 
+### Testing
 Finally we will click "Save and Test" and fivetran will test our connection.
 
 ADD PHOTO HERE FOR TESTING.
+
+### Troubleshooting
+If you get an error with regard to your host, it is likely you incorrectly have your account locator. Here is some [documentation](https://docs.snowflake.com/en/user-guide/admin-account-identifier#non-vps-account-locator-formats-by-cloud-platform-and-regionr) regarding the account locator.
