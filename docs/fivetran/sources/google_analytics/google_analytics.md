@@ -5,7 +5,7 @@ In this tutorial we will show how to push data from Google Analytics in Fivetran
 Video is still in developemnt.
 
 ## Requirements
-1. You will need a Snowflake account which we can be setup as [trial](https://signup.snowflake.com/) if we don't have one today.
+1. You will need a Snowflake account which can be setup as [trial](https://signup.snowflake.com/) if we don't have one today.
 2. You will need to have a fivetran account or [sign up for a free trial](https://fivetran.com/signup).
 3. You have [Snowflake as a destination](https://sfc-gh-dwilczak.github.io/tutorials/fivetran/setup/setup/).
 4. You have a already working [Google Analytics](https://developers.google.com/analytics/) account. 
@@ -72,7 +72,7 @@ Lets query our new data. In this example we will see how many users we have had 
     | 341                |
 
 ### Dashboard
-Lets take the data we have an make a really quick dashboard that will tell us unique users per month. Lets start by creating a new streamlit dashboard.
+Lets take the data we have and make a really quick dashboard that will tell us unique users per month. Lets start by creating a new streamlit dashboard.
 ![New streamlit dashboard](images/12.png)
 
 Lets point it at our new data and give it a name.
