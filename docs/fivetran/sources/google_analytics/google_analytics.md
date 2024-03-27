@@ -44,7 +44,7 @@ Once it starts you will see it's currently in the process of finishing. Once it'
 Finally we are finished on the FIvetran side, lets move to Snowflake and see our data.
 ![Finished](images/11.png)
 
-## Snowflake
+## Snowflake :octicons-feed-tag-16:
 Lets see the data we loaded
 
 ### View the data.
