@@ -1,4 +1,4 @@
-# Fivetran -> Snowflake Setup
+# Fivetran -> Snowflake
 In this tutorial we will show how to setup Snowflake as a destination for snowflake.
 
 ## Video
@@ -86,7 +86,7 @@ And finish it off by providring the necessary permission for fivetran. All we ha
     ```
 
 ### Account Locator
-Before we move to setting up Fivetran we will want to copy our "account identifier url". This is a unique url to your account that will be used in the setup process of fivetran. The url is unique (1) to a few different type os snowflake account but the copy link feature should work for this tutorial.
+Before we move to setting up Fivetran we will want to copy our "account identifier url". This is a unique url to your account that will be used in the setup process of fivetran. The url is unique (1) to a few different type of Snowflake accounts but the "copy account url" feature should work for this tutorial.
 { .annotate }
 
 1.  | URL type                 | URL format                                                         |
