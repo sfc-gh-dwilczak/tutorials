@@ -54,7 +54,10 @@ nav:
       - Change Service Level: snowflake/account/service_level.md
     - SSO:
       - Azure Active Directory: snowflake/sso/azure_ad.md
-
+  - Fivetran:
+      - Setup: fivetran/setup/setup.md
+      - Sources:
+        - Google Analytics: fivetran/sources/google_analytics.md
 
 
 markdown_extensions:

@@ -91,16 +91,21 @@ Lets open a worksheet in snowflake and enter the code below by entering in the n
     ```
     { .annotate }
 
-    1. <EntityDescriptor ID="_8416250f-50fb-...8bcd335e92" entityID="https://sts.windows.net/9a2d78cb-73...fc1ac5ef57a7/"
-    xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
+    1. ```
+       <EntityDescriptor ID="_8416250f-50fb-...8bcd335e92" entityID="https://sts.windows.net/9a2d78cb-73...fc1ac5ef57a7/" xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
+       ```
 
-    2. <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.microsoftonline.com/9a2d78c...-fc1ac5ef57a7/saml2" />
+    2. ```
+       <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.microsoftonline.com/9a2d78c...-fc1ac5ef57a7/saml2" />
+       ```
 
-    3.  <X509Certificate>
+    3.  ```
+        <X509Certificate>
         MIIC8DCCAdigAwIBAgIQQH4r9rnBiKlPEFVEjpdNhTANBgkqhkiG9w0BAQ
         .......
         Y9B1uSBpb4OmtWZ/LRNzHBDcDNbR oQ6PiPd2yWhtUfbYClOoNcMFOkk8E
-        </X509Certificate>`
+        </X509Certificate>
+        ```
 
 === ":octicons-image-16: Example"
 
@@ -204,7 +209,7 @@ If you already have users in snowflake but when they were created they didn't us
     ```sql linenums="1"
     use role accountadmin;
     
-    alter user <CURRENT USERNAME rename to "<USER EMAIL";
+    alter user <USERNAME> rename to "<USER EMAIL>";
     ```
 
 === ":octicons-image-16: Example"
