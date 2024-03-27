@@ -57,7 +57,7 @@ nav:
   - Fivetran:
       - Setup: fivetran/setup/setup.md
       - Sources:
-        - Google Analytics: fivetran/sources/google_analytics.md
+        - Google Analytics: fivetran/sources/google_analytics/google_analytics.md
 
 
 markdown_extensions:
