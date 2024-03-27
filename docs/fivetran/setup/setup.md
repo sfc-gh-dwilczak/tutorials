@@ -28,11 +28,11 @@ And finish it off by providring the necessary permission for fivetran. All we ha
     ```sql linenums="1"
     -- create variables for user / password / role / warehouse / database 
       -- Everything (other than the password) needs to be uppercase for it to work.
-    set role_name = 'SERVICE_FIVETRAN';
-    set user_name = 'SERVICE_FIVETRAN';
-    set user_password = 'Password12'; -- UPDATE PASSWORD
+    set role_name      = 'SERVICE_FIVETRAN';
+    set user_name      = 'SERVICE_FIVETRAN';
+    set user_password  = '...'; -- UPDATE PASSWORD
     set warehouse_name = 'SERVICE_FIVETRAN';
-    set database_name = 'RAW';
+    set database_name  = 'RAW';
 
     -- change role to securityadmin for user / role steps
     use role securityadmin;
