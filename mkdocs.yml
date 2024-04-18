@@ -40,6 +40,8 @@ nav:
     - SFTP: 
       - Username and password: snowflake/sftp/username_password.md
       - SSH Key: snowflake/sftp/ssh_key.md
+    - Notebooks:
+     - PDF's / RAG: snowflake/notebooks/RAG/pdf/pdf.md
     - Jupyter Notebook:
       - Basics: snowflake/jupyter/basics.md
       - ML Model: snowflake/jupyter/model.md
