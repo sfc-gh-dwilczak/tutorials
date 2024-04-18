@@ -1,7 +1,7 @@
 # Chatgpt in Snowflake
 In this tutorial we will show you how to perform RAG on a series of PDF's in Snowflake using Snowflake notebooks. To make it usable to users we will also add a streamlit application in our notebook so that it's simple for users to interat with the content.
 
-IMAGE HERE?
+![Overview](images/09.png)
 
 ## Video
 PUT SHAWN VIDEO HERE FOR NOW.
@@ -74,5 +74,10 @@ Lookup and added these three packages:
 You can either run all the cells or one by one.
 ![Navigate](images/06.png)
 
+## Dataflow
+Here we can see the data flow of of our notebook / application.
+![Dataflow](images/07.png)
+
 ## Step by Step
 I will add this section later but for now the video will be best. 
+
