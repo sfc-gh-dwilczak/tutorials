@@ -4,7 +4,7 @@ In this tutorial we will show you how to perform RAG on a series of PDF's in Sno
 ![Overview](images/09.png)
 
 ## Video
-PUT SHAWN VIDEO HERE FOR NOW.
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/SZAAIAl31UI?si=UK4jA8fDrbm2vlFi" style="display:block;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Requirement
 If you have a Snowflake account, reach out to your account team to have these enabled.
@@ -12,8 +12,8 @@ If you have a Snowflake account, reach out to your account team to have these en
 - You will need access to our [embed/vector LLM functions](https://docs.snowflake.com/LIMITEDACCESS/vector-data-type) which is still currently in private preview.
 
 ## Download
-- [Notebook]()
-- [PDF files]()
+- [Notebook](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/notebooks/RAG/pdf/pdf/data/notebook.ipynb)
+- [PDF files](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/notebooks/RAG/pdf/pdf/data/pdfs.zip)
 
 ## Setup
 In this section we will do the setup to support our notebook. Lets open a notebook and run the code below.
@@ -48,6 +48,11 @@ In this section we will do the setup to support our notebook. Lets open a notebo
     */
     create or replace stage udf;
     create or replace stage folder;
+    ```
+=== ":octicons-image-16: Result"
+
+    ```sql
+    Stage area FOLDER successfully created. 
     ```
 
 
