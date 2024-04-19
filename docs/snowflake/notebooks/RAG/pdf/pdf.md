@@ -5,9 +5,10 @@ In this tutorial we will show you how to perform RAG on a series of PDF's in Sno
 <iframe width="850px" height="478px" src="https://www.youtube.com/embed/SZAAIAl31UI?si=UK4jA8fDrbm2vlFi" style="display:block;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Requirement
-If you have a Snowflake account, reach out to your account team to have these enabled.
-- You will need access to Snowflake Notebooks which is still currently in private preview.
-- You will need access to our [embed/vector LLM functions](https://docs.snowflake.com/LIMITEDACCESS/vector-data-type) which is still currently in private preview.
+If you have a Snowflake account, reach out to your account team to have these enabled.  
+
+- You will need access to Snowflake Notebooks which is still currently in private preview.  
+- You will need access to our [embed/vector LLM functions](https://docs.snowflake.com/LIMITEDACCESS/vector-data-type) which is still currently in private preview.  
 
 ## Download
 - [Notebook](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/notebooks/RAG/pdf/data/notebook.ipynb)
@@ -70,10 +71,11 @@ Input the name of the notebook, select the database, schema and warehouse.
 Select the packages drop-down.
 ![Drop-Down](images/04.png)
 
-Lookup and added these three packages:
-- langchain
-- pypdf2
-- snowflake-snowpark-python
+Lookup and added these three packages:  
+
+- langchain  
+- pypdf2  
+- snowflake-snowpark-python  
 
 ![Package select](images/05.png)
 
