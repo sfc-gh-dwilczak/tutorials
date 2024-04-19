@@ -4,10 +4,10 @@ In this tutorial we will show you how to perform RAG on a series of PDF's in Sno
 ## Video
 <iframe width="850px" height="478px" src="https://www.youtube.com/embed/SZAAIAl31UI?si=UK4jA8fDrbm2vlFi" style="display:block;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-## Requirement
+## Requirements
 If you have a Snowflake account, reach out to your account team to have these enabled.  
 
-- You will need access to Snowflake Notebooks which is still currently in private preview.  
+- You will need access to [Snowflake Notebooks](https://docs.snowflake.com/LIMITEDACCESS/snowsight-notebooks/ui-snowsight-notebooks-about) which is still currently in private preview.  
 - You will need access to our [embed/vector LLM functions](https://docs.snowflake.com/LIMITEDACCESS/vector-data-type) which is still currently in private preview.  
 
 ## Download
