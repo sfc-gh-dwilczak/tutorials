@@ -10,8 +10,8 @@ If you have a Snowflake account, reach out to your account team to have these en
 - You will need access to our [embed/vector LLM functions](https://docs.snowflake.com/LIMITEDACCESS/vector-data-type) which is still currently in private preview.
 
 ## Download
-- [Notebook](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/notebooks/RAG/pdf/pdf/data/notebook.ipynb)
-- [PDF files](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/notebooks/RAG/pdf/pdf/data/pdfs.zip)
+- [Notebook](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/notebooks/RAG/pdf/data/notebook.ipynb)
+- [PDF files](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/notebooks/RAG/pdf/data/pdfs.zip)
 
 ## Tutorial
 Lets start by setting up some objects in snowflake and follow it up with uploading and using the notebook.
