@@ -15,7 +15,10 @@ If you have a Snowflake account, reach out to your account team to have these en
 - [Notebook](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/notebooks/RAG/pdf/pdf/data/notebook.ipynb)
 - [PDF files](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/notebooks/RAG/pdf/pdf/data/pdfs.zip)
 
-## Setup
+## Tutorial
+Lets start by setting up some objects in snowflake and follow it up with uploading and using the notebook.
+
+### Setup
 In this section we will do the setup to support our notebook. Lets open a notebook and run the code below.
 
 === ":octicons-image-16: Setup"
@@ -56,7 +59,7 @@ In this section we will do the setup to support our notebook. Lets open a notebo
     ```
 
 
-## Notebook
+### Notebook
 Let's start with going to the notebooks.
 ![Navigate](images/01.png)
 
