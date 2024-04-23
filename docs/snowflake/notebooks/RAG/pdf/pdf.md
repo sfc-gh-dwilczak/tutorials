@@ -57,6 +57,9 @@ In this section we will do the setup to support our notebook. Lets open a notebo
     Stage area FOLDER successfully created. 
     ```
 
+### Upload PDF's
+Using the UI we will upload our downloaded pdf's into our stage (folder on Snowflake).
+
 
 ### Notebook
 Let's start with going to the notebooks.
