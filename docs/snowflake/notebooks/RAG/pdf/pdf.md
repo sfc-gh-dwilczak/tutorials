@@ -58,8 +58,17 @@ In this section we will do the setup to support our notebook. Lets open a notebo
     ```
 
 ### Upload PDF's
-Using the UI we will upload our downloaded pdf's into our stage (folder on Snowflake).
+Using the UI we will upload our downloaded pdf's into our stage (folder on Snowflake). Lets go to the stage in our snowflake account.
+![Navigate to stage](images/10.png)
 
+Once we click the "+ Files" button we will need to drag or select the [pdf files](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/notebooks/RAG/pdf/data/pdfs.zip) that downloaded earlier.
+![Select files](images/11.png)
+
+Once selected we can click upload.
+![Upload](images/12.png)
+
+Once upload we will see the files in the stage. Next we can go to notebooks.
+![Show files](images/13.png)
 
 ### Notebook
 Let's start with going to the notebooks.
