@@ -149,7 +149,7 @@ Lets now use snowflake to connect to our repository.
     | Git Repository TUTORIAL was successfully created. |
 
 
-## Examples
+## Examples :octicons-feed-tag-16:
 Now that we have our Snowflake and Git repository setup lets go through a few examples.
 
 ### Navigation
