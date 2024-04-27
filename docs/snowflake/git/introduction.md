@@ -4,7 +4,7 @@ In this tutorial we will show you how to integrate Git into your Snowflake accou
 - Pull the repo into Snowflake and navigating around.  
 - Create a stored procedure, streamlit dashboard, and run a query from files that lives on github.  
 
-Credit for this tutorial goes to [Mark Boos](https://www.linkedin.com/in/mark-w-boos/)!  
+Credit for the orginial tutorial goes to [Mark Boos](https://www.linkedin.com/in/mark-w-boos/)!  
 
 ## Video
 Video in development.
