@@ -15,9 +15,6 @@ You will need a [github](https://github.com/) repo and the ability to [create a 
 ## Download
 - [Repository files](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/git/data/repo.zip)
 
-## Tutorial
-Lets start by setting up some objects in snowflake and follow it up with uploading and using the notebook.
-
 ## Setup :octicons-feed-tag-16:
 In this section we will upload the example code to a repository and then setup Snowflake:
 
@@ -125,12 +122,12 @@ Lets now use snowflake to connect to our repository.
     ```sql linenums="1"
     use role accountadmin;
 
-    create or replace secret github_secret
+    create secret github_secret
         type = password
         username = 'sfc-gh-dwilczak'
         password = 'huifuhf.....f94894h2';
 
-    create or replace api integration git_api_integration
+    create api integration git_api_integration
         api_provider = git_https_api
         api_allowed_prefixes = ('https://github.com/sfc-gh-dwilczak')
         allowed_authentication_secrets = (github_secret)
@@ -138,7 +135,7 @@ Lets now use snowflake to connect to our repository.
 
     use role sysadmin;
   
-    create or replace git repository tutorial
+    create git repository tutorial
         api_integration = git_api_integration
         git_credentials = git_secret
         origin = 'https://github.com/sfc-gh-dwilczak/tutorial';
@@ -147,9 +144,9 @@ Lets now use snowflake to connect to our repository.
 
 === ":octicons-image-16: Result"
 
-    ```sql linenums="1"
-    ADD RESULT HERE
-    ```
+    | status                                            |
+    |---------------------------------------------------|
+    | Git Repository TUTORIAL was successfully created. |
 
 
 ## Examples
