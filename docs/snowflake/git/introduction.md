@@ -98,12 +98,10 @@ Lets now use snowflake to connect to our repository.
         api_allowed_prefixes = ('<Base Github URL>') /* (3)! */
         allowed_authentication_secrets = (github_secret)
         enabled = true;
-
-    use role sysadmin;
   
     create or replace git repository tutorial
         api_integration = git_api_integration
-        git_credentials = git_secret
+        git_credentials = github_secret
         origin = '<REPOSITORY URL>'; /* (4)! */
 
     ```
@@ -132,12 +130,10 @@ Lets now use snowflake to connect to our repository.
         api_allowed_prefixes = ('https://github.com/sfc-gh-dwilczak')
         allowed_authentication_secrets = (github_secret)
         enabled = true;
-
-    use role sysadmin;
   
     create git repository tutorial
         api_integration = git_api_integration
-        git_credentials = git_secret
+        git_credentials = github_secret
         origin = 'https://github.com/sfc-gh-dwilczak/tutorial';
     ```
 
