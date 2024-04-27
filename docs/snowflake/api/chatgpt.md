@@ -15,7 +15,7 @@ In this section we will do the setup to support our user-defined function by:
     === ":octicons-image-16: Database, schema and warehouse"
 
         ```sql
-        use role accountadmin;
+        use role sysadmin;
         
         -- Create a database to store our schemas.
         create database if not exists 
@@ -41,6 +41,8 @@ In this section we will do the setup to support our user-defined function by:
 === ":octicons-image-16: Setup"
 
     ```sql linenums="1"
+    use role accountadmin;
+
     create or replace network rule chatgpt_network_rule
         mode = egress
         type = host_port

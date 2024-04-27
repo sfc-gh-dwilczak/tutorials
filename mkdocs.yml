@@ -52,6 +52,8 @@ nav:
       - JDBC: snowflake/connection/jdbc/jdbc.md
     - API's:
       - Chatgpt: snowflake/api/chatgpt.md
+    - Git:
+      - Introduction: snowflake/git/introduction.md
     - Account:
       - Change Service Level: snowflake/account/service_level.md
     - SSO:
