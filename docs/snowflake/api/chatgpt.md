@@ -71,7 +71,6 @@ In this section we will do the setup to support our user-defined function by:
 
 
 ### Function
-
 Let's create the python user defined function to make it easy to access later.
 
 === ":octicons-image-16: Function"

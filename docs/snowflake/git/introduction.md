@@ -4,7 +4,7 @@ In this tutorial we will show you how to integrate Git into your Snowflake accou
 Credit for the orginial tutorial goes to [Mark Boos](https://www.linkedin.com/in/mark-w-boos/)!  
 
 ## Video
-<iframe width="850px" src="https://www.youtube.com/embed/WEklZ63mMr4?si=35VTyboIMMQGX1DU" style="display:block;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/WEklZ63mMr4?si=35VTyboIMMQGX1DU" style="display:block;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Requirements
 You will need a [github](https://github.com/) repo and the ability to [create a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). We will show how to create the token in this tutorial. 
