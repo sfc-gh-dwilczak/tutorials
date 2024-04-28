@@ -188,7 +188,7 @@ Finally push the image to your image repository living on Snowflake.
 Lets switch back to snowflake to start our container. 
 
 ### Start Service
-Create the service with our inline service specification..
+Create the service to host the container with our inline service specification..
 
 === ":octicons-image-16: SQL"
 
@@ -220,11 +220,10 @@ Create the service with our inline service specification..
     |----------------------------------------------------------------------|
     | br2sbye-sfsenorthamerica-wilczak-videos2.snowflakecomputing.app      |
 
-### Set role
+### Set default role
 Before we go to our URL. Please make sure your default role is set to Sysadmin
 ![Role default](images/02.png)
 
-Go to URL
 Now go to the webiste url, login and see your amazing website!
 ![Terminal](images/01.png)
 
