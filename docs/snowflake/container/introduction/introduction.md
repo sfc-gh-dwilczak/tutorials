@@ -185,7 +185,10 @@ Finally push the image to your image repository living on Snowflake.
     ```
 
 ## Run :octicons-feed-tag-16:
-Lets switch back to snowflake to start our container. Create the service with our inline service specification and go to the URL given.
+Lets switch back to snowflake to start our container. 
+
+### Start Service
+Create the service with our inline service specification..
 
 === ":octicons-image-16: SQL"
 
@@ -217,12 +220,13 @@ Lets switch back to snowflake to start our container. Create the service with ou
     |----------------------------------------------------------------------|
     | br2sbye-sfsenorthamerica-wilczak-videos2.snowflakecomputing.app      |
 
+### Set role
 Before we go to our URL. Please make sure your default role is set to Sysadmin
 ![Role default](images/02.png)
 
+Go to URL
 Now go to the webiste url, login and see your amazing website!
 ![Terminal](images/01.png)
-
 
 ## Clean up script :octicons-feed-tag-16:
 If you don't plan to keep this running. Which I don't reccomend considering it's using .11 credits per hour. Here is a clean up script.
