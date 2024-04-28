@@ -1,5 +1,5 @@
 # Container Services - Introduction
-Goal of this tutorial is to get a introduction to Snowflake Container services.
+Goal of this tutorial is to get a introduction to Snowflake Container services by creating a flask website and then uploading / running it in Snowflake.
 
 ## Video
 Video currently in development.
@@ -65,7 +65,7 @@ Let's start by setting up Snowflake before we jump to docker. Create a worksheet
         max_nodes = 1
         instance_family = cpu_x64_xs;
 
-    -- Image registry to store our application code.
+    -- Image registry to upload our docker image to.
     create or replace image repository images;
 
     -- Give us the url to upload our docker container to.
@@ -84,7 +84,7 @@ Let's start by setting up Snowflake before we jump to docker. Create a worksheet
 ### Snowflake
 
 ### Build Application
-Our goal is to run the application locally and check if it works and then upload the dockerfile / image to our snowflake image repository so it can be hosted on Snowflake container services.
+Our goal is to run the application locally and check if it works and then upload the built docker image to our snowflake image repository so it can be hosted on Snowflake container services.
 
 !!! Note
     Please install docker desktop - [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
@@ -100,6 +100,19 @@ NEED TO MAKE THIS STEP MORE HELPFUL!!!!!
     docker build --rm -t flask:website .
     docker run --rm -p 8080:8080 flask:website
     ```
+
+=== ":octicons-image-16: Result"
+
+    ```linenums="1"
+    WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+    * Serving Flask app 'app'
+    * Debug mode: off
+    WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+    * Running on all addresses (0.0.0.0)
+    * Running on http://127.0.0.1:8080
+    * Running on http://172.17.0.2:8080
+    ```
+
 
 Now you can go to [Localhost](http://localhost:8080/) or the direct local url [http://127.0.0.1:8080/](http://127.0.0.1:8080/). To see what the website will look like before we upload it.
 
@@ -208,11 +221,11 @@ Create the service with our inline service specification and go to the URL given
     | br2sbye-sfsenorthamerica-wilczak-videos2.snowflakecomputing.app      |
 
 Before we go to our URL. Please make sure your default role is set to Sysadmin
-1.  ![Role default](images/2.png)
+1.  ![Role default](images/02.png)
 
 
 Now go to the webiste url, login and see your amazing website!
-1.  ![Terminal](images/1.png)
+1.  ![Terminal](images/01.png)
 
 
 ## Clean up script :octicons-feed-tag-16:
