@@ -12,6 +12,9 @@ Video currently in development.
 - [Flask Application and Docker File](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/container/introduction/data/website.zip)
 
 ## Setup :octicons-feed-tag-16:
+Lets go through some setup before to go into our application.
+
+### Snowflake
 Let's start by setting up Snowflake before we jump to docker. Create a worksheet in snowflake and add / run the code below.
 
 ??? note "If you don't have a database, schema or warehouse yet."
@@ -80,10 +83,7 @@ Let's start by setting up Snowflake before we jump to docker. Create a worksheet
     | sfsenorthamerica-wilczak-videos2.registry.snowflakecomputing.com/raw/website/images |
 
 
-
-### Snowflake
-
-### Build Application
+### Docker
 Our goal is to run the application locally and check if it works and then upload the built docker image to our snowflake image repository so it can be hosted on Snowflake container services.
 
 !!! Note
@@ -184,11 +184,8 @@ Finally push the image to your image repository living on Snowflake.
     website: digest: sha256:f0ef0b8e2a6e9fa218fd7cd771bce6befeecd1d62a26c740df8fb8b45ed6831c size: 3045
     ```
 
-## Snowflake :octicons-feed-tag-16:
-Lets switch back to snowflake to start our container.
-
-### Run the container service
-Create the service with our inline service specification and go to the URL given.
+## Run :octicons-feed-tag-16:
+Lets switch back to snowflake to start our container. Create the service with our inline service specification and go to the URL given.
 
 === ":octicons-image-16: SQL"
 
@@ -228,7 +225,7 @@ Now go to the webiste url, login and see your amazing website!
 1.  ![Terminal](images/01.png)
 
 
-## Clean up script :octicons-feed-tag-16:
+### Clean up script :octicons-feed-tag-16:
 If you don't plan to keep this running. Which I don't reccomend considering it's using .11 credits per hour. Here is a clean up script.
 
 === ":octicons-image-16: SQL"
