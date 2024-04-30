@@ -1,6 +1,8 @@
 # Container Services - Introduction
 Goal of this tutorial is to download the llama3 model from huggingface and host it in container services. We will also use the model via a model and (UDF) in Snowflake.
 
+![Overview](images/03.png)
+
 ## Video
 Video currently in development.
 
