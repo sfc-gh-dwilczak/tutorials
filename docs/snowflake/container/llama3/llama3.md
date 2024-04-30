@@ -49,7 +49,6 @@ Let's start by setting up Snowflake before we jump to docker. Create a worksheet
     ```sql linenums="1"
     -- Use account admin for the integration.
     use role accountadmin;
-    use role accountadmin;
 
     ------ Setup network connections to download model and access to website. -----
     create or replace network rule hf_network_rule
@@ -292,12 +291,11 @@ Create the service to host the container that will give us our api and frontend 
     | br2sbye-sfsenorthamerica-wilczak-videos2.snowflakecomputing.app      |
 
 ### Set default role
-Before we go to our URL. Please make sure your default role is set to Sysadmin
+Before we go to our URL. Please make sure your default role is set to Sysadmin.
 ![Role default](images/02.png)
 
 ### Website
 Now go to the webiste url, login and see your amazing website!
-![Terminal](images/01.png)
 
 ### SQL - UDF
 Now lets query the model via a user defined function.
