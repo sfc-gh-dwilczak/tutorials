@@ -202,12 +202,12 @@ Create the service to host the container with our inline service specification..
         spec:
             container:  
             - name: website
-            image: /raw/website/images/flask:website
+              image: /raw/website/images/website
             
             endpoint:
             - name: app
-            port: 8080
-            public: true
+              port: 8080
+              public: true
         $$;
 
     -- Give us a URL to see our application.
