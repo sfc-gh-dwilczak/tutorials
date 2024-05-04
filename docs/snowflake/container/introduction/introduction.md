@@ -202,7 +202,7 @@ Create the service to host the container with our inline service specification..
         spec:
             container:  
             - name: website
-              image: /raw/website/images/website
+              image: /raw/website/images/flask:website
             
             endpoint:
             - name: app
