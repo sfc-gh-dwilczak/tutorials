@@ -36,7 +36,8 @@ nav:
     - Azure:
       - Blob: snowflake/azure/blob.md
     - Google Cloud: 
-      - Cloud Storage: snowflake/google/cloud_storage.md
+      - Cloud Storage: snowflake/google/storage/cloud_storage.md
+      - Iceberg: snowflake/google/iceberg/iceberg.md
     - SFTP: 
       - Username and password: snowflake/sftp/username_password.md
       - SSH Key: snowflake/sftp/ssh_key.md
