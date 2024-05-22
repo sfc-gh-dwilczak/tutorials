@@ -5,11 +5,11 @@ Goal of this tutorial is to get a introduction to Snowflake Container services b
 Video currently in development.
 
 ## Requirements 
-- Be in a [container services enabled region](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview#available-regions).  
-- You [CAN NOT be on a trial account](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview).
+- Be in a container services enabled region.[Link](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview#available-regions)  
+- You can NOT be on a trial account. ([Link](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview))
 
 ## Download
-- [Flask Application and Docker File](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/container/introduction/data/website.zip)
+- Files [Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/container/introduction/data/website.zip)
 
 ## Setup :octicons-feed-tag-16:
 Lets go through some setup before to go into our application.
@@ -91,8 +91,8 @@ Our goal is to run the application locally and check if it works and then upload
 
 
 Using terminal, navigate to the folder that has the docker file you downloaded. 
+![Terminal](images/03.png)
 
-NEED TO MAKE THIS STEP MORE HELPFUL!!!!!
 
 === ":octicons-image-16: Build and Run"
 

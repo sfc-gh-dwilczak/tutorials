@@ -1,5 +1,5 @@
-# Managed Iceberg on GCP via Snowflake
-In this tutorial we will show you how to use iceberg tables inside of Snowflake. We will be using an [external volume](https://docs.snowflake.com/en/sql-reference/sql/create-external-volume) to make the integration to GCP.  This tutorial assumes you have nothing in your Snowflake account ([Trial](https://signup.snowflake.com/)) and no complex security needs.
+# Native app + Container Services (Intro)
+In this tutorial we will show you how to use .
 
 ## Video
 Video is in development.
