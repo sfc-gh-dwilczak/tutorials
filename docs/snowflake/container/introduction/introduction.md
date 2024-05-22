@@ -5,11 +5,11 @@ Goal of this tutorial is to get a introduction to Snowflake Container services b
 Video currently in development.
 
 ## Requirements 
-- Be in a container services enabled region.[Link](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview#available-regions)  
+- Be in a container services enabled region.([Link](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview#available-regions))
 - You can NOT be on a trial account. ([Link](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview))
 
 ## Download
-- Files [Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/container/introduction/data/website.zip)
+- Files ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/container/introduction/data/website.zip))
 
 ## Setup :octicons-feed-tag-16:
 Lets go through some setup before to go into our application.
