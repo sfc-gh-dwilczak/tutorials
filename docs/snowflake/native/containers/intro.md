@@ -1,4 +1,4 @@
-# Container Services - Introduction
+# Native App + Container Services (Intro)
 Goal of this tutorial is to get a introduction to Native App + Container Services. In this tutorial use a containerized website and then deploy it via a Native app. This is the same container we used in our [container services introduction](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/container/introduction/introduction/) tutorial.
 
 ## Video
@@ -13,7 +13,7 @@ Video currently in development.
 - Files ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/native/containers/data/files.zip))
 
 ## Setup :octicons-feed-tag-16:
-Lets go through some setup before to go into our application.
+Lets go through some setup before going to docker / building our native application.
 
 ### Snowflake
 Let's start by setting up Snowflake before we jump to docker. Create a worksheet in Snowflake and add / run the code below.
@@ -67,7 +67,7 @@ Our goal is to run the application locally and check if it works and then upload
     Please install docker desktop - [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
 
 
-Using terminal, navigate into the "website" folder. 
+Using terminal, navigate into the "website" folder. And run the code below to build the application locally.
 ![Terminal](images/10.png)
 
 
@@ -91,7 +91,7 @@ Using terminal, navigate into the "website" folder.
     ```
 
 
-Now you can go to [Localhost](http://localhost:8080/) or the direct local url [http://127.0.0.1:8080/](http://127.0.0.1:8080/). To see what the website will look like before we upload it.
+Now you can go to [Localhost](http://localhost:8080/) or the direct local url [http://127.0.0.1:8080/](http://127.0.0.1:8080/). To see what the website will look like before we upload it. Press Ctrl+C to stop the application.
 
 ### Upload
 
