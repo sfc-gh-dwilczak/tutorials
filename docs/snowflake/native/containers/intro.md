@@ -58,7 +58,7 @@ Next we'll take the files stage folder files and upload them.
 ![Terminal](images/02.png)
 
 
-## Docker
+## Docker :octicons-feed-tag-16:
 Our goal is to run the application locally and check if it works and then upload the built docker image to our snowflake image repository so it can be hosted on Snowflake container services followed by a Native App.
 
 !!! Note
@@ -160,7 +160,7 @@ Finally push the image to your image repository living on Snowflake.
     ```
 
 
-## Build Application
+## Build Application :octicons-feed-tag-16:
 Now were ready to build our application package and test it by building/testing it in our Snowflake account. Lets go back to our worksheet and copy the code below.
 
 === ":octicons-image-16: Application"
