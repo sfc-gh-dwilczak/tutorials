@@ -51,12 +51,12 @@ Let's start by setting up Snowflake before we jump to docker. Create a worksheet
 
  Copy the resulting URL, we will use it in Docker.
 
-### Upload Native App
+### Upload Native App Files
 In this section we will go back to our "provider_db/provider_schema" database/schema and upload our [native app code](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/native/containers/data/files.zip) we got earlier into the "code" stage.
 
 ![Terminal](images/01.png)
 
-Next we'll take the files stage folder files and upload them. 
+Next we'll take the files from the "stage" folder and upload them. 
 ![Terminal](images/02.png)
 
 
