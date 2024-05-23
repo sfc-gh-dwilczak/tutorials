@@ -16,7 +16,7 @@ Video currently in development.
 Lets go through some setup before to go into our application.
 
 ### Snowflake
-Let's start by setting up Snowflake before we jump to docker. Create a worksheet in Snowflake and add / run the code below. Copy the resulting URL, we will use it in Docker.
+Let's start by setting up Snowflake before we jump to docker. Create a worksheet in Snowflake and add / run the code below.
 
 === ":octicons-image-16: Setup"
 
@@ -49,6 +49,8 @@ Let's start by setting up Snowflake before we jump to docker. Create a worksheet
     |-------------------------------------------------------------------------------------|
     | sfsenorthamerica-wilczak-videos2.registry.snowflakecomputing.com/raw/website/images |
 
+ Copy the resulting URL, we will use it in Docker.
+
 ### Upload Native App
 In this section we will go back to our "provider_db/provider_schema" database/schema and upload our [native app code](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/native/containers/data/files.zip) we got earlier into the "code" stage.
 
@@ -66,7 +68,7 @@ Our goal is to run the application locally and check if it works and then upload
 
 
 Using terminal, navigate into the "website" folder. 
-![Terminal](images/03.png)
+![Terminal](images/10.png)
 
 
 === ":octicons-image-16: Build and Run"
@@ -135,9 +137,9 @@ Finally push the image to your image repository living on Snowflake.
 === ":octicons-sign-out-16: Example"
 
     ```bash linenums="1"
-   docker push sfsenorthamerica-demo-dwilczak.registry.snowflakecomputing.com/provider_db/provider_schema/docker/website
-
+    docker push sfsenorthamerica-demo-dwilczak.registry.snowflakecomputing.com/provider_db/provider_schema/docker/website
     ```
+
 === ":octicons-sign-out-16: Result"
 
     ```
