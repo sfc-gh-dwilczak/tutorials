@@ -11,8 +11,9 @@ Video currently in development.
 - Must have Native App + Container Services enabled on your account. Please reach out to Quinn in the #feat-na-spcs.
 
 ## Download
-- Files for simple website - ([Image](images/09.png)) ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/native/containers/data/Files.zip)) 
-- Files for bootstrap website - ([Image](#)) ([Link](#)) 
+Both website are built the same way.
+- Files for simple website - ([Image](images/09.png)) ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/native/containers/data/simple/Files.zip)) 
+- Files for fancy website - ([Image](images/11.png)) ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/native/containers/data/fancy/Files.zip)) 
 
 ## Setup :octicons-feed-tag-16:
 Lets go through some setup before going to docker / building our native application.
@@ -215,7 +216,7 @@ We'll login with a user who has the accountadmin role.
 ![Login](images/08.png)
 
 Now we can see the amazing website we have made in Native apps and Container Services on Snowflake.
-![See the Application](images/09.png)
+![See the Application](images/11.png)
 
 
 ## (Extra) Sharing
