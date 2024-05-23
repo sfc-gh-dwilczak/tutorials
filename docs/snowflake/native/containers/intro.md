@@ -12,11 +12,15 @@ Video currently in development.
 
 ## Download
 - Files ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/native/containers/data/Files.zip))
+
 ## Setup :octicons-feed-tag-16:
 Lets go through some setup before going to docker / building our native application.
 
 ### Snowflake
 Let's start by setting up Snowflake before we jump to docker. Create a worksheet in Snowflake and add / run the code below.
+
+!!! note
+    Copy the resulting URL, we will use it in Docker.
 
 === ":octicons-image-16: Setup"
 
@@ -49,7 +53,7 @@ Let's start by setting up Snowflake before we jump to docker. Create a worksheet
     |-------------------------------------------------------------------------------------|
     | sfsenorthamerica-wilczak-videos2.registry.snowflakecomputing.com/raw/website/images |
 
- Copy the resulting URL, we will use it in Docker.
+
 
 ### Upload Native App Files
 In this section we will go back to our "provider_db/provider_schema" database/schema and upload our [native app code](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/native/containers/data/files.zip) we got earlier into the "code" stage.
@@ -115,7 +119,7 @@ Now that we have our image created. Lets upload it to Snowflake. We will need ou
     docker tag website sfsenorthamerica-demo-dwilczak.registry.snowflakecomputing.com/provider_db/provider_schema/docker/website
     ```
 
-Next docker login to our snowflake image repo and upload the image. We will use the user with accountadmin access.
+Next docker login to our snowflake image repo using only the part of the url prior to the first forward slash. We will use the user with accountadmin access.
 === ":octicons-image-16: Code"
 
     ```bash linenums="1"
@@ -197,7 +201,10 @@ Grant the application the privligies to create a warehouse, compute pool, and en
 Click activate, this will start the build process.
 ![Activate](images/05.png)
 
-The build will go into a loading screen. This can load for upward of a few minutes for a simple application and longer for more complex apps. I recommend to refresh the screen once in a while, the UI might just hung up.
+!!! warning
+     I recommend to refresh the screen once in a while, the UI might just hung up.
+
+The build will go into a loading screen. This can load for upward of a few minutes for a simple application and longer for more complex apps.
 ![Waiting](images/06.png)
 
 Once the application is installed we can launch the app.
@@ -207,12 +214,12 @@ We'll login with a user who has the accountadmin role.
 ![Login](images/08.png)
 
 Now we can see the amazing website we have made in Native apps and Container Services on Snowflake.
-![See the Application](images/08.png)
-
+![See the Application](images/09.png)
 
 
 ## (Extra) Sharing
-!!! caution
+
+!!! warning
     Your second account will also have to be enabled.
 
 If you want to share your application, you will have to set a default version.
