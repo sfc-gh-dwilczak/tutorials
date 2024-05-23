@@ -211,7 +211,7 @@ Now we can see the amazing website we have made in Native apps and Container Ser
 
 
 
-### (Extra) Sharing
+## (Extra) Sharing
 !!! caution
     Your second account will also have to be enabled.
 
