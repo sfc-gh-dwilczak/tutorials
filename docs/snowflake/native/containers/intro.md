@@ -11,7 +11,8 @@ Video currently in development.
 - Please install docker desktop - [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
 
 ## Download
-- Files ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/native/containers/data/Files.zip))
+- Files for simple website - ([Image](images/09.png)) ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/native/containers/data/Files.zip)) 
+- Files for bootstrap website - ([Image](#)) ([Link](#)) 
 
 ## Setup :octicons-feed-tag-16:
 Lets go through some setup before going to docker / building our native application.
