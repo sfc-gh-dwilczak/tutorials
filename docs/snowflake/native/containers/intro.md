@@ -7,8 +7,8 @@ Video currently in development.
 ## Requirements 
 - Be in a container services enabled region.([Link](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview#available-regions))
 - You can NOT be on a trial account. ([Link](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview))
-- Must have Native App + Container Services enabled on your account. Please reach out to Quinn in the #feat-na-spcs.
 - Please install docker desktop - [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
+- Must have Native App + Container Services enabled on your account. Please reach out to Quinn in the #feat-na-spcs.
 
 ## Download
 - Files for simple website - ([Image](images/09.png)) ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/native/containers/data/Files.zip)) 
