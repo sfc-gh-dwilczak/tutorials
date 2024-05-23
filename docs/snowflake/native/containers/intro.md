@@ -21,7 +21,7 @@ Lets go through some setup before going to docker / building our native applicat
 Let's start by setting up Snowflake before we jump to docker. Create a worksheet in Snowflake and add / run the code below.
 
 !!! note
-    Copy the resulting URL, we will use it in Docker.
+    Copy the resulting URL, we will use it in Docker later.
 
 === ":octicons-image-16: Setup"
 
