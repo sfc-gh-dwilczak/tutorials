@@ -10,13 +10,13 @@ Video currently in development.
 - Must have Native App + Container Services enabled on your account. Please reach out to Quinn in the #feat-na-spcs.
 
 ## Download
-- Files ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/container/introduction/data/website.zip))
+- Files ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/native/containers/data/files.zip))
 
 ## Setup :octicons-feed-tag-16:
 Lets go through some setup before to go into our application.
 
 ### Snowflake
-Let's start by setting up Snowflake before we jump to docker. Create a worksheet in Snowflake and add / run the code below. Copy the URL resulting URL, we will use it in Docker.
+Let's start by setting up Snowflake before we jump to docker. Create a worksheet in Snowflake and add / run the code below. Copy the resulting URL, we will use it in Docker.
 
 === ":octicons-image-16: Setup"
 
@@ -49,6 +49,13 @@ Let's start by setting up Snowflake before we jump to docker. Create a worksheet
     |-------------------------------------------------------------------------------------|
     | sfsenorthamerica-wilczak-videos2.registry.snowflakecomputing.com/raw/website/images |
 
+### Upload Native App
+In this section we will go back to our "provider_db/provider_schema" database/schema and upload our [native app code](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/native/containers/data/files.zip) we got earlier into the "code" stage.
+
+![Terminal](images/01.png)
+
+Next we'll take the files stage folder files and upload them. 
+![Terminal](images/02.png)
 
 
 ## Docker
@@ -106,7 +113,7 @@ Now that we have our image created. Lets upload it to Snowflake. We will need ou
     docker tag website sfsenorthamerica-demo-dwilczak.registry.snowflakecomputing.com/provider_db/provider_schema/docker/website
     ```
 
-Next docker login to our snowflake image repo and upload the image. We will use the login name that has access to **sysadmin** role.
+Next docker login to our snowflake image repo and upload the image. We will use the user with accountadmin access.
 === ":octicons-image-16: Code"
 
     ```bash linenums="1"
@@ -152,14 +159,6 @@ Finally push the image to your image repository living on Snowflake.
     latest: digest: sha256:1d6431ee1c749261d35129ee07ebc34ea2868fe2473e0b226078cf774951dc99 size: 3045
     ```
 
-
-## Upload Native App
-In this section we will go back to our "provider_db/provider_schema" database/schema and upload our [native app code](#) into the "code" stage.
-
-![Terminal](images/01.png)
-
-Next we'll take the files stage folder files and upload them. 
-![Terminal](images/02.png)
 
 ## Build Application
 Now were ready to build our application package and test it by building/testing it in our Snowflake account. Lets go back to our worksheet and copy the code below.
