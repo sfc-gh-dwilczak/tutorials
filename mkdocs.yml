@@ -59,7 +59,7 @@ nav:
     - SSO:
       - Azure Active Directory: snowflake/sso/azure_ad.md
     - Native App:
-      - Container Services: snowflake/native/container/intro.md
+      - Container Services: snowflake/native/containers/intro.md
   - Fivetran:
       - Setup: fivetran/setup/setup.md
       - Sources:
