@@ -11,9 +11,8 @@ Video currently in development.
 - Must have Native App + Container Services enabled on your account. Please reach out to Quinn in the #feat-na-spcs.
 
 ## Download
-Both website are built the same way.
-- Files for simple website - ([Image](images/09.png)) ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/native/containers/data/simple/Files.zip)) 
-- Files for fancy website - ([Image](images/11.png)) ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/native/containers/data/fancy/Files.zip)) 
+- Files for simple website - ([Image](images/09.png)) ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/native/containers/data/simple/Files.zip))   
+- Files for fancy website - ([Image](images/11.png)) ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/native/containers/data/fancy/Files.zip))   
 
 ## Setup :octicons-feed-tag-16:
 Lets go through some setup before going to docker / building our native application.
