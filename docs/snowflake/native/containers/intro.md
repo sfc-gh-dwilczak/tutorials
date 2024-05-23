@@ -69,7 +69,7 @@ Next we'll take the files from the "stage" folder and upload them.
 Our goal is to run the application locally and check if it works and then upload the built docker image to our snowflake image repository so it can be hosted on Snowflake container services followed by a Native App.
 
 !!! Note
-    Please install docker desktop - [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
+    Please install docker desktop and have it running - [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
 
 
 Using terminal, navigate into the "website" folder. And run the code below to build the application locally.
