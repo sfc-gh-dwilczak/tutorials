@@ -10,7 +10,7 @@ Video currently in development.
 - Please install docker desktop - [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
 - Must have Native App + Container Services enabled on your account. Please reach out to Quinn in the #feat-na-spcs.
 
-## Download
+## Download (Choose 1)
 - Files for simple website - ([Image](images/09.png)) ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/native/containers/data/simple/Files.zip))   
 - Files for fancy website - ([Image](images/11.png)) ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/native/containers/data/fancy/Files.zip))   
 
