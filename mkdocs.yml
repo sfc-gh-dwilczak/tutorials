@@ -48,7 +48,7 @@ nav:
       - ML Model: snowflake/jupyter/model.md
     - Container Services:
       - Introduction: snowflake/container/introduction/introduction.md
-      #- Llama3 (In Progress): snowflake/container/llama3/llama3.md
+      - Llama3 (In Progress): snowflake/container/llama3/llama3.md
       - CPU Jupyter Notebook: snowflake/container/cpu/jupyter/jupyter.md
     - API's:
       - Chatgpt: snowflake/api/chatgpt.md
