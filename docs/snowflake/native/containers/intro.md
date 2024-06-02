@@ -2,7 +2,7 @@
 Goal of this tutorial is to get a introduction to Native App + Container Services. In this tutorial you will build a containerized website and then deploy it via a Native app + Container Services. This is the same container we used in our [container services introduction](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/container/introduction/introduction/) tutorial.
 
 ## Video
-Video currently in development.
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/jK7BRX0j3Qk?si=vuUKHXXzd8OBg3og" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Requirements 
 - Be in a container services enabled region.([Link](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview#available-regions))
