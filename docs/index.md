@@ -4,4 +4,4 @@ Thank you for coming to my everything snowflake documentation. Please use or sha
 ## If you find the tutorials useful
 If you find one of the tutorials helpful and you want to help the author in promoting them, consider filling out this three-question survey. Your feedback would be amazing!
 
-[https://forms.gle/hTpvBfBdRSL8Y8U19](https://forms.gle/hTpvBfBdRSL8Y8U19)
+[https://forms.gle/fo4MesqU7yoqYpht9](https://forms.gle/fo4MesqU7yoqYpht9)
