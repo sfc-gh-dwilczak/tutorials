@@ -98,7 +98,7 @@ With our key now set on the user, lets use the key to connect to Snowflake via a
 Lets pip install the needed packages first. I reccomend doing this in a python virtual envirement via ``python3 -m venv venv``.
 === ":octicons-image-16: Setup"
 
-    ```sql linenums="1"
+    ```bash linenums="1"
     pip3 install snowflake-connector-python
     pip3 install cryptography
     ```
