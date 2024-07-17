@@ -106,7 +106,7 @@ Lets pip install the needed packages first. I reccomend doing this in a python v
 ### Code
 Here is the code we'll use. Please fill in the two needed areas.
 
-??? warning "Using the correct account locator."
+?!? warning "Using the correct account locator."
 
     If your Snowflake account is in anther region other then US EAST (Oregon). Please append your locator with the region ``xy12345.us-east-1`` read the [Account Identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier#non-vps-account-locator-formats-by-cloud-platform-and-region) documentation to learn how to format your account locator based on your region. 
 
