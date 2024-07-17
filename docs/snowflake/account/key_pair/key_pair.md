@@ -67,7 +67,6 @@ Lets apply the public key to our user in Snowflake. The public key file will end
     alter user danielwilczak set 
         rsa_public_key='<Public Key>';  /* (1)! */
     ```   
-
     { .annotate }
 
     1.  The public key file will end with ``.pub``. We got this from our "create key step".
@@ -105,7 +104,7 @@ Lets pip install the needed packages first. I reccomend doing this in a python v
     ```
 
 ### Code
-Here is the code we'll use. Please fill in the four needed areas.
+Here is the code we'll use. Please fill in the two needed areas.
 
 ??? warning "Using the correct account locator."
 
@@ -138,8 +137,8 @@ Here is the code we'll use. Please fill in the four needed areas.
 
     # Connect to Snowflake
     ctx = snowflake.connector.connect(
-        user='<User Name>',  /* (1)! */
-        account='<Account Locator>',  /* (2)! */
+        user='<User Name>',  #(1)! 
+        account='<Account Locator>',  #(2)!
         private_key=pkb
     )
 
