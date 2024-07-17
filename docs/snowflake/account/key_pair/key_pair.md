@@ -11,10 +11,11 @@ Video is still in development.
 This tutorial assumes you have nothing in your Snowflake account ([Trial](https://signup.snowflake.com/)) and no complex security needs.
 
 ## Setup :octicons-feed-tag-16:
-To start we will create a new user with no password setup. I added a role to show a parameter we can set. The user doesnt not need Sysadmin access.
+Lets start the setup prcoess in Snowflake. 
 
 
 ### User creation
+First we'll create a new user with no password setup. I added a role to show a parameter we can set. The user doesnt not need Sysadmin access.
 === ":octicons-image-16: Setup"
 
     ```sql linenums="1"
