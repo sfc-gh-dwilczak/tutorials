@@ -74,7 +74,7 @@ Lets apply the public key to our user in Snowflake. The public key file will end
 === ":octicons-image-16: Example"
 
     ```sql linenums="1"
-        alter user danielwilczak set 
+    alter user danielwilczak set 
         rsa_public_key='MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsLiIQpJ0SkB0KgyN/Cj5
             O+3W3zIN5HvjBwsQnVbXAGpu920fohXRQAFc5hZpMNZOGNsLvl1YY1HtQ15j4K7o
             Ip3Eo2.............................................EUnH8sGWDvH+U
