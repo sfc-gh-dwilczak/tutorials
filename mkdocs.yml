@@ -57,7 +57,8 @@ nav:
     - Git:
       - Introduction: snowflake/git/introduction.md
     - Account:
-      - Change Service Level: snowflake/account/service_level.md
+      - Key Pair Authentication: snowflake/account/key_pair/kay_pair.md
+      - Change Service Level: snowflake/account/servic_level/service_level.md
     - SSO:
       - Azure Active Directory: snowflake/sso/azure_ad.md
     - Native App:
