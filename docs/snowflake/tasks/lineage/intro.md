@@ -95,6 +95,8 @@ Finally lets create the child task and resume the task so it runs after our pare
 
 Lets run the notebook and see that once the task row is added, the notebook row follows.
 
+=== ":octicons-image-16: Execute"
+
     ```sql linenums="1"
     -- Run the task tree.
     execute task parent_task;
@@ -105,12 +107,10 @@ Lets run the notebook and see that once the task row is added, the notebook row 
 
 === ":octicons-image-16: Result"
 
-    ``` linenums="1"
     | # | Column   | Column   |
     |---|----------|----------|
     | 1 | task     | task     |
     | 2 | notebook | notebook |
-    ```
 
 You can also see the task linage by going to the parent task in the UI.
 ![Lineage](images/02.png)
