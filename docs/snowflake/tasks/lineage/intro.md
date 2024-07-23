@@ -58,6 +58,8 @@ First lets start by setting up the table we'll enter data into.
         values ('task', 'task');
     ```   
 
+### Parent Task
+
 === ":octicons-image-16: Result"
 
     ``` linenums="1"
@@ -74,7 +76,9 @@ Next lets create a Snowflake notebook named "my_notebook" and enter the sql belo
         values ('notebook', 'notebook')
     ```
 
-Finally lets create the child task and resume the task so it runs after our parent task.
+### Child Task
+
+Lets create the child task and resume the task so it runs after our parent task.
 === ":octicons-image-16: Setup"
 
     ```sql linenums="1"
@@ -92,7 +96,10 @@ Finally lets create the child task and resume the task so it runs after our pare
     ``` linenums="1"
     Statement executed successfully.
     ```
+You can also see the task linage by going to the parent task in the UI.
+![Lineage](images/02.png)
 
+### Run Task
 Lets run the notebook and see that once the task row is added, the notebook row follows.
 
 === ":octicons-image-16: Execute"
@@ -112,5 +119,3 @@ Lets run the notebook and see that once the task row is added, the notebook row 
     | 1 | task     | task     |
     | 2 | notebook | notebook |
 
-You can also see the task linage by going to the parent task in the UI.
-![Lineage](images/02.png)
