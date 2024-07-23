@@ -58,13 +58,13 @@ First lets start by setting up the table we'll enter data into.
         values ('task', 'task');
     ```   
 
-### Parent Task
-
 === ":octicons-image-16: Result"
 
     ``` linenums="1"
     Task PARENT_TASK successfully created.
     ```
+
+### Parent Task
 
 Next lets create a Snowflake notebook named "my_notebook" and enter the sql below.
 ![Add notebook](images/01.png)
