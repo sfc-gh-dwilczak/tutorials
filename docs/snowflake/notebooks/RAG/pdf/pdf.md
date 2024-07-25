@@ -20,7 +20,7 @@ Lets start by setting up some objects in snowflake and follow it up with uploadi
 ### Setup
 In this section we will do the setup to support our notebook. Lets open a notebook and run the code below.
 
-=== ":octicons-image-16: Setup"
+??? note "If you don't have a database, schema or warehouse yet."
 
     ```sql
     use role accountadmin;
@@ -48,14 +48,23 @@ In this section we will do the setup to support our notebook. Lets open a notebo
         Setup our two stages (aka filder) that the
         user defined functions and our pdf files will live in.
     */
+    ```
+
+Lets setup our stages to upload the pdf and store some sql udf's.
+
+=== ":octicons-image-16: Setup"
+
+    ```sql linenums="1"
     create or replace stage udf;
     create or replace stage folder;
     ```
+
 === ":octicons-image-16: Result"
 
-    ```sql
+    ```
     Stage area FOLDER successfully created. 
     ```
+
 
 ### Upload PDF's
 Using the UI we will upload our downloaded pdf's into our stage (folder on Snowflake). Lets go to the stage in our snowflake account.
@@ -83,11 +92,12 @@ Input the name of the notebook, select the database, schema and warehouse.
 Select the packages drop-down.
 ![Drop-Down](images/04.png)
 
-Lookup and added these three packages:  
+Add these three packages with the version specified:  
 
-- langchain  
-- pypdf2  
-- snowflake-snowpark-python  
+- langchain  = 0.0.298
+- pypdf2 = 2.10.5
+- snowflake-snowpark-python 1.13.0a1  
+- pandas = 2.14
 
 ![Package select](images/05.png)
 
