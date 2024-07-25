@@ -99,7 +99,7 @@ Add these three packages with the version specified:
 - snowflake-snowpark-python 1.13.0a1  
 - pandas = 2.14
 
-![Package select](images/05.png)
+![Package select](images/14.png)
 
 You can either run all the cells or one by one.
 ![Navigate](images/06.png)
