@@ -43,6 +43,7 @@ nav:
       - SSH Key: snowflake/sftp/ssh_key.md
     - Notebooks - Snowflake:
       #- Git: snowflake/notebooks/git/git.md
+      - External Access: snowflake/notebooks/external/index.md
       - PDF's / RAG: snowflake/notebooks/RAG/pdf/pdf.md
     - Notebooks - Local Jupyter :
       - Basics: snowflake/jupyter/basics.md
