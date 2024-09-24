@@ -5,7 +5,7 @@ This tutorial will show how to replicate your data from one Snowflake account to
 Video is still in development.
 
 ## Requirement
-You will need to be an **account admin** and **orgadmin** role.
+- You will need to be an **account admin** and **orgadmin** role.
 
 ??? warning "You will need to enable orgadmin role to see the account page under the admin page."
 
