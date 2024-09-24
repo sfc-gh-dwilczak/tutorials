@@ -7,32 +7,35 @@ Video is still in development.
 ## Requirement
 You will need to be an **account admin** and **orgadmin** role.
 
-??? warning "You will need to enable orgadmin role to see the account page under the admin page."
+?!? warning "You will need to enable orgadmin role to see the account page under the admin page."
 ```sql
--- Assume the ACCOUNTADMIN role
-USE ROLE accountadmin;
+use role accountadmin;
 
--- (Option 1) Grant the ORGADMIN role to a user.
-GRANT ROLE orgadmin TO USER <username>;
+-- (option 1) grant the orgadmin role to a user.
+grant role orgadmin to user <username>;
 
--- (Option 2) Grant ORGADMIN to a role.
-GRANT ROLE orgadmin TO ROLE <role>;
+-- (option 2) grant orgadmin to a role.
+grant role orgadmin to role <role>;
 ```
 
 
 ## Walk Through :octicons-feed-tag-16:
 
-First we'll want to enable the other account to be able to replicate to.
+First we'll want to enable the other account to be able to replicate to. Please put in your orginization name and account name.
 ```sql
 -- If you do not have this role please read warning above.
 use role orgadmin;
 
 -- View the list of the accounts in your organization
--- Note the organization name and account name for each account for which you are enabling replication
+-- NOTE the organization name and account name for each account for which you are enabling replication
 show accounts;
 
 -- Enable replication by executing this statement for each source and target account in your organization
-select system$global_account_set_parameter('<orginization>.<account name>', 'enable_account_database_replication', 'true');
+select system$global_account_set_parameter(
+    '<orginization>.<account name>',
+    'enable_account_database_replication',
+    'true'
+);
 ```
 
 
