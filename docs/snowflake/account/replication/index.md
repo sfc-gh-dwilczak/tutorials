@@ -26,11 +26,17 @@ First we'll want to enable the other account to be able to replicate to. Please 
 -- If you do not have this role please read warning above.
 use role orgadmin;
 
--- View the list of the accounts in your organization
--- NOTE the organization name and account name for each account for which you are enabling replication
+/* View the list of the accounts in your organization. NOTE the
+   organization name and account name for each account for which
+    you are enabling replication.
+*/
 show accounts;
 
--- Enable replication by executing this statement for each source and target account in your organization
+/* 
+    Enable replication by executing this statement for
+    each source and target account in your organization.
+*/
+
 select system$global_account_set_parameter(
     '<orginization>.<account name>',
     'enable_account_database_replication',
