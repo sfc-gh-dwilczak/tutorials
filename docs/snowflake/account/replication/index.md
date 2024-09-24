@@ -7,16 +7,17 @@ Video is still in development.
 ## Requirement
 You will need to be an **account admin** and **orgadmin** role.
 
-?!? warning "You will need to enable orgadmin role to see the account page under the admin page."
-```sql
-use role accountadmin;
+??? warning "You will need to enable orgadmin role to see the account page under the admin page."
 
--- (option 1) grant the orgadmin role to a user.
-grant role orgadmin to user <username>;
+    ```sql
+    use role accountadmin;
 
--- (option 2) grant orgadmin to a role.
-grant role orgadmin to role <role>;
-```
+    -- (option 1) grant the orgadmin role to a user.
+    grant role orgadmin to user <username>;
+
+    -- (option 2) grant orgadmin to a role.
+    grant role orgadmin to role <role>;
+    ```
 
 
 ## Walk Through :octicons-feed-tag-16:
