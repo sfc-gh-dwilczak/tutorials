@@ -60,8 +60,9 @@ nav:
     - Tasks:
       - Lineage: snowflake/tasks/lineage/intro.md
     - Account:
-      - Key Pair Authentication: snowflake/account/key_pair/key_pair.md
       - Change Service Level: snowflake/account/service_level/service_level.md
+      - Key Pair Authentication: snowflake/account/key_pair/key_pair.md
+      - Replication: snowflake/account/replication/index.md
     - SSO:
       - Azure Active Directory: snowflake/sso/azure_ad.md
     - Native App:
