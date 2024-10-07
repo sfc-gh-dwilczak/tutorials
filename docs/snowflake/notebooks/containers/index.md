@@ -12,8 +12,6 @@ Video is still in development.
 - Notebook ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/notebooks/containers/notebook/notebook.ipynb))
 
 ## Setup :octicons-feed-tag-16:
-Lets start the network setup prcoess in Snowflake. 
-
 ??? note "If you don't have a database, schema or warehouse yet."
 
     === ":octicons-image-16: Database, schema and warehouse"
