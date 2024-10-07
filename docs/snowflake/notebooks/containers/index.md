@@ -7,7 +7,6 @@ Video is still in development.
 ## Requirement
 - Be in a [container services enabled region](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview#available-regions).  
 - You [CAN NOT be on a trial account](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview).
-- A network policy that does not block pypi and hugging face.
 
 ## Downloads
 - Notebook ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/notebooks/containers/notebook/notebook.ipynb))
