@@ -42,8 +42,30 @@ Lets start the network setup prcoess in Snowflake.
         use warehouse development;
         ```
 
+### GPU Compute Pool
+First lets start by creating a gpu compute pool for our notebook via accountadmin role and then grant sysadmin to use it.
+
+=== ":octicons-image-16: Setup"
+
+    ```sql linenums="1"
+    use role accountadmin;
+
+    create compute pool gpu_small
+        min_nodes = 1
+        max_nodes = 1
+        instance_family = gpu_nv_s;
+
+    grant usage on compute pool gpu_small to role sysadmin;
+    ```  
+
+=== ":octicons-image-16: Result"
+
+    ``` linenums="1"
+    Statement executed successfully.
+    ```
+
 ### External Access
-First lets start by setting up the network rules in a worksheet to allow our Snowflake Notebook to talk with our external source.
+Lets create the network rules in a worksheet to allow our Snowflake Notebook to talk with our external source.
 === ":octicons-image-16: Setup"
 
     ```sql linenums="1"
@@ -72,22 +94,6 @@ First lets start by setting up the network rules in a worksheet to allow our Sno
 
     grant usage on integration pypi_access_integration to role sysadmin;
     grant usage on integration hf_access_integration to role sysadmin;
-    ```   
-
-### GPU Compute Pool
-Lets create a gpu compute pool for our notebook via accountadmin role and then grant sysadmin to use it.
-
-=== ":octicons-image-16: Setup"
-
-    ```sql linenums="1"
-    use role accountadmin;
-
-    create compute pool gpu_small
-        min_nodes = 1
-        max_nodes = 1
-        instance_family = gpu_nv_s;
-
-    grant usage on compute pool gpu_small to role sysadmin;
     ```  
 
 === ":octicons-image-16: Result"
