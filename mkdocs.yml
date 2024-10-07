@@ -87,6 +87,11 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
   
+  # Icons
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
   # Content Tabs
   - pymdownx.tabbed:
       alternate_style: true 
@@ -94,7 +99,7 @@ markdown_extensions:
 # Plugins
 plugins:
   - glightbox
-
+  - typeset
   - search:
       separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
 
