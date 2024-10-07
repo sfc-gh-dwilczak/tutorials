@@ -10,7 +10,7 @@ Video is still in development.
 - A network policy that does not block pypi and hugging face.
 
 ## Downloads
-- Notebook ([Link](#))
+- Notebook ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/notebooks/containers/notebook/notebook.ipynb))
 
 ## Setup :octicons-feed-tag-16:
 Lets start the network setup prcoess in Snowflake. 
