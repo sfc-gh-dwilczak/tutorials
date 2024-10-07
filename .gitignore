@@ -1,2 +1,5 @@
 .DS_Store
 docs/snowflake/container/cpu/llama/files/llama-2-7b-chat.Q2_K.gguf
+
+venv/*
+site/*

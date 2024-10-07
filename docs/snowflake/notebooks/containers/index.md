@@ -48,21 +48,23 @@ First lets start by setting up the network rules in a worksheet to allow our Sno
 
     ```sql linenums="1"
 
-    use role accountadmin;
+    use role sysadmin;
 
     create or replace network rule pypi_network_rule
         mode = egress
         type = host_port
         value_list = ('pypi.org', 'pypi.python.org', 'pythonhosted.org',  'files.pythonhosted.org');
 
+    create or replace network rule hf_network_rule
+            mode = egress
+            type = host_port
+            value_list = ('huggingface.co', 'cdn-lfs.huggingface.co','cdn-lfs.hf.co');
+
+    use role accountadmin;
+
     create or replace external access integration pypi_access_integration
         allowed_network_rules = (pypi_network_rule)
         enabled = true;
-
-    create or replace network rule hf_network_rule
-        mode = egress
-        type = host_port
-        value_list = ('huggingface.co', 'cdn-lfs.huggingface.co','cdn-lfs.hf.co');
 
     create or replace external access integration hf_access_integration
         allowed_network_rules = (hf_network_rule)
@@ -100,6 +102,7 @@ Lets create a gpu compute pool for our notebook via accountadmin role and then g
 Lets start by setting our role to sysadmin.
 ![note](images/1.png)
 
+#### Setup
 Upload the [example notebook](#) provided.
 ![note](images/2.png)
 
@@ -118,6 +121,7 @@ Enable both pypi and huggingface.
 Click run all, the notebook will provide you a timer. It typically takes 5-7 minutes.
 ![note](images/7.png)
 
+#### Result
 Once the notebook runs you will see we first make a directory for files to be downloaded to.
 ![note](images/8.png)
 
