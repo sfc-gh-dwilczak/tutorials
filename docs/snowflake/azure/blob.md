@@ -14,7 +14,7 @@ Sign into your azure account. If you don't have one, a free [azure account](http
 Create the stoage account you intend to use. 
 ![Azure create container](images/1.png)
 
-In our case we'll call the stoage account **danielwilczak** and make it's region the same as the one our Snowflake account. It's okay if it's not with the same provider or region, it's just the quickest. We will also use the default for everything else.
+In our case we'll call the stoage account **danielwilczak** and make it's region the same as the one our Snowflake account. It's okay if it's not with the same provider or region, it's just the quickest. We will also use the default for everything else. If creating a resource group just enter a name and take the defaults.
 ![Azure create container options](images/2.png)
 
 We will then navigate into the storage account.
