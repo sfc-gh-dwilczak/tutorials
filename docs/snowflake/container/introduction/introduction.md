@@ -50,12 +50,6 @@ Let's start by setting up Snowflake before we jump to docker. Create a worksheet
     -- Use account admin for the integration.
     use role accountadmin;
 
-    -- This enables us to login to our application via a website url.
-    create or replace security integration snowservices_ingress_oauth
-        type=oauth
-        oauth_client=snowservices_ingress
-        enabled=true;
-
     -- Allow sysadmin to create our website url.
     grant bind service endpoint on account to role sysadmin;
 
