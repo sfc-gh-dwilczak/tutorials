@@ -1,4 +1,4 @@
-# SFTP to Snowflake Stage - Using containerized notebooks
+# SFTP to Snowflake Stage
 In this tutorial we will show how you can takes files from an sftp and load them into a Snowflake stage to later be loaded into a table.
 
 ## Video
