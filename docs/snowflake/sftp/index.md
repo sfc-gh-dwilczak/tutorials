@@ -126,7 +126,7 @@ Finally we'll click "run all" and see our notebook start, it may take up to 5 mi
 Once finished we will see that the file we selected is loaded into the stage via the ``ls`` command to the stage
 ![Show files](images/08.png)
 
-We can also see that the file is in the stage via the UI. The idea here is that we can schedule the notebook to load the files from the stftp and then use a [child on task](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/tasks/lineage/intro/) to load the file via a copy into coammand.
+We can also see that the file is in the stage via the UI. The idea here is that we can schedule the notebook to load the files from the stftp and then use a [child task](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/tasks/lineage/intro/) to load the file via a copy into coammand on a schedule.
 ![Show files](images/09.png)
 
 
