@@ -38,14 +38,12 @@ nav:
     - Google Cloud: 
       - Cloud Storage: snowflake/google/storage/cloud_storage.md
       #- Iceberg: snowflake/google/iceberg/iceberg.md
-    - SFTP: 
-      - Username and password: snowflake/sftp/username_password.md
-      - SSH Key: snowflake/sftp/ssh_key.md
     - Notebooks - Snowflake:
       #- Git: snowflake/notebooks/git/git.md
       - External Access: snowflake/notebooks/external/index.md
       - PDF's / RAG: snowflake/notebooks/RAG/pdf/pdf.md
       - Containers: snowflake/notebooks/containers/index.md
+      - SFTP: snowflake/sftp/index.md
     - Notebooks - Local Jupyter :
       - Basics: snowflake/jupyter/basics.md
       - ML Model: snowflake/jupyter/model.md
