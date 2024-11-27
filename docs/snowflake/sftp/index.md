@@ -8,7 +8,7 @@ Video is still in development.
 You must have a Snowflake account that is not on a trial. This is a requirement of [container services](https://docs.snowflake.com/developer-guide/snowpark-container-services/working-with-compute-pool), not the tutorial.
 
 ## Download needed files:
-- Notebook ([Link](#))
+- Notebook ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/sftp/files/notebook.ipynb))
 
 ## Setup :octicons-feed-tag-16:
 Lets start the network setup prcoess in Snowflake. 
@@ -45,6 +45,8 @@ First lets start by setting up the network rules, stage and compute pool in a wo
 === ":octicons-image-16: Setup"
 
     ```sql linenums="1"
+    -- We use sysadmin because accountadmin can't be used in the containized notebooks.
+    use role sysadmin;
 
     -- We will store our files in the stage.
     create stage if not exists files directory = ( enable = true );
@@ -63,7 +65,7 @@ First lets start by setting up the network rules, stage and compute pool in a wo
     create or replace network rule sftp_network_rule
         mode = egress
         type = host_port
-        value_list = ('danielwilczakv2.blob.core.windows.net:22');
+        value_list = ('<UPDATE WITH YOUR URL>:22');
 
     -- We'll need this to download the sftp python package.
     create or replace network rule pypi_network_rule
@@ -89,7 +91,7 @@ First lets start by setting up the network rules, stage and compute pool in a wo
 === ":octicons-image-16: Result"
 
     ``` linenums="1"
-    Integration SFTP_EXTERNAL_ACCESS successfully created.
+    Integration PYPI_ACCESS_INTEGRATION successfully created.
     ```
 
 ### Notebook
