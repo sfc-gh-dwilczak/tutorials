@@ -94,13 +94,14 @@ First lets start by setting up the network rules, stage and compute pool in a wo
     Integration PYPI_ACCESS_INTEGRATION successfully created.
     ```
 
-### Notebook
+### Notebook Creation
 Next lets import the example notebook in our database / schema.
 ![Show files](images/01.png)
 
 Next lets assign it to our database/schema
 ![Show files](images/02.png)
 
+### Enable external access
 To enable our notebook to talk outside of Snowflake we'll have to enable the notebook to use that external access we created earlier. We can do this by going to Notebooks settings.
 ![Show files](images/03.png)
 
@@ -114,12 +115,14 @@ Check your SFTP external access and pypi external access to give the notebook ac
 
     Once the example is working I suggest to keep the password stored as a secret instead of plane text via the [secret](https://docs.snowflake.com/en/sql-reference/sql/create-secret) object. 
 
+### Update SFTP parameters
 We'll want to update our sftp python function input parameters with the hostname,username and password. After that put in your file you want to load into a stage. It can be either a single file or a ZIP which will be unzipped and loaded into a folder in the stage.  
 ![Show files](images/06.png)
 
 Finally we'll click "run all" and see our notebook start, it may take up to 5 minutes to start the compute pool, we can see the status in the bottom right.
 ![Show files](images/07.png)
 
+### Result
 Once finished we will see that the file we selected is loaded into the stage via the ``ls`` command to the stage
 ![Show files](images/08.png)
 
