@@ -32,7 +32,7 @@ nav:
   - Snowflake:
     - Getting Started: index.md
     - AWS: 
-      - S3: snowflake/aws/s3.md
+      - S3: snowflake/aws/s3/index.md
     - Azure:
       - Blob: snowflake/azure/blob.md
     - Google Cloud: 
