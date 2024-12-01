@@ -111,6 +111,8 @@ Lets create the table in Snowflake to load data into.
 === ":octicons-image-16: Table"
 
     ```sql
+    use role sysadmin; 
+
     create or replace table taxi_data (
         vendor_id NUMBER, 
         tpep_pickup_datetime VARCHAR, 
