@@ -84,7 +84,7 @@ Lets create the table in Snowflake to load data into.
 
     === ":octicons-image-16: Database, schema and warehouse"
 
-        ```sql
+        ```sql linenums="1"
         use role sysadmin;
         
         -- Create a database to store our schemas.
@@ -110,7 +110,7 @@ Lets create the table in Snowflake to load data into.
 
 === ":octicons-image-16: Table"
 
-    ```sql
+    ```sql linenums="1"
     use role sysadmin; 
 
     create or replace table taxi_data (
@@ -137,7 +137,7 @@ Lets create the table in Snowflake to load data into.
 
 === ":octicons-image-16: Result"
 
-    ```
+    ``` linenums="1"
     Table TAXI_DATA successfully created.
     ```
 
