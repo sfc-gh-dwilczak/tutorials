@@ -33,6 +33,7 @@ nav:
     - Getting Started: index.md
     - AWS: 
       - S3: snowflake/aws/s3/index.md
+      - Kinesis: snowflake/aws/kinesis/index.md
     - Azure:
       - Blob: snowflake/azure/blob.md
     - Google Cloud: 
