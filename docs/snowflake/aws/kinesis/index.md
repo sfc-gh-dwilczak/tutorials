@@ -270,21 +270,13 @@ Lets start by updating our code to use the stream we setup at the beginning. Ins
 === ":octicons-image-16: Code"
 
     ```py linenums="1"
-    response = client.put_record(
-        StreamName="<YOUR KINESIS STREAM NAME>",  # Name of the Kinesis stream
-        Data=json.dumps(ride),      # Convert ride data to JSON string
-        PartitionKey=str(hash(ride['tpep_pickup_datetime']))  # Use hashed pickup datetime as partition key
-    )
+    StreamName="<YOUR KINESIS STREAM NAME>",  # Name of the Kinesis stream
     ```
 
 === ":octicons-image-16: Result"
 
     ```py linenums="1"
-    response = client.put_record(
-        StreamName="danielwilczak_stream",  # Name of the Kinesis stream
-        Data=json.dumps(ride),      # Convert ride data to JSON string
-        PartitionKey=str(hash(ride['tpep_pickup_datetime']))  # Use hashed pickup datetime as partition key
-    )
+    StreamName="danielwilczak_stream",  # Name of the Kinesis stream
     ```
 
 
