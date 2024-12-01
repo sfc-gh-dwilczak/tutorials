@@ -265,6 +265,30 @@ Once installed well want to call and fill in the questions:
 ## Python data generator  :octicons-feed-tag-16:
 Now we are ready to start generating the data that will be passed to kinesis and then loaded into our Snowflake table. We'll want to open the folder of the files we downloaded at the start of the tutorial.
 
+Lets start by updating our code to use the stream we setup at the beginning. Inside our ``main.py`` we'll update:
+
+=== ":octicons-image-16: Code"
+
+    ```py linenums="1"
+    response = client.put_record(
+        StreamName="<YOUR KINESIS STREAM NAME>",  # Name of the Kinesis stream
+        Data=json.dumps(ride),      # Convert ride data to JSON string
+        PartitionKey=str(hash(ride['tpep_pickup_datetime']))  # Use hashed pickup datetime as partition key
+    )
+    ```
+
+=== ":octicons-image-16: Result"
+
+    ```py linenums="1"
+    response = client.put_record(
+        StreamName="danielwilczak_stream",  # Name of the Kinesis stream
+        Data=json.dumps(ride),      # Convert ride data to JSON string
+        PartitionKey=str(hash(ride['tpep_pickup_datetime']))  # Use hashed pickup datetime as partition key
+    )
+    ```
+
+
+Next we'll want to run that code to start generating the data which will be moved to Snowflake.
 === ":octicons-image-16: Code"
 
     ```bash linenums="1"
