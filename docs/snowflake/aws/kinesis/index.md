@@ -282,7 +282,7 @@ Now we are ready to start generating the data that will be passed to kinesis and
     ...
     ```
 
-We will be able to see the messages being sent to kinesis. Now we should start seeing our Data being move to Snowflake. If you don't check your firehose logs. You might have a connection issue.
+We will be able to see the messages being sent to kinesis. Now we should start seeing our data being move to Snowflake. If you don't check your firehose logs. You might have a connection issue.
 ![Two keys](images/31.png)
 
 ## Result  :octicons-feed-tag-16:
