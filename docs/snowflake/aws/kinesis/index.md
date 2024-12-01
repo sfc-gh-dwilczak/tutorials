@@ -232,17 +232,16 @@ Now we'll want to copy our access key and secret access key, so we can put it in
 ![start](images/28.png)
 
 
-## AWS CLI Setup :octicons-feed-tag-16:
+## AWS CLI Setup  :octicons-feed-tag-16:
 In this section we'll setup the AWS SLI to be able to connect to our stream via python. I suggest using the GUI installer for this example.
 
-https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+[https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
 Click, download the cli and install it. It's pretty straight forward.
 ![Two keys](images/29.png)
 
 
 Once installed well want to call and fill in the questions:
-
 === ":octicons-image-16: Code"
 
     ```bash linenums="1"
@@ -261,11 +260,10 @@ Once installed well want to call and fill in the questions:
 
 ![Two keys](images/30.png)
 
-## Python data generator
+## Python data generator  :octicons-feed-tag-16:
 Now we are ready to start generating the data that will be passed to kinesis and then loaded into our Snowflake table. We'll want to open the folder of the files we downloaded at the start of the tutorial.
 
-
-== ":octicons-image-16: Code"
+=== ":octicons-image-16: Code"
 
     ```bash linenums="1"
     python -m venv venv 
@@ -287,7 +285,7 @@ Now we are ready to start generating the data that will be passed to kinesis and
 We will be able to see the messages being sent to kinesis. Now we should start seeing our Data being move to Snowflake. If you don't check your firehose logs. You might have a connection issue.
 ![Two keys](images/31.png)
 
-## Result
+## Result  :octicons-feed-tag-16:
 Now we should see our data being loaded into Snowflake.
 ![Two keys](images/32.png)
 
