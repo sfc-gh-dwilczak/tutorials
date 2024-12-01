@@ -36,25 +36,24 @@ nav:
       - Kinesis: snowflake/aws/kinesis/index.md
     - Azure:
       - Blob: snowflake/azure/blob.md
+      - Azure Active Directory: snowflake/sso/azure_ad.md
     - Google Cloud: 
       - Cloud Storage: snowflake/google/storage/cloud_storage.md
       #- Iceberg: snowflake/google/iceberg/iceberg.md
     - SFTP: 
       - Via Notebook: snowflake/sftp/index.md
     - Notebooks - Snowflake:
-      #- Git: snowflake/notebooks/git/git.md
-      - External Access: snowflake/notebooks/external/index.md
-      - PDF's / RAG: snowflake/notebooks/RAG/pdf/pdf.md
+      # - Git: snowflake/notebooks/git/git.md
+      # - PDF's / RAG: snowflake/notebooks/RAG/pdf/pdf.md
       - Containers: snowflake/notebooks/containers/index.md
-    - Notebooks - Local Jupyter :
+    - Notebooks - Local Jupyter:
       - Basics: snowflake/jupyter/basics.md
       - ML Model: snowflake/jupyter/model.md
     - Container Services:
       - Introduction: snowflake/container/introduction/introduction.md
       - Streamlit: snowflake/container/streamlit/introduction.md
-      #- Llama3 (In Progress): snowflake/container/llama3/llama3.md
-      - CPU Jupyter Notebook: snowflake/container/cpu/jupyter/jupyter.md
     - API's:
+      - Intoduction via Notebook: snowflake/notebooks/external/index.md
       - Chatgpt: snowflake/api/chatgpt.md
     - Git:
       - Introduction: snowflake/git/introduction.md
@@ -64,8 +63,6 @@ nav:
       - Change Service Level: snowflake/account/service_level/service_level.md
       - Key Pair Authentication: snowflake/account/key_pair/key_pair.md
       - Replication: snowflake/account/replication/index.md
-    - SSO:
-      - Azure Active Directory: snowflake/sso/azure_ad.md
     - Native App:
       - Container Services: snowflake/native/containers/intro.md
   - Fivetran:
