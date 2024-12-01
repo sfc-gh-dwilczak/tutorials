@@ -143,7 +143,7 @@ Lets create the table in Snowflake to load data into.
 
 
 ## AWS Setup :octicons-feed-tag-16:
-Lets setup AWS to connect to Snowflake and also our data generator to push data to the kinesis stream.
+Lets setup AWS to recieve data via a stream and the move it to Snowflake via firehose. In the process we will create a user and credentials.
 
 ### Stream
 Lets start by heading into aws and going to Kinesis.
