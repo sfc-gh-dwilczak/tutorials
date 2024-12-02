@@ -58,10 +58,12 @@ nav:
       - Lineage: snowflake/tasks/lineage/intro.md
     - Account:
       - Change Service Level: snowflake/account/service_level/service_level.md
-      - Key Pair Authentication: snowflake/account/key_pair/key_pair.md
       - Replication: snowflake/account/replication/index.md
     - Native App:
       - Container Services: snowflake/native/containers/intro.md
+    - Security:
+      - Key Pair Authentication: snowflake/security/key_pair/index.md
+      - Python with Key Pair: snowflake/security/python/index.md
   - Fivetran:
       - Setup: fivetran/setup/setup.md
       - Sources:
