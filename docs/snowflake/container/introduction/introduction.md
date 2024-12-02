@@ -146,15 +146,13 @@ Next docker login to our snowflake image repo and upload the image. We will use 
     docker login sfsenorthamerica-wilczak-videos2.registry.snowflakecomputing.com/ -u danielwilczak
     ```
 
-??? Warning "If your using MFA - Please enable token caching"
+??? Warning "If your user is using MFA - Please enable token caching before uploading"
     Docker will upload the image in a multi threaded way, if you have MFA it will ask you a hundred times. To prevent this we suggest to enable token caching.
 
     ```sql
     alter account set allow_client_mfa_caching = TRUE;
     ```
    
-
-
 Finally push the image to your image repository living on Snowflake.
 === ":octicons-sign-out-16: Code"
 
