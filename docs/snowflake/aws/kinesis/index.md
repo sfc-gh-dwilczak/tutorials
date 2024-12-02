@@ -1,6 +1,8 @@
 # AWS Kinesis to Snowflake
 In this tutorial we will show how you can setup Kinesis stream and firehose to load data into Snowflake. We will use a local python script of taxi data to act as our source.
 
+Credit for the orginial tutorial goes to [Umesh Patel](https://medium.com/@umeshpatel_us)!
+
 ## Video
 <iframe width="850px" height="478px" src="https://www.youtube.com/embed/AzebPF5PuDA?si=shmV1gOGtpCeVS1S" style="display:block;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
