@@ -39,13 +39,10 @@ nav:
       - Azure Active Directory: snowflake/sso/azure_ad.md
     - Google Cloud: 
       - Cloud Storage: snowflake/google/storage/cloud_storage.md
-      #- Iceberg: snowflake/google/iceberg/iceberg.md
     - SFTP: 
       - Via Notebook: snowflake/sftp/index.md
-    - Notebooks - Snowflake:
-      # - Git: snowflake/notebooks/git/git.md
-      # - PDF's / RAG: snowflake/notebooks/RAG/pdf/pdf.md
-      - Containers: snowflake/notebooks/containers/index.md
+    - Containerized Notebooks:
+      - Introduction: snowflake/notebooks/containers/index.md
     - Notebooks - Local Jupyter:
       - Basics: snowflake/jupyter/basics.md
       - ML Model: snowflake/jupyter/model.md
@@ -70,6 +67,9 @@ nav:
       - Sources:
         - Google Analytics: fivetran/sources/google_analytics/google_analytics.md
 
+      # - Iceberg: snowflake/google/iceberg/iceberg.md
+      # - Git: snowflake/notebooks/git/git.md
+      # - PDF's / RAG: snowflake/notebooks/RAG/pdf/pdf.md
 
 markdown_extensions:
   - tables
