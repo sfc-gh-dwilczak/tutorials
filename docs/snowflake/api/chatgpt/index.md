@@ -1,8 +1,8 @@
 # Chatgpt in Snowflake
-In this tutorial we will show you how to integrate chatgpt "Open.ai" into a user defined function in Snowflake, so it can be used anywhere.
+In this tutorial we will show you how to integrate chatgpt [Open.ai](https://platform.openai.com/) into a user defined function in Snowflake, so it can be used anywhere in Snowflake.
 
 ## Video
-Video still in development.
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/bS7H5Ores6M?si=IKmT7XpzTbwbRwly" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Requirement
 This tutorial assume you have an account with [openai.com](openai.com). You will need to get an api token from it.
@@ -38,6 +38,8 @@ In this section we will do the setup to support our user-defined function by:
         use warehouse developer;
         ```
 
+### External Access
+Lets setup the external access so our Snowflake can talk with [Open.ai](https://platform.openai.com/).
 === ":octicons-image-16: Setup"
 
     ```sql linenums="1"
@@ -69,6 +71,11 @@ In this section we will do the setup to support our user-defined function by:
         Click create new secret key and then copy it into your code.
         ![Openai key](images/3.png)
 
+=== ":octicons-image-16: Result"
+
+    ``` linenums="1"
+    Integration OPENAI_INTEGRATION successfully created.
+    ```
 
 ### Function
 Let's create the python user defined function to make it easy to access later.
@@ -91,7 +98,7 @@ Let's create the python user defined function to make it easy to access later.
     from openai import OpenAI
 
     def chatgpt(question):
-        openai_api_key = _snowflake.get_generic_secret_string(''cred''')
+        openai_api_key = _snowflake.get_generic_secret_string(''cred'')
 
         client = OpenAI(api_key=openai_api_key)
         completion = client.chat.completions.create(
