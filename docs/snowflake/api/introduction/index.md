@@ -41,6 +41,7 @@ Lets start the network setup prcoess in Snowflake.
         ```
 
 
+### External Access
 First lets start by setting up the network rules in a worksheet to allow our Snowflake Notebook to talk with our external source.
 === ":octicons-image-16: Setup"
 
