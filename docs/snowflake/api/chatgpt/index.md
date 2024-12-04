@@ -77,7 +77,7 @@ Lets setup the external access so our Snowflake can talk with [Open.ai](https://
     Integration OPENAI_INTEGRATION successfully created.
     ```
 
-### Function
+### SQL Function
 Let's create the python user defined function to make it easy to access later.
 
 === ":octicons-image-16: Function"
