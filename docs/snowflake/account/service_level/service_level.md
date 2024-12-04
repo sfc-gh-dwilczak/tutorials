@@ -2,7 +2,7 @@
 To change your service level in snowflake to Standard, Enterprise, or Busniess Critical we will need to submit a support ticket and this tutorial will show how.
 
 ## Video
-Video is still in development.
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/fQF8MZiY2nM?si=RjLCH-rId-vwHeRz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Requirement
 You will need to be an **account admin** to submit the support ticket request.
