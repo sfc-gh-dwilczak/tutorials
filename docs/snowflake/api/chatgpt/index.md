@@ -91,7 +91,7 @@ Let's create the python user defined function to make it easy to access later.
     from openai import OpenAI
 
     def chatgpt(question):
-        openai_api_key = _snowflake.get_generic_secret_string('cred')
+        openai_api_key = _snowflake.get_generic_secret_string(''cred''')
 
         client = OpenAI(api_key=openai_api_key)
         completion = client.chat.completions.create(
