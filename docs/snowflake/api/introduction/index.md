@@ -8,7 +8,7 @@ Video is still in development.
 This tutorial assumes you have nothing in your Snowflake account ([Trial](https://signup.snowflake.com/)) and no complex security needs.
 
 ## Downloads
-- Notebook ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/notebooks/external/notebook/external_access.ipynb))
+- Notebook ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/api/introduction/notebook/external_access.ipynb))
 
 ## Setup :octicons-feed-tag-16:
 Lets start the network setup prcoess in Snowflake. 
