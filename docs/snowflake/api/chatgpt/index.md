@@ -77,8 +77,8 @@ Let's create the python user defined function to make it easy to access later.
 
     ```python linenums="1"
 
-    create or replace function api.functions.chatgpt("question" varchar(16777216))
-        returns varchar(16777216)
+    create or replace function api.functions.chatgpt("question" varchar)
+        returns varchar
         language python
         runtime_version = '3.8'
         packages = ('requests','openai')
