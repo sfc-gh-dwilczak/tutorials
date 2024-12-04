@@ -5,7 +5,7 @@ For the official Snowflake documentation this tutorial was based on:
 [https://docs.snowflake.com/en/user-guide/key-pair-auth](https://docs.snowflake.com/en/user-guide/key-pair-auth)
 
 ## Video
-Video is still in development.
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/WdCLossuS8U?si=06NU0Kv466KnmWu3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Requirement
 This tutorial assumes you have nothing in your Snowflake account ([Trial](https://signup.snowflake.com/)) and no complex security needs.
