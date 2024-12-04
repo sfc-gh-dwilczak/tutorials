@@ -2,7 +2,7 @@
 Goal of this tutorial is to get a introduction to Snowflake Container services by creating a flask website and then uploading / running it in Snowflake.
 
 ## Video
-Video currently in development.
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/4f39EvGv--M?si=qISUrpqpLjLBv51m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Requirements 
 - Be in a container services enabled region.([Link](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview#available-regions))
@@ -138,7 +138,7 @@ Next docker login to our snowflake image repo and upload the image. We will use 
 === ":octicons-image-16: Code"
 
     ```bash linenums="1"
-    docker login <FIRST PART OF THE URL> -u danielwilczak
+    docker login <FIRST PART OF THE URL> -u <LOGIN USERNAME>
     ```
 === ":octicons-image-16: Example"
 

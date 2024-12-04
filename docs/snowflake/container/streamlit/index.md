@@ -2,7 +2,7 @@
 Goal of this tutorial is to move our Streamlit in Snowflake "SiS" application into Snowflake container services. This is a typical workflow to remove the Snowflake headers around the application.
 
 ## Video
-Video currently in development.
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/4f39EvGv--M?si=qISUrpqpLjLBv51m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Requirements 
 - Be in a container services enabled region.([Link](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview#available-regions))
@@ -128,7 +128,7 @@ Next docker login to our snowflake image repo and upload the image. We will use 
 === ":octicons-image-16: Code"
 
     ```bash linenums="1"
-    docker login <FIRST PART OF THE URL> -u danielwilczak
+    docker login <FIRST PART OF THE URL> -u <LOGIN USERNAME>
     ```
 === ":octicons-image-16: Example"
 
