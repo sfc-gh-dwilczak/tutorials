@@ -10,37 +10,7 @@ Video is still in development.
 ## Requirement
 This tutorial assumes you have nothing in your Snowflake account ([Trial](https://signup.snowflake.com/)) and no complex security needs.
 
-## Setup :octicons-feed-tag-16:
-Lets start the setup prcoess in Snowflake. 
-
-
-### User creation
-First we'll create a new user with no password setup. I added a role to show a parameter we can set. The user doesnt not need Sysadmin access.
-=== ":octicons-image-16: Setup"
-
-    ```sql linenums="1"
-    use role useradmin;
-
-    create user <user_name>
-        default_role = <role_name>>;
-    ```   
-
-=== ":octicons-image-16: Example"
-
-    ```sql linenums="1"
-    use role useradmin;
-
-    create user danielwilczak
-        default_role = sysadmin;
-    ```
-
-=== ":octicons-image-16: Result"
-
-    ``` linenums="1"
-    User DANIELWILCZAK successfully created.
-    ```
-
-### Create Key
+## Create Key
 Lets create the private and public key so that we can apply the public key to our user.
 
 === ":octicons-image-16: Setup"
@@ -59,12 +29,17 @@ Lets create the private and public key so that we can apply the public key to ou
 This will create two files in the folder we are currently located.
 ![Two keys](images/01.png)
 
-### Apply key to user
+## Apply key to user
 Lets apply the public key to our user in Snowflake. The public key file will end with ``.pub``.
 
 === ":octicons-image-16: Setup"
 
     ```sql linenums="1"
+    use role useradmin;
+
+    create user danielwilczak
+        default_role = sysadmin;
+
     alter user danielwilczak set 
         rsa_public_key='<Public Key>';  /* (1)! */
     ```   
@@ -75,6 +50,11 @@ Lets apply the public key to our user in Snowflake. The public key file will end
 === ":octicons-image-16: Example"
 
     ```sql linenums="1"
+    use role useradmin;
+
+    create user danielwilczak
+        default_role = sysadmin;
+
     alter user danielwilczak set 
         rsa_public_key='MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsLiIQpJ0SkB0KgyN/Cj5
             O+3W3zIN5HvjBwsQnVbXAGpu920fohXRQAFc5hZpMNZOGNsLvl1YY1HtQ15j4K7o
@@ -91,6 +71,6 @@ Lets apply the public key to our user in Snowflake. The public key file will end
     Statement executed successfully.
     ```
 
-With our key now set on the user, we might want to test it via local python. [Here is a tutorial to test it](#).
+With our key now set on the user, we might want to test it via local python. [Here is a tutorial to test it](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/security/python/).
 
 

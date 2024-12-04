@@ -9,7 +9,7 @@ Video is still in development.
 
 ## Requirement
 - This tutorial assumes you have nothing in your Snowflake account ([Trial](https://signup.snowflake.com/)) and no complex security needs.
-- This tutorial assumes you've already have a private key, [if not here is a tutorial](#)
+- This tutorial assumes you've already have a private key, [if not here is a tutorial](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/security/key_pair/)
 
 ## Setup :octicons-feed-tag-16:
 Lets get start with our setup.
