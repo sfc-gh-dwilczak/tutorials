@@ -23,12 +23,19 @@ Lets start with some setup.
         use role sysadmin;
 
         -- Create the raw database for our data and a science database for our models.
-        create database if not exists 
-            raw comment='This is only raw data from your source.';
+        create database if not exists raw;
 
         -- Create the schema. The schema stores all objects that we will need later.
-        create schema if not exists
-            raw.training comment='Store training data in this schema.';
+        create schema if not exists raw.training;
+
+        /*
+            Warehouses are synonymous with the idea of compute
+            resources in other systems. We will use this
+            warehouse to call our user defined function.
+        */
+        create warehouse if not exists development 
+            warehouse_size = xsmall
+            initially_suspended = true;
         ```
 
 Lets create the table we'll query later in the notebook.
@@ -58,7 +65,7 @@ Lets create the table we'll query later in the notebook.
 === ":octicons-image-16: Snowflake - Code"
 
     ``` linenums="1"
-    UPDATE
+    Unumber of rows inserted - 10
     ```
 
 ### Jupyter Notebook
