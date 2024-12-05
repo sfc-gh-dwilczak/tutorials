@@ -1,0 +1,19 @@
+# Use an official Python runtime as a parent image
+FROM --platform=linux/amd64 python:3.11.6
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY ./llama.py /app/llama.py
+COPY ./llama-2-7b-chat.Q2_K.gguf /app/llama-2-7b-chat.Q2_K.gguf
+
+# Install any needed packages specified in requirements.txt
+RUN pip install llama-cpp-python
+RUN pip install Flask
+
+# Expose port 8080 to the world outside this container
+EXPOSE 8080
+
+# Run app.py when the container launches
+CMD ["python3", "llama.py"]
