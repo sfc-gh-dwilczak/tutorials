@@ -1,4 +1,4 @@
-# Setup DBT Devevelopemnt and Production:
+# DBT Devevelopemnt and Production:
 In this tutorial we will show how you how to setup dbt cloud with Snowflake. In the process we will show how to setup your development and production envirement.
 
 ## Video
@@ -97,7 +97,7 @@ First lets start in Snowflake by setting up some resources. We'll create one dat
 Lets walk through the development envirement setup in dbt. 
 
 ### Project
-As soon on you login you'll be asked to start a project an give it a name.
+As soon on you login you'll be asked to start a project and give it a name.
 ![project](images/01.png)
 
 We'll want to add our development envirement connection to Snowflake.
@@ -107,7 +107,7 @@ We'll want to add our development envirement connection to Snowflake.
 To add our development environment we'll want to get our account identifier. Once copied we'll make sure we replace the ``.`` with a ``-`` otherwise it won't find the account.
 ![account identifier](images/03.png)
 
-We'll select snowflake and give the connection a name. For the connection setting you'll want to add your account identifier as the account. Please remember to swap ``.`` with a ``-`` otherwise it won't find the account. For the database we'll use ``DBT``, warehouse = ``development`` and role = ``SYSADMIN``.
+We'll select snowflake and give the connection a name. For the connection settings you'll want to add your account identifier as the account. Please remember to swap ``.`` with a ``-`` otherwise it won't find the account. For the database we'll use ``DBT``, warehouse = ``development`` and role = ``SYSADMIN``.
 ![Connection setup](images/04.png)
 
 Once saved, dbt will not redirect you to the setup so please click ``Credentials`` and then the project. This will prompt you to click a link that will take you back to the setup page.
@@ -116,10 +116,10 @@ Once saved, dbt will not redirect you to the setup so please click ``Credentials
 Select your connection.
 ![select connection](images/06.png)
 
-?!? Warning "If your user is using MFA"
+!!! Warning "If your user is using MFA"
     If your planned development user is using MFA. This connection test will ask for MFA authentication.
 
-Now we'll want to enter our own development credentials and then select test connection to validate everything.
+Now we'll want to enter our own development credentials and then select ``test connection`` to validate everything.
 ![dev credentials](images/07.png)
 
 Once tested you will see a ``complete`` status. From there we'll click save.
@@ -142,11 +142,11 @@ Lets initialize the project code.
 We can see a sample project has been added to our branch.
 ![show code](images/13.png)
 
-Before we build these models lets remove some code so that everything build successfully. DBT has setup up this code for learning but we are more intrested in getting everything working.
+Before we build these models lets remove some code so that everything builds successfully. DBT has setup up this code for learning but we are more intrested in getting everything working.
 ![Remove code](images/14.png)
 
 ??? Warning "If your user is using MFA - Please enable token caching before uploading"
-    If your planned development user is using MFA. Please enable token caching or else it will ask you for authentication everytime you run anything in dbt.
+    If your development user is using MFA. Please enable token caching or else it will ask you for authentication everytime you run each dbt model. In this case will we ask at least 6-7 times.
 
     ```sql
     alter account set allow_client_mfa_caching = TRUE;
@@ -212,7 +212,7 @@ Jobs run dbt code in our environment on a regular bases. Lets use the left navba
 Create a new deploy job.
 ![create job](images/32.png)
 
-We'll give our job a name. The enirement should be production and we want to run the command ``dbt build`` similar to when we were in development. Next we'll select to generate docs and run on a schedule. Click save when finished.
+We'll give our job a name. The environment should be production and we want to run the command ``dbt build`` similar to when we were in development. Next we'll select to generate docs and run on a schedule. Click save when finished.
 ![job setup](images/33.png)
 
 Now that we created the job, lets run it.
