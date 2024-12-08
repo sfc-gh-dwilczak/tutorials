@@ -2,7 +2,7 @@
 In this tutorial, we will guide you through setting up dbt Cloud with Snowflake. Along the way, we'll demonstrate how to configure both your development and production environments.
 
 ## Video
-Video in development
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/TnTOl9ayL3Y?si=23hTTYwBhjoFoGHV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Requirement
 - At least a free Snowflake ([trial account](https://signup.snowflake.com/)) and no complex security needs.
