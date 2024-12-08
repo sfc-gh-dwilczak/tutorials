@@ -9,7 +9,7 @@ Video in development
 - At least a free DBT [developer account](https://www.getdbt.com/signup) and no complex security needs.
 - A git repository. I suggest [github](https://github.com/).
 
-## Snowflake
+## Snowflake :octicons-feed-tag-16:
 First lets start in Snowflake by setting up some resources. We'll create one database, two warehouses and one new users using [sysadmin role](https://docs.snowflake.com/en/user-guide/security-access-control-overview).
 
 ??? Warning "If your user is using MFA - Please enable token caching before uploading"
