@@ -1,5 +1,5 @@
 # DBT Development and Production:
-In this tutorial we will show how you how to setup dbt cloud with Snowflake. In the process we will show how to setup your development and production envirement.
+In this tutorial, we will guide you through setting up dbt Cloud with Snowflake. Along the way, we'll demonstrate how to configure both your development and production environments.
 
 ## Video
 Video in development
