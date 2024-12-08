@@ -68,6 +68,8 @@ nav:
       - Setup: fivetran/setup/setup.md
       - Sources:
         - Google Analytics: fivetran/sources/google_analytics/google_analytics.md
+  - DBT:
+      - Setup: dbt/setup/index.md
 
       # - Iceberg: snowflake/google/iceberg/iceberg.md
       # - Git: snowflake/notebooks/git/git.md
