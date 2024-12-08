@@ -94,13 +94,13 @@ First lets start in Snowflake by setting up some resources. We'll create one dat
     ```
 
 ## Development :octicons-feed-tag-16:
-Lets walk through the development envirement setup in dbt. 
+Lets walk through the development environment setup in dbt. 
 
 ### Project
 As soon on you login you'll be asked to start a project and give it a name.
 ![project](images/01.png)
 
-We'll want to add our development envirement connection to Snowflake.
+We'll want to add our development environment connection to Snowflake.
 ![add connection](images/02.png)
 
 ### Snowflake

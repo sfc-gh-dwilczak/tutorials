@@ -75,11 +75,10 @@ Lets create the table we'll query later in the notebook.
     ```
 
 
-We'll want get our accout url but only grabbing the first part of it before the ``.snowflakecomputing.com`` part. Please read the [Account Identifiers](https://docs.snowflake.com/en/user-guide/admin-account-identifier#non-vps-account-locator-formats-by-cloud-platform-and-region) documentation to learn how to format your account locator based on your region. 
-
+To add our development environment we'll want to get our account identifier. 
 ![Account URL](images/07.png)
 
-In the notebook we'll have to update our connectection parameters.
+In the notebook we'll have to update our connectection parameters. Once pasted we'll make sure we replace the ``.`` with a ``-`` otherwise it won't connect to the account.
 === ":octicons-image-16: Setup"
 
     ```python linenums="1"
