@@ -26,7 +26,7 @@ Lets start with some setup.
         create database if not exists raw;
 
         -- Create the schema. The schema stores all objects that we will need later.
-        create schema if not exists raw.training;
+        create schema if not exists raw.jupyter;
 
         /*
             Warehouses are synonymous with the idea of compute
@@ -39,7 +39,7 @@ Lets start with some setup.
         ```
 
 Lets create the table we'll query later in the notebook.
-=== ":octicons-image-16: Snowflake - Code"
+=== ":octicons-image-16: Code"
 
     ```sql linenums="1"
     create table xy (
@@ -62,7 +62,7 @@ Lets create the table we'll query later in the notebook.
         (10, 52);
     ```
 
-=== ":octicons-image-16: Snowflake - Code"
+=== ":octicons-image-16: Result"
 
     ``` linenums="1"
     Unumber of rows inserted - 10
