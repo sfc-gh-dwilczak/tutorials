@@ -104,7 +104,7 @@ In the notebook we'll have to update our connectection parameters. Once pasted w
 We can follow along in the notebook or see the result in the image below.
 ![Worksheet](images/02.png)
 
-## Troubleshooting :octicons-image-16:
+## Troubleshooting :octicons-feed-tag-16:
 Here are some common errors I've seen during the setup process.
 
 ### Can't find module - Snowflake
