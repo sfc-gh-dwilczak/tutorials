@@ -59,8 +59,7 @@ Let's transition to Snowflake by creating a worksheet and adding the code below 
     use role sysadmin;
 
     -- Create a database to store our schemas.
-    create database if not exists raw 
-        comment='This is only raw data from your source.';
+    create database if not exists raw ;
 
     -- Create the schema. The schema stores all objects.
     create schema if not exists raw.azure;
@@ -69,8 +68,9 @@ Let's transition to Snowflake by creating a worksheet and adding the code below 
         Warehouses are synonymous with the idea of
         compute resources in other systems.
     */
-    create or replace warehouse developer 
+    create warehouse development 
         warehouse_size = xsmall
+        auto_suspend = 30
         initially_suspended = true;
 
     /*
@@ -78,7 +78,6 @@ Let's transition to Snowflake by creating a worksheet and adding the code below 
         should do because it's allowing outside snowflake connections to your data.
     */
     use role accountadmin;
-    use warehouse developer;
 
     create or replace storage integration azure_integration
         type = external_stage
@@ -119,8 +118,7 @@ Let's transition to Snowflake by creating a worksheet and adding the code below 
     use role sysadmin;
 
     -- Create a database to store our schemas.
-    create database if not exists raw 
-        comment='This is only raw data from your source.';
+    create database if not exists raw;
 
     -- Create the schema. The schema stores all objects.
     create schema if not exists raw.azure;
@@ -129,8 +127,9 @@ Let's transition to Snowflake by creating a worksheet and adding the code below 
         Warehouses are synonymous with the idea of
         compute resources in other systems.
     */
-    create or replace warehouse developer 
+    create or replace warehouse development 
         warehouse_size = xsmall
+        auto_suspend = 30
         initially_suspended = true;
 
     /*
@@ -138,7 +137,6 @@ Let's transition to Snowflake by creating a worksheet and adding the code below 
         should do because it's allowing outside snowflake connections to your data.
     */
     use role accountadmin;
-    use warehouse developer;
 
     create or replace storage integration azure_integration
         type = external_stage
@@ -196,6 +194,7 @@ Lets setup the stage, file format, warehouse and finally load some json data.
     use database raw;
     use schema azure;
     use role sysadmin;
+    use warehouse development;
 
     /*
        Stages are synonymous with the idea of folders
@@ -242,6 +241,7 @@ Lets setup the stage, file format, warehouse and finally load some json data.
     use database raw;
     use schema azure;
     use role sysadmin;
+    use warehouse development;
 
     /*
        Stages are synonymous with the idea of folders
@@ -423,7 +423,7 @@ We'll load a csv file by automating the creation of the table and infering the n
     use role sysadmin;
     use database raw;
     use schema azure;
-    use warehouse developer;
+    use warehouse development;
 
     /*
         Copy CSV data using a pipe without having

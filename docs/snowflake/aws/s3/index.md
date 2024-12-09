@@ -335,13 +335,13 @@ Lets setup the stage, file format, warehouse and finally load some json data.
         type = 'json';
 
     -- Create the table.
-    create or replace table data (
+    create or replace table json (
         file_name varchar,
         data variant
     );
 
     -- Load json data.
-    copy into data(file_name,data)
+    copy into json(file_name,data)
     from (
         select 
             metadata$filename,
@@ -380,13 +380,13 @@ Lets setup the stage, file format, warehouse and finally load some json data.
         type = 'json';
 
     -- Create the table.
-    create or replace table data (
+    create or replace table json (
         file_name varchar,
         data variant
     );
 
     -- Load json data.
-    copy into data(file_name,data)
+    copy into json(file_name,data)
     from (
         select 
             metadata$filename,

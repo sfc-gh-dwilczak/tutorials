@@ -49,8 +49,7 @@ Let's setup snowflake by creating a worksheet in snowflake and add the code belo
     use role sysadmin;
 
     --- Create a database to store our schemas.
-    create database if not exists raw 
-        comment='This is only raw data from your source.';
+    create database if not exists raw;
 
     -- Create the schema. The schema stores all objects.
     create schema if not exists raw.gcp;
@@ -60,8 +59,9 @@ Let's setup snowflake by creating a worksheet in snowflake and add the code belo
         resources in other systems. We will use this
         warehouse to query our integration and to load data.
     */
-    create warehouse developer 
+    create warehouse development 
         warehouse_size = xsmall
+        auto_suspend = 30
         initially_suspended = true;
 
     /*
@@ -70,7 +70,6 @@ Let's setup snowflake by creating a worksheet in snowflake and add the code belo
         snowflake connections to your data.
     */
     use role accountadmin;
-    use warehouse developer;
 
     create storage integration gcp_integration
         type = external_stage
@@ -100,8 +99,7 @@ Let's setup snowflake by creating a worksheet in snowflake and add the code belo
     use role sysadmin;
 
     --- Create a database to store our schemas.
-    create database if not exists raw 
-        comment='This is only raw data from your source.';
+    create database if not exists raw;
 
     -- Create the schema. The schema stores all objectss.
     create schema if not exists raw.gcp;
@@ -111,8 +109,9 @@ Let's setup snowflake by creating a worksheet in snowflake and add the code belo
         resources in other systems. We will use this
         warehouse to query our integration and to load data.
     */
-    create warehouse developer 
+    create warehouse development 
         warehouse_size = xsmall
+        auto_suspend = 30
         initially_suspended = true;
 
     /*
@@ -121,7 +120,6 @@ Let's setup snowflake by creating a worksheet in snowflake and add the code belo
         snowflake connections to your data.
     */
     use role accountadmin;
-    use warehouse developer;
 
     create storage integration gcp_integration
         type = external_stage
@@ -180,6 +178,7 @@ Lets setup the stage, file format and finally load some json data.
     use database raw;
     use schema gcp;
     use role sysadmin;
+    use warehouse development;
 
     /*
        Stages are synonymous with the idea of folders
@@ -225,6 +224,7 @@ Lets setup the stage, file format and finally load some json data.
     use database raw;
     use schema gcp;
     use role sysadmin;
+    use warehouse development;
 
     /*
        Stages are synonymous with the idea of folders
@@ -241,10 +241,6 @@ Lets setup the stage, file format and finally load some json data.
     */
     create or replace file format raw.gcp.json
         type = 'json';
-
-
-    -- Lets use that warehouse to load our json data.
-    use warehouse developer;
 
     -- Create the table to load into.
     create or replace table json (
@@ -452,7 +448,7 @@ In this case we'll load a csv file by automating the creation of the table and i
     use role sysadmin;
     use database raw;
     use schema gcp;
-    use warehouse developer;
+    use warehouse development;
 
     /*
         Copy CSV data using a pipe without having
