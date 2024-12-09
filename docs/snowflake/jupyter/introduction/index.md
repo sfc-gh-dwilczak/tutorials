@@ -35,6 +35,7 @@ Lets start with some setup.
         */
         create warehouse if not exists development 
             warehouse_size = xsmall
+            auto_suspend = 30
             initially_suspended = true;
         ```
 
