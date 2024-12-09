@@ -2,7 +2,7 @@
 In this tutorial you will learn how to get data from snowflake into our local jupyter notebook.
 
 ## Video
-Video is still in development
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/BXtvIjcHmC4?si=BeLuNrC0p4tQOppo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Installing Jupyter Notebook :octicons-feed-tag-16:
 The fastest way I got jupyter notebooks up and running is by installing [VsCode](https://code.visualstudio.com/) and then creating a new file with the extension ".ipynb".
