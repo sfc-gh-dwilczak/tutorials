@@ -136,8 +136,7 @@ Lets start the snowflake setup by creating our database and schema. Followed by 
     use role sysadmin;
 
     -- Create a database to store our schemas.
-    create database if not exists 
-        raw comment='This is only raw data from our sources.';
+    create database if not exists raw;
 
     -- Create the schema. The schema stores all objects.
     create schema if not exists raw.aws;
@@ -147,8 +146,9 @@ Lets start the snowflake setup by creating our database and schema. Followed by 
         resources in other systems. We will use this
         warehouse to query our integration and to load data.
     */
-    create warehouse developer 
+    create warehouse development 
         warehouse_size = xsmall
+        auto_suspend = 30
         initially_suspended = true;
 
     /*
@@ -184,8 +184,7 @@ Lets start the snowflake setup by creating our database and schema. Followed by 
     use role sysadmin;
 
     -- Create a database to store our schemas.
-    create database if not exists 
-        raw comment='This is only raw data from our sources.';
+    create database if not exists raw;
 
     -- Create the schema. The schema stores all objectss.
     create schema if not exists raw.aws;
@@ -195,8 +194,9 @@ Lets start the snowflake setup by creating our database and schema. Followed by 
         resources in other systems. We will use this
         warehouse to query our integration and to load data.
     */
-    create warehouse developer 
+    create warehouse development 
         warehouse_size = xsmall
+        auto_suspend = 30
         initially_suspended = true;
 
     /*
@@ -316,7 +316,7 @@ Lets setup the stage, file format, warehouse and finally load some json data.
     use role sysadmin;
     use database raw;
     use schema aws;
-    use warehouse developer;
+    use warehouse development;
 
     /*
        Stages are synonymous with the idea of folders
@@ -361,6 +361,7 @@ Lets setup the stage, file format, warehouse and finally load some json data.
     use role sysadmin;
     use database raw;
     use schema aws;
+    use warehouse development;
 
     /*
        Stages are synonymous with the idea of folders
@@ -377,14 +378,6 @@ Lets setup the stage, file format, warehouse and finally load some json data.
     */
     create or replace file format json
         type = 'json';
-
-    /*
-        Warehouses are synonymous with the idea of
-        compute resources in other systems.
-    */
-    create or replace warehouse developer 
-        warehouse_size=xsmall
-        initially_suspended=true;
 
     -- Create the table.
     create or replace table data (
@@ -443,7 +436,7 @@ In this case we'll load a csv file by automating the creation of the table and i
     use role sysadmin;
     use database raw;
     use schema aws;
-    use warehouse developer;
+    use warehouse development;
 
     /*
         Copy CSV data using a pipe without having
