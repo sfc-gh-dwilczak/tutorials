@@ -93,7 +93,7 @@ In the notebook we'll have to update our connectection parameters. Once pasted w
 
     ```python linenums="1"
     connection_parameters = {
-        "account":  "wzb37388.us-east-1",
+        "account":  "wzb37388.gh787th",
         "user":     "daniel.wilczak@snowflake.com",
         "password": "password123"
     }   
