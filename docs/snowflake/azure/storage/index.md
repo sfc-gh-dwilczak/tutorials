@@ -179,10 +179,6 @@ Lets navigate to IAM so that we can give snowflake access to our storage account
 Search for **Storage Blob Data Contributor**, select the role and click next.
 ![Storage Blob Contributor](images/14_1.png)
 
-!!! note
-
-    You only need to enter the first half of the string for azure to find the member in the search.
-
 Lets add the Snowflake member by selecting "select member" and search for our **AZURE_MULTI_TENANT_APP_NAME** that we got earlier from snowflake. 
 
 ![Add snowflake memeber](images/15_1.png)
@@ -423,10 +419,6 @@ Using the left side search "iam" and select Access Control and "add role assignm
 
 Search for "storage queue data contributor" and select it and click next.
 ![NRole assignment](images/26.png)
-
-!!! note
-
-    You only need to enter the first half of the string for azure to find the member in the search.
     
 Click "Select members" and add your `AZURE_MULTI_TENANT_APP_NAME` that we recieved from Snowflake in the prior snowflake step. 
 ![NRole assignment](images/27.png)
