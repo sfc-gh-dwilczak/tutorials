@@ -41,9 +41,9 @@ nav:
       - Cloud Storage: snowflake/google/storage/index.md
     - SFTP: 
       - Via Notebook: snowflake/sftp/index.md
-    - Containerized Notebooks:
+    - Notebooks - Containerized:
       - Introduction: snowflake/notebooks/containers/index.md
-    - Local Jupyter Notebooks:
+    - Notebooks - Local Jupyter :
       - Introduction: snowflake/jupyter/introduction/index.md
       - ML Model: snowflake/jupyter/models/index.md
     - Container Services:
