@@ -149,7 +149,7 @@ Lets start the snowflake setup by creating our database and schema. Followed by 
         resources in other systems. We will use this
         warehouse to query our integration and to load data.
     */
-    create warehouse development 
+    create warehouse if not exists development 
         warehouse_size = xsmall
         auto_suspend = 30
         initially_suspended = true;

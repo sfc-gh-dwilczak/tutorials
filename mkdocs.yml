@@ -35,10 +35,10 @@ nav:
       - S3: snowflake/aws/s3/index.md
       - Kinesis: snowflake/aws/kinesis/index.md
     - Azure:
-      - Blob: snowflake/azure/blob.md
-      - Azure Active Directory: snowflake/sso/azure_ad.md
+      - Blob / Storage: snowflake/azure/storage/index.md
+      - Azure Active Directory / SSO: snowflake/azure/sso/index.md
     - Google Cloud: 
-      - Cloud Storage: snowflake/google/storage/cloud_storage.md
+      - Cloud Storage: snowflake/google/storage/index.md
     - SFTP: 
       - Via Notebook: snowflake/sftp/index.md
     - Containerized Notebooks:
