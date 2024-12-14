@@ -4,6 +4,9 @@ Goal of this tutorial is to load JSON and CSV data from a S3 bucket using the [C
 ## Video
 Video in development.
 
+## Download  :octicons-feed-tag-16:
+- Sample data ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/data/data.zip))
+
 ## Manual Loading  :octicons-feed-tag-16:
 Lets start by setting up a snowflake connection to AWS s3 storage and load json data. After that use snowpipe to automate the ingestion of CSV files.
 

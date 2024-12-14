@@ -4,6 +4,9 @@ Goal of this tutorial is to load JSON and CSV data from a Google Cloud Storage u
 ## Video
 Video in development.
 
+## Download  :octicons-feed-tag-16:
+- Sample data ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/data/data.zip))
+
 ## Manual Loading  :octicons-feed-tag-16:
 Lets start by setting up a Snowflake connection to Google Cloud Storage and load json data. After that use snowpipe to automate the ingestion of CSV files.
 
