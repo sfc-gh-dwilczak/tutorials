@@ -71,7 +71,7 @@ Let's transition to Snowflake by creating a worksheet and adding the code below 
         Warehouses are synonymous with the idea of
         compute resources in other systems.
     */
-    create warehouse development 
+    create warehouse if not exists development 
         warehouse_size = xsmall
         auto_suspend = 30
         initially_suspended = true;
