@@ -2,7 +2,7 @@
 Goal of this tutorial is to load JSON and CSV data from a S3 bucket using the [Copy into](https://docs.snowflake.com/en/sql-reference/sql/copy-into-table) sql command and [Snowpipe](https://docs.snowflake.com/en/user-guide/data-load-snowpipe-intro) to automate the ingestion process. This tutorial assumes you have nothing in your Snowflake account ([Trial](https://signup.snowflake.com/)) and no complex security needs.
 
 ## Video
-Video in development.
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/K9i_PWE_HHw?si=DANmRHLH1kGuj_Hf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Download  :octicons-feed-tag-16:
 - Sample data ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/data/data.zip))
