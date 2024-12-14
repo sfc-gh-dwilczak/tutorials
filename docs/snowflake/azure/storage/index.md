@@ -187,6 +187,9 @@ Once selected, click Review and Assign.
 ![Review and assign](images/16.png)
 
 ### Load the data
+??? warning "If you get an error when creating the stage."
+
+    Just wait 30 seconds to a minute and try again. Sometimes it takes Azure a bit to update security.
 
 Lets setup the stage, file format, warehouse and finally load some json data.
 
@@ -431,6 +434,10 @@ Final Azure step, select review and assign and your done with azure.
 !!! Note
 
     Sometimes it may take 1-2 minutes before you see data in the table. This depends on how Azure is feeling today.
+
+??? warning "If you get an error when creating the pipe."
+
+    Just wait 30 seconds to a minute and try again. Sometimes it takes Azure a bit to update security.
 
 We'll load a csv file by automating the creation of the table and infering the names in the csv pipe.
 
