@@ -155,8 +155,10 @@ Let's transition to Snowflake by creating a worksheet and adding the code below 
 
     -- Get the URL to authenticate with azure and the app name to use later.
     describe storage integration azure_integration;
-    select "property", "property_value" from TABLE(RESULT_SCAN(LAST_QUERY_ID()))
-    where "property" = 'AZURE_CONSENT_URL' or "property" = 'AZURE_MULTI_TENANT_APP_NAME';
+    select "property", 
+    case  when "property" = 'AZURE_MULTI_TENANT_APP_NAME' then split_part("property_value", '_', 1) else "property_value"end as "property_value"
+    from table(result_scan(last_query_id()))
+    where "property" in ('AZURE_CONSENT_URL', 'AZURE_MULTI_TENANT_APP_NAME');
     ```
 
 === ":octicons-sign-out-16: Result"
@@ -182,7 +184,8 @@ Search for **Storage Blob Data Contributor**, select the role and click next.
     You only need to enter the first half of the string for azure to find the member in the search.
 
 Lets add the Snowflake member by selecting "select member" and search for our **AZURE_MULTI_TENANT_APP_NAME** that we got earlier from snowflake. 
-![Add snowflake memeber](images/15.png)
+
+![Add snowflake memeber](images/15_1.png)
 
 Once selected, click Review and Assign.
 ![Review and assign](images/16.png)
@@ -315,6 +318,24 @@ Store the URL. It will be used later.
 Next lets create an event subscription. 
 ![Event Subscription](images/18.png)
 
+??? warning "If you get an error with the topic follow this prosess to enable it"
+
+    Search for subscription.
+    ![Subscription](images/34.png)
+
+    Select your subscription.
+    ![Subscription](images/35.png)
+
+    Search "resource provider" and select it.
+    ![Subscription](images/36.png)
+
+    Search "EventGrid", select it, and the select register. This will enable it in your account.
+    ![Subscription](images/37.png)
+
+    Wait for it to say registered.
+    ![Subscription](images/38.png)
+
+
 Enter in the highlighted fields. I've named mine `danielwilczak-snowflake-event`. Once entered click "configure endpoint".
 ![Event Input](images/19.png)
 
@@ -378,9 +399,10 @@ Open a worksheet and enter in your `queue url` and `tenant_id`.
     grant usage on integration azure_snowpipe_integration to role sysadmin;
 
     describe notification integration azure_snowpipe_integration;
-    select "property", "property_value" as property_value
+    select "property", 
+    case  when "property" = 'AZURE_MULTI_TENANT_APP_NAME' then split_part("property_value", '_', 1) else "property_value"end as "property_value"
     from table(result_scan(last_query_id()))
-    where "property" = 'AZURE_CONSENT_URL' or "property" = 'AZURE_MULTI_TENANT_APP_NAME';
+    where "property" in ('AZURE_CONSENT_URL', 'AZURE_MULTI_TENANT_APP_NAME');
     ```
 
 === ":octicons-sign-out-16: Result"
