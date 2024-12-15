@@ -6,7 +6,7 @@ Goal of this tutorial is to load JSON and CSV data from a Google Cloud Storage u
 - Google cloud account, you can setup a [free account](https://cloud.google.com/) to get started.
 
 ## Video
-Video in development.
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/Q4nldiYqCzo?si=8fX823UOz_R3o6Uu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Download  :octicons-feed-tag-16:
 - Sample data ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/data/data.zip))
