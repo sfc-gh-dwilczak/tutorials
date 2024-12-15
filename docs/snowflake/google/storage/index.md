@@ -168,7 +168,7 @@ In the new principles section, add your [STORAGE_GCP_SERVICE_ACCOUNT](https://sf
 Now add your role by clicking `select role` -> `custom` -> `snowflake`. The last one will be your role name.
 ![Add role](images/14.png)
 
-??? warning "If you get a 'Domain restricted sharing' error. "
+??? warning "If you get a 'Domain restricted sharing' error when you click 'Save'. "
 
     If you run into this error it's because google cloud has updated thier policy as of March 2024. We'll have to update them. First select your orginization (not your project), then go to IAM in the search, followed by clicking "grant access".
     ![navigate to grant access](images/44.png)
