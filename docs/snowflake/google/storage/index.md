@@ -112,7 +112,7 @@ Let's setup snowflake by creating a worksheet in snowflake and add the code belo
         resources in other systems. We will use this
         warehouse to query our integration and to load data.
     */
-    create warehouse development 
+    create warehouse if not exists development 
         warehouse_size = xsmall
         auto_suspend = 30
         initially_suspended = true;
@@ -167,6 +167,35 @@ In the new principles section, add your [STORAGE_GCP_SERVICE_ACCOUNT](https://sf
 
 Now add your role by clicking `select role` -> `custom` -> `snowflake`. The last one will be your role name.
 ![Add role](images/14.png)
+
+??? warning "If you get a 'Domain restricted sharing' error. "
+
+    If you run into this error it's because google cloud has updated thier policy as of March 2024. We'll have to update them. First select your orginization (not your project), then go to IAM in the search, followed by clicking "grant access".
+    ![navigate to grant access](images/44.png)
+
+    Next we'll add our user email into the new principals area. We'll search and click on "Organization Policy Administrator".
+    ![org policy admin](images/45.png)
+
+    Click save.
+    ![update](images/46.png)
+
+    Next we'll want to update the policy. By searching IAM, selecting orgianization policies, searching domain and clicking on "Domain restricted sharing".
+    ![update](images/47.png)
+
+    Click Manage polcy.
+    ![update](images/48.png)
+
+    !!! Note
+
+    "Allow All" is the simple approach but feel free to use [more fine grain approach via Snowflake documentation](https://docs.snowflake.com/en/user-guide/data-load-gcs-config#assigning-the-custom-role-to-the-cloud-storage-service-account).
+
+    We'll want to overide the parent policy with a new rule. Select replace the policy and then select "Allow All". Click done and "Set Polcy." and your good to go. 
+    ![update](images/49.png)
+
+    The policy has been updated and you can retry adding the role to the new principal.
+    ![update](images/50.png)
+
+
 
 Click `Save` and your finished with Google Cloud for manual loading.
 ![Click Save](images/15.png)
@@ -415,7 +444,7 @@ Click show panel if not open already.
 Click `Add Principle`.
 ![Add Principle](images/33.png)
 
-Add your principle login user we got from snowflake in the p[rior step](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/google/cloud_storage/#snowflake_1).
+Add your principle login user we got from snowflake in the [prior step](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/google/storage/#snowflake_1).
 ![Add login user](images/34.png)
 
 Click select role and select `Pub / Sub` -> `Pub / Sub Subscriber`.
@@ -430,7 +459,7 @@ Next we'll want to go back to IAM.
 Click `Grant Access`.
 ![Grant Access](images/38.png)
 
-Add your principle login user we got from snowflake in the [prior step](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/google/cloud_storage/#snowflake_1).
+Add your principle login user we got from snowflake in the [prior step](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/google/storage/#snowflake_1).
 ![Add login user part 2](images/39.png)
 
 Click select role and search `Monitoring Viewer` and click `Monitoring Viewer`.
