@@ -1,5 +1,9 @@
 # Connect Snowflake to Azure Storage
-Goal of this tutorial is to load JSON and CSV data from a Azure Storage using the [Copy into](https://docs.snowflake.com/en/sql-reference/sql/copy-into-table) sql command and [Snowpipe](https://docs.snowflake.com/en/user-guide/data-load-snowpipe-intro) to automate the ingestion process. This tutorial assumes you have nothing in your Snowflake account ([Trial](https://signup.snowflake.com/)) and no complex security needs.
+Goal of this tutorial is to load JSON and CSV data from a Azure Storage using the [Copy into](https://docs.snowflake.com/en/sql-reference/sql/copy-into-table) sql command and [Snowpipe](https://docs.snowflake.com/en/user-guide/data-load-snowpipe-intro) to automate the ingestion process.
+
+## Requirements
+- Snowflake account, you can use a ([free trial](https://signup.snowflake.com/)). We also assume no complex security needs.
+- Azure account, you can setup a [free account](https://azure.microsoft.com/en-us/free/) to get started.
 
 ## Video
 <iframe width="850px" height="478px" src="https://www.youtube.com/embed/K18izJ1azFg?si=QloTQIiHYYOoumxm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -11,7 +15,7 @@ Goal of this tutorial is to load JSON and CSV data from a Azure Storage using th
 Lets start by setting up a Snowflake connection to Azure storage and load json data. After that use snowpipe to automate the ingestion of CSV files.
 
 ### Azure
-Sign into your azure account. If you don't have one, a free [azure account](https://azure.microsoft.com/en-us/free/) can be started.
+Sign into your azure account.
 
 #### Create Storage account 
 Create the stoage account you intend to use. 

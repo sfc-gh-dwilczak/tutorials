@@ -1,5 +1,9 @@
 # Connect Snowflake to S3 Storage
-Goal of this tutorial is to load JSON and CSV data from a S3 bucket using the [Copy into](https://docs.snowflake.com/en/sql-reference/sql/copy-into-table) sql command and [Snowpipe](https://docs.snowflake.com/en/user-guide/data-load-snowpipe-intro) to automate the ingestion process. This tutorial assumes you have nothing in your Snowflake account ([Trial](https://signup.snowflake.com/)) and no complex security needs.
+Goal of this tutorial is to load JSON and CSV data from a S3 bucket using the [Copy into](https://docs.snowflake.com/en/sql-reference/sql/copy-into-table) sql command and [Snowpipe](https://docs.snowflake.com/en/user-guide/data-load-snowpipe-intro) to automate the ingestion process.
+
+## Requirements
+- Snowflake account, you can use a ([free trial](https://signup.snowflake.com/)). We also assume no complex security needs.
+- AWS account, you can setup a [free account](https://aws.amazon.com/free/) to get started.
 
 ## Video
 <iframe width="850px" height="478px" src="https://www.youtube.com/embed/K9i_PWE_HHw?si=DANmRHLH1kGuj_Hf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -11,7 +15,7 @@ Goal of this tutorial is to load JSON and CSV data from a S3 bucket using the [C
 Lets start by setting up a snowflake connection to AWS s3 storage and load json data. After that use snowpipe to automate the ingestion of CSV files.
 
 ### AWS
-Sign into your aws account. If you don't have one, a free [aws account](https://aws.amazon.com/free/) can be started.
+Sign into your aws account.
 
 #### Create S3 bucket
 Create the bucket you intend to use. In our case we'll call the bucket **danielwilczak**.
