@@ -1,5 +1,9 @@
 # Connect Snowflake to Google Cloud Storage
-Goal of this tutorial is to load JSON and CSV data from a Google Cloud Storage using the [Copy into](https://docs.snowflake.com/en/sql-reference/sql/copy-into-table) sql command and [Snowpipe](https://docs.snowflake.com/en/user-guide/data-load-snowpipe-intro) to automate the ingestion process. This tutorial assumes you have nothing in your Snowflake account ([Trial](https://signup.snowflake.com/)) and no complex security needs.
+Goal of this tutorial is to load JSON and CSV data from a Google Cloud Storage using the [Copy into](https://docs.snowflake.com/en/sql-reference/sql/copy-into-table) sql command and [Snowpipe](https://docs.snowflake.com/en/user-guide/data-load-snowpipe-intro) to automate the ingestion process.
+
+## Requirements
+- Snowflake account, you can use a ([free trial](https://signup.snowflake.com/)). We also assume no complex security needs.
+- Google cloud account, you can setup a [free account](https://cloud.google.com/) to get started.
 
 ## Video
 Video in development.
@@ -11,7 +15,7 @@ Video in development.
 Lets start by setting up a Snowflake connection to Google Cloud Storage and load json data. After that use snowpipe to automate the ingestion of CSV files.
 
 ### Google Cloud
-Sign into your azure account. If you don't have one, a free [Google Cloud account](https://cloud.google.com/) can be started.
+Sign into your google account. 
 
 #### Create project 
 If you don't have a project, start by selecting/creating a project.
