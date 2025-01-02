@@ -35,10 +35,11 @@ Lets apply the public key to our user in Snowflake. The public key file will end
 === ":octicons-image-16: Setup"
 
     ```sql linenums="1"
-    use role useradmin;
+    use role accountadmin;
 
-    create user danielwilczak
-        default_role = sysadmin;
+    create user danielwilczak;
+
+    grant role sysadmin to user danielwilczak;
 
     alter user danielwilczak set 
         rsa_public_key='<Public Key>';  /* (1)! */
@@ -50,10 +51,11 @@ Lets apply the public key to our user in Snowflake. The public key file will end
 === ":octicons-image-16: Example"
 
     ```sql linenums="1"
-    use role useradmin;
+    use role accountadmin;
 
-    create user danielwilczak
-        default_role = sysadmin;
+    create user danielwilczak;
+
+    grant role sysadmin to user danielwilczak;
 
     alter user danielwilczak set 
         rsa_public_key='MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsLiIQpJ0SkB0KgyN/Cj5
