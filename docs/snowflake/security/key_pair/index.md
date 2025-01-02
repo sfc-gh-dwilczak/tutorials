@@ -41,8 +41,7 @@ Lets apply the public key to our user in Snowflake. The public key file will end
 
     grant role sysadmin to user danielwilczak;
 
-    alter user danielwilczak set 
-        rsa_public_key='<Public Key>';  /* (1)! */
+    alter user danielwilczak set rsa_public_key='<Public Key>';  /* (1)! */
     ```   
     { .annotate }
 
