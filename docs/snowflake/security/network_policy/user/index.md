@@ -1,5 +1,5 @@
 # Network Policy - User level
-In this tutorial we will show how you can create a network policy that is only applied to an indivigual user.
+In this tutorial we will show how you can create a network policy that is only applied to an individual user.
 
 ## Video
 Video in development
@@ -38,7 +38,7 @@ Lets start the network setup prcoess in Snowflake.
         ```
 
 
-We'll need a user to apply the policy to. Typically this is applied to a service user with an SSH key but you can apply it to who ever you want.
+We'll need a user to apply the policy to. Typically this is applied to a service user with an SSH key but you can apply it to who ever you want. You'll also want to update your I.P addresses since these are just for an example.
 === ":octicons-image-16: Example"
 
     ```sql linenums="1"
@@ -49,7 +49,7 @@ We'll need a user to apply the policy to. Typically this is applied to a service
 
     create network policy my_policy 
         allowed_ip_list = ('18.210.29.198','34.230.230.9');
-        
+
     alter user danielwilczak set network_policy = my_policy;
     ```
 
