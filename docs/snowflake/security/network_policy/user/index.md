@@ -47,7 +47,9 @@ We'll need a user to apply the policy to. Typically this is applied to a service
     create user danielwilczak type = 'service';
     grant role sysadmin to user danielwilczak;
 
-    create network policy my_policy allowed_ip_list = ('18.210.29.198','34.230.230.9');
+    create network policy my_policy 
+        allowed_ip_list = ('18.210.29.198','34.230.230.9');
+        
     alter user danielwilczak set network_policy = my_policy;
     ```
 
@@ -69,7 +71,9 @@ We'll need a user to apply the policy to. Typically this is applied to a service
     1wIDAQAB';
 
     -- Create the policy and apply it.
-    create network policy my_policy allowed_ip_list = ('18.210.29.198','34.230.230.9');
+    create network policy my_policy 
+        allowed_ip_list = ('18.210.29.198','34.230.230.9');
+    
     alter user danielwilczak set network_policy = my_policy;
     ```
 
