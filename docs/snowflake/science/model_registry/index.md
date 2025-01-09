@@ -46,7 +46,7 @@ First lets start by creating some sample data for our model to train from.
 === ":octicons-image-16: Code"
 
     ```sql linenums="1"
-    use role sysadmin;
+    use role accountadmin;
 
     -- Sample Data
     create or replace table student_test_scores as
