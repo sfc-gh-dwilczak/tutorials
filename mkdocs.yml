@@ -54,6 +54,8 @@ nav:
       - Introduction: snowflake/git/introduction.md
     - Tasks:
       - Lineage: snowflake/tasks/lineage/intro.md
+    - Data Science:
+      - Model Registry: snowflake/science/model_registry/index.md
     - Account:
       - Add account to Org: snowflake/account/add/index.md
       - Change Service Level: snowflake/account/service_level/index.md
