@@ -18,7 +18,7 @@ Lets start by adding some sample data and uploading our notebook.
     === ":octicons-image-16: Database, schema and warehouse"
 
         ```sql
-        use role accoutadmin;
+        use role accountadmin;
         
         -- Create a database to store our schemas.
         create database if not exists raw;
