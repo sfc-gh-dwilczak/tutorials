@@ -38,29 +38,42 @@ Lets start the network setup prcoess in Snowflake.
         ```
 
 
-We'll need a user to apply the policy to. Typically this is applied to a service user with an SSH key but you can apply it to who ever you want. You'll also want to update your I.P addresses since these are just for an example.
+We'll need a user to apply the policy to. Typically this is applied to a service user with an [Key Pair](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/security/key_pair/) but you can apply it to who ever you want. You'll also want to update your I.P addresses since these are just for an example.
+=== ":octicons-image-16: Code"
+
+    ```sql linenums="1"
+    use role accountadmin;
+
+    -- Create the user.
+    create user <username> type = 'service';
+
+    -- OPTIONAL: Instead of using a password we can use an Key Pair.
+    -- alter user danielwilczak set rsa_public_key='';
+
+    -- Give the user a role.
+    grant role <role_name> to user <username>;
+
+    -- Create the policy and add the I.P's that are allowed.
+    create network policy <policy_name> 
+        allowed_ip_list = ('<IP ADDRESS>','<SECOND IP ADDRESS IF NEEDED>');
+
+    
+    alter user <username> set network_policy = <policy_name> ;
+    ```
+
 === ":octicons-image-16: Example"
 
     ```sql linenums="1"
     use role accountadmin;
 
+    -- Create the user.
     create user danielwilczak type = 'service';
+
+    -- Give the user a role.
     grant role sysadmin to user danielwilczak;
 
-    create network policy my_policy 
-        allowed_ip_list = ('18.210.29.198','34.230.230.9');
-
-    alter user danielwilczak set network_policy = my_policy;
-    ```
-
-=== ":octicons-image-16: Example - With SSH Key"
-
-    ```sql linenums="1"
-    use role accountadmin;
-    create user danielwilczak type = 'service';
-    grant role sysadmin to user danielwilczak;
-
-    -- Instead of using a password we will use an SSH key.
+    -- OPTIONAL: Instead of using a password we will use an Key Pair.
+    /* 
     alter user danielwilczak set 
         rsa_public_key='MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzd7lfIGps+lBXrVCT05l
     92rDpYUsXyjtvAu26Q2z0k3/7n7HnZNmKjreIlGQJZlBe0Eud4LzqGX9Vbp53G2F
@@ -68,12 +81,13 @@ We'll need a user to apply the policy to. Typically this is applied to a service
     N+JgeOqpEHPstfqGc7XsbdZJtCalMpjYq0o8aC1qJVv+ry9W+8xmfTRUSq6B0de8
     Y9XBEAhJu/3tJkyDSqs7ZEXR9F02hQ3WlmfQEExaktcpIm1l+3beupmCoCliFfoN
     bdcZegiIdFmGcYRmKba+YpQ3yqpqcqAlCErdqwql8rscJTGx0/AnxyaeX5Qtr86c
-    1wIDAQAB';
+    1wIDAQAB'; */
 
-    -- Create the policy and apply it.
+    -- Create the policy and add the I.P's that are allowed.
     create network policy my_policy 
         allowed_ip_list = ('18.210.29.198','34.230.230.9');
     
+    -- Apply the policy to just the user.
     alter user danielwilczak set network_policy = my_policy;
     ```
 
