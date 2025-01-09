@@ -69,7 +69,9 @@ First lets start by creating some sample data for our model to train from.
 === ":octicons-image-16: Result"
 
     ``` linenums="1"
-    UPDATE
+    | status                                          |
+    |-------------------------------------------------|
+    | Table STUDENT_TEST_SCORES successfully created. |
     ```
 
 ### Upload Notebook
