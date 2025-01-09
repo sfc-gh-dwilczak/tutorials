@@ -81,7 +81,7 @@ Lets upload our [notebook we downloaded](https://sfc-gh-dwilczak.github.io/tutor
 Next we'll name it and select the location and that we want to run via a warehouse.
 ![selection on notebook](images/02.png)
 
-Our final step before running install the needed package ``snowflake-ml-python`` to build and save our model. The package comes with ``sklearn`` with it.
+Our final step before running is to install the needed package ``snowflake-ml-python`` to build and save our model. The package comes with ``sklearn`` with it.
 ![package install](images/03.png)
 
 ## Run the notebook
@@ -108,7 +108,7 @@ Now that we have our model saved into our model registry, lets use the model via
     select
         8 as hours_studied,
 
-        raw.science.predict_test_score!predict(hours_studied) as result,
+        predict_test_score!predict(hours_studied) as result,
 
         result:output_feature_0::float as prediction;
     ```   
@@ -129,7 +129,7 @@ We can also select specific versions if we have multiple or want to retrieve the
     ```sql linenums="1"
     -- Selecting a specific model version.
     with
-        predict_test_score as model raw.science.predict_test_score version last
+        predict_test_score as model predict_test_score version last
 
     select
         3.5 as hours_studied,
