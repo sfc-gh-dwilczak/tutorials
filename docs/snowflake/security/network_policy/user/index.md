@@ -75,13 +75,13 @@ We'll need a user to apply the policy to. Typically this is applied to a service
     -- OPTIONAL: Instead of using a password we will use an Key Pair.
     /* 
     alter user danielwilczak set 
-        rsa_public_key='MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzd7lfIGps+lBXrVCT05l
-    92rDpYUsXyjtvAu26Q2z0k3/7n7HnZNmKjreIlGQJZlBe0Eud4LzqGX9Vbp53G2F
-    oZePQSy46rxXQ9bmCGlF8tGhV7gOgh7D/LGfLHhtVt+b4BhPWLgOqOqCDUv+MXlY
-    N+JgeOqpEHPstfqGc7XsbdZJtCalMpjYq0o8aC1qJVv+ry9W+8xmfTRUSq6B0de8
-    Y9XBEAhJu/3tJkyDSqs7ZEXR9F02hQ3WlmfQEExaktcpIm1l+3beupmCoCliFfoN
-    bdcZegiIdFmGcYRmKba+YpQ3yqpqcqAlCErdqwql8rscJTGx0/AnxyaeX5Qtr86c
-    1wIDAQAB'; */
+        rsa_public_key='MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA
+    zd7lfIGps+lBXrVCT05l 92rDpYUsXyjtvAu26Q2z0k3/7n7HnZNmKjreIlGQJZl
+    Be0Eud4LzqGX9Vbp53G2FoZePQSy46rxXQ9bmCGlF8tGhV7gOgh7D/LGfLHhtVt+
+    b4BhPWLgOqOqCDUv+MXlYN+JgeOqpEHPstfqGc7XsbdZJtCalMpjYq0o8aC1qJVv
+    +ry9W+8xmfTRUSq6B0de8Y9XBEAhJu/3tJkyDSqs7ZEXR9F02hQ3WlmfQEExaktc
+    pIm1l+3beupmCoCliFfoNbdcZegiIdFmGcYRmKba+YpQ3yqpqcqAlCErdqwql8rs
+    cJTGx0/AnxyaeX5Qtr86c1wIDAQAB'; */
 
     -- Create the policy and add the I.P's that are allowed.
     create network policy my_policy 
