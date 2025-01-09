@@ -4,6 +4,8 @@ In this tutorial we will show how you can create a model in a notebook, save tha
 ## Video
 Video still in development
 
+<iframe width="850px" height="478px"  src="https://www.youtube.com/embed/9cy8eEjXQYg?si=_c-Cp7Go8W6nb57c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Requirement
 - Snowflake account, you can use a [free trial](https://signup.snowflake.com/). We also assume no complex security needs.
 
