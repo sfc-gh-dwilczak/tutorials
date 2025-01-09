@@ -11,9 +11,7 @@ Video in development
 When it comes to updating orginization names there is only one way and that is via a support ticket where as account name updates can happen one of two way. One being via a support ticket where as the other is via the UI. We will show both.
 
 ### Orginization / account name
-Lets start a support ticket to update our orginization name. When you contact Snowflake Support, you must decide whether users can temporarily access accounts in the organization using the original account URL. If you keep the original account URL, it is automatically dropped after 90 days, at which time users must use the new account URL to access the account.
-
-To start we will click on our profile name in the bottom left corner and click on support.
+Lets start a support ticket to update our orginization name. To start we will click on our profile name in the bottom left corner and click on support.
 ![Navigate](images/1.png)
 
 ??? warning "If you have not submitted a ticket in the past or added your email to their user profile"
