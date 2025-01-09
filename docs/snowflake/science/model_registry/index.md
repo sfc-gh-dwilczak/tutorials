@@ -7,7 +7,7 @@ Video still in development
 ## Requirement
 - Snowflake account, you can use a [free trial](https://signup.snowflake.com/). We also assume no complex security needs.
 
-## Download needed files:
+## Download
 - Notebook ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/science/model_registry/notebook/notebook.ipynb))
 
 ## Setup :octicons-feed-tag-16:
