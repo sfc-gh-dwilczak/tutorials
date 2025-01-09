@@ -90,16 +90,18 @@ Now that we have our model saved into our model registry, lets use the model via
     -- Using the default version.
     select
         8 as hours_studied,
-        
-        science.students.predict_test_score!predict(hours_studied) as result,
-        
+
+        raw.science.predict_test_score!predict(hours_studied) as result,
+
         result:output_feature_0::float as prediction;
     ```   
 
 === ":octicons-image-16: Result"
 
     ``` linenums="1"
-    UPDATE
+    | HOURS_STUDIED | RESULT                                          | PREDICTION  |
+    |---------------|-------------------------------------------------|-------------|
+    | 8             | {   "output_feature_0": 6.647030303030303e+01 } | 66.47030303 |
     ```
 
 
@@ -110,7 +112,7 @@ We can also select specific versions if we have multiple or want to retrieve the
     ```sql linenums="1"
     -- Selecting a specific model version.
     with
-        predict_test_score as model science.students.predict_test_score version last
+        predict_test_score as model raw.science.predict_test_score version last
 
     select
         3.5 as hours_studied,
@@ -121,5 +123,7 @@ We can also select specific versions if we have multiple or want to retrieve the
 === ":octicons-image-16: Result"
 
     ``` linenums="1"
-    UPDATE
+    | HOURS_STUDIED | RESULT                                          | PREDICTION   |
+    |---------------|-------------------------------------------------|--------------|
+    | 3.5           | {   "output_feature_0": 2.586181818181818e+01 } | 25.861818182 |
     ```
