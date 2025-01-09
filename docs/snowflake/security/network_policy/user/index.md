@@ -7,7 +7,7 @@ Video in development
 ## Requirement
 - Snowflake account, you can use a [free trial](https://signup.snowflake.com/). We also assume no complex security needs.
 
-## Setup :octicons-feed-tag-16:
+## Walk Through :octicons-feed-tag-16:
 Lets start the network setup prcoess in Snowflake. 
 
 ??? note "If you don't have a database, schema or warehouse yet."
