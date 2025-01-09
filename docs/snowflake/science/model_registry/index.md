@@ -74,21 +74,34 @@ First lets start by creating some sample data for our model to train from.
     | Table STUDENT_TEST_SCORES successfully created. |
     ```
 
-### Upload Notebook
-Lets upload our [notebook we downloaded](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/science/model_registry/notebook/notebook.ipynb) earlier.
+### Upload and Setup Notebook
+Lets upload our [notebook we downloaded](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/science/model_registry/notebook/notebook.ipynb) earlier. Start by navigating to noteboobs and clicking ``import .ipynb file``.
+![Navigate to upload](images/01.png)
+
+Next we'll name it and select the location and that we want to run via a warehouse.
+![selection on notebook](images/02.png)
+
+Our final step before running install the needed package ``snowflake-ml-python`` to build and save our model. The package comes with ``sklearn`` with it.
+![package install](images/03.png)
 
 ## Run the notebook
-To run the notebook we'll first have to install the needed package ``snowflake-ml-python`` to build and save our model. The package comes with ``sklearn`` with it.
+To run the notebook we'll click ``run all``. 
+![run all](images/04.png)
 
-IMAGES OF NOTEBOOK.
+Once the model is run we can refresh our schema to see a model object has been added. We'll want to open the details to get our metrics we saved in the notebook. 
+![object](images/05.png)
 
-IMAGES OF MODEL AND VERSIONS.
+We can click on the version we just created.
+![version](images/06.png)
+
+We can see the metadata  our model and also the functions we will use in the next section to make predictions via SQL.
+![metadata](images/07.png)
 
 
 ## Use the model via SQL
 Now that we have our model saved into our model registry, lets use the model via sql to make a prediction. Lets open a new worksheet.
 
-=== ":octicons-image-16: Setup"
+=== ":octicons-image-16: Code"
 
     ```sql linenums="1"
     -- Using the default version.
@@ -111,7 +124,7 @@ Now that we have our model saved into our model registry, lets use the model via
 
 We can also select specific versions if we have multiple or want to retrieve the latest model version..
 
-=== ":octicons-image-16: Setup"
+=== ":octicons-image-16: Code"
 
     ```sql linenums="1"
     -- Selecting a specific model version.
@@ -130,4 +143,33 @@ We can also select specific versions if we have multiple or want to retrieve the
     | HOURS_STUDIED | RESULT                                          | PREDICTION   |
     |---------------|-------------------------------------------------|--------------|
     | 3.5           | {   "output_feature_0": 2.586181818181818e+01 } | 25.861818182 |
+    ```
+
+## Change default version
+Updating the version can allow us to make sure downstream users are using the correct model.
+
+=== ":octicons-image-16: Code"
+
+    ```sql linenums="1"
+    alter model
+        predict_test_score
+    set
+        default_version = <Model version name>;
+    ```   
+
+=== ":octicons-image-16: Example"
+
+    ```sql linenums="1"
+    alter model
+       predict_test_score
+    set
+        default_version = V20241122_114535;
+    ```  
+
+=== ":octicons-image-16: Result"
+
+    ``` linenums="1"
+    | status                           |
+    |----------------------------------|
+    | Statement executed successfully. |
     ```
