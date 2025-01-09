@@ -18,7 +18,7 @@ Lets start by adding some sample data and uploading our notebook.
     === ":octicons-image-16: Database, schema and warehouse"
 
         ```sql
-        use role sysadmin;
+        use role accoutadmin;
         
         -- Create a database to store our schemas.
         create database if not exists raw;
@@ -78,13 +78,15 @@ First lets start by creating some sample data for our model to train from.
 Lets upload our [notebook we downloaded](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/science/model_registry/notebook/notebook.ipynb) earlier.
 
 ## Run the notebook
-To run the notebook we'll first have to install the needed packages to build our model.
-IMAGE
+To run the notebook we'll first have to install the needed package ``snowflake-ml-python`` to build and save our model. The package comes with ``sklearn`` with it.
+
+IMAGES OF NOTEBOOK.
+
+IMAGES OF MODEL AND VERSIONS.
 
 
 ## Use the model via SQL
 Now that we have our model saved into our model registry, lets use the model via sql to make a prediction. Lets open a new worksheet.
-
 
 === ":octicons-image-16: Setup"
 
