@@ -57,8 +57,9 @@ nav:
     - Tasks:
       - Lineage: snowflake/tasks/lineage/intro.md
     - Account:
+      - Add account to Org: snowflake/account/add/index.md
       - Change Service Level: snowflake/account/service_level/index.md
-      - Change org / account name: snowflake/account/name/index.md
+      - Change Org / Account name: snowflake/account/name/index.md
       - Replication: snowflake/account/replication/index.md
     - Native App:
       - Container Services: snowflake/native/containers/intro.md

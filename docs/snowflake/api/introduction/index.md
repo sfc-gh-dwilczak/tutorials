@@ -5,7 +5,7 @@ In this tutorial we will show how to connect a notebook to an external api to ge
 <iframe width="850px" height="478px" src="https://www.youtube.com/embed/SCEF0WZZmoY?si=1YYbM5XSxPIVNRDb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Requirement
-This tutorial assumes you have nothing in your Snowflake account ([Trial](https://signup.snowflake.com/)) and no complex security needs.
+- Must be on a on-demand (Paying) or contracted account. This is due to [external access](https://docs.snowflake.com/en/developer-guide/external-network-access/external-network-access-limitations#limitations) not being allowed on trial accounts. We also assume not complex security requirement.
 
 ## Downloads
 - Notebook ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/api/introduction/notebook/external_access.ipynb))

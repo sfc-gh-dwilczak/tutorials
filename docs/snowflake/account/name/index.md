@@ -1,17 +1,17 @@
-# Chnage Name - Account and Orginization
+# Change Name - Account and Organization
 In this tutorial we will show how you can update your orginization and account name.
 
 ## Video
 Video in development
 
 ## Requirement
-- Snowflake on-demand or contracted account, you CAN NOT be on [free trial](https://signup.snowflake.com/). We also assume no complex security needs.
+- Must be on a on-demand (Paying) or contracted account, you CAN NOT be on [free trial](https://signup.snowflake.com/). We also assume no complex security needs.
 
 ## Walk Through :octicons-feed-tag-16:
-When it comes to updating orginization names there is only one way and that is via a support ticket where as account name updates can happen one of two way. One being via a support ticket where as the other is via the UI. We will show both.
+When it comes to updating organization names there is only one way and that is via a support ticket where as account name updates can happen one of two way. One being via a support ticket where as the other is via the UI. We will show both.
 
-### Orginization / account name
-Lets start a support ticket to update our orginization name. To start we will click on our profile name in the bottom left corner and click on support.
+### Organization / account name
+Lets start a support ticket to update our organization name. To start we will click on our profile name in the bottom left corner and click on support.
 ![Navigate](images/1.png)
 
 ??? warning "If you have not submitted a ticket in the past or added your email to their user profile"
