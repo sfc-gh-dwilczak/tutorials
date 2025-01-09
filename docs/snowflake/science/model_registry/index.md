@@ -75,7 +75,7 @@ First lets start by creating some sample data for our model to train from.
     ```
 
 ### Upload and Setup Notebook
-Lets upload our [notebook we downloaded](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/science/model_registry/notebook/notebook.ipynb) earlier. Start by navigating to noteboobs and clicking ``import .ipynb file``.
+Lets upload our [notebook we downloaded](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/science/model_registry/notebook/notebook.ipynb) earlier. Start by navigating to notebooks and clicking ``import .ipynb file``.
 ![Navigate to upload](images/01.png)
 
 Next we'll name it and select the location and that we want to run via a warehouse.
