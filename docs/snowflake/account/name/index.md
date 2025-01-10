@@ -2,7 +2,7 @@
 In this tutorial we will show how you can update your orginization and account name.
 
 ## Video
-Video in development
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/mSJRqEv-wjY?si=41ysmYs_Rz-nWhuA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Requirement
 - Must be on a on-demand (Paying) or contracted account, you CAN NOT be on [free trial](https://signup.snowflake.com/). We also assume no complex security needs.
