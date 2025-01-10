@@ -1,8 +1,8 @@
 # Add new account to orginization
-In this tutorial we will show how you can add a new Snowflake account under your orginization.
+This tutorial will show how you can add a new Snowflake account under your organization.
 
 ## Video
-Video in development
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/cjKlINn-zMk?si=cB2_BhhSdmB9U5GZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Requirement
 - Must be on a on-demand (Paying) or contracted account, you CAN NOT be on [free trial](https://signup.snowflake.com/). We also assume no complex security needs.
