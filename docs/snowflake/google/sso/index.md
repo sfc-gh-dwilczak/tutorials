@@ -116,4 +116,4 @@ Enable for everyone.
     Please make sure your username is the email that is in google or else the SSO will not work. You can edit your user in the admin section as shown in part one of this tutorial.
 
 Now you should be able to go to your Snowflake login page and see the new ``Google SSO`` version.
-![login](images/010.png)
+![login](images/10.png)
