@@ -31,7 +31,7 @@ Give the integration a name. This name is only used in Google.
 We'll want to copy the SSO URL, Entity ID and Certificate to a Snowflake worksheet. We will need these in the next step.
 ![UPDATE](images/04.png)
 
-## Integration
+## Integration  :octicons-feed-tag-16:
 Now that we have our Snowflake account URL, SSO URL, Entity ID and Certificate we can put it all together in Snowflake to enable the SSO.
 
 ### Snowflake
