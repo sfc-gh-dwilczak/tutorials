@@ -12,7 +12,7 @@ Video is still in developemnt.
 Lets start with some basic setup.
 
 ### Snowflake
-Please make sure your username is the email that is in google or else the SSO will not work. TO edit your user to be a email please go to your user under admin and update it by adding double quotes and your email in the username block.
+Please make sure your username is the email that is in google or else the SSO will not work. To edit your user to be a email please go to your user under admin and update it by adding double quotes and your email in the username block.
 ![admin page](images/11.png)
 
 Now that we have our username setup, we'll copy our account url and add it to a worksheet. We'll need this later.
