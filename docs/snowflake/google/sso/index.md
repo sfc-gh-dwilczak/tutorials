@@ -1,4 +1,4 @@
-# Azure Active Directory (SSO) to Snowflake
+# Google Cloud (SSO) to Snowflake
 In this tutorial we will show how to setup authentication to Snowflake using SSO with Google Authenticator. 
 
 ## Video
