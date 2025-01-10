@@ -39,6 +39,7 @@ nav:
       - Active Directory / SSO: snowflake/azure/sso/index.md
     - Google Cloud: 
       - Cloud Storage: snowflake/google/storage/index.md
+      - SSO: snowflake/google/sso/index.md
     - SFTP: 
       - Via Notebook: snowflake/sftp/index.md
     - Notebooks:

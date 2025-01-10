@@ -4,180 +4,116 @@ In this tutorial we will show how to setup authentication to Snowflake using SSO
 ## Video
 Video is still in developemnt.
 
-## Google :octicons-feed-tag-16:
-Lets start in google by setting up the SSO and then adding the users to the approved list.
+## Requirements
+- Snowflake account, you can use a [free trial](https://signup.snowflake.com/). We also assume no complex security needs.
+- Google cloud account, you can setup a [free account](https://cloud.google.com/) to get started.
 
-### Setup
-Log into your Google administrator account (http://admin.google.com).
-![UPDATE](images/01.png)
+## Setup :octicons-feed-tag-16:
+Lets start with some basic setup.
 
-### Add users
-!!! warning
-    If you don't add the user in the Azure AD group they will not be able to use the SSO login on Snowflake. 
+### Snowflake
+Please make sure your username is the email that is in google or else the SSO will not work. TO edit your user to be a email please go to your user under admin and update it by adding double quotes and your email in the username block.
+![admin page](images/11.png)
 
+Now that we have our username setup, we'll copy our account url and add it to a worksheet. We'll need this later.
+![URL](images/09.png)
 
+### Google 
+Lets start in google by going to our [Google administrator account](https://admin.google.com/).
+![admin page](images/01.png)
 
-## Snowflake :octicons-feed-tag-16:
-Next we will setup Snowflake with the information we got from our ``federation metadata xml`` file. To make this process easier I suggest formatting your XML file so it's easier to look through. I used [VS code](https://code.visualstudio.com/) and an [xml formatter](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml) to accomplish this. Once you have the file open in vs code and the xml extension installed, select all the code and right clicl -> "Format Document". 
+Click Apps > Web and mobile apps > Add app > Add custom SAML app.
+![Add custom ](images/02.png)
 
-### Setup
-Lets open a worksheet in snowflake and enter the code below by entering in the necessary areas from our federation metadata xml file..
+Give the integration a name. This name is only used in Google.
+![name](images/03.png)
 
-=== ":octicons-image-16: Template"
+We'll want to copy the SSO URL, Entity ID and Certificate to a Snowflake worksheet. We will need these in the next step.
+![UPDATE](images/04.png)
+
+## Integration
+Now that we have our Snowflake account URL, SSO URL, Entity ID and Certificate we can put it all together in Snowflake to enable the SSO.
+
+### Snowflake
+!!! warning 
+
+    Please remove the ``-----BEGIN CERTIFICATE-----`` and ``-----END CERTIFICATE-----`` from the certificate, it will give you an eror.
+
+Now in our worksheet we'll want to add the code below with the information we've copied so far.
+=== ":octicons-image-16: Code"
 
     ```sql linenums="1"
     use role accountadmin;
-    create security integration azureadintegration
+
+    create security integration GOOGLE_SSO
         type = saml2
         enabled = true
-        saml2_issuer = 'https://sts.windows.net/[...]]/'  /* (1)! */
-        saml2_sso_url = 'https://login.microsoftonline.com/[...]/saml2' /* (2)! */
-        saml2_provider = 'CUSTOM'
-        saml2_x509_cert = '<idp certificate>'  /* (3)! */
-        saml2_sp_initiated_login_page_label = 'AzureADSSO'
-        saml2_enable_sp_initiated = true;
+        saml2_issuer    = '<Entity ID HERE>'
+        saml2_sso_url   = '<SSO URL HERE>'
+        saml2_provider  = 'custom'
+        saml2_x509_cert = '<Certificate HERE>'
+        saml2_sp_initiated_login_page_label = 'GOOGLE SSO'
+        saml2_enable_sp_initiated = true
+        SAML2_SNOWFLAKE_ACS_URL    = '<ACCOUNT URL HERE>/fed/login'
+        SAML2_SNOWFLAKE_ISSUER_URL = '<ACCOUNT URL HERE>';
+
+    desc integration GOOGLE_SSO;
+    select "property", "property_value" from TABLE(RESULT_SCAN(LAST_QUERY_ID()))
+    where "property" = 'SAML2_SNOWFLAKE_ACS_URL' or "property" = 'SAML2_SNOWFLAKE_ISSUER_URL';
     ```
-    { .annotate }
-
-    1. ```
-       <EntityDescriptor ID="_8416250f-50fb-...8bcd335e92" entityID="https://sts.windows.net/9a2d78cb-73...fc1ac5ef57a7/" xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
-       ```
-
-    2. ```
-       <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.microsoftonline.com/9a2d78c...-fc1ac5ef57a7/saml2" />
-       ```
-
-    3.  ```
-        <X509Certificate>
-        MIIC8DCCAdigAwIBAgIQQH4r9rnBiKlPEFVEjpdNhTANBgkqhkiG9w0BAQ
-        .......
-        Y9B1uSBpb4OmtWZ/LRNzHBDcDNbR oQ6PiPd2yWhtUfbYClOoNcMFOkk8E
-        </X509Certificate>
-        ```
 
 === ":octicons-image-16: Example"
 
     ```sql linenums="1"
     use role accountadmin;
-    create security integration azureadintegration
+
+    create security integration GOOGLE_SSO
         type = saml2
         enabled = true
-        saml2_issuer = 'https://sts.windows.net/9a2d78cb-73e9-40ee-a55...1ac5ef57a7/' 
-        saml2_sso_url = 'https://login.microsoftonline.com/9a2d78cb-73e...ac5ef57a7/saml2'
-        saml2_provider = 'CUSTOM'
-        saml2_x509_cert = 'miic8dccadigawibagiqqh4r9rnbiklpefvejpdnhtanbgkqhkig9w0baqsfada0mtiwmaydvqqdeylnawnyb3nvznqgqxp1
-        ......
-        oq6pipd2ywhtufbyclooncmfokk8e6n48t33kivtvurwwta52olbt2eorzbvwaglt8dlkfhpzzd0szfystjyvd5k2tezsqy8hqlfh33m6+sa2e74x1yj' 
-        saml2_sp_initiated_login_page_label = 'AzureADSSO'
-        saml2_enable_sp_initiated = true;
+        saml2_issuer    = 'https://accounts.google.com/o/saml2?idpid=C02n8rltd'
+        saml2_sso_url   = 'https://accounts.google.com/o/saml2/idp?idpid=C02n8rltd'
+        SAML2_SNOWFLAKE_ACS_URL    = 'https://vpb00288.snowflakecomputing.com/fed/login'
+        SAML2_SNOWFLAKE_ISSUER_URL = 'https://vpb00288.snowflakecomputing.com'
+        saml2_sp_initiated_login_page_label = 'GOOGLE SSO'
+        saml2_enable_sp_initiated = true
+        saml2_provider  = 'custom'
+        saml2_x509_cert = 'MIIDdDCCAlygAwIBAgIGAZE+BMSSMA0GCSqGSIb3DQEBCwUAMHsxFDASBgNVBAoTC0dvb2dsZSBJ
+        bmMuMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MQ8wDQYDVQQDEwZHb29nbGUxGDAWBgNVBAsTD0dv
+        b2dsZSBGb3IgV29yazELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWEwHhcNMjQwODEw
+        MjAzOTQ1WhcNMjkwOD........................Yq/o1B/utIgjtWX6Vru3yGpnIead1vvbzJ
+        fT0SNwzSVsoplblpU5O+nfJ96/fGj5eBk8u8X+BPA+KqTZHTb9CisHB6o8j4SjnZQVTrmU7HJet1
+        a1PvW+pCw+M2WXr8mZyID+/UAtQ/kM/jDgG/5ZDK0HOg';
+
+        desc integration GOOGLE_SSO;
+        select "property", "property_value" from TABLE(RESULT_SCAN(LAST_QUERY_ID()))
+        where "property" = 'SAML2_SNOWFLAKE_ACS_URL' or "property" = 'SAML2_SNOWFLAKE_ISSUER_URL';
     ```
 
-=== ":octicons-image-16: Result"
+=== ":octicons-sign-out-16: Result"
 
-    | status                                               |
-    |------------------------------------------------------|
-    | Integration AZUREADINTEGRATION successfully created. |
-
-!!! success
-    If you configured the Basic SAML configuration in the azure section using the Regional Locator Snowflake URL (1), you can move on to the next step by adding users and testing your login.
-    { .annotate }
-
-    1. This is an example of a regional locator URL: https://mbb41651.snowflakecomputing.com/
-
-??? warning "If you've chosen to use a different URL format then regional locator"
-    If you've chosen to use a different URL format such as Organization, Connection or one of the Privatelink URLs, follow the steps below. 
-
-    Review the current integration configuration. Confirm the values of the ``SAML2_SNOWFLAKE_ACS_URL`` and ``SAML_SNOWFLAKE_ISSUER_URL`` parameters are using the Regional Locator URL (1).
-    { .annotate }
-
-    1. This is an example of a regional locator URL: https://mbb41651.snowflakecomputing.com/
+    | property                   | property_value                                    |
+    |----------------------------|---------------------------------------------------|
+    | SAML2_SNOWFLAKE_ACS_URL    | https://vpb00288.snowflakecomputing.com/fed/login |
+    | SAML2_SNOWFLAKE_ISSUER_URL | https://vpb00288.snowflakecomputing.com           |
 
 
-    === ":octicons-image-16: Check"
+### Google.
+Lets take the output of our Snowflake and finish off in Google. Take the ``SAML2_SNOWFLAKE_ACS_URL`` -> ``ACS URL`` and ``SAML2_SNOWFLAKE_ISSUER_URL`` -> ``Entity ID``
+![URLS input](images/05.png)
 
-        ```sql linenums="1"
-        desc security integration azureadintegration;
-        ```
+Click finished.
+![click finish](images/06.png)
 
-    If they are not, alter the security integration by using the code below.
-    === ":octicons-image-16: Alter integration"
+Next we'll want to enable user access. Click the ``User access`` box.
+![click box](images/07.png)
 
-        ```sql linenums="1"
-        use role accountadmin;
+Enable for everyone.
+![enable](images/08.png)
 
-        alter security integration azureadintegration 
-            set SAML2_SNOWFLAKE_ACS_URL = 'https://<organization name>-<account name>.snowflakecomputing.com/fed/login';
-        
-        -- OR
+## Login
+!!! warning 
 
-        alter security integration azureadintegration
-            set SAML2_SNOWFLAKE_ISSUER_URL = 'https://<organization name>-<account name>.snowflakecomputing.com';
-        ```
+    Please make sure your username is the email that is in google or else the SSO will not work. You can edit your user in the admin section as shown in part one of this tutorial.
 
-    Notes:  
-    - The above statement uses the Organization URL as an example. You should use the URL format the Azure Single sign on application was configured with.  
-    - The value for the parameter SAML2_SNOWFLAKE_ACS_URL ends with /fed/login.  
-    - The value for the parameter SAML2_SNOWFLAKE_ISSUER_URL is only the Snowflake account URL, in the format matching the Azure application configuration.  
-
-### Add or modify users.
-
-!!! warning
-    Your users must use their email for logging into Snowflake that matches in Azure AD or it will not work.
-
-!!! note
-    If you already have users in Snowflake and they already are using their email for logging in then you can skip this section. 
-
-Lets add the user to snowflake using the users email. It is also suggested to give that user a role at this point.
-
-=== ":octicons-image-16: Add user with email"
-
-    ```sql linenums="1"
-    use role accountadmin;
-    
-    create user "<USER EMAIL>";
-    ```
-
-=== ":octicons-image-16: Example"
-
-    ```sql linenums="1"
-    use role accountadmin;
-    
-    create user "daniel.wilczak@snowflake.com";
-    ```
-
-=== ":octicons-image-16: Result"
-    | status                                                  |
-    |---------------------------------------------------------|
-    | User daniel.wilczak@snowflake.com successfully created. |
-
-If you already have users in snowflake but when they were created they didn't use their email.
-
-=== ":octicons-image-16: Modify user to set email"
-
-    ```sql linenums="1"
-    use role accountadmin;
-    
-    alter user <USERNAME> rename to "<USER EMAIL>";
-    ```
-
-=== ":octicons-image-16: Example"
-
-    ```sql linenums="1"
-    use role accountadmin;
-
-    alter user danielw rename to "hi@hi.com";
-    ```
-
-=== ":octicons-image-16: Result"
-    | status                           |
-    |----------------------------------|
-    | Statement executed successfully. |
-
-### Test login
-!!! note
-    If you get an error stating the user doesnt exist, you either forgot to add the user in Azure or Snowflake.
-
-Lets make sure your Azure AD is working. Logout of your Snowflake account and you should now see the Azure AD login button.
-![Login](images/15.png)
-
-
+Now you should be able to go to your Snowflake login page and see the new ``Google SSO`` version.
+![login](images/010.png)
