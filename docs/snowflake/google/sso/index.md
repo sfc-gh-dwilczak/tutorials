@@ -16,11 +16,11 @@ Please make sure your username is the email that is in google or else the SSO wi
 ![admin page](images/11.png)
 
 Now that we have our username setup, we'll copy our account url and add it to a worksheet. We'll need this later.
-![URL](images/09.png)
+![URL](images/12.png)
 
 ### Google 
 Lets start in google by going to our [Google administrator account](https://admin.google.com/).
-![admin page](images/01.png)
+![page](images/01.png)
 
 Click Apps > Web and mobile apps > Add app > Add custom SAML app.
 ![Add custom ](images/02.png)
