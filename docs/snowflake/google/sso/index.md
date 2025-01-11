@@ -1,8 +1,8 @@
-# Google Cloud (SSO) to Snowflake
-In this tutorial we will show how to setup authentication to Snowflake using SSO with Google Authenticator. 
+# Google Authenticator to Snowflake (SSO / SAML)
+In this tutorial, we will show how to set up authentication to Snowflake using SSO / SAML with Google Authenticator.
 
 ## Video
-Video is still in developemnt.
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/vvIPfL6rOIQ?si=FgvZfOrR99X8rnqf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Requirements
 - Snowflake account, you can use a [free trial](https://signup.snowflake.com/). We also assume no complex security needs.
