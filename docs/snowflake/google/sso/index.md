@@ -51,11 +51,11 @@ Now in our worksheet we'll want to add the code below with the information we've
         saml2_issuer  = '<Entity ID HERE>'
         saml2_sso_url = '<SSO URL HERE>'
         saml2_snowflake_acs_url    = '<ACCOUNT URL HERE>/fed/login'
-        saml2_snowflake_issuer_url = '<ACCOUNT URL HERE>';
+        saml2_snowflake_issuer_url = '<ACCOUNT URL HERE>'
         saml2_sp_initiated_login_page_label = 'GOOGLE SSO'
         saml2_enable_sp_initiated = true
         saml2_provider  = 'custom'
-        saml2_x509_cert = '<Certificate HERE>'
+        saml2_x509_cert = '<Certificate HERE>';
 
     desc integration GOOGLE_SSO;
     select "property", "property_value" from TABLE(RESULT_SCAN(LAST_QUERY_ID()))
