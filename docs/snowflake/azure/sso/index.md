@@ -24,7 +24,7 @@ Give your Snowflake application a name, then click the Create button at the bott
 ![Name application](images/05.png)
 
 Once the application is created, on the left side choose Single sign-on, then choose SAML in the middle panel.
-![SAML](images/06.jpeg)
+![SAML](images/16.jpeg)
 
 In the middle pane under the Basic SAML configuration section, click the Edit button.
 ![Edit SAML config](images/07.jpeg)
