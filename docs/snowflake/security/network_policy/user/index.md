@@ -20,8 +20,8 @@ We'll need a user to apply the policy to. Typically this is applied to a service
     -- Give the user a role.
     grant role <role_name> to user <username>;
 
-    -- OPTIONAL: Instead of using a password we can use an Key Pair.
-    -- alter user <username> set rsa_public_key='<Public Key>';
+    -- Instead of using a password we can use an Key Pair.
+    alter user <username> set rsa_public_key='<Public Key>';
 
     -- Give the user a role.
     grant role <role_name> to user <username>;
@@ -46,15 +46,14 @@ We'll need a user to apply the policy to. Typically this is applied to a service
     grant role sysadmin to user danielwilczak;
 
     -- OPTIONAL: Instead of using a password we will use an Key Pair.
-    /* 
     alter user danielwilczak set 
         rsa_public_key='MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA
     zd7lfIGps+lBXrVCT05l 92rDpYUsXyjtvAu26Q2z0k3/7n7HnZNmKjreIlGQJZl
     Be0Eud4LzqGX9Vbp53G2FoZePQSy46rxXQ9bmCGlF8tGhV7gOgh7D/LGfLHhtVt+
-    b4BhPWLgOqOqCDUv+MXlYN+JgeOqpEHPstfqGc7XsbdZJtCalMpjYq0o8aC1qJVv
+    b4BhPWLgOqOqCDUv+MXlYN+..................bdZJtCalMpjYq0o8aC1qJVv
     +ry9W+8xmfTRUSq6B0de8Y9XBEAhJu/3tJkyDSqs7ZEXR9F02hQ3WlmfQEExaktc
     pIm1l+3beupmCoCliFfoNbdcZegiIdFmGcYRmKba+YpQ3yqpqcqAlCErdqwql8rs
-    cJTGx0/AnxyaeX5Qtr86c1wIDAQAB'; */
+    cJTGx0/AnxyaeX5Qtr86c1wIDAQAB';
 
     -- Create the policy and add the I.P's that are allowed.
     create network policy my_policy 
