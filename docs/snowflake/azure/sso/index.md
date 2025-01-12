@@ -2,7 +2,7 @@
 In this tutorial we will show how to setup authentication to Snowflake using SSO with Azure Microsoft Entra ID Identity Provider which used to called Azure Active Directory.
 
 ## Video
-Video is still in developemnt.
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/Dm1k-SSldRA?si=qfS4jV8tp3YA3cnS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Azure :octicons-feed-tag-16:
 Lets start in azure by setting up the SSO and then adding the users to the approved list.
