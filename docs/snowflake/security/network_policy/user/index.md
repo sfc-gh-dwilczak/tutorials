@@ -47,6 +47,9 @@ We'll need a user to apply the policy to. Typically this is applied to a service
     -- Create the user.
     create user <username> type = 'service';
 
+    -- Give the user a role.
+    grant role <role_name> to user <username>;
+
     -- OPTIONAL: Instead of using a password we can use an Key Pair.
     -- alter user <username> set rsa_public_key='<Public Key>';
 
