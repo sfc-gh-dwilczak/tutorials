@@ -23,9 +23,6 @@ We'll need a user to apply the policy to. Typically this is applied to a service
     -- Instead of using a password we can use an Key Pair.
     alter user <username> set rsa_public_key='<Public Key>';
 
-    -- Give the user a role.
-    grant role <role_name> to user <username>;
-
     -- Create the policy and add the I.P's that are allowed.
     create network policy <policy_name> 
         allowed_ip_list = ('<IP ADDRESS>','<SECOND IP ADDRESS IF NEEDED>');
