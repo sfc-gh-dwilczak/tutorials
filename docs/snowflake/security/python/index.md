@@ -13,8 +13,7 @@ For the official Snowflake documentation this tutorial was based on:
 
 
 ## Download needed files:
-- Files ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/security/python/files.zip))
-
+- Files ([Link](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/security/python/files/files.zip))                
 
 ## Install
 Lets start by updating our code to use the stream we setup at the beginning. Inside our ``main.py`` we'll update:
