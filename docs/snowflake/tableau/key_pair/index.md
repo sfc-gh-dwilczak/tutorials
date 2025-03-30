@@ -1,4 +1,4 @@
-# Key Pair Authentication
+# Tableau - Key Pair Authentication
 In this tutorial we will show how to connect to snowflake via tableau with key-pair as the authenitcation method.
 
 ## Video

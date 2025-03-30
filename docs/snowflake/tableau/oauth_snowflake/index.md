@@ -1,4 +1,4 @@
-# Key Pair Authentication
+# Tableau - Snowflake OAuth Authentication
 In this tutorial we will show how to connect to snowflake via tableau with OAuth as the authenitcation method. Snowflake official documentation can be found here: 
 
 ## Video
