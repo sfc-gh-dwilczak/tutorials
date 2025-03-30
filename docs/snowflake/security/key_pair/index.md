@@ -32,45 +32,60 @@ This will create two files in the folder we are currently located.
 ## Apply key to user
 Lets apply the public key to our user in Snowflake. The public key file will end with ``.pub``.
 
-=== ":octicons-image-16: Setup"
+=== ":octicons-image-16: Code"
 
     ```sql linenums="1"
     use role accountadmin;
 
-    create user danielwilczak;
+    -- Create the user. Optional add type = 'service' for service accounts.
+    create user <username>;
 
-    grant role sysadmin to user danielwilczak;
+    -- Give the user a role.
+    grant role <role_name> to user <username>;
 
-    alter user danielwilczak set rsa_public_key='<Public Key>';  /* (1)! */
-    ```   
-    { .annotate }
+    -- Apply the public key to the user.
+    alter user <username> set rsa_public_key='<Public Key>';
 
-    1.  The public key file will end with ``.pub``. We got this from our "create key step".
+    /* (OPTIONAL) Create a network policy and apply it to the user. 
+    create network policy <policy_name>  allowed_ip_list = ('<IP ADDRESS>');
+
+    alter user <username> set network_policy = <policy_name> ;
+    /* 
+    ```
 
 === ":octicons-image-16: Example"
 
     ```sql linenums="1"
     use role accountadmin;
 
+    -- Create the user. Optional add type = 'service' for service accounts.
     create user danielwilczak;
 
+    -- Apply the public key to the user.
     grant role sysadmin to user danielwilczak;
 
+    -- OPTIONAL: Instead of using a password we will use an Key Pair.
     alter user danielwilczak set 
-        rsa_public_key='MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsLiIQpJ0SkB0KgyN/Cj5
-            O+3W3zIN5HvjBwsQnVbXAGpu920fohXRQAFc5hZpMNZOGNsLvl1YY1HtQ15j4K7o
-            Ip3Eo2.............................................EUnH8sGWDvH+U
-            g5ha+Sa6KD5864ajlkylKFiu9T++GQaItyLNsOVx8AGi8J4oDtv02a6MlG7oDyOo
-            ArBubofdmM+8exWL7NfYNfV04Wjnpz5itGNq9CM718Fx910mom4sIUPBGQC0Dnio
-            Wr9cvDxXmfWdRUjgeKDGAwrvXP9+PtCMoLlo+eYjWhz9Gii2lxdHqfLgY67ZCa1t
-            ZQIDAQAB';
+        rsa_public_key='MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA
+    zd7lfIGps+lBXrVCT05l 92rDpYUsXyjtvAu26Q2z0k3/7n7HnZNmKjreIlGQJZl
+    Be0Eud4LzqGX9Vbp53G2FoZePQSy46rxXQ9bmCGlF8tGhV7gOgh7D/LGfLHhtVt+
+    b4BhPWLgOqOqCDUv+MXlYN+..................bdZJtCalMpjYq0o8aC1qJVv
+    +ry9W+8xmfTRUSq6B0de8Y9XBEAhJu/3tJkyDSqs7ZEXR9F02hQ3WlmfQEExaktc
+    pIm1l+3beupmCoCliFfoNbdcZegiIdFmGcYRmKba+YpQ3yqpqcqAlCErdqwql8rs
+    cJTGx0/AnxyaeX5Qtr86c1wIDAQAB';
+
+    /*
+    -- (OPTIONAL) Create a network policy and apply it to the user. 
+    create network policy my_policy allowed_ip_list = ('34.230.230.9');
+    
+    alter user danielwilczak set network_policy = my_policy; */
     ```
 
-=== ":octicons-image-16: Result"
+=== ":octicons-sign-out-16: Result"
 
-    ``` linenums="1"
-    Statement executed successfully.
-    ```
+    | status                              |
+    |-------------------------------------|
+    | Statement executed successfully.    |
 
 With our key now set on the user, we might want to test it via local python. [Here is a tutorial to test it](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/security/python/).
 

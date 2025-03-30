@@ -68,6 +68,8 @@ nav:
       - Key Pair Authentication: snowflake/security/key_pair/index.md
       - Python with Key Pair: snowflake/security/python/index.md
       - Network Policy - User: snowflake/security/network_policy/user/index.md
+    - Tableau:
+      - Key Pair: snowflake/tableau/key_pair/index.md
   - Fivetran:
       - Setup: fivetran/setup/setup.md
       - Sources:
