@@ -48,7 +48,7 @@ Next you'll see the url
 Lets start by adding Snowflake as a source. Search for Snowflake in "Connect to Server".
 ![UPDATE](images/03.png)
 
-Once Snowflake is selected you'll want to enter your Snowflake account URL (ADD PLUS HERE), role "CAN NOT BE ACCOUNTADMIN", warehouse and select sign in using OAuth.
+Once Snowflake is selected you'll want to enter your Snowflake account URL, role "CAN NOT BE ACCOUNTADMIN", warehouse and select sign in using OAuth.
 ![credentials](images/04.png)
 
 Once you click "Sign in" a browser will appear for login/approval.
