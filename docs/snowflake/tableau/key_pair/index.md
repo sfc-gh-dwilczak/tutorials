@@ -7,11 +7,9 @@ Video is still in development.
 ## Requirement
 This tutorial assumes you have nothing in your Snowflake account ([Trial](https://signup.snowflake.com/)) and no complex security needs.
 
-!!! warning 
-
-    Tableau requires these versions to use key-pair:
-        - Snowflake ODBC driver 3.4 or later
-        - Tableau Desktop 2024.3 or later
+!!! warning "Tableau requires these versions to use key-pair:"
+    * Snowflake ODBC driver 3.4 or later
+    * Tableau Desktop 2024.3 or later
 
 
 ## Setup - Create key-pair
