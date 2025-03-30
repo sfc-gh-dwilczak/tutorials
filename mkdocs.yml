@@ -5,7 +5,6 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   features:
-    - navigation.tabs
     - content.code.select
     - content.code.copy
     - content.action.edit
