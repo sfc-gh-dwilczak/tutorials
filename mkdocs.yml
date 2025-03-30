@@ -70,6 +70,7 @@ nav:
       - Network Policy - User: snowflake/security/network_policy/user/index.md
     - Tableau:
       - Key Pair: snowflake/tableau/key_pair/index.md
+      - OAuth - Snowflake: snowflake/tableau/oauth_snowflake/index.md
   - Fivetran:
       - Setup: fivetran/setup/setup.md
       - Sources:
