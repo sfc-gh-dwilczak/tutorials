@@ -14,7 +14,10 @@ This tutorial assumes you have nothing in your Snowflake account ([Trial](https:
     If you do want to use ACCOUNTADMIN or SECURITYADMIN roles please submit a support ticket allowing it with the integration name created below.
 
 ## Snowflake
-Lets start a worksheet and add either or both security integrations below.
+Lets start in Snowflake first.
+
+### Intergration
+Start a worksheet and add either or both security integrations below.
 
 === ":octicons-image-16: Code"
 
@@ -23,36 +26,43 @@ Lets start a worksheet and add either or both security integrations below.
 
     -- For tableau desktop
     create security integration tableau_desktop_oauth
-    type = oauth
-    enabled = true
-    oauth_client = tableau_desktop;
+        type = oauth
+        enabled = true
+        oauth_client = tableau_desktop;
 
     -- For tableau cloud
     create security integration tableau_cloud_oauth
-    type = oauth
-    enabled = true
-    oauth_client = tableau_server;
+        type = oauth
+        enabled = true
+        oauth_client = tableau_server;
     ```
+
+### Account URL
+Before we leave Snowflake we'll want to copy our account url to later add to tableau.
+![account indo](images/01.png)
+
+Next you'll see the url
+![account url](images/02.png)
 
 ## Tableau Desktop
 Lets start by adding Snowflake as a source. Search for Snowflake in "Connect to Server".
-![UPDATE](images/01.png)
+![UPDATE](images/03.png)
 
 Once Snowflake is selected you'll want to enter your Snowflake account URL (ADD PLUS HERE), role "CAN NOT BE ACCOUNTADMIN", warehouse and select sign in using OAuth.
-![credentials](images/02.png)
+![credentials](images/04.png)
 
 Once you click "Sign in" a browser will appear for login/approval.
-![sign in](images/03.png)
+![sign in](images/05.png)
 
 Login with your user.
-![login](images/04.png)
+![login](images/06.png)
 
 Click allow for tableau to connect to your Snowflake user.
-![allow](images/05.png)
+![allow](images/07.png)
 
 Success your OAuth is setup.
-![success](images/06.png)
+![success](images/08.png)
 
 ## Tableau Cloud
 
-TBD for update.
+Updated.
