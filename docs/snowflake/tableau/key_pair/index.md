@@ -12,7 +12,7 @@ This tutorial assumes you have nothing in your Snowflake account ([Trial](https:
     * Tableau Desktop 2024.3 or later
 
 
-## Setup
+## Generate Key :octicons-feed-tag-16:
 Lets create the private and public key so that we can apply the public key to our user.
 
 === ":octicons-image-16: Setup"
