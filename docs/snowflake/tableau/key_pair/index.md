@@ -97,7 +97,7 @@ Before we leave Snowflake we'll want to copy our account url to later add to tab
 Next you'll see the url
 ![account url](images/03.png)
 
-## Tableau
+## Tableau Desktop
 Lets Open tableau Desktop and add a new source that is Snowflake.
 ![open desktop](images/04.png)
 
@@ -106,3 +106,22 @@ Past in url, add role name, warehouse and username. Select key-pair as authentic
 
 Success your login via key-pair authentication.
 ![finished](images/06.png)
+
+## Tableau Cloud
+Go to "My account settings" on the top right.
+![finished](images/07.png)
+
+Find Snowflake as a source, click add.
+![finished](images/08.png)
+
+Click the drop down and select "key-pair authentication method".
+![finished](images/09.png)
+
+Click add.
+![finished](images/10.png)
+
+Fill in the server with the account url, role username, add your private key we generated at the start, and click add.
+![finished](images/11.png)
+
+Once added we can test our connection to make sure it works.
+![finished](images/12.png)
