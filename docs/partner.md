@@ -1,0 +1,1 @@
+This are tutorials that work with Snowflake to accomplish tasks like loading data, data tranformation, and Busniess Intellegence.

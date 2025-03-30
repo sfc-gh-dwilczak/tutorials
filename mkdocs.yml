@@ -67,6 +67,8 @@ nav:
       - Key Pair Authentication: snowflake/security/key_pair/index.md
       - Python with Key Pair: snowflake/security/python/index.md
       - Network Policy - User: snowflake/security/network_policy/user/index.md
+  - Partner Tools:
+    - partner.md
     - Tableau:
       - Key Pair: snowflake/tableau/key_pair/index.md
       - OAuth - Snowflake: snowflake/tableau/oauth_snowflake/index.md
