@@ -12,7 +12,7 @@ This tutorial assumes you have nothing in your Snowflake account ([Trial](https:
     * Tableau Desktop 2024.3 or later
 
 
-## Setup - Create key-pair
+## Setup
 Lets create the private and public key so that we can apply the public key to our user.
 
 === ":octicons-image-16: Setup"
@@ -92,6 +92,7 @@ Lets create the user, assign the user a role and finally apply the public key to
     |-------------------------------------|
     | Statement executed successfully.    |
 
+### Account URL
 Before we leave Snowflake we'll want to copy our account url to later add to tableau.
 ![account indo](images/02.png)
 
@@ -102,8 +103,8 @@ Next you'll see the url
 Lets Open tableau Desktop and add a new source that is Snowflake.
 ![open desktop](images/04.png)
 
-5. Past in url, add role name, warehouse and username. Select key-pair as authentication and browse/add your private key. Finally click sign in.
+Past in url, add role name, warehouse and username. Select key-pair as authentication and browse/add your private key. Finally click sign in.
 ![add information](images/05.png)
 
-6. Success your login via key-pair authentication.
+Success your login via key-pair authentication.
 ![finished](images/06.png)
