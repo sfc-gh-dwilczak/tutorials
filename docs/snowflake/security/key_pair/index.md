@@ -49,8 +49,7 @@ Lets apply the public key to our user in Snowflake. The public key file will end
     /* (OPTIONAL) Create a network policy and apply it to the user. 
     create network policy <policy_name>  allowed_ip_list = ('<IP ADDRESS>');
 
-    alter user <username> set network_policy = <policy_name> ;
-    /* 
+    alter user <username> set network_policy = <policy_name> ; /* 
     ```
 
 === ":octicons-image-16: Example"
@@ -61,10 +60,10 @@ Lets apply the public key to our user in Snowflake. The public key file will end
     -- Create the user. Optional add type = 'service' for service accounts.
     create user danielwilczak;
 
-    -- Apply the public key to the user.
+    -- Give the user a role.
     grant role sysadmin to user danielwilczak;
 
-    -- OPTIONAL: Instead of using a password we will use an Key Pair.
+    -- Apply the public key to the user.
     alter user danielwilczak set 
         rsa_public_key='MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA
     zd7lfIGps+lBXrVCT05l 92rDpYUsXyjtvAu26Q2z0k3/7n7HnZNmKjreIlGQJZl
@@ -74,8 +73,7 @@ Lets apply the public key to our user in Snowflake. The public key file will end
     pIm1l+3beupmCoCliFfoNbdcZegiIdFmGcYRmKba+YpQ3yqpqcqAlCErdqwql8rs
     cJTGx0/AnxyaeX5Qtr86c1wIDAQAB';
 
-    /*
-    -- (OPTIONAL) Create a network policy and apply it to the user. 
+    /* (OPTIONAL) Create a network policy and apply it to the user. 
     create network policy my_policy allowed_ip_list = ('34.230.230.9');
     
     alter user danielwilczak set network_policy = my_policy; */

@@ -65,10 +65,10 @@ Lets create the user, assign the user a role and finally apply the public key to
     -- Create the user. Optional add type = 'service' for service accounts.
     create user danielwilczak;
 
-    -- Apply the public key to the user.
+    -- Give the user a role.
     grant role sysadmin to user danielwilczak;
 
-    -- OPTIONAL: Instead of using a password we will use an Key Pair.
+    -- Apply the public key to the user.
     alter user danielwilczak set 
         rsa_public_key='MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA
     zd7lfIGps+lBXrVCT05l 92rDpYUsXyjtvAu26Q2z0k3/7n7HnZNmKjreIlGQJZl
