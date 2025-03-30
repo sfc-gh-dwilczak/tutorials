@@ -72,9 +72,9 @@ nav:
       - Key Pair: snowflake/tableau/key_pair/index.md
       - OAuth - Snowflake: snowflake/tableau/oauth_snowflake/index.md
     - Fivetran:
-        - Setup: fivetran/setup/setup.md
+        - Setup: fivetran/setup/index.md
         - Sources:
-          - Google Analytics: fivetran/sources/google_analytics/google_analytics.md
+          - Google Analytics: fivetran/sources/google_analytics/index.md
     - DBT:
         - Setup: dbt/setup/index.md
 
