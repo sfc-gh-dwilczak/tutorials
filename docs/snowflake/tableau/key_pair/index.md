@@ -31,7 +31,7 @@ Lets create the private and public key so that we can apply the public key to ou
 This will create two files in the folder we are currently located.
 ![Two keys](images/01.png)
 
-## Snowflake
+## Snowflake :octicons-feed-tag-16:
 Lets start with applying our key to our user and then getting the account url.
 
 ### Apply key to user
@@ -97,7 +97,7 @@ Before we leave Snowflake we'll want to copy our account url to later add to tab
 Next you'll see the url
 ![account url](images/03.png)
 
-## Tableau Desktop
+## Tableau Desktop :octicons-feed-tag-16:
 Lets Open tableau Desktop and add a new source that is Snowflake.
 ![open desktop](images/04.png)
 
@@ -107,21 +107,21 @@ Past in url, add role name, warehouse and username. Select key-pair as authentic
 Success your login via key-pair authentication.
 ![finished](images/06.png)
 
-## Tableau Cloud
+## Tableau Cloud :octicons-feed-tag-16:
 Go to "My account settings" on the top right.
-![finished](images/07.png)
+![account seetings](images/07.png)
 
 Find Snowflake as a source, click add.
-![finished](images/08.png)
+![add source](images/08.png)
 
 Click the drop down and select "key-pair authentication method".
-![finished](images/09.png)
+![select key-pair authentication](images/09.png)
 
 Click add.
-![finished](images/10.png)
+![add](images/10.png)
 
 Fill in the server with the account url, role username, add your private key we generated at the start, and click add.
-![finished](images/11.png)
+![account information](images/11.png)
 
 Once added we can test our connection to make sure it works.
-![finished](images/12.png)
+![test](images/12.png)

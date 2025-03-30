@@ -1,12 +1,12 @@
-# Fivetran -> Snowflake
+# Connect Fivetran to Snowflake
 In this tutorial we will show how to setup Snowflake as a destination for snowflake.
 
 ## Video
 Video is still in developemnt.
 
 ## Requirement
-1. You will need a Snowflake account which can be setup as [trial](https://signup.snowflake.com/) if we don't have one today.
-2. You will need to have a fivetran account or [sign up for a free trial](https://fivetran.com/signup).
+* You will need a Snowflake account which can be setup as [trial](https://signup.snowflake.com/) if we don't have one today.
+* You will need to have a fivetran account or [sign up for a free trial](https://fivetran.com/signup).
 
 ## Snowflake :octicons-feed-tag-16:
 Lets start in Snowflake by opening a worksheet (1).
