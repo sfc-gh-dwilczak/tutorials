@@ -28,45 +28,44 @@ theme:
         name: Switch to light mode
 
 nav:
-  - Snowflake:
-    - Getting Started: index.md
-    - AWS: 
-      - S3: snowflake/aws/s3/index.md
-      - Kinesis: snowflake/aws/kinesis/index.md
-    - Azure:
-      - Blob / Storage: snowflake/azure/storage/index.md
-      - Active Directory / SSO: snowflake/azure/sso/index.md
-    - Google Cloud: 
-      - Cloud Storage: snowflake/google/storage/index.md
-      - SSO: snowflake/google/sso/index.md
-    - SFTP: 
-      - Via Notebook: snowflake/sftp/index.md
-    - Notebooks:
-      - Intro to Containerized : snowflake/notebooks/containers/index.md
-      - Intro to Local Jupyter: snowflake/notebooks/jupyter/index.md
-    - Container Services:
-      - Introduction: snowflake/container/introduction/index.md
-      - Streamlit: snowflake/container/streamlit/index.md
-    - API's:
-      - Intoduction via Notebook: snowflake/api/introduction/index.md
-      - Chatgpt: snowflake/api/chatgpt/index.md
-    - Git:
-      - Introduction: snowflake/git/introduction.md
-    - Tasks:
-      - Lineage: snowflake/tasks/lineage/intro.md
-    - Data Science:
-      - Model Registry: snowflake/science/model_registry/index.md
-    - Account:
-      - Add account to Org: snowflake/account/add/index.md
-      - Change Service Level: snowflake/account/service_level/index.md
-      - Change Org / Account name: snowflake/account/name/index.md
-      - Replication: snowflake/account/replication/index.md
-    - Native App:
-      - Container Services: snowflake/native/containers/intro.md
-    - Security:
-      - Key Pair Authentication: snowflake/security/key_pair/index.md
-      - Python with Key Pair: snowflake/security/python/index.md
-      - Network Policy - User: snowflake/security/network_policy/user/index.md
+  - index.md
+  - AWS: 
+    - S3: snowflake/aws/s3/index.md
+    - Kinesis: snowflake/aws/kinesis/index.md
+  - Azure:
+    - Blob / Storage: snowflake/azure/storage/index.md
+    - Active Directory / SSO: snowflake/azure/sso/index.md
+  - Google Cloud: 
+    - Cloud Storage: snowflake/google/storage/index.md
+    - SSO: snowflake/google/sso/index.md
+  - SFTP: 
+    - Via Notebook: snowflake/sftp/index.md
+  - Notebooks:
+    - Intro to Containerized : snowflake/notebooks/containers/index.md
+    - Intro to Local Jupyter: snowflake/notebooks/jupyter/index.md
+  - Container Services:
+    - Introduction: snowflake/container/introduction/index.md
+    - Streamlit: snowflake/container/streamlit/index.md
+  - API's:
+    - Intoduction via Notebook: snowflake/api/introduction/index.md
+    - Chatgpt: snowflake/api/chatgpt/index.md
+  - Git:
+    - Introduction: snowflake/git/introduction.md
+  - Tasks:
+    - Lineage: snowflake/tasks/lineage/intro.md
+  - Data Science:
+    - Model Registry: snowflake/science/model_registry/index.md
+  - Account:
+    - Add account to Org: snowflake/account/add/index.md
+    - Change Service Level: snowflake/account/service_level/index.md
+    - Change Org / Account name: snowflake/account/name/index.md
+    - Replication: snowflake/account/replication/index.md
+  - Native App:
+    - Container Services: snowflake/native/containers/intro.md
+  - Security:
+    - Key Pair Authentication: snowflake/security/key_pair/index.md
+    - Python with Key Pair: snowflake/security/python/index.md
+    - Network Policy - User: snowflake/security/network_policy/user/index.md
   - Partner Tools:
     - partner.md
     - Tableau:
