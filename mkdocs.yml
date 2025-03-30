@@ -66,17 +66,15 @@ nav:
     - Key Pair Authentication: snowflake/security/key_pair/index.md
     - Python with Key Pair: snowflake/security/python/index.md
     - Network Policy - User: snowflake/security/network_policy/user/index.md
-  - Partner Tools:
-    - partner.md
-    - Tableau:
-      - Key Pair: snowflake/tableau/key_pair/index.md
-      - OAuth - Snowflake: snowflake/tableau/oauth_snowflake/index.md
-    - Fivetran:
-        - Setup: fivetran/setup/index.md
-        - Sources:
-          - Google Analytics: fivetran/sources/google_analytics/index.md
-    - DBT:
-        - Setup: dbt/setup/index.md
+  - Tableau:
+    - Key Pair: snowflake/tableau/key_pair/index.md
+    - OAuth - Snowflake: snowflake/tableau/oauth_snowflake/index.md
+  - Fivetran:
+      - Setup: fivetran/setup/index.md
+      - Sources:
+        - Google Analytics: fivetran/sources/google_analytics/index.md
+  - DBT:
+      - Setup: dbt/setup/index.md
 
       # - Iceberg: snowflake/google/iceberg/iceberg.md
       # - Git: snowflake/notebooks/git/git.md
