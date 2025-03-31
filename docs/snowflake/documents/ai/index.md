@@ -8,7 +8,7 @@ Video is still in development.
 ## Requirement
 This tutorial assumes you have nothing in your Snowflake account ([Trial](https://signup.snowflake.com/)) and no complex security needs.
 
-## Requirement
+## Downloads
 * [Training data](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/documents/ai/files/training.zip)
 * [Testing data](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/documents/ai/files/testing.zip)
 
@@ -84,6 +84,7 @@ Click publish.
 Now we'll notice that two examples are provided for parsing new documents using our published model. We can copy either the folder or single files example, we will use this later.
 ![UPDATE](images/14.png)  
 
+#### Upload Testing Data
 Lets create a new stage in our schema for our testing pdf documents.
 ![UPDATE](images/15.png)  
 
@@ -96,16 +97,26 @@ Lets upload our [testing resumes](https://sfc-gh-dwilczak.github.io/tutorials/sn
 Browse, upload all three pdf's, and click "upload".
 ![UPDATE](images/18.png)  
 
+#### Parse new documents
 Once upload lets open a worksheet and run one of our two example codes pointed at our stage.
-=== ":octicons-image-16: Code"
+
+=== ":octicons-image-16: Single"
 
     ```sql linenums="1"
-    SELECT 
-    RAW.DOCUMENTS.RESUMES!PREDICT(
-        GET_PRESIGNED_URL(
-            @resumes,
-            'Ex11.pdf'
-        ), 1);
+    use schema raw.documents;
+
+    select resumes!predict(get_presigned_url(@resumes,'Ex11.pdf', 1);
+    ```
+
+=== ":octicons-image-16: Directory"
+
+    ```sql linenums="1"
+    use schema raw.documents;
+    
+    select 
+        resumes!predict(get_presigned_url(@resumes,relative_path, 1)
+    from
+        directory(@resumes);
     ```
 
 Now we can see our JSON response, if you do an entire directory you can also put it in a CTE and flatten it after be parsed.
