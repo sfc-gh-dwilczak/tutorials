@@ -38,6 +38,7 @@ nav:
   - Google Cloud: 
     - Cloud Storage: snowflake/google/storage/index.md
     - SSO: snowflake/google/sso/index.md
+
   - SFTP: 
     - Via Notebook: snowflake/sftp/index.md
   - Notebooks:
@@ -49,6 +50,8 @@ nav:
   - API's:
     - Intoduction via Notebook: snowflake/api/introduction/index.md
     - Chatgpt: snowflake/api/chatgpt/index.md
+  - Documents:
+    - Document AI: snowflake/documents/ai/index.md
   - Git:
     - Introduction: snowflake/git/introduction.md
   - Tasks:
