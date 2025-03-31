@@ -1,0 +1,6 @@
+[connections.danielwilczak]
+account = "GGB82720"
+user = "daniel.wilczak@snowflake.com"
+password = "....."
+database = "LLM"
+schema = "LLAMA"
