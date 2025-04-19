@@ -204,9 +204,8 @@ Now add your role by clicking `select role` -> `custom` -> `snowflake`. The last
 Click `Save` and your finished with Google Cloud for manual loading.
 ![Click Save](images/15.png)
 
-### Stage with external table.
-
-Lets setup the stage, file format and finally load some json data.
+### Stage :octicons-feed-tag-16:
+Lets setup the stage so that our external table can reference it.
 
 === ":octicons-image-16: Template"
 
@@ -254,6 +253,6 @@ Lets setup the stage, file format and finally load some json data.
     UPDATE
 
 
-## External Table
+## External Table :octicons-feed-tag-16:
 
 ADD CODE FOR EXTERNAL TABLE ON EXAMPLE DATA.
