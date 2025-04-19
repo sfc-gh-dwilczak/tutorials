@@ -31,65 +31,70 @@ nav:
   - index.md
 
   - Clouds: snowflake/overviews/clouds.md
-  -   AWS:  # 2 em spaces before AWS
-      - S3: snowflake/aws/s3/index.md
-      - Kinesis: snowflake/aws/kinesis/index.md
-  -   Azure:
-      - Blob / Storage: snowflake/azure/storage/index.md
-      - Active Directory / SSO: snowflake/azure/sso/index.md
-  -   Google Cloud:
-      - Cloud Storage: snowflake/google/storage/index.md
-      - SSO: snowflake/google/sso/index.md
+  -  AWS:  # 1 em space (U+2003)
+      -   S3: snowflake/aws/s3/index.md  # 2 em spaces (U+2003 x2)
+      -   Kinesis: snowflake/aws/kinesis/index.md
+  -  Azure:
+      -   Blob / Storage: snowflake/azure/storage/index.md
+      -   Active Directory / SSO: snowflake/azure/sso/index.md
+  -  Google Cloud:
+      -   Cloud Storage: snowflake/google/storage/index.md
+      -   SSO: snowflake/google/sso/index.md
 
-  - Engineering: snowflake/overviews/engineering.md
-  - SFTP: 
-    - Via Notebook: snowflake/sftp/index.md
-  - Container Services:
-    - Introduction: snowflake/container/introduction/index.md
-    - Streamlit: snowflake/container/streamlit/index.md
-  - API's:
-    - Intoduction via Notebook: snowflake/api/introduction/index.md
-    - Chatgpt: snowflake/api/chatgpt/index.md
-  - Documents:
-    - Document AI: snowflake/documents/ai/index.md
-  - Tasks:
-    - Lineage: snowflake/tasks/lineage/intro.md
+  -  Engineering: snowflake/overviews/engineering.md
+  -  SFTP:
+      -   Via Notebook: snowflake/sftp/index.md
+  -  Container Services:
+      -   Introduction: snowflake/container/introduction/index.md
+      -   Streamlit: snowflake/container/streamlit/index.md
+  -  API's:
+      -   Intoduction via Notebook: snowflake/api/introduction/index.md
+      -   Chatgpt: snowflake/api/chatgpt/index.md
+  -  Documents:
+      -   Document AI: snowflake/documents/ai/index.md
+  -  Tasks:
+      -   Lineage: snowflake/tasks/lineage/intro.md
 
-  - Consumers: snowflake/overviews/consumers.md
-  - Notebooks:
-    - Intro to Containerized : snowflake/notebooks/containers/index.md
-    - Intro to Local Jupyter: snowflake/notebooks/jupyter/index.md
-  - Data Science:
-    - Model Registry: snowflake/science/model_registry/index.md
-  
-  - Consumers: snowflake/overviews/configurations.md
-  - Account:
-    - Add account to Org: snowflake/account/add/index.md
-    - Change Service Level: snowflake/account/service_level/index.md
-    - Change Org / Account name: snowflake/account/name/index.md
-    - Replication: snowflake/account/replication/index.md
-  - Security:
-    - Key Pair Authentication: snowflake/security/key_pair/index.md
-    - Python with Key Pair: snowflake/security/python/index.md
-    - Network Policy - User: snowflake/security/network_policy/user/index.md
+  -  Consumers: snowflake/overviews/consumers.md
+  -  Notebooks:
+      -   Intro to Containerized : snowflake/notebooks/containers/index.md
+      -   Intro to Local Jupyter: snowflake/notebooks/jupyter/index.md
+  -  Data Science:
+      -   Model Registry: snowflake/science/model_registry/index.md
 
-  - Tools: snowflake/overviews/tools.md
-  - Tableau:
-    - Key Pair: snowflake/tableau/key_pair/index.md
-    - OAuth - Snowflake: snowflake/tableau/oauth_snowflake/index.md
-  - Fivetran:
-      - Setup: fivetran/setup/index.md
-      - Sources:
-        - Google Analytics: fivetran/sources/google_analytics/index.md
-  - DBT:
-      - Setup: dbt/setup/index.md
+  -  Configurations: snowflake/overviews/configurations.md
+  -  Account:
+      -   Add account to Org: snowflake/account/add/index.md
+      -   Change Service Level: snowflake/account/service_level/index.md
+      -   Change Org / Account name: snowflake/account/name/index.md
+      -   Replication: snowflake/account/replication/index.md
+  -  Security:
+      -   Key Pair Authentication: snowflake/security/key_pair/index.md
+      -   Python with Key Pair: snowflake/security/python/index.md
+      -   Network Policy - User: snowflake/security/network_policy/user/index.md
 
-  - Applications: snowflake/overviews/applications.md
-  - Native App:
-      - Container Services: snowflake/native/containers/intro.md
-      # - Iceberg: snowflake/google/iceberg/iceberg.md
-      # - Git: snowflake/notebooks/git/git.md
-      # - PDF's / RAG: snowflake/notebooks/RAG/pdf/pdf.md
+  -  Tools: snowflake/overviews/tools.md
+  -  Tableau:
+      -   Key Pair: snowflake/tableau/key_pair/index.md
+      -   OAuth - Snowflake: snowflake/tableau/oauth_snowflake/index.md
+  -  Fivetran:
+      -   Setup: fivetran/setup/index.md
+      -   Sources:
+          -    Google Analytics: fivetran/sources/google_analytics/index.md
+  -  DBT:
+      -   Setup: dbt/setup/index.md
+
+  -  Applications: snowflake/overviews/applications.md
+  -  Native App:
+      -   Container Services: snowflake/native/containers/intro.md
+
+
+
+
+
+  # - Iceberg: snowflake/google/iceberg/iceberg.md
+  # - Git: snowflake/notebooks/git/git.md
+  # - PDF's / RAG: snowflake/notebooks/RAG/pdf/pdf.md
 
 markdown_extensions:
   - tables
