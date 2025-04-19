@@ -30,7 +30,7 @@ theme:
 nav:
   - index.md
 
-  - Clouds: snowflake/overviews/clouds.md
+  - Clouds: "#"
   -  AWS:  # 1 em space (U+2003)
     -   S3: snowflake/aws/s3/index.md  # 2 em spaces (U+2003 x2)
     -   Kinesis: snowflake/aws/kinesis/index.md
@@ -39,15 +39,14 @@ nav:
     -   Active Directory / SSO: snowflake/azure/sso/index.md
   -  Google Cloud:
     -   Cloud Storage: snowflake/google/storage/index.md
+    #-   External Tables: TBD
+    #-   Iceberg: TBD
     -   SSO: snowflake/google/sso/index.md
 
   - Engineering: snowflake/overviews/engineering.md
   -  API's:
     -   Intoduction via Notebook: snowflake/api/introduction/index.md
     -   Chatgpt: snowflake/api/chatgpt/index.md
-  -  Container Services:
-    -   Introduction: snowflake/container/introduction/index.md
-    -   Streamlit: snowflake/container/streamlit/index.md
   -  Documents:
     -   Document AI: snowflake/documents/ai/index.md
   -  Tasks:
@@ -55,8 +54,7 @@ nav:
   -  SFTP:
     -   Via Notebook: snowflake/sftp/index.md
 
-
-  - Consumers: snowflake/overviews/consumers.md
+  - Data Science / ML: snowflake/overviews/consumers.md
   -  Notebooks:
     -   Intro to Containerized : snowflake/notebooks/containers/index.md
     -   Intro to Local Jupyter: snowflake/notebooks/jupyter/index.md
@@ -67,7 +65,7 @@ nav:
   -  Account:
     -   Add account to Org: snowflake/account/add/index.md
     -   Change Service Level: snowflake/account/service_level/index.md
-    -   Change Org / Account name: snowflake/account/name/index.md
+    -   Org / Account name: snowflake/account/name/index.md
     -   Replication: snowflake/account/replication/index.md
   -  Security:
     -   Key Pair Authentication: snowflake/security/key_pair/index.md
@@ -86,8 +84,12 @@ nav:
     -   Setup: dbt/setup/index.md
 
   - Apps: snowflake/overviews/applications.md
+  -  Container Services:
+    -   Introduction: snowflake/container/introduction/index.md
+    -   Streamlit: snowflake/container/streamlit/index.md
   -  Native App:
     -   Container Services: snowflake/native/containers/intro.md
+  
 
 
 
