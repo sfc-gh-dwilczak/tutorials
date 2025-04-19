@@ -204,7 +204,7 @@ Now add your role by clicking `select role` -> `custom` -> `snowflake`. The last
 Click `Save` and your finished with Google Cloud for manual loading.
 ![Click Save](images/15.png)
 
-### Stage :octicons-feed-tag-16:
+#### Stage :octicons-feed-tag-16:
 Lets setup the stage so that our external table can reference it.
 
 === ":octicons-image-16: Template"
