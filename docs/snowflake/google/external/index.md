@@ -191,7 +191,7 @@ Now add your role by clicking `select role` -> `custom` -> `snowflake`. The last
 
     !!! Note
 
-    "Allow All" is the simple approach but feel free to use [more fine grain approach via Snowflake documentation](https://docs.snowflake.com/en/user-guide/data-load-gcs-config#assigning-the-custom-role-to-the-cloud-storage-service-account).
+        "Allow All" is the simple approach but feel free to use [more fine grain approach via Snowflake documentation](https://docs.snowflake.com/en/user-guide/data-load-gcs-config#assigning-the-custom-role-to-the-cloud-storage-service-account).
 
     We'll want to overide the parent policy with a new rule. Select replace the policy and then select "Allow All". Click done and "Set Polcy." and your good to go. 
     ![update](images/49.png)
@@ -223,8 +223,6 @@ Lets setup the stage so that our external table can reference it.
         storage_integration = gcp_integration
         url = 'gcs://<BUCKET NAME>/' /* (1)! */
         directory = ( enable = true);
-
-  
     ```
     { .annotate }
 
