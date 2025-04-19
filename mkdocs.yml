@@ -30,7 +30,7 @@ theme:
 nav:
   - index.md
 
-  - -----: pages/clouds.md
+  - -----: snowflake/pages/clouds.md
   - AWS: 
     - S3: snowflake/aws/s3/index.md
     - Kinesis: snowflake/aws/kinesis/index.md
@@ -41,7 +41,7 @@ nav:
     - Cloud Storage: snowflake/google/storage/index.md
     - SSO: snowflake/google/sso/index.md
 
-  - -----: pages/engineering.md
+  - -----: snowflake/pages/engineering.md
   - SFTP: 
     - Via Notebook: snowflake/sftp/index.md
   - Container Services:
@@ -55,14 +55,14 @@ nav:
   - Tasks:
     - Lineage: snowflake/tasks/lineage/intro.md
 
-  - -----: pages/consumers.md
+  - -----: snowflake/pages/consumers.md
   - Notebooks:
     - Intro to Containerized : snowflake/notebooks/containers/index.md
     - Intro to Local Jupyter: snowflake/notebooks/jupyter/index.md
   - Data Science:
     - Model Registry: snowflake/science/model_registry/index.md
   
-  - -----: pages/configurations.md
+  - -----: snowflake/pages/configurations.md
   - Account:
     - Add account to Org: snowflake/account/add/index.md
     - Change Service Level: snowflake/account/service_level/index.md
@@ -73,7 +73,7 @@ nav:
     - Python with Key Pair: snowflake/security/python/index.md
     - Network Policy - User: snowflake/security/network_policy/user/index.md
 
-  - -----: pages/tools.md
+  - -----: snowflake/pages/tools.md
   - Tableau:
     - Key Pair: snowflake/tableau/key_pair/index.md
     - OAuth - Snowflake: snowflake/tableau/oauth_snowflake/index.md
@@ -84,7 +84,7 @@ nav:
   - DBT:
       - Setup: dbt/setup/index.md
 
-  - -----: pages/applications.md
+  - -----: snowflake/pages/applications.md
   - Native App:
       - Container Services: snowflake/native/containers/intro.md
       # - Iceberg: snowflake/google/iceberg/iceberg.md
