@@ -25,7 +25,7 @@ Click create project.
 ![Create project](images/2.png)
 
 In our case we'll call the project `danielwilczak` and select the default `no orginization` for the locaition.
-![Azure create container options](images/3.png)
+![Name project](images/3.png)
 
 #### Create cloud storage
 We will select our new project and click `cloud storage` to create a storage bucket.

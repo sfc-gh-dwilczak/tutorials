@@ -39,7 +39,7 @@ nav:
     -   Active Directory / SSO: snowflake/azure/sso/index.md
   -  Google Cloud:
     -   Cloud Storage: snowflake/google/storage/index.md
-    #-   External Tables: TBD
+    -   External Tables: TBD
     #-   Iceberg: TBD
     -   SSO: snowflake/google/sso/index.md
 
