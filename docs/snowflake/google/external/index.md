@@ -21,6 +21,9 @@ In this section we will upload the new [sample files](https://sfc-gh-dwilczak.gi
 ![Add to bucket](images/01.png)
 
 ## External Table :octicons-feed-tag-16:
+Let's not start to create our table and see the options we can have with regard to our table.
+
+### Simple
 Lets create the table on top of the [sample files](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/google/external/files/data.zip) we have stored in the bucket / stage.
 
 === ":octicons-image-16: Code"
@@ -37,7 +40,6 @@ Lets create the table on top of the [sample files](https://sfc-gh-dwilczak.githu
         last_name string as (value:c3::string),
         email string as (value:c4::string)
     )
-    with 
         location = @gcp/customers
         file_format = customers_csv_format
         auto_refresh = false;
@@ -48,3 +50,30 @@ Lets create the table on top of the [sample files](https://sfc-gh-dwilczak.githu
     | status                                    |
     |-------------------------------------------|
     | Table EXT_CUSTOMERS successfully created. |
+
+
+### Partition by
+After setting up our file format and querying larger, more complex datasets, we can improve performance by partitioning the external table. Partitioning by a column like file_created_at helps Snowflake prune files during queries, reducing scan time.
+
+=== ":octicons-image-16: Code"
+
+    ```sql linenums="1"
+    create or replace external table external_customers (
+        customer_id number as (value:c1::number),
+        first_name string as (value:c2::string),
+        last_name string as (value:c3::string),
+        email string as (value:c4::string),
+        row_created_at timestamp_ntz as (value:c5::timestamp),
+        file_created_at date as cast(split_part(split_part(metadata$filename, '/', -1), 'T', 1) as date)
+    )
+        partition by (file_created_at)
+        location = @gcp/customers
+        file_format = customers_csv_format
+        auto_refresh = false;
+    ```
+
+=== ":octicons-sign-out-16: Result"
+
+    | status                                         |
+    |------------------------------------------------|
+    | Table EXTERNAL_CUSTOMERS successfully created. |
