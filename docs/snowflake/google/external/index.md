@@ -104,6 +104,7 @@ After setting up our file format and querying larger, more complex datasets, we 
 
     This sections assumes you have already setup event notification system via pub/sub on the stage/bucket. If you have not [please follow this tutorial](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/google/storage/#automatic-loading).
 
+Now that we have the data partitioned correctly we probably want to be able to see new data as it is loaded into the folder. To do se we will change the autorefresh to true. This assumes we already have event notifications setup similar to Snowpipe.
 
 === ":octicons-image-16: Code"
 
