@@ -14,11 +14,11 @@ Video in development.
 ## Setup :octicons-feed-tag-16:
 !!! warning 
 
-    This tutorial assumes you have already setup a stage with read/write privligies and Snowpipe that is conencted to GCP cloud storage to enable autorefresh on the external table. If you have not [please follow this tutorial](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/google/cloud_storage/).
+    This tutorial assumes you have already setup a stage with read/write privligies. If you want to enable autorefresh on the external table you'll also want to do to the autoloading section. If you have not [please follow this tutorial](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/google/cloud_storage/).
     
 In this section we will upload the new [sample files](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/google/external/files/data.zip) to a GCP folder and then setup Snowflake.
 
-<IMAGE HERE>
+![Add to bucket](images/01.png)
 
 ## External Table :octicons-feed-tag-16:
 Lets create the table on top of the [sample files](https://sfc-gh-dwilczak.github.io/tutorials/snowflake/google/external/files/data.zip) we have stored in the bucket / stage.
