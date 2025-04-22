@@ -40,7 +40,7 @@ nav:
   -  Google Cloud:
     -   Cloud Storage: snowflake/google/storage/index.md
     -   External Tables: snowflake/google/external/index.md
-    #-   Iceberg: TBD
+    -   Iceberg: snowflake/google/iceberg/index.md
     -   SSO: snowflake/google/sso/index.md
 
   - Engineering: "#"

@@ -4,18 +4,16 @@ use role accountadmin;
 use warehouse developer;
 
 
-CREATE or replace EXTERNAL VOLUME exvol
+create or replace external volume external_volume
   STORAGE_LOCATIONS =
     (
       (
-        NAME = 'exvol'
+        NAME = 'external_volume'
         STORAGE_PROVIDER = 'GCS'
-        STORAGE_BASE_URL = 'gcs://pycon2024/'
+        STORAGE_BASE_URL = 'gcs://danielwilczak/'
       )
     );
     
--- Get the url.
-describe external volume exvol;
 
 -- If your lazy like me.
 select 
@@ -28,4 +26,4 @@ where
 
 
 -- Grant sysadmin access to the volume.
-GRANT ALL ON EXTERNAL VOLUME exvol TO ROLE sysadmin WITH GRANT OPTION;
+grant all on external volume external_volume to role sysadmin with grant option;
