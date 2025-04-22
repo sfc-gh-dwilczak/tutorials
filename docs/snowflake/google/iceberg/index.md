@@ -9,6 +9,8 @@ Video still in development.
 - Google cloud account, you can setup a [free account](https://cloud.google.com/) to get started.
 
 
+
+
 ## Setup  :octicons-feed-tag-16:
 Lets start by setting up a Snowflake connection to Google Cloud Storage. After that we'll create and load data into some Iceberg tables.
 
@@ -195,5 +197,26 @@ Click `Save` and your finished with Google Cloud for manual loading.
 ![Click Save](images/15.png)
 
 ## Iceberg Table
-
 Lets create a table and add data to it.
+
+
+=== ":octicons-image-16: Template"
+
+    ```sql linenums="1"  
+    use role sysadmin;
+
+    create or replace iceberg table csv (x integer, y integer)  
+        catalog='SNOWFLAKE'
+        external_volume='external_volume'
+        base_location='iceberg';
+
+    insert into csv (x, y)
+        values (1, 2),
+            (3, 4),
+            (5, 6);
+
+    ```
+
+=== ":octicons-sign-out-16: Result"
+
+    UPDATE
