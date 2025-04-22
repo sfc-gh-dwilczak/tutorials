@@ -37,6 +37,7 @@ I'm going to name the bucket `danielwilczak` as well. Copy this name, we will us
 
 
 ### Snowflake
+Let's setup snowflake by creating a worksheet in snowflake and add the code below with your bucket name from earlier and hit run.
 
 ??? note "If you don't have a database, schema or warehouse yet."
 
@@ -67,7 +68,7 @@ I'm going to name the bucket `danielwilczak` as well. Copy this name, we will us
         ```
 
 
-Let's setup snowflake by creating a worksheet in snowflake and add the code below with your bucket name from earlier and hit run:
+
 
 === ":octicons-image-16: Template"
 
