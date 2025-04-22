@@ -1,5 +1,5 @@
 # Iceberg - Google Cloud Storage
-Goal of this tutorial is to setup the an external volume in Snowflake to be able to create an manage iceberg table.
+Goal of this tutorial is to setup the an external volume in Snowflake to be able to create and manage iceberg table.
 
 ## Video
 Video still in development.
@@ -117,7 +117,7 @@ Let's setup snowflake by creating a worksheet in snowflake and add the code belo
             (
             name = 'external_volume'
             storage_provider = 'GCS'
-            storage_base_url = 'gcs://danielwilczak/' /* (1)! */
+            storage_base_url = 'gcs://danielwilczak/'
             )
         );
     
