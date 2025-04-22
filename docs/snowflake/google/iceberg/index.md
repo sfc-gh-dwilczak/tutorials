@@ -8,13 +8,11 @@ Video still in development.
 - Snowflake account, you can use a [free trial](https://signup.snowflake.com/). We also assume no complex security needs.
 - Google cloud account, you can setup a [free account](https://cloud.google.com/) to get started.
 
-
-
 ## Setup  :octicons-feed-tag-16:
 !!! warning 
 
     Your GCP bucket and Snowflake acount have to be in the same region to be able to create iceberg tables.
-    
+
 Lets start by setting up a Snowflake connection to Google Cloud Storage. After that we'll create and load data into some Iceberg tables.
 
 ### Google Cloud
