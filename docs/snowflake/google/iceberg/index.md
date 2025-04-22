@@ -68,19 +68,18 @@ Let's setup snowflake by creating a worksheet in snowflake and add the code belo
         ```
 
 
-
-
 === ":octicons-image-16: Template"
 
     ```sql linenums="1"  
     use role accountadmin;
 
+    -- Create a volume which will act as our connection to GCP.
     create or replace external volume external_volume
         storage_locations =
         (
             (
             name = 'external_volume'
-            storiage_provider = 'GCS'
+            storage_provider = 'GCS'
             storage_base_url = 'gcs://<storage bucket name>/' /* (1)! */
             )
         );
@@ -88,7 +87,7 @@ Let's setup snowflake by creating a worksheet in snowflake and add the code belo
     -- Grant sysadmin access to the volume.
     grant all on external volume external_volume to role sysadmin with grant option;
 
-    -- Get our storage location.
+    -- Get our principal url to be used in GCP.
     describe external volume external_volume;
     select 
         "property",
@@ -106,14 +105,15 @@ Let's setup snowflake by creating a worksheet in snowflake and add the code belo
 === ":octicons-image-16: Example"
 
     ```sql linenums="1"
-        use role accountadmin;
-
+    use role accountadmin;
+    
+    -- Create a volume which will act as our connection to GCP.
     create or replace external volume external_volume
         storage_locations =
         (
             (
             name = 'external_volume'
-            storiage_provider = 'GCS'
+            storage_provider = 'GCS'
             storage_base_url = 'gcs://danielwilczak/' /* (1)! */
             )
         );
@@ -121,7 +121,7 @@ Let's setup snowflake by creating a worksheet in snowflake and add the code belo
     -- Grant sysadmin access to the volume.
     grant all on external volume external_volume to role sysadmin with grant option;
 
-    -- Get our storage location.
+    -- Get our principal url to be used in GCP.
     describe external volume external_volume;
     select 
         "property",
@@ -134,7 +134,9 @@ Let's setup snowflake by creating a worksheet in snowflake and add the code belo
 
 === ":octicons-sign-out-16: Result"
 
-    UPDATE
+    | property           | URL                                           |
+    |--------------------|-----------------------------------------------|
+    | STORAGE_LOCATION_1 | jtongh...k@prod3-f617.iam.gserviceaccount.com |
 
 
 #### Grant Access in Google Cloud
@@ -191,3 +193,7 @@ Now add your role by clicking `select role` -> `custom` -> `snowflake`. The last
 
 Click `Save` and your finished with Google Cloud for manual loading.
 ![Click Save](images/15.png)
+
+## Iceberg Table
+
+Lets create a table and add data to it.
