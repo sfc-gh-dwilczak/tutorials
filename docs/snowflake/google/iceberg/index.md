@@ -239,5 +239,5 @@ Once the table is created we can query data living in the table that really live
     | 5 | 6 |
 
 
-We can also look in our bucket under the folder "icebeg" to see our metadata and data stored in parquet files.
+We can also look in our bucket under the folder "iceberg" to see our metadata and data stored in parquet files.
 ![Click Save](images/16.png)
