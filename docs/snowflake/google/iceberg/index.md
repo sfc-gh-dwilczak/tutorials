@@ -200,7 +200,7 @@ Click `Save` and your finished with Google Cloud for manual loading.
 ## Iceberg Table :octicons-feed-tag-16:
 Lets create a table and add data to it.
 
-=== ":octicons-image-16: Template"
+=== ":octicons-image-16: Code"
 
     ```sql linenums="1"  
     use role sysadmin;
@@ -223,6 +223,21 @@ Lets create a table and add data to it.
     |-------------------------|
     | 3                       |
 
-Once the table is created we can query data living in the table or look at the data that is now stored in our bucket under the folder "icebeg".
+Once the table is created we can query data living in the table that really lives in our GCP bucekt.
+=== ":octicons-image-16: Code"
 
+    ```sql linenums="1"  
+    select * from csv;
+    ```
+
+=== ":octicons-sign-out-16: Result"
+
+    | X | Y |
+    |---|---|
+    | 1 | 2 |
+    | 3 | 4 |
+    | 5 | 6 |
+
+
+We can also look in our bucket under the folder "icebeg" to see our metadata and data stored in parquet files.
 ![Click Save](images/16.png)
