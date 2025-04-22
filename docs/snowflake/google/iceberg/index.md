@@ -199,7 +199,6 @@ Click `Save` and your finished with Google Cloud for manual loading.
 ## Iceberg Table
 Lets create a table and add data to it.
 
-
 === ":octicons-image-16: Template"
 
     ```sql linenums="1"  
@@ -219,4 +218,10 @@ Lets create a table and add data to it.
 
 === ":octicons-sign-out-16: Result"
 
-    UPDATE
+    | number of rows inserted |
+    |-------------------------|
+    | 3                       |
+
+Once the table is created we can query data living in the table or look at the data that is now stored in our bucket under the folder "icebeg".
+
+![Click Save](images/16.png)
