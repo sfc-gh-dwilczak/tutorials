@@ -1,4 +1,4 @@
-# Connect Snowflake to Google Cloud Storage
+# Iceberg - Google Cloud Storage
 Goal of this tutorial is to setup the an external volume in Snowflake to be able to create an manage iceberg table.
 
 ## Video
@@ -8,8 +8,9 @@ Video still in development.
 - Snowflake account, you can use a [free trial](https://signup.snowflake.com/). We also assume no complex security needs.
 - Google cloud account, you can setup a [free account](https://cloud.google.com/) to get started.
 
+!!! warning 
 
-
+    Your GCP bucket and Snowflake acount have to be in the same region to be able to create iceberg tables.
 
 ## Setup  :octicons-feed-tag-16:
 Lets start by setting up a Snowflake connection to Google Cloud Storage. After that we'll create and load data into some Iceberg tables.
@@ -196,7 +197,7 @@ Now add your role by clicking `select role` -> `custom` -> `snowflake`. The last
 Click `Save` and your finished with Google Cloud for manual loading.
 ![Click Save](images/15.png)
 
-## Iceberg Table
+## Iceberg Table :octicons-feed-tag-16:
 Lets create a table and add data to it.
 
 === ":octicons-image-16: Template"
