@@ -38,49 +38,51 @@ I'm going to name the bucket `danielwilczak` as well. Copy this name, we will us
 
 ### Snowflake
 
+??? note "If you don't have a database, schema or warehouse yet."
+
+    === ":octicons-image-16: Database, schema and warehouse"
+
+        ```sql linenums="1"
+        use role sysadmin;
+        
+        -- Create a database to store our schemas.
+        create database if not exists raw;
+
+        -- Create the schema. The schema stores all our objectss.
+        create schema if not exists raw.gcp;
+
+        /*
+            Warehouses are synonymous with the idea of compute
+            resources in other systems. We will use this
+            warehouse to call our user defined function.
+        */
+        create warehouse if not exists development 
+            warehouse_size = xsmall
+            auto_suspend = 30
+            initially_suspended = true;
+
+        use database raw;
+        use schema gcp;
+        use warehouse development;
+        ```
+
+
 Let's setup snowflake by creating a worksheet in snowflake and add the code below with your bucket name from earlier and hit run:
 
 === ":octicons-image-16: Template"
 
-    ```sql linenums="1"
-    /*
-        We switch to "sysadmin" to create an object
-        because it will be owned by that role.
-    */
-    use role sysadmin;
-
-    --- Create a database to store our schemas.
-    create database if not exists raw;
-
-    -- Create the schema. The schema stores all objects.
-    create schema if not exists raw.gcp;
-
-    /*
-        Warehouses are synonymous with the idea of compute
-        resources in other systems. We will use this
-        warehouse to query our integration and to load data.
-    */
-    create warehouse if not exists development 
-        warehouse_size = xsmall
-        auto_suspend = 30
-        initially_suspended = true;
-
-    /*
-        Integrations are on of those important features that
-        account admins should do because it's allowing outside 
-        snowflake connections to your data.
-    */
+    ```sql linenums="1"  
     use role accountadmin;
 
     create or replace external volume external_volume
-        STORAGE_LOCATIONS =
+        storage_locations =
+        (
             (
-            (
-                NAME = 'external_volume'
-                STORAGE_PROVIDER = 'GCS'
-                STORAGE_BASE_URL = 'gcs://<storage bucket name>/' /* (1)! */
+            name = 'external_volume'
+            storiage_provider = 'GCS'
+            storage_base_url = 'gcs://<storage bucket name>/' /* (1)! */
             )
-            );
+        );
     
     -- Grant sysadmin access to the volume.
     grant all on external volume external_volume to role sysadmin with grant option;
@@ -103,44 +105,17 @@ Let's setup snowflake by creating a worksheet in snowflake and add the code belo
 === ":octicons-image-16: Example"
 
     ```sql linenums="1"
-       /*
-        We switch to "sysadmin" to create an object
-        because it will be owned by that role.
-    */
-    use role sysadmin;
-
-    --- Create a database to store our schemas.
-    create database if not exists raw;
-
-    -- Create the schema. The schema stores all objects.
-    create schema if not exists raw.gcp;
-
-    /*
-        Warehouses are synonymous with the idea of compute
-        resources in other systems. We will use this
-        warehouse to query our integration and to load data.
-    */
-    create warehouse if not exists development 
-        warehouse_size = xsmall
-        auto_suspend = 30
-        initially_suspended = true;
-
-    /*
-        Integrations are on of those important features that
-        account admins should do because it's allowing outside 
-        snowflake connections to your data.
-    */
-    use role accountadmin;
+        use role accountadmin;
 
     create or replace external volume external_volume
-        STORAGE_LOCATIONS =
+        storage_locations =
+        (
             (
-            (
-                NAME = 'external_volume'
-                STORAGE_PROVIDER = 'GCS'
-                STORAGE_BASE_URL = 'gcs://danielwilczak/' /* (1)! */
+            name = 'external_volume'
+            storiage_provider = 'GCS'
+            storage_base_url = 'gcs://danielwilczak/' /* (1)! */
             )
-            );
+        );
     
     -- Grant sysadmin access to the volume.
     grant all on external volume external_volume to role sysadmin with grant option;
