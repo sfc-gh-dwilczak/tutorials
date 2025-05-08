@@ -60,6 +60,7 @@ nav:
   -  Direct: sharing/direct/index.md
   -  Listings: sharing/listing/index.md
 #  -  Reader Account: sharing/reader/index.md
+#  -  Marketplace: sharing/reader/index.md
 
   - Data Science / ML: "#"
   -  Notebooks:
@@ -67,6 +68,7 @@ nav:
     -   Intro to Local Jupyter: science/notebooks/jupyter/index.md
   -  Models:
     -   Registry: science/models/registry/index.md
+  #-  Cortex Analyst: science/analyst/index.md
 
   - Configurations: "#"
   -  Account:

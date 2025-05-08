@@ -1,7 +1,7 @@
 # Sharing - Direct
 !!! warning 
 
-    Direct dat sharing can only be done to account on the same cloud provider and in the same region as your Snowflake account. To share to other providers/regions use [data share listings](#).
+    Direct data sharing can only be done to accounts on the same cloud provider and in the same region as your Snowflake account. To share to other providers/regions use a [data share listing](https://sfc-gh-dwilczak.github.io/tutorials/sharing/listing/).
 
 In this tutorial we will cover how to create sercure views on our data and then direct data share with anther Snowflake account.
 
