@@ -11,8 +11,8 @@ If you have a Snowflake account, reach out to your account team to have these en
 - You will need access to our [embed/vector LLM functions](https://docs.snowflake.com/LIMITEDACCESS/vector-data-type) which is still currently in private preview.  
 
 ## Download
-- [Notebook](https://sfc-gh-dwilczak.github.io/science/notebooks/RAG/pdf/data/notebook.ipynb)
-- [PDF files](https://sfc-gh-dwilczak.github.io/science/notebooks/RAG/pdf/data/pdfs.zip)
+- [Notebook](https://sfc-gh-dwilczak.github.io/tutorials/science/notebooks/RAG/pdf/data/notebook.ipynb)
+- [PDF files](https://sfc-gh-dwilczak.github.io/tutorials/science/notebooks/RAG/pdf/data/pdfs.zip)
 
 ## Tutorial
 Lets start by setting up some objects in snowflake and follow it up with uploading and using the notebook.
@@ -70,7 +70,7 @@ Lets setup our stages to upload the pdf and store some sql udf's.
 Using the UI we will upload our downloaded pdf's into our stage (folder on Snowflake). Lets go to the stage in our snowflake account.
 ![Navigate to stage](images/10.png)
 
-Once we click the "+ Files" button we will need to drag or select the [pdf files](https://sfc-gh-dwilczak.github.io/science/notebooks/RAG/pdf/data/pdfs.zip) that downloaded earlier.
+Once we click the "+ Files" button we will need to drag or select the [pdf files](https://sfc-gh-dwilczak.github.io/tutorials/science/notebooks/RAG/pdf/data/pdfs.zip) that downloaded earlier.
 ![Select files](images/11.png)
 
 Once selected we can click upload.

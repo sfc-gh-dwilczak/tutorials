@@ -9,14 +9,14 @@ Video in development.
 - Google cloud account, you can setup a [free account](https://cloud.google.com/) to get started.
 
 ## Download
-- [Sample Data](https://sfc-gh-dwilczak.github.io/clouds/google/external/files/data.zip)
+- [Sample Data](https://sfc-gh-dwilczak.github.io/tutorials/clouds/google/external/files/data.zip)
 
 ## Setup :octicons-feed-tag-16:
 !!! warning 
 
-    This tutorial assumes you have already setup a stage with read/write privligies. If you have not [please follow this tutorial](https://sfc-gh-dwilczak.github.io/clouds/google/cloud_storage/).
+    This tutorial assumes you have already setup a stage with read/write privligies. If you have not [please follow this tutorial](https://sfc-gh-dwilczak.github.io/tutorials/clouds/google/cloud_storage/).
     
-In this section we will upload the new [sample files](https://sfc-gh-dwilczak.github.io/clouds/google/external/files/data.zip) to a GCP folder and then setup Snowflake.
+In this section we will upload the new [sample files](https://sfc-gh-dwilczak.github.io/tutorials/clouds/google/external/files/data.zip) to a GCP folder and then setup Snowflake.
 
 ![Add to bucket](images/01.png)
 
@@ -24,7 +24,7 @@ In this section we will upload the new [sample files](https://sfc-gh-dwilczak.gi
 Let's not start to create our table and see the options we can have with regard to our table.
 
 ### Simple
-Lets create the table on top of the [sample files](https://sfc-gh-dwilczak.github.io/clouds/google/external/files/data.zip) we have stored in the bucket / stage.
+Lets create the table on top of the [sample files](https://sfc-gh-dwilczak.github.io/tutorials/clouds/google/external/files/data.zip) we have stored in the bucket / stage.
 
 === ":octicons-image-16: Code"
 
@@ -102,7 +102,7 @@ After setting up our file format and querying larger, more complex datasets, we 
 
 !!! warning 
 
-    This sections assumes you have already setup event notification system via pub/sub on the stage/bucket. If you have not [please follow this tutorial](https://sfc-gh-dwilczak.github.io/clouds/google/storage/#automatic-loading).
+    This sections assumes you have already setup event notification system via pub/sub on the stage/bucket. If you have not [please follow this tutorial](https://sfc-gh-dwilczak.github.io/tutorials/clouds/google/storage/#automatic-loading).
 
 Now that we have the data partitioned correctly we probably want to be able to see new data as it is loaded into the folder. To do se we will change the autorefresh to true. This assumes we already have event notifications setup similar to Snowpipe.
 

@@ -159,7 +159,7 @@ The permissions to select can be found on [Snowflake's documentation](https://do
 Navigate back to our bucket. Click `permissions`, followed by `add principle`.
 ![Navigate to bucket and permissions](images/12.png)
 
-In the new principles section, add your [STORAGE_GCP_SERVICE_ACCOUNT](https://sfc-gh-dwilczak.github.io/clouds/google/cloud_storage/#snowflake) given by Snowflake earlier.
+In the new principles section, add your [STORAGE_GCP_SERVICE_ACCOUNT](https://sfc-gh-dwilczak.github.io/tutorials/clouds/google/cloud_storage/#snowflake) given by Snowflake earlier.
 ![Add snowflake service account](images/13.png)
 
 Now add your role by clicking `select role` -> `custom` -> `snowflake`. The last one will be your role name.

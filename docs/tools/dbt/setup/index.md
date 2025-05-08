@@ -199,7 +199,7 @@ Lets create a new environment.
 Lets give our environment a name, select deplyment type of ``production`` and connection of Snowflake we created earlier.
 ![environment setup 1](images/28.png)
 
-Lets add our connection variables. The image shows what everything should be if you used our setup code. The password comes from that setup code. If your want to use key-pair instead of username/password, check our [key-pair tutorial](https://sfc-gh-dwilczak.github.io/configurations/security/key_pair/).
+Lets add our connection variables. The image shows what everything should be if you used our setup code. The password comes from that setup code. If your want to use key-pair instead of username/password, check our [key-pair tutorial](https://sfc-gh-dwilczak.github.io/tutorials/configurations/security/key_pair/).
 ![environment setup 2](images/29.png)
 
 Once finished head back to the top and click save.

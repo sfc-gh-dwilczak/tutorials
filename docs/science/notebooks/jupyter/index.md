@@ -8,7 +8,7 @@ In this tutorial you will learn how to get data from snowflake into our local ju
 The fastest way I got jupyter notebooks up and running is by installing [VsCode](https://code.visualstudio.com/) and then creating a new file with the extension ".ipynb".
 
 ## Downloads
-- Notebook ([Link](https://sfc-gh-dwilczak.github.io/science/jupyter/introduction/files/notebook.ipynb))
+- Notebook ([Link](https://sfc-gh-dwilczak.github.io/tutorials/science/jupyter/introduction/files/notebook.ipynb))
 
 ## Setup :octicons-feed-tag-16:
 Lets start with some setup.

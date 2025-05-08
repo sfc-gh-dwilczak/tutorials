@@ -10,7 +10,7 @@ Credit for the orginial tutorial goes to [Umesh Patel](https://medium.com/@umesh
 This tutorial assumes you have nothing in your Snowflake account ([Trial](https://signup.snowflake.com/)) and no complex security needs.
 
 ## Download needed files:
-- Data generator code ([Link](https://sfc-gh-dwilczak.github.io/clouds/aws/kinesis/files/files.zip))
+- Data generator code ([Link](https://sfc-gh-dwilczak.github.io/tutorials/clouds/aws/kinesis/files/files.zip))
 
 ## Snowflake Setup :octicons-feed-tag-16:
 For the Snowflake setup we'll want to create the service user with an ssh key and the table to load data into.

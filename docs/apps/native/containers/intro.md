@@ -1,5 +1,5 @@
 # Native App + Container Services (Intro)
-Goal of this tutorial is to get a introduction to Native App + Container Services. In this tutorial you will build a containerized website and then deploy it via a Native app + Container Services. This is the same container we used in our [container services introduction](https://sfc-gh-dwilczak.github.io/apps/container/introduction/introduction/) tutorial.
+Goal of this tutorial is to get a introduction to Native App + Container Services. In this tutorial you will build a containerized website and then deploy it via a Native app + Container Services. This is the same container we used in our [container services introduction](https://sfc-gh-dwilczak.github.io/tutorials/apps/container/introduction/introduction/) tutorial.
 
 ## Video
 <iframe width="850px" height="478px" src="https://www.youtube.com/embed/jK7BRX0j3Qk?si=vuUKHXXzd8OBg3og" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -10,8 +10,8 @@ Goal of this tutorial is to get a introduction to Native App + Container Service
 - Please install docker desktop - [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
 
 ## Download (Choose 1)
-- Files for simple website - ([Image](images/09.png)) ([Link](https://sfc-gh-dwilczak.github.io/apps/containers/data/simple/Files.zip))   
-- Files for fancy website - ([Image](images/11.png)) ([Link](https://sfc-gh-dwilczak.github.io/apps/native/containers/data/fancy/Files.zip))   
+- Files for simple website - ([Image](images/09.png)) ([Link](https://sfc-gh-dwilczak.github.io/tutorials/apps/containers/data/simple/Files.zip))   
+- Files for fancy website - ([Image](images/11.png)) ([Link](https://sfc-gh-dwilczak.github.io/tutorials/apps/native/containers/data/fancy/Files.zip))   
 
 ## Setup :octicons-feed-tag-16:
 Lets go through some setup before going to docker / building our native application.
@@ -56,7 +56,7 @@ Let's start by setting up Snowflake before we jump to docker. Create a worksheet
 
 
 ### Upload Native App Files
-In this section we will go back to our "provider_db/provider_schema" database/schema and upload our [native app code](https://sfc-gh-dwilczak.github.io/apps/native/containers/data/files.zip) we got earlier into the "code" stage.
+In this section we will go back to our "provider_db/provider_schema" database/schema and upload our [native app code](https://sfc-gh-dwilczak.github.io/tutorials/apps/native/containers/data/files.zip) we got earlier into the "code" stage.
 
 ![Terminal](images/01.png)
 

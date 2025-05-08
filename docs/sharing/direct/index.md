@@ -15,7 +15,7 @@ Video still in development.
 Lets start by setting up our second account in our Snowflake orginization so that we can go through the process of sharing with a real life account.
 
 ### Second Account
-To create anther account please follow this [tutorial](https://sfc-gh-dwilczak.github.io/configurations/account/add/) (3 minutes) but make sure it's in the same region as the first account.
+To create anther account please follow this [tutorial](https://sfc-gh-dwilczak.github.io/tutorials/configurations/account/add/) (3 minutes) but make sure it's in the same region as the first account.
 
 Now that we have our second account we'll need that account's locator. Lets start by going to our account details.
 ![account details](images/01.png)

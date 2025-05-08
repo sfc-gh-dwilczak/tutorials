@@ -9,8 +9,8 @@ Video is still in development.
 This tutorial assumes you have nothing in your Snowflake account ([Trial](https://signup.snowflake.com/)) and no complex security needs.
 
 ## Downloads
-* [Training data](https://sfc-gh-dwilczak.github.io/engineering/documents/ai/files/training.zip)
-* [Testing data](https://sfc-gh-dwilczak.github.io/engineering/documents/ai/files/testing.zip)
+* [Training data](https://sfc-gh-dwilczak.github.io/tutorials/engineering/documents/ai/files/training.zip)
+* [Testing data](https://sfc-gh-dwilczak.github.io/tutorials/engineering/documents/ai/files/testing.zip)
 
 ??? note "If you don't have a database, schema or warehouse yet."
 
@@ -44,10 +44,10 @@ Lets start in the AI & ML under Document AI and we'll build our first model.
 Lets give the model a name and location to be stored. Once done, click "create".
 ![UPDATE](images/01.png)  
 
-Now that it's created lets upload our [training resumes](https://sfc-gh-dwilczak.github.io/engineering/documents/ai/files/training.zip). Click upload documents.
+Now that it's created lets upload our [training resumes](https://sfc-gh-dwilczak.github.io/tutorials/engineering/documents/ai/files/training.zip). Click upload documents.
 ![UPDATE](images/02.png)  
 
-Browse and upload the [training pdf](https://sfc-gh-dwilczak.github.io/engineering/documents/ai/files/training.zip) files.
+Browse and upload the [training pdf](https://sfc-gh-dwilczak.github.io/tutorials/engineering/documents/ai/files/training.zip) files.
 ![UPDATE](images/03.png)  
 
 Once all have been uploaded click done.
@@ -91,7 +91,7 @@ Lets create a new stage in our schema for our testing pdf documents.
 Lets call it resumes, encrypt it using "Server-side encreption", and click create.
 ![UPDATE](images/16.png)  
 
-Lets upload our [testing resumes](https://sfc-gh-dwilczak.github.io/engineering/documents/ai/files/testing.zip).
+Lets upload our [testing resumes](https://sfc-gh-dwilczak.github.io/tutorials/engineering/documents/ai/files/testing.zip).
 ![UPDATE](images/17.png)  
 
 Browse, upload all three pdf's, and click "upload".

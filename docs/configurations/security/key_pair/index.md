@@ -85,6 +85,6 @@ Lets apply the public key to our user in Snowflake. The public key file will end
     |-------------------------------------|
     | Statement executed successfully.    |
 
-With our key now set on the user, we might want to test it via local python. [Here is a tutorial to test it](https://sfc-gh-dwilczak.github.io/configurations/security/python/).
+With our key now set on the user, we might want to test it via local python. [Here is a tutorial to test it](https://sfc-gh-dwilczak.github.io/tutorials/configurations/security/python/).
 
 

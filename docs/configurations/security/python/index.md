@@ -9,11 +9,11 @@ For the official Snowflake documentation this tutorial was based on:
 
 ## Requirement
 - This tutorial assumes you have nothing in your Snowflake account ([Trial](https://signup.snowflake.com/)) and no complex security needs.
-- This tutorial assumes you've already have a private key, [if not here is a tutorial](https://sfc-gh-dwilczak.github.io/configurations/security/key_pair/)
+- This tutorial assumes you've already have a private key, [if not here is a tutorial](https://sfc-gh-dwilczak.github.io/tutorials/configurations/security/key_pair/)
 
 
 ## Download needed files:
-- Files ([Link](https://sfc-gh-dwilczak.github.io/configurations/security/python/files/files.zip))                
+- Files ([Link](https://sfc-gh-dwilczak.github.io/tutorials/configurations/security/python/files/files.zip))                
 
 ## Install
 Lets start by updating our code to use the stream we setup at the beginning. Inside our ``main.py`` we'll update:

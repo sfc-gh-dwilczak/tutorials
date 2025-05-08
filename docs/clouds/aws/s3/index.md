@@ -9,7 +9,7 @@ Goal of this tutorial is to load JSON and CSV data from a S3 bucket using the [C
 <iframe width="850px" height="478px" src="https://www.youtube.com/embed/K9i_PWE_HHw?si=DANmRHLH1kGuj_Hf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Download  :octicons-feed-tag-16:
-- Sample data ([Link](https://sfc-gh-dwilczak.github.io/data/data.zip))
+- Sample data ([Link](https://sfc-gh-dwilczak.github.io/tutorials/data/data.zip))
 
 ## Manual Loading  :octicons-feed-tag-16:
 Lets start by setting up a snowflake connection to AWS s3 storage and load json data. After that use snowpipe to automate the ingestion of CSV files.
@@ -22,7 +22,7 @@ Create the bucket you intend to use. In our case we'll call the bucket **danielw
 ![Create S3](images/0_create_bucket.png)
 
 #### Upload sample data
-Upload the [sample data](https://sfc-gh-dwilczak.github.io/data/data.zip) to your s3 bucket (json/csv) provided in the data folder.
+Upload the [sample data](https://sfc-gh-dwilczak.github.io/tutorials/data/data.zip) to your s3 bucket (json/csv) provided in the data folder.
 ![Upload example data](images/27.gif)
 
 #### Policy and role
@@ -135,7 +135,7 @@ Copy your **role ARN**, this will be used in the next step:
 ![Copy arn](images/11_copy_arn.png)
 
 ### Snowflake
-Lets start the snowflake setup by creating our database and schema. Followed by creating the integration to AWS by running the code below with your [copied role arn](https://sfc-gh-dwilczak.github.io/clouds/aws/s3/#policy-and-role) and [bucket name](https://sfc-gh-dwilczak.github.io/clouds/aws/s3/#create-s3-bucket):
+Lets start the snowflake setup by creating our database and schema. Followed by creating the integration to AWS by running the code below with your [copied role arn](https://sfc-gh-dwilczak.github.io/tutorials/clouds/aws/s3/#policy-and-role) and [bucket name](https://sfc-gh-dwilczak.github.io/tutorials/clouds/aws/s3/#create-s3-bucket):
 
 === ":octicons-image-16: Template"
 
@@ -247,7 +247,7 @@ Click trusted relationship:
 Click edit trust policy:
 ![Edit trust policy](images/13_click_edit_trust_policy.png)
 
-Copy the policy json template code below and add your "STORAGE_AWS_IAM_USER_ARN" and "STORAGE_AWS_EXTERNAL_ID" from prior [Snowflake](https://sfc-gh-dwilczak.github.io/clouds/aws/s3/#snowflake) step.
+Copy the policy json template code below and add your "STORAGE_AWS_IAM_USER_ARN" and "STORAGE_AWS_EXTERNAL_ID" from prior [Snowflake](https://sfc-gh-dwilczak.github.io/tutorials/clouds/aws/s3/#snowflake) step.
 
 === ":octicons-image-16: Template"
 
@@ -425,7 +425,7 @@ Look at the data you just loaded.
 
 !!! warning 
 
-    If you have not [manually loaded](https://sfc-gh-dwilczak.github.io/clouds/aws/s3/#manual-loading) data yet from S3. Please go back and complete that section first.
+    If you have not [manually loaded](https://sfc-gh-dwilczak.github.io/tutorials/clouds/aws/s3/#manual-loading) data yet from S3. Please go back and complete that section first.
 
 Lets create a pipe to automate copying data into a table. Create the file format, table and pipe in snowflake. This approach automates the process so you don't have to manually name all the columns. This code will also give you your **SQS queue** string to be entered into AWS later.
 
@@ -508,7 +508,7 @@ Scroll down to "Create event notification":
 Add a name to the notification and select all object create notification:
 ![Properties](images/18_notification_settings.png)
 
-Scroll down and enter your [sqs queue](https://sfc-gh-dwilczak.github.io/clouds/aws/s3/#snowflake_1) we got from our snowflake step and click "save changes":
+Scroll down and enter your [sqs queue](https://sfc-gh-dwilczak.github.io/tutorials/clouds/aws/s3/#snowflake_1) we got from our snowflake step and click "save changes":
 ![Properties](images/20_enter_sqs.png)
 
 Almost done, in snowflake lets refresh the pipe so that we ingest all the current files.
@@ -531,6 +531,6 @@ Almost done, in snowflake lets refresh the pipe so that we ingest all the curren
 
     Sometimes it may take 1-2 minutes before you see data in the table. This depends on how AWS is feeling today.
 
-Let's add more [sample data](https://sfc-gh-dwilczak.github.io/data/csv/sample_2.csv) into the S3 bucket CSV folder and see it added in snowflake ~30 seconds later. We can see this by doing a count on our table and seeing 20 records, whereas the original CSV only has 10 records.
+Let's add more [sample data](https://sfc-gh-dwilczak.github.io/tutorials/data/csv/sample_2.csv) into the S3 bucket CSV folder and see it added in snowflake ~30 seconds later. We can see this by doing a count on our table and seeing 20 records, whereas the original CSV only has 10 records.
 
 <iframe width="850px" height="478px" src="https://www.youtube.com/embed/I0QVJWjR5Qw?si=FDW-4b6LaEdTVVKf" style="display:block;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

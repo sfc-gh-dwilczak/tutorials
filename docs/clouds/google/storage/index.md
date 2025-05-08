@@ -9,7 +9,7 @@ Goal of this tutorial is to load JSON and CSV data from a Google Cloud Storage u
 - Google cloud account, you can setup a [free account](https://cloud.google.com/) to get started.
 
 ## Download  :octicons-feed-tag-16:
-- Sample data ([Link](https://sfc-gh-dwilczak.github.io/data/data.zip))
+- Sample data ([Link](https://sfc-gh-dwilczak.github.io/tutorials/data/data.zip))
 
 ## Manual Loading  :octicons-feed-tag-16:
 Lets start by setting up a Snowflake connection to Google Cloud Storage and load json data. After that use snowpipe to automate the ingestion of CSV files.
@@ -39,7 +39,7 @@ I'm going to name the bucket `danielwilczak` as well. Copy this name, we will us
 
 #### Upload sample data
 
-Upload the [sample data](https://sfc-gh-dwilczak.github.io/data/data.zip) to your google cloud storage bucket (json/csv) provided in the data folder.
+Upload the [sample data](https://sfc-gh-dwilczak.github.io/tutorials/data/data.zip) to your google cloud storage bucket (json/csv) provided in the data folder.
 ![Navigate into container](images/43.gif)
 
 ### Snowflake
@@ -166,7 +166,7 @@ The permissions to select can be found on [Snowflake's documentation](https://do
 Navigate back to our bucket. Click `permissions`, followed by `add principle`.
 ![Navigate to bucket and permissions](images/12.png)
 
-In the new principles section, add your [STORAGE_GCP_SERVICE_ACCOUNT](https://sfc-gh-dwilczak.github.io/clouds/google/cloud_storage/#snowflake) given by Snowflake earlier.
+In the new principles section, add your [STORAGE_GCP_SERVICE_ACCOUNT](https://sfc-gh-dwilczak.github.io/tutorials/clouds/google/cloud_storage/#snowflake) given by Snowflake earlier.
 ![Add snowflake service account](images/13.png)
 
 Now add your role by clicking `select role` -> `custom` -> `snowflake`. The last one will be your role name.
@@ -315,7 +315,7 @@ Look at the data you just loaded.
 
 !!! warning 
 
-    If you have not [manually loaded](https://sfc-gh-dwilczak.github.io/clouds/google/cloud_storage/#manual-loading) data yet from Google Cloud storage. Please go back and complete that section first.
+    If you have not [manually loaded](https://sfc-gh-dwilczak.github.io/tutorials/clouds/google/cloud_storage/#manual-loading) data yet from Google Cloud storage. Please go back and complete that section first.
 
 
 ### Google Cloud
@@ -448,7 +448,7 @@ Click show panel if not open already.
 Click `Add Principle`.
 ![Add Principle](images/33.png)
 
-Add your principle login user we got from snowflake in the [prior step](https://sfc-gh-dwilczak.github.io/clouds/google/storage/#snowflake_1).
+Add your principle login user we got from snowflake in the [prior step](https://sfc-gh-dwilczak.github.io/tutorials/clouds/google/storage/#snowflake_1).
 ![Add login user](images/34.png)
 
 Click select role and select `Pub / Sub` -> `Pub / Sub Subscriber`.
@@ -463,7 +463,7 @@ Next we'll want to go back to IAM.
 Click `Grant Access`.
 ![Grant Access](images/38.png)
 
-Add your principle login user we got from snowflake in the [prior step](https://sfc-gh-dwilczak.github.io/clouds/google/storage/#snowflake_1).
+Add your principle login user we got from snowflake in the [prior step](https://sfc-gh-dwilczak.github.io/tutorials/clouds/google/storage/#snowflake_1).
 ![Add login user part 2](images/39.png)
 
 Click select role and search `Monitoring Viewer` and click `Monitoring Viewer`.
@@ -549,7 +549,7 @@ In this case we'll load a csv file by automating the creation of the table and i
 
     Sometimes it may take 1-2 minutes before you see data in the table. This depends on how Google Cloud is feeling today.
 
-Lets add more [sample data](https://sfc-gh-dwilczak.github.io/data/csv/sample_2.csv) into the google cloud storage bucket csv folder and see it added in snowflake ~30 seconds later. We can see this by doing a count on our table and see 20 records where the original csv only has 10 records.
+Lets add more [sample data](https://sfc-gh-dwilczak.github.io/tutorials/data/csv/sample_2.csv) into the google cloud storage bucket csv folder and see it added in snowflake ~30 seconds later. We can see this by doing a count on our table and see 20 records where the original csv only has 10 records.
 
 <iframe width="850px" height="478px" src="https://www.youtube.com/embed/Zuw1Llfb9Rw?si=7jGUMtfjJG5m0LvI" style="display:block;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 

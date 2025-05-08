@@ -9,7 +9,7 @@ Video is still in development.
 - You [CAN NOT be on a trial account](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview).
 
 ## Downloads
-- Notebook ([Link](https://sfc-gh-dwilczak.github.io/science/notebooks/containers/notebook/notebook.ipynb))
+- Notebook ([Link](https://sfc-gh-dwilczak.github.io/tutorials/science/notebooks/containers/notebook/notebook.ipynb))
 
 ## Setup :octicons-feed-tag-16:
 ??? note "If you don't have a database, schema or warehouse yet."

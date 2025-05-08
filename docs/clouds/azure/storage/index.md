@@ -9,7 +9,7 @@ Goal of this tutorial is to load JSON and CSV data from a Azure Storage using th
 <iframe width="850px" height="478px" src="https://www.youtube.com/embed/K18izJ1azFg?si=QloTQIiHYYOoumxm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Download  :octicons-feed-tag-16:
-- Sample data ([Link](https://sfc-gh-dwilczak.github.io/data/data.zip))
+- Sample data ([Link](https://sfc-gh-dwilczak.github.io/tutorials/data/data.zip))
 
 ## Manual Loading  :octicons-feed-tag-16:
 Lets start by setting up a Snowflake connection to Azure storage and load json data. After that use snowpipe to automate the ingestion of CSV files.
@@ -41,7 +41,7 @@ Navigate into the data container.
 Lets upload some sample data
 ![Navigate into container](images/7.png)
 
-Upload the [sample data](https://sfc-gh-dwilczak.github.io/data/data.zip) to your azure storage bucket (json/csv) provided in the data folder.
+Upload the [sample data](https://sfc-gh-dwilczak.github.io/tutorials/data/data.zip) to your azure storage bucket (json/csv) provided in the data folder.
 
 ![Upload example data](images/33.gif)
 
@@ -310,7 +310,7 @@ Look at the data you just loaded.
 
 !!! warning
 
-    If you have not [manually loaded](https://sfc-gh-dwilczak.github.io/clouds/azure/blob/#manual-loading) data yet from azure storage. Please go back and complete that section first.
+    If you have not [manually loaded](https://sfc-gh-dwilczak.github.io/tutorials/clouds/azure/blob/#manual-loading) data yet from azure storage. Please go back and complete that section first.
 
 
 ### Azure 
@@ -519,7 +519,7 @@ We'll load a csv file by automating the creation of the table and infering the n
 
     Sometimes it may take 1-2 minutes before you see data in the table. This depends on how Azure is feeling today.
 
-Lets add more [sample data](https://sfc-gh-dwilczak.github.io/data/csv/sample_2.csv) into the azure csv folder and see it added in snowflake ~30 seconds later. We can see this by doing a count on our table and see 20 records where th original csv only has 10 records.
+Lets add more [sample data](https://sfc-gh-dwilczak.github.io/tutorials/data/csv/sample_2.csv) into the azure csv folder and see it added in snowflake ~30 seconds later. We can see this by doing a count on our table and see 20 records where th original csv only has 10 records.
 
 <iframe width="850px" height="478px" src="https://www.youtube.com/embed/ZBr6gKOFvw4?si=MfWVGshDNIy3RAtE" style="display:block;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 

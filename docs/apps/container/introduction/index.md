@@ -9,7 +9,7 @@ Goal of this tutorial is to get a introduction to Snowflake Container services b
 - You can NOT be on a trial account. ([Link](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview))
 
 ## Download
-- Files ([Link](https://sfc-gh-dwilczak.github.io/apps/container/introduction/data/website.zip))
+- Files ([Link](https://sfc-gh-dwilczak.github.io/tutorials/apps/container/introduction/data/website.zip))
 
 ## Setup :octicons-feed-tag-16:
 Lets go through some setup before to go into our application.

@@ -11,7 +11,7 @@ Video still in development.
 Lets start by setting up our second account in our Snowflake orginization so that we can go through the process of sharing with a real life account.
 
 ### Second Account
-To create anther account please follow this [tutorial](https://sfc-gh-dwilczak.github.io/configurations/account/add/) (3 minutes). In this tutorial we will setup the second account in Azure while our primary account is in AWS.
+To create anther account please follow this [tutorial](https://sfc-gh-dwilczak.github.io/tutorials/configurations/account/add/) (3 minutes). In this tutorial we will setup the second account in Azure while our primary account is in AWS.
 
 Now that we have our second account we'll need that account's ``Data Sharing Account Identifier``. Lets start by going to our account details.
 ![account details](images/01.png)

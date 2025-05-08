@@ -7,7 +7,7 @@ Video is still in developemnt.
 ## Requirements
 1. You will need a Snowflake account which can be setup as [trial](https://signup.snowflake.com/) if we don't have one today.
 2. You will need to have a fivetran account or [sign up for a free trial](https://fivetran.com/signup).
-3. You have [Snowflake as a destination](https://sfc-gh-dwilczak.github.io/tools/fivetran/setup/setup/).
+3. You have [Snowflake as a destination](https://sfc-gh-dwilczak.github.io/tutorials/tools/fivetran/setup/setup/).
 4. You have a already working [Google Analytics](https://developers.google.com/analytics/) account. 
 
 ## Fivetran :octicons-feed-tag-16:

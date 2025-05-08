@@ -106,7 +106,7 @@ Let's start by setting up Snowflake before we jump to docker. Create a worksheet
 ### Download
 
 #### Docker and services files
-Lets first [download the files](https://sfc-gh-dwilczak.github.io/apps/container/cpu/llama/files.zip) we'll need for the docker file and service file later.
+Lets first [download the files](https://sfc-gh-dwilczak.github.io/tutorials/apps/container/cpu/llama/files.zip) we'll need for the docker file and service file later.
 
 #### Llama 2 Model
 You will want to select and download your [Llama model](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF/tree/main). For this tutorial I downloaded the "[llama-2-7b-chat.Q2_K.gguf](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF/resolve/main/llama-2-7b-chat.Q2_K.gguf?download=true)" model due to it being the smallest model.

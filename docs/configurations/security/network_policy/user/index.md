@@ -8,7 +8,7 @@ Video in development
 - Snowflake account, you can use a [free trial](https://signup.snowflake.com/). We also assume no complex security needs.
 
 ## Walk Through :octicons-feed-tag-16:
-We'll need a user to apply the policy to. Typically this is applied to a service user with an [Key Pair](https://sfc-gh-dwilczak.github.io/configurations/security/key_pair/) but you can apply it to who ever you want. You'll also want to update your I.P addresses since these are just for an example.
+We'll need a user to apply the policy to. Typically this is applied to a service user with an [Key Pair](https://sfc-gh-dwilczak.github.io/tutorials/configurations/security/key_pair/) but you can apply it to who ever you want. You'll also want to update your I.P addresses since these are just for an example.
 
 === ":octicons-image-16: Code"
 

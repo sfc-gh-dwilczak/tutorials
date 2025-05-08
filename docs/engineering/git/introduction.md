@@ -10,7 +10,7 @@ Credit for the orginial tutorial goes to [Mark Boos](https://www.linkedin.com/in
 You will need a [github](https://github.com/) repo and the ability to [create a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). We will show how to create the token in this tutorial. 
 
 ## Download
-- [Repository files](https://sfc-gh-dwilczak.github.io/engineering/git/data/repo.zip)
+- [Repository files](https://sfc-gh-dwilczak.github.io/tutorials/engineering/git/data/repo.zip)
 
 ## Setup :octicons-feed-tag-16:
 In this section we will upload the example code to a repository and then setup Snowflake:
@@ -24,7 +24,7 @@ Call it "tutorial". It can be public or private.
 
 !!! Caution "Please do not upload the repo folder itself. Just the files in it."
 
-Upload the [example repository](https://sfc-gh-dwilczak.github.io/engineering/git/data/repo.zip).
+Upload the [example repository](https://sfc-gh-dwilczak.github.io/tutorials/engineering/git/data/repo.zip).
 ![Naming](images/09.png)
 
 Your good to go.
