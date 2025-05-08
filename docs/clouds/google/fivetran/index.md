@@ -107,10 +107,26 @@ Once in the destination, on the top navigation bar, select "Catalog Integration"
 ![UPDATE](images/25.png)
 
 Lets head into Snowflake and add the code from fivetran and the line below. This will allow us to see the tables that are managed by the catalog.
-```sql
--- To see the tables in the catalog
-select system$list_iceberg_tables_from_catalog('fivetran_catalog_throwback_refinery', '', 0);
-```
+
+=== ":octicons-image-16: Template"
+
+    ```sql linenums="1"  
+    -- To see the tables in the catalog
+    select system$list_iceberg_tables_from_catalog('<Catalog Name>', '', 0);
+    ```
+
+=== ":octicons-image-16: Template"
+
+    ```sql linenums="1"  
+    -- To see the tables in the catalog
+    select system$list_iceberg_tables_from_catalog('fivetran_catalog_throwback_refinery', '', 0);
+    ```
+
+=== ":octicons-image-16: Template"
+
+    ```sql linenums="1"  
+    UPDATE
+    ```
 
 #### Grant access in GCP
 We'll now need to allow Snowflake to interacte with with bucket via the external volume. To do so we'll 
