@@ -136,7 +136,7 @@ We'll now need to allow Snowflake to interacte with with bucket via the external
     ```sql linenums="1"  
     use role accountadmin;
 
-    -- Add our volume name given by fivetran.
+    -- Get our principal url to be used in GCP so we can connect to the bucket.
     describe external volume <VOLUME NAME >;
     select 
         "property",
