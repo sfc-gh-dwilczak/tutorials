@@ -93,7 +93,7 @@ Select our table.
 ![UPDATE](images/06.png)
 
 
-!!! note "If you get error: This product can be shared only in the local region"
+??? note "If you get error: This product can be shared only in the local region"
 
     If you see this error:
     ![Error](images/07.png)
