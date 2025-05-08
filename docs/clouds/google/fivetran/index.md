@@ -115,7 +115,7 @@ Lets head into Snowflake and add the code from fivetran and the line below. This
     select system$list_iceberg_tables_from_catalog('<Catalog Name>', '', 0);
     ```
 
-=== ":octicons-image-16: Template"
+=== ":octicons-image-16: Example"
 
     ```sql linenums="1"  
     -- To see the tables in the catalog
