@@ -57,7 +57,7 @@ nav:
     -   Via Notebook: engineering/sftp/index.md
 
   - Data Sharing: "#"
-  -  Direct Share: sharing/direct/index.md
+  -  Direct: sharing/direct/index.md
   -  Listings: sharing/listing/index.md
 #  -  Reader Account: sharing/reader/index.md
 
