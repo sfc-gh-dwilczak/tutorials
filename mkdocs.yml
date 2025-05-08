@@ -81,6 +81,7 @@ nav:
     -   Network Policy - User: configurations/security/network_policy/user/index.md
 
   - Tools: "#"
+  -  Git: tools/git/index.md
   -  Tableau:
     -   Key Pair: tools/tableau/key_pair/index.md
     -   OAuth - Snowflake: tools/tableau/oauth_snowflake/index.md
@@ -89,10 +90,8 @@ nav:
  #   - Key-Pair: tools/fivetran/key_pair/index.md
     -   Sources:
         -    Google Analytics: tools/fivetran/sources/google_analytics/index.md
-  -  DBT:
-    -   Setup: tools/dbt/setup/index.md
-  - Zapier:
-    -   Setup: tools/zapier/index.md
+  -  DBT: tools/dbt/setup/index.md
+  -  Zapier: tools/zapier/index.md
 
   - Apps: "#"
   -  Container Services:
