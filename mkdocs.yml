@@ -4,6 +4,7 @@ edit_uri: edit/main/docs/
 
 theme:
   name: material
+  logo: assets/logo.png
   features:
     - content.code.select
     - content.code.copy
@@ -32,73 +33,74 @@ nav:
 
   - Clouds: "#"
   -  AWS:  # 1 em space (U+2003)
-    -   S3: snowflake/aws/s3/index.md  # 2 em spaces (U+2003 x2)
-    -   Kinesis: snowflake/aws/kinesis/index.md
+    -   S3: clouds/aws/s3/index.md  # 2 em spaces (U+2003 x2)
+    -   Kinesis: clouds/aws/kinesis/index.md
   -  Azure:
-    -   Blob / Storage: snowflake/azure/storage/index.md
-    -   Active Directory / SSO: snowflake/azure/sso/index.md
+    -   Blob / Storage: clouds/azure/storage/index.md
+    -   Active Directory / SSO: clouds/azure/sso/index.md
   -  Google Cloud:
-    -   Cloud Storage: snowflake/google/storage/index.md
-    -   External Tables: snowflake/google/external/index.md
-    -   Iceberg: snowflake/google/iceberg/index.md
-    -   SSO: snowflake/google/sso/index.md
+    -   Cloud Storage: clouds/google/storage/index.md
+    -   External Tables: clouds/google/external/index.md
+    -   Fivetran Data Lake: clouds/google/fivetran/index.md
+    -   Iceberg: clouds/google/iceberg/index.md
+    -   SSO: clouds/google/sso/index.md
 
   - Engineering: "#"
   -  API's:
-    -   Intoduction via Notebook: snowflake/api/introduction/index.md
-    -   Chatgpt: snowflake/api/chatgpt/index.md
+    -   Intoduction via Notebook: engineering/api/introduction/index.md
+    -   Chatgpt: engineering/api/chatgpt/index.md
   -  Documents:
-    -   Document AI: snowflake/documents/ai/index.md
+    -   Document AI: engineering/documents/ai/index.md
   -  Tasks:
-    -   Lineage: snowflake/tasks/lineage/intro.md
+    -   Lineage: engineering/tasks/lineage/intro.md
   -  SFTP:
-    -   Via Notebook: snowflake/sftp/index.md
+    -   Via Notebook: engineering/sftp/index.md
+
+  - Data Sharing: "#"
+  -  Direct Share: sharing/direct/index.md
+  -  Listings: sharing/listing/index.md
+#  -  Reader Account: sharing/reader/index.md
 
   - Data Science / ML: "#"
   -  Notebooks:
-    -   Intro to Containerized : snowflake/notebooks/containers/index.md
-    -   Intro to Local Jupyter: snowflake/notebooks/jupyter/index.md
+    -   Intro to Containerized : science/notebooks/containers/index.md
+    -   Intro to Local Jupyter: science/notebooks/jupyter/index.md
   -  Models:
-    -   Registry: snowflake/models/registry/index.md
+    -   Registry: science/models/registry/index.md
 
   - Configurations: "#"
   -  Account:
-    -   Add account to Org: snowflake/account/add/index.md
-    -   Change Service Level: snowflake/account/service_level/index.md
-    -   Org / Account name: snowflake/account/name/index.md
-    -   Replication: snowflake/account/replication/index.md
+    -   Add account to Org: configurations/account/add/index.md
+    -   Change Service Level: configurations/account/service_level/index.md
+    -   Org / Account name: configurations/account/name/index.md
+    -   Replication: configurations/account/replication/index.md
+    -   Support Ticket: configurations/account/support/index.md
   -  Security:
-    -   Key Pair Authentication: snowflake/security/key_pair/index.md
-    -   Python with Key Pair: snowflake/security/python/index.md
-    -   Network Policy - User: snowflake/security/network_policy/user/index.md
+    -   Key Pair Authentication: configurations/security/key_pair/index.md
+    -   Python with Key Pair: configurations/security/python/index.md
+    -   Network Policy - User: configurations/security/network_policy/user/index.md
 
   - Tools: "#"
   -  Tableau:
-    -   Key Pair: snowflake/tableau/key_pair/index.md
-    -   OAuth - Snowflake: snowflake/tableau/oauth_snowflake/index.md
+    -   Key Pair: tools/tableau/key_pair/index.md
+    -   OAuth - Snowflake: tools/tableau/oauth_snowflake/index.md
   -  Fivetran:
-    -   Setup: fivetran/setup/index.md
+    - Introduction: tools/fivetran/introduction/index.md
+ #   - Key-Pair: tools/fivetran/key_pair/index.md
     -   Sources:
-        -    Google Analytics: fivetran/sources/google_analytics/index.md
+        -    Google Analytics: tools/fivetran/sources/google_analytics/index.md
   -  DBT:
-    -   Setup: dbt/setup/index.md
+    -   Setup: tools/dbt/setup/index.md
+  - Zapier:
+    -   Setup: tools/zapier/index.md
 
   - Apps: "#"
   -  Container Services:
-    -   Introduction: snowflake/container/introduction/index.md
-    -   Streamlit: snowflake/container/streamlit/index.md
+    -   Introduction: apps/container/introduction/index.md
+    -   Streamlit: apps/container/streamlit/index.md
   -  Native App:
-    -   Container Services: snowflake/native/containers/intro.md
+    -   Container Services: apps/native/containers/intro.md
   
-
-
-
-
-
-  # - Iceberg: snowflake/google/iceberg/iceberg.md
-  # - Git: snowflake/notebooks/git/git.md
-  # - PDF's / RAG: snowflake/notebooks/RAG/pdf/pdf.md
-
 markdown_extensions:
   - tables
   - pymdownx.inlinehilite

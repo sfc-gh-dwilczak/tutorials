@@ -1,0 +1,1 @@
+In this tutorial we will show how to create and manage a reader account and then share data with that account.
