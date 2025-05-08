@@ -11,11 +11,9 @@ Video still in development.
 ## Requirements
 - Snowflake account, you can use a [free trial](https://signup.snowflake.com/). We also assume no complex security needs.
 
-## Setup  :octicons-feed-tag-16:
-Lets start by setting up our second account in our Snowflake orginization so that we can go through the process of sharing with a real life account.
 
-### Second Account
-To create anther account please follow this [tutorial](https://sfc-gh-dwilczak.github.io/tutorials/configurations/account/add/) (3 minutes) but make sure it's in the same region as the first account.
+## Second Account
+Lets start by setting up our second account in our Snowflake orginization so that we can go through the process of sharing with a real life account. To create anther account please follow this [tutorial](https://sfc-gh-dwilczak.github.io/tutorials/configurations/account/add/) (3 minutes) but make sure it's in the same region as the first account.
 
 Now that we have our second account we'll need that account's locator. Lets start by going to our account details.
 ![account details](images/01.png)
@@ -23,6 +21,8 @@ Now that we have our second account we'll need that account's locator. Lets star
 Copy the account locator, we'll need this for later.
 ![copy account locator](images/02.png)
 
+## Setup  :octicons-feed-tag-16:
+Lets create some data and share it to our second account.
 
 ### Data
 Lets now create some data to be shared with our second account. Lets start a sql worksheet and add the code below.
@@ -78,7 +78,7 @@ Lets now create some data to be shared with our second account. Lets start a sql
     |-------------------------|
     | 3                       |
 
-### Data Share
+### Share
 !!! note
 
     You must be using accountadmin or the button/dropdown won't show up. 
@@ -101,7 +101,7 @@ Once everything is to our liking we can click "create share".
 Once the share is created you'll see it's an object we can change if needed.
 ![view data share](images/08.png)
 
-### Second account
+## Add data share
 Lets now add the data share in the second account by going to private sharing and clicking the download button next to our share.
 ![add](images/09.png)
 
@@ -114,7 +114,7 @@ The data has now been added to the second account. Lets go view that data.
 We can see it has been added with the database name we wantsed and we can go to the customers table to see the data.
 ![see data](images/12.png)
 
-### Bonus - Sharing filtered data
+## Bonus - Sharing filtered data
 We might want to only share specific data to anther account without that account knowing how we filtered the data. To do this we will create a [secure view](https://docs.snowflake.com/en/user-guide/views-secure) on top of our table to filter only to rows with the name "john doe".
 
 === ":octicons-image-16: View"

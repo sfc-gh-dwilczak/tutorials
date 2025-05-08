@@ -7,11 +7,8 @@ Video still in development.
 ## Requirements
 - Snowflake account, you can use a [free trial](https://signup.snowflake.com/). We also assume no complex security needs.
 
-## Setup  :octicons-feed-tag-16:
-Lets start by setting up our second account in our Snowflake orginization so that we can go through the process of sharing with a real life account.
-
-### Second Account
-To create anther account please follow this [tutorial](https://sfc-gh-dwilczak.github.io/tutorials/configurations/account/add/) (3 minutes). In this tutorial we will setup the second account in Azure while our primary account is in AWS.
+## Second Account
+Lets start by setting up our second account in our Snowflake orginization so that we can go through the process of sharing with a real life account. To create anther account please follow this [tutorial](https://sfc-gh-dwilczak.github.io/tutorials/configurations/account/add/) (3 minutes). In this tutorial we will setup the second account in Azure while our primary account is in AWS.
 
 Now that we have our second account we'll need that account's ``Data Sharing Account Identifier``. Lets start by going to our account details.
 ![account details](images/01.png)
@@ -19,6 +16,8 @@ Now that we have our second account we'll need that account's ``Data Sharing Acc
 Copy the ``Data Sharing Account Identifier``, we'll need this for later.
 ![copy account locator](images/02.png)
 
+## Setup  :octicons-feed-tag-16:
+Lets create some data and share it to our second account.
 
 ### Data
 Lets now create some data to be shared with our second account. Lets start a sql worksheet and add the code below.
@@ -74,7 +73,7 @@ Lets now create some data to be shared with our second account. Lets start a sql
     |-------------------------|
     | 3                       |
 
-### Data Share
+### Share
 
 !!! note
 
@@ -127,7 +126,7 @@ Once we enter our ``Data Sharing Account Identifier`` we'll see new options show
 Now our listing is live and shared with our second account. Once it's added to the second account it will replicate the data and the second account will have access to the shared data.
 ![UPDATE](images/10.png)
 
-### Second Account
+## Add data share
 Now that we have our data shared, lets add it to the second account. Lets go into our Azure account and add the data. You must use the accountadmin role.
 ![UPDATE](images/11.png)
 
@@ -147,7 +146,7 @@ Your data is now added.
 We can see the new shared database in our accont with our table.
 ![UPDATE](images/15.png)
 
-### Bonus - Sharing filtered data
+## Bonus - Sharing filtered data
 We might want to only share specific data to anther account without that account knowing how we filtered the data. To do this we will create a [secure view](https://docs.snowflake.com/en/user-guide/views-secure) on top of our table to filter only to rows with the name "john doe".
 
 === ":octicons-image-16: View"
