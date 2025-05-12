@@ -1,5 +1,5 @@
 # Science - Cortex Analyst
-In this tutorial we will go through an introduction to setting up cortex analyst.
+In this tutorial we will go through an introduction to setting up cortex analyst. We'll show two ways to deploy it via streamlit in Snowflake and Flask.
 
 ## Video
 Video still in development.
@@ -8,7 +8,7 @@ Video still in development.
 - Snowflake account, you can use a [free trial](https://signup.snowflake.com/). We also assume no complex security needs.
 
 ## Download  :octicons-feed-tag-16:
-- Sales Semantic Layer ([Link](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/introduction/files/sales.yaml))
+- Sales Semantic Layer ([Link](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/files/sales.yaml))
 
 ## Setup  :octicons-feed-tag-16:
 Lets create some example data first the our chatbot (Cortex Analyst) can use later on.
@@ -125,13 +125,13 @@ Lets now insert some data to those tables.
 ## Building Cortex Analyst :octicons-feed-tag-16:
 Now that we have our data loaded into our tables lets build the semantic layer and play with it in the Cortex Analyst playground.
 
-To start lets upload our [example semantic layer](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/introduction/files/sales.yaml) to our stage. We can do that by clicking "+ Files".
+To start lets upload our [example semantic layer](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/files/sales.yaml) to our stage. We can do that by clicking "+ Files".
 ![UPDATE](images/01.png)
 
 Click browse.
 ![UPDATE](images/02.png)
 
-Select the [example semantic layer](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/introduction/files/sales.yaml) called sales. 
+Select the [example semantic layer](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/files/sales.yaml) called sales. 
 ![UPDATE](images/03.png)
 
 Now that we have our example uploaded we can head to cortex analyst under the AI / ML Studio.
@@ -169,7 +169,7 @@ Now that we have our cortex analyst chatbot built we'll want to deploy it. In th
 Lets deploy our semantic layer / chatbot in streamlit in Snowflake. 
 
 #### Downloads
-- Streamlit Application ([Link](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/introduction/files/streamlit.py))
+- Streamlit Application ([Link](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/files/streamlit.py))
 
 #### Streamlit
 To start lets create a new streamlit application in Snowflake.
@@ -182,7 +182,7 @@ Lets give our streamlit app a name, where to put it and finally the warehouse th
 
     If you put your semantic file somewhere else you'll just update it the string of the location.
 
-Now that we have the app, lets copy in the code from the [example application](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/introduction/files/streamlit.py) that we downloaded earlier and hit run.
+Now that we have the app, lets copy in the code from the [example application](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/files/streamlit.py) that we downloaded earlier and hit run.
 ![UPDATE](images/14.png)
 
 Now you can see the chatbot and start using it and sharing it with any team who needs a sales chatbot.
@@ -193,8 +193,8 @@ Now you can see the chatbot and start using it and sharing it with any team who 
 Lets move to a build use case where we want to add our semantic layer into our application. In this example we'll build two additional semantic layers and then deploy them in our flask application. Make sure we download the necessary files for this section.
 
 #### Downloads
-- Flask Application ([Link](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/introduction/files/flask.zip))
-- All semantic layers [Link](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/introduction/files/semantic.zip)
+- Flask Application ([Link](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/files/flask.zip))
+- All semantic layers [Link](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/files/semantic.zip)
 
 #### Snowflake
 Lets adding some new tables for our new semantic layers.
