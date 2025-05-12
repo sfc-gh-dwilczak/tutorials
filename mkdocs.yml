@@ -63,9 +63,7 @@ nav:
 #  -  Marketplace: sharing/reader/index.md
 
   - Data Science / ML: "#"
-  -  Cortex Analyst: 
-    -   Introduction: science/analyst/introduction/index.md
-  #  -   API: science/analyst/api/index.md
+  -  Cortex Analyst: science/analyst/index.md
   -  Models:
     -   Registry: science/models/registry/index.md
   -  Notebooks:
