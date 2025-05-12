@@ -194,7 +194,7 @@ Lets move to a build use case where we want to add our semantic layer into our a
 
 #### Downloads
 - Flask Application ([Link](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/files/flask.zip))
-- All semantic layers [Link](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/files/semantic.zip)
+- All semantic layers ([Link](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/files/semantic.zip))
 
 #### Snowflake
 Lets adding some new tables for our new semantic layers.
