@@ -1,1 +1,0 @@
-In this tutorial we will go through an introduction to cortex analyst.

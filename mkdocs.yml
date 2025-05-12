@@ -63,12 +63,14 @@ nav:
 #  -  Marketplace: sharing/reader/index.md
 
   - Data Science / ML: "#"
+  -  Cortex Analyst: 
+    -   Introduction: science/analyst/introduction/index.md
+  #  -   API: science/analyst/api/index.md
+  -  Models:
+    -   Registry: science/models/registry/index.md
   -  Notebooks:
     -   Intro to Containerized : science/notebooks/containers/index.md
     -   Intro to Local Jupyter: science/notebooks/jupyter/index.md
-  -  Models:
-    -   Registry: science/models/registry/index.md
-  #-  Cortex Analyst: science/analyst/index.md
 
   - Configurations: "#"
   -  Account:
@@ -83,16 +85,16 @@ nav:
     -   Network Policy - User: configurations/security/network_policy/user/index.md
 
   - Tools: "#"
-  -  Git: tools/git/index.md
-  -  Tableau:
-    -   Key Pair: tools/tableau/key_pair/index.md
-    -   OAuth - Snowflake: tools/tableau/oauth_snowflake/index.md
+  -  DBT: tools/dbt/setup/index.md
   -  Fivetran:
     -   Introduction: tools/fivetran/introduction/index.md
  #   - Key-Pair: tools/fivetran/key_pair/index.md
     -   Sources:
         -    Google Analytics: tools/fivetran/sources/google_analytics/index.md
-  -  DBT: tools/dbt/setup/index.md
+  -  Git: tools/git/index.md
+  -  Tableau:
+    -   Key Pair: tools/tableau/key_pair/index.md
+    -   OAuth - Snowflake: tools/tableau/oauth_snowflake/index.md
   -  Zapier: tools/zapier/index.md
 
   - Apps: "#"

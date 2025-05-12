@@ -1,0 +1,147 @@
+name: Sales
+description: Semantic model for simplified sales data.
+tables:
+  - name: product
+    description: Product reference table.
+    base_table:
+      database: raw
+      schema: cortex
+      table: product
+    primary_key:
+      columns:
+        - product_id
+    dimensions:
+      - name: product_id
+        expr: product_id
+        data_type: string
+        description: Unique identifier for the product.
+      - name: product_name
+        expr: product_name
+        data_type: string
+        description: Name of the product.
+      - name: category
+        expr: category
+        data_type: string
+        description: Category of the product.
+      - name: brand
+        expr: brand
+        data_type: string
+        description: Brand of the product.
+
+  - name: customer
+    description: Customer reference table.
+    base_table:
+      database: raw
+      schema: cortex
+      table: customer
+    primary_key:
+      columns:
+        - customer_id
+    dimensions:
+      - name: customer_id
+        expr: customer_id
+        data_type: string
+        description: Unique identifier for the customer.
+      - name: customer_name
+        expr: customer_name
+        data_type: string
+        description: Name of the customer.
+      - name: region
+        expr: region
+        data_type: string
+        description: Region of the customer.
+
+  - name: sales
+    description: Sales transaction fact table (denormalized).
+    base_table:
+      database: raw
+      schema: cortex
+      table: sales
+    primary_key:
+      columns:
+        - sale_id
+    dimensions:
+      - name: sale_id
+        expr: sale_id
+        data_type: string
+        description: Unique identifier for the sale.
+      - name: product_id
+        expr: product_id
+        data_type: string
+        description: Product associated with the sale.
+      - name: customer_id
+        expr: customer_id
+        data_type: string
+        description: Customer associated with the sale.
+      - name: store_name
+        expr: store_name
+        data_type: string
+        description: Store name where the sale occurred.
+      - name: city
+        expr: city
+        data_type: string
+        description: City where the store is located.
+      - name: region
+        expr: region
+        data_type: string
+        description: Region of the store.
+      - name: day_of_week
+        expr: day_of_week
+        data_type: string
+        description: Day of the week when the sale occurred.
+    time_dimensions:
+      - name: sale_date
+        expr: sale_date
+        data_type: date
+        description: Date of the sale.
+    facts:
+      - name: quantity_sold
+        expr: quantity_sold
+        data_type: integer
+        description: Quantity of product sold.
+      - name: revenue
+        expr: revenue
+        data_type: float
+        description: Revenue from the sale.
+
+relationships:
+  - name: sales_to_product
+    left_table: sales
+    right_table: product
+    relationship_columns:
+      - left_column: product_id
+        right_column: product_id
+    join_type: left_outer
+    relationship_type: many_to_one
+
+  - name: sales_to_customer
+    left_table: sales
+    right_table: customer
+    relationship_columns:
+      - left_column: customer_id
+        right_column: customer_id
+    join_type: left_outer
+    relationship_type: many_to_one
+
+verified_queries:
+  - name: total revenue by product
+    question: What is the total revenue for each product?
+    sql: |
+      SELECT
+        p.product_name,
+        SUM(s.revenue) AS total_revenue
+      FROM __sales s
+      JOIN __product p ON s.product_id = p.product_id
+      GROUP BY p.product_name
+      ORDER BY total_revenue DESC;
+
+  - name: quantity sold by region and weekday
+    question: What are total quantities sold by region and day of week?
+    sql: |
+      SELECT
+        s.region,
+        s.day_of_week,
+        SUM(s.quantity_sold) AS total_quantity
+      FROM __sales s
+      GROUP BY s.region, s.day_of_week
+      ORDER BY total_quantity DESC;
