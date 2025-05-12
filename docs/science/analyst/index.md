@@ -122,7 +122,7 @@ Lets now insert some data to those tables.
     |-------------------------|
     | 3                       |
 
-## Building Cortex Analyst
+## Building Cortex Analyst :octicons-feed-tag-16:
 Now that we have our data loaded into our tables lets build the semantic layer and play with it in the Cortex Analyst playground.
 
 To start lets upload our [example semantic layer](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/introduction/files/sales.yaml) to our stage. We can do that by clicking "+ Files".
@@ -162,15 +162,16 @@ You can monitor the usage of this semantic layer by going to the monitoring tab,
 ![UPDATE](images/11.png)
 
 
-## Deployment
+## Deployment :octicons-feed-tag-16:
 Now that we have our cortex analyst chatbot built we'll want to deploy it. In this section we have two example platforms but you can deploy to many more.
 
 ### Streamlit in Snowflake
 Lets deploy our semantic layer / chatbot in streamlit in Snowflake. 
 
-Downloads
+#### Downloads
 - Streamlit Application ([Link](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/introduction/files/streamlit.py))
 
+#### Streamlit
 To start lets create a new streamlit application in Snowflake.
 ![UPDATE](images/12.png)
 
@@ -191,7 +192,7 @@ Now you can see the chatbot and start using it and sharing it with any team who 
 ### Flask Website
 Lets move to a build use case where we want to add our semantic layer into our application. In this example we'll build two additional semantic layers and then deploy them in our flask application. Make sure we download the necessary files for this section.
 
-#### Downloads:
+#### Downloads
 - Flask Application ([Link](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/introduction/files/flask.zip))
 - All semantic layers [Link](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/introduction/files/semantic.zip)
 
