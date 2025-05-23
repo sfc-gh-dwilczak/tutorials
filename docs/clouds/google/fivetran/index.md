@@ -85,21 +85,14 @@ We'll want to search for "Storage Object Admin" and then click on it in the drop
 Once both are added click "Save".
 ![UPDATE](images/19.png)
 
-#### Finilize Fivetran
+#### Load source data
 Now we can added our bucket name, folder and click save and test.
 ![UPDATE](images/20.png)
 
 Once tested your destination is read to use.
 ![UPDATE](images/21.png)
 
-### Add Source
-This section will be vary depending on what source you plan to use. In my example I would load some data from google analytics by adding it as a connector.
-![UPDATE](images/22.png)
-
-Now if we check our bucket you can see fivetran has loaded the google analytics data into our data lake.
-![UPDATE](images/23.png)
-
-### Snowflake
+#### Snowflake
 !!! warning 
 
     Currently you must grab the catalog code when the destination is created otherwise the key will be hidden '*******'. Fivetran is working on fixing this issue.
@@ -233,6 +226,13 @@ Now add your role by clicking `select role` -> `custom` -> `snowflake`. The last
 
 Click `Save` and your finished GCP setup.
 ![Click Save](images/33.png)
+
+### Add Source
+This section will be vary depending on what source you plan to use. In my example I would load some data from google analytics by adding it as a connector.
+![UPDATE](images/22.png)
+
+Now if we check our bucket you can see fivetran has loaded the google analytics data into our data lake.
+![UPDATE](images/23.png)
 
 
 ## Create - Table
@@ -474,7 +474,7 @@ Now lets automate the creation off all the tables using a Python script. We'll a
 === ":octicons-image-16: Result"
 
     | status                                                | STATEMENT_TIMESTAMP     | STATEMENT                                                                                                                                                                                                                                                               |
-|-------------------------------------------------------|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Schema GOOGLE_ANALYTICS successfully created.         | 2025-05-23 14:28:14.514 |  CREATE SCHEMA if not exists google_analytics EXTERNAL_VOLUME = 'fivetran_volume_buffer_concierge' CATALOG='fivetran_catalog_buffer_concierge'                                                                                                                          |
-| Table CONVERSION_EVENTS successfully created.         | 2025-05-23 14:28:14.517 |  CREATE OR REPLACE ICEBERG TABLE google_analytics.conversion_events EXTERNAL_VOLUME = 'fivetran_volume_buffer_concierge' CATALOG='fivetran_catalog_buffer_concierge' CATALOG_NAMESPACE= 'google_analytics' CATALOG_TABLE_NAME = 'conversion_events' AUTO_REFRESH=TRUE;  |
-| GOOGLE_ANALYTICS already exists, statement succeeded. | 2025-05-23 14:28:14.520 |  CREATE SCHEMA if not exists google_analytics EXTERNAL_VOLUME = 'fivetran_volume_buffer_concierge' CATALOG='fivetran_catalog_buffer_concierge'                                                                                                                          |
+    |-------------------------------------------------------|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    | Schema GOOGLE_ANALYTICS successfully created.         | 2025-05-23 14:28:14.514 |  CREATE SCHEMA if not exists google_analytics EXTERNAL_VOLUME = 'fivetran_volume_buffer_concierge' CATALOG='fivetran_catalog_buffer_concierge'                                                                                                                          |
+    | Table CONVERSION_EVENTS successfully created.         | 2025-05-23 14:28:14.517 |  CREATE OR REPLACE ICEBERG TABLE google_analytics.conversion_events EXTERNAL_VOLUME = 'fivetran_volume_buffer_concierge' CATALOG='fivetran_catalog_buffer_concierge' CATALOG_NAMESPACE= 'google_analytics' CATALOG_TABLE_NAME = 'conversion_events' AUTO_REFRESH=TRUE;  |
+    | GOOGLE_ANALYTICS already exists, statement succeeded. | 2025-05-23 14:28:14.520 |  CREATE SCHEMA if not exists google_analytics EXTERNAL_VOLUME = 'fivetran_volume_buffer_concierge' CATALOG='fivetran_catalog_buffer_concierge'                                                                                                                          |
