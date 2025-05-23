@@ -85,11 +85,10 @@ We'll want to search for "Storage Object Admin" and then click on it in the drop
 Once both are added click "Save".
 ![UPDATE](images/19.png)
 
-#### Load source data
 Now we can added our bucket name, folder and click save and test.
 ![UPDATE](images/20.png)
 
-Once tested your destination is read to use.
+Once tested your destination is read to use. Let's view the destination.
 ![UPDATE](images/21.png)
 
 #### Snowflake
@@ -227,7 +226,7 @@ Now add your role by clicking `select role` -> `custom` -> `snowflake`. The last
 Click `Save` and your finished GCP setup.
 ![Click Save](images/33.png)
 
-### Add Source
+### Load source data
 This section will be vary depending on what source you plan to use. In my example I would load some data from google analytics by adding it as a connector.
 ![UPDATE](images/22.png)
 
