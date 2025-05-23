@@ -100,6 +100,10 @@ Now if we check our bucket you can see fivetran has loaded the google analytics 
 ![UPDATE](images/23.png)
 
 ### Snowflake
+!!! warning 
+
+    Currently you must grab the catalog code when the destination is created otherwise the key will be hidden '*******'. Fivetran is working on fixing this issue.
+
 Now that our data is loaded into our GCP bucket lets connection Snowflake to it using Fivetrans hosted Polarias catalog. Lets start by going back into our GCP destination in Fivetran to copy some Snowflake code.
 ![UPDATE](images/24.png)
 
@@ -124,8 +128,16 @@ Lets head into Snowflake and add the code from fivetran and the line below. This
 
 === ":octicons-image-16: Template"
 
-    ```sql linenums="1"  
-    UPDATE
+    ```json linenums="1"  
+    [
+        {"namespace":"google_analytics","name":"conversion_events"},
+        {"namespace":"google_analytics","name":"events_report"},
+        {"namespace":"google_analytics","name":"accounts"},
+        {"namespace":"google_analytics","name":"content_group_report"},
+        {"namespace":"google_analytics","name":"audiences_report"},
+        {"namespace":"google_analytics","name":"properties"},
+        {"namespace":"google_analytics","name":"conversions_report"}
+    ]
     ```
 
 #### Grant access in GCP
@@ -279,7 +291,97 @@ Not that we have our first table created lets query from it.
 ## Automate - Table Creation
 Now lets automate the creation off all the tables using a Python script. We'll add this python code into a "Python Worksheet". We'll want to fill in our "catalog integratio nname" and "external volume name" that we got from fivetran.
 
-=== ":octicons-image-16: Template"
+=== ":octicons-image-16: Example"
+
+    ```python linenums="1"  
+    import snowflake.snowpark as snowpark
+    from snowflake.snowpark.functions import col, lit
+    import json
+    import datetime
+    import pandas as pd
+    from functools import reduce
+
+    CATALOG_INTEGRATION_NAME = '<Catalog name>'
+    EXTERNAL_VOLUME_NAME     = '<External volume name>'
+
+    def main(session: snowpark.Session):
+        # Fetch a list of tables from the external catalog
+        external_catalog_tables = [
+            row
+            for rs in session.sql(f"select SYSTEM$LIST_ICEBERG_TABLES_FROM_CATALOG('{CATALOG_INTEGRATION_NAME}','',0) as TABLE_LIST").collect()
+            for row in json.loads(rs.as_dict()["TABLE_LIST"])
+        ]
+
+        # Convert the tables to the appropriate CREATE SCHEMA and CREATE ICEBERG TABLE statements
+        statements = [
+            sql
+            for table in external_catalog_tables
+            for sql in [create_schema(table), create_table(table)]
+        ]
+
+        # Execute each of the statements and merge the resulting dataframes into one combined dataframe to show the user
+        results = reduce(lambda left, right: left.union_all(right), [
+            exec(session, statement)
+            for statement in statements
+        ])
+
+        # Identify any tables that exist in CURRENT_DATABASE() that are not tracked in the external catalog and optionally
+        sync_dropped_tables(session, external_catalog_tables, drop=False)
+        
+        return results.sort(col('statement_timestamp'))
+
+    def create_schema(table):
+        return f"""
+    CREATE SCHEMA if not exists {table['namespace']}
+    EXTERNAL_VOLUME = '{EXTERNAL_VOLUME_NAME}'
+    CATALOG='{CATALOG_INTEGRATION_NAME}'
+    """
+
+    def create_table(table):
+        return f"""
+    CREATE OR REPLACE ICEBERG TABLE {table['namespace']}.{table['name']}
+    EXTERNAL_VOLUME = '{EXTERNAL_VOLUME_NAME}'
+    CATALOG='{CATALOG_INTEGRATION_NAME}'
+    CATALOG_NAMESPACE= '{table['namespace']}'
+    CATALOG_TABLE_NAME = '{table['name']}'
+    AUTO_REFRESH=TRUE;
+    """
+
+    def exec_and_aggregate_results(session: snowpark.Session, dataframe: snowpark.DataFrame, sql: str) -> snowpark.DataFrame:
+        results = session.sql(sql)
+        results = results.with_column('statement_timestamp', lit(datetime.datetime.now()))
+        results = results.with_column('statement', lit(sql))
+        
+        return dataframe.union_all(results) if dataframe else results
+
+    def exec(session: snowpark.Session, sql: str) -> snowpark.DataFrame:
+        results = session.sql(sql)
+        results = results.with_column('statement_timestamp', lit(datetime.datetime.now()))
+        results = results.with_column('statement', lit(sql))
+        return results
+
+    def sync_dropped_tables(session: snowpark.Session, external_catalog_tables: list, drop=False):
+        all_tables_df = session.sql("""
+    SELECT CONCAT(table_schema, '.', table_name) AS FQTN, table_schema, table_name  FROM INFORMATION_SCHEMA.TABLES WHERE table_catalog = CURRENT_DATABASE() and table_schema NOT IN ('INFORMATION_SCHEMA', 'PUBLIC')
+    """).toPandas()
+
+        external_catalog_tables_df = pd.DataFrame.from_dict(external_catalog_tables) 
+        external_catalog_tables_df['FQTN'] = external_catalog_tables_df["namespace"].str.upper() + "." + external_catalog_tables_df["name"].str.upper()
+
+        tables_to_drop = all_tables_df.merge(external_catalog_tables_df, on='FQTN', how='left', indicator=True)
+        tables_to_drop = tables_to_drop[tables_to_drop['_merge'] == 'left_only'].drop(columns=['_merge'])
+        drop_statements = tables_to_drop["FQTN"].map(lambda fqtn: f"""DROP TABLE {fqtn}""")
+        
+        for sql in drop_statements:
+            if drop:
+                session.sql(sql)
+                print(f"Dropped orphan table: {sql}")
+            else:
+                print("Orphan table detected. Run the following to drop it:")
+                print(sql)
+    ```
+
+=== ":octicons-image-16: Example"
 
     ```python linenums="1"  
     import snowflake.snowpark as snowpark
@@ -371,4 +473,8 @@ Now lets automate the creation off all the tables using a Python script. We'll a
 
 === ":octicons-image-16: Result"
 
-    UPDATE
+    | status                                                | STATEMENT_TIMESTAMP     | STATEMENT                                                                                                                                                                                                                                                               |
+|-------------------------------------------------------|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Schema GOOGLE_ANALYTICS successfully created.         | 2025-05-23 14:28:14.514 |  CREATE SCHEMA if not exists google_analytics EXTERNAL_VOLUME = 'fivetran_volume_buffer_concierge' CATALOG='fivetran_catalog_buffer_concierge'                                                                                                                          |
+| Table CONVERSION_EVENTS successfully created.         | 2025-05-23 14:28:14.517 |  CREATE OR REPLACE ICEBERG TABLE google_analytics.conversion_events EXTERNAL_VOLUME = 'fivetran_volume_buffer_concierge' CATALOG='fivetran_catalog_buffer_concierge' CATALOG_NAMESPACE= 'google_analytics' CATALOG_TABLE_NAME = 'conversion_events' AUTO_REFRESH=TRUE;  |
+| GOOGLE_ANALYTICS already exists, statement succeeded. | 2025-05-23 14:28:14.520 |  CREATE SCHEMA if not exists google_analytics EXTERNAL_VOLUME = 'fivetran_volume_buffer_concierge' CATALOG='fivetran_catalog_buffer_concierge'                                                                                                                          |

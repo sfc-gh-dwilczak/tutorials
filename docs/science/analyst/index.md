@@ -320,5 +320,3 @@ Now that we have everything for the application, lets run it.
 
 Now we can go to the I.P address provided and see our flask application with multiple semantic models.
 ![UPDATE](images/17.png)
-
-
