@@ -133,7 +133,7 @@ Lets head into Snowflake and add the code from fivetran and the line below. This
     ]
     ```
 
-#### Grant access in GCP
+##### Grant access in GCP
 We'll now need to allow Snowflake to interacte with with bucket via the external volume. To do so we'll 
 
 === ":octicons-image-16: Template"
