@@ -226,7 +226,7 @@ Now add your role by clicking `select role` -> `custom` -> `snowflake`. The last
 Click `Save` and your finished GCP setup.
 ![Click Save](images/33.png)
 
-### Load source data
+## Load source data
 This section will be vary depending on what source you plan to use. In my example I would load some data from google analytics by adding it as a connector.
 ![UPDATE](images/22.png)
 
@@ -234,7 +234,7 @@ Now if we check our bucket you can see fivetran has loaded the google analytics 
 ![UPDATE](images/23.png)
 
 
-## Create - Table
+## Create - Table  :octicons-feed-tag-16:
 Lets create a database, schema and our first table in Snowflake using everything we have created.
 
 === ":octicons-image-16: Template"
@@ -287,7 +287,7 @@ Not that we have our first table created lets query from it.
     | accounts/302439834 | danielwilczak | US          | 2025-04-24 19:48:34.101 -0700 |
 
 
-## Automate - Table Creation
+## Automate - Table Creation  :octicons-feed-tag-16:
 Now lets automate the creation off all the tables using a Python script. We'll add this python code into a "Python Worksheet". We'll want to fill in our "catalog integratio nname" and "external volume name" that we got from fivetran.
 
 === ":octicons-image-16: Example"
