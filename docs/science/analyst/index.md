@@ -8,7 +8,7 @@ Video still in development.
 - Snowflake account, you can use a [free trial](https://signup.snowflake.com/). We also assume no complex security needs.
 
 ## Download  :octicons-feed-tag-16:
-- Sales Semantic Layer ([Link](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/files/sales.yaml))
+- Sales Semantic Layer ([Link](https://sfc-gh-dwilczak.github.io/tutorials/science/analyst/files/semantic/sales.yaml))
 
 ## Setup  :octicons-feed-tag-16:
 Lets create some example data first the our chatbot (Cortex Analyst) can use later on.
@@ -309,6 +309,7 @@ Next we'll want to start a python virtual environment and install the packages w
   ```
 
 Now that we have everything for the application, lets run it.
+
 === ":octicons-image-16: Python"
 
   ```bash linenums="1"  
