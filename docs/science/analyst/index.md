@@ -36,11 +36,6 @@ Lets create some example data first the our chatbot (Cortex Analyst) can use lat
             auto_suspend = 30
             initially_suspended = true;
 
-        create warehouse if not exists development 
-            warehouse_size = xsmall
-            auto_suspend = 30
-            initially_suspended = true;
-
         -- We'll use this stage "folder" to store our semantic layer.
         create stage files directory = ( ENABLE = true );
 
@@ -198,6 +193,7 @@ Lets move to a build use case where we want to add our semantic layer into our a
 
 #### Snowflake
 Lets adding some new tables for our new semantic layers.
+
 === ":octicons-image-16: Tables"
 
   ```sql linenums="1"  
@@ -303,6 +299,7 @@ Lets walk throught the process of setting up the example files and starting our 
   ```
 
 Next we'll want to start a python virtual environment and install the packages we need. This may be different on windows.
+
 === ":octicons-image-16: Python"
 
   ```bash linenums="1"  
