@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" data-layout="fluid" data-sidebar-theme="dark" data-sidebar-position="left" data-sidebar-behavior="sticky">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cortex Analyst Chatbot</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/app.css') }}" rel="stylesheet">
+  <script src="{{ url_for('static', filename='js/settings.js') }}"></script>
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+    .wrapper, .main, .content, .container-fluid, .card, .row {
+      height: 100%;
+    }
+    .chat-area {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .chat-scroll-container {
+      flex: 1 1 auto;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    #chat-box {
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <nav id="sidebar" class="sidebar">
+    <div class="sidebar-content js-simplebar">
+      <a class="sidebar-brand" href="#"><span class="align-middle me-3">AppStack</span></a>
+      <ul class="sidebar-nav">
+        <li class="sidebar-item active">
+          <a class="sidebar-link" href="#"><i class="align-middle" data-lucide="list"></i> <span class="align-middle">Chat</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="main">
+    <main class="content h-100">
+      <div class="container-fluid p-0 h-100">
+        <div class="card h-100 d-flex flex-column">
+          <div class="row g-0 flex-grow-1 overflow-hidden">
+
+            <div class="col-12 col-lg-5 col-xl-3 border-end list-group">
+              {% for model in semantic_models %}
+              <a href="/?model={{ model.file }}" class="list-group-item list-group-item-action border-0 {% if model.file == active_model %}active{% endif %}">
+                <div class="d-flex align-items-start">
+                  <img src="{{ url_for('static', filename=model.avatar) }}" class="rounded-circle me-1" width="40" height="40">
+                  <div class="flex-grow-1 ms-3">
+                    {{ model.name }}
+                    <div class="small"><span class="fas fa-circle chat-online"></span> {{ model.file }}</div>
+                  </div>
+                </div>
+              </a>
+              {% endfor %}
+            </div>
+
+            <div class="col-12 col-lg-7 col-xl-9 d-flex flex-column">
+              <div class="py-2 px-4 border-bottom d-none d-lg-block">
+                {% set active = semantic_models | selectattr("file", "equalto", active_model) | list | first %}
+                <div class="d-flex align-items-start py-1">
+                  <img src="{{ url_for('static', filename=active.avatar) }}" class="rounded-circle me-1" width="40" height="40">
+                  <div class="flex-grow-1 ps-3">
+                    <strong>{{ active.name }}</strong>
+                    <div class="small text-muted" id="active-model-file">{{ active.file }}</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="chat-area px-4">
+                <div class="chat-scroll-container">
+                  <div class="chat-messages py-2" id="chat-box"></div>
+                </div>
+                <div class="flex-grow-0 py-3 border-top" id="chat-input-bar">
+                  <div class="input-group">
+                    <input type="text" id="chat-input" class="form-control" placeholder="Type your message">
+                    <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script>
+  function resizeChatBox() {
+    const chatArea = document.querySelector(".chat-area");
+    const chatBox = document.getElementById("chat-box");
+    const inputBar = document.getElementById("chat-input-bar");
+
+    if (!chatArea || !chatBox || !inputBar) return;
+
+    const inputHeight = inputBar.offsetHeight;
+    const totalHeight = chatArea.clientHeight;
+    const boxHeight = totalHeight - inputHeight;
+    chatBox.style.height = boxHeight + "px";
+  }
+
+  // Run on load and resize
+  window.addEventListener("load", resizeChatBox);
+  window.addEventListener("resize", resizeChatBox);
+
+  // Observe layout changes to the chat area
+  const observer = new ResizeObserver(resizeChatBox);
+  const chatAreaElement = document.querySelector(".chat-area");
+  if (chatAreaElement) {
+    observer.observe(chatAreaElement);
+  }
+
+  async function sendMessage() {
+    const input = document.getElementById("chat-input");
+    const message = input.value.trim();
+    if (!message) return;
+
+    const chatBox = document.getElementById("chat-box");
+    chatBox.innerHTML += `
+      <div class="chat-message-right pb-4">
+        <div><img src="{{ url_for('static', filename='img/avatars/avatar.jpg') }}" class="rounded-circle me-1" width="40" height="40">
+        <div class="text-muted small text-nowrap mt-2">Now</div></div>
+        <div class="flex-shrink-1 bg-body-tertiary rounded py-2 px-3 me-3">
+          <div class="fw-bold mb-1">You</div>${message}
+        </div>
+      </div>`;
+
+    input.value = "";
+
+    chatBox.innerHTML += `
+      <div id="loading-indicator" class="text-center py-2">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>`;
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    const selectedModel = document.getElementById("active-model-file")?.innerText || "sales.yaml";
+
+    const response = await fetch("/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prompt: message, model: selectedModel })
+    });
+
+    const data = await response.json();
+    let reply = "";
+
+    if (data.response && data.response.message && data.response.message.content) {
+      for (const item of data.response.message.content) {
+        if (item.type === "text") {
+          reply += `<p>${item.text}</p>`;
+        }
+        if (item.type === "sql") {
+          reply += `
+            <details class="mb-2">
+              <summary><strong>View SQL Query</strong></summary>
+              <div class="card-body">
+                <textarea class="form-control" rows="5" readonly>${item.statement}</textarea>
+              </div>
+            </details>`;
+        }
+
+        if (item.type === "sql" && data.sql_results && data.sql_columns) {
+          reply += `
+            <div class="card mt-3" style="height: auto;">
+              <div class="table-responsive">
+                <table class="table table-striped mb-0">
+                  <thead>
+                    <tr>${data.sql_columns.map(col => `<th>${col}</th>`).join("")}</tr>
+                  </thead>
+                  <tbody>
+                    ${data.sql_results.map(row => `
+                      <tr>
+                        ${data.sql_columns.map(col => `<td>${row[col]}</td>`).join("")}
+                      </tr>`).join("")}
+                  </tbody>
+                </table>
+              </div>
+            </div>`;
+        }
+      }
+    } else {
+      reply = "<p><em>No response from assistant.</em></p>";
+    }
+
+    document.getElementById("loading-indicator")?.remove();
+
+    chatBox.innerHTML += `
+      <div class="chat-message-left pb-4">
+        <div><img src="{{ url_for('static', filename=active.avatar) }}" class="rounded-circle me-1" width="40" height="40">
+        <div class="text-muted small text-nowrap mt-2">Now</div></div>
+        <div class="flex-shrink-1 bg-body-tertiary rounded py-2 px-3 ms-3">
+          <div class="fw-bold mb-1">{{ active.name }}</div>
+          ${reply}
+        </div>
+      </div>`;
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  document.getElementById("chat-input").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") sendMessage();
+  });
+</script>
+</body>
+</html>
