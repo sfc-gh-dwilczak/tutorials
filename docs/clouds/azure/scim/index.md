@@ -1,5 +1,5 @@
-# Sharing - Listing
-In this tutorial, we’ll walk through how to share data with another Snowflake account using a listing, even if the account is on a different cloud provider than your own.
+# Azure Entra ID SCIM to Snowflake
+In this tutorial, we’ll walk through how to setup Azure EntraID SCIM to provision users and role to our Snowflake account.
 
 ## Video
 Video still in development.
