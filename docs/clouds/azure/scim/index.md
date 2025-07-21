@@ -9,9 +9,9 @@ Video still in development.
 - An Azure account with P1 Security otherwise you will not be able to add groups.
 
 ## Snowflake
-Lets start with the easy part, lets get Snowflake setup. Our first goal will be to create our azure provisioning role, the security integration and finally grab the needed URL and token that will be used in Azure Entra ID.
+Lets start with the easy part, lets get Snowflake setup. Our first goal will be to create our azure provisioning role, example engineer role and the security integration and finally grab the needed URL and token that will be used in Azure Entra ID.
 
-Lets open a worksheet and add in the code below. This will create a engineer and aad_provisioner. We will give the engineer role to myself in this tutorial via Entra ID SCIM group.
+Lets open a worksheet and add in the code below. This will create a engineer and aad_provisioner role. We will give the engineer role to myself in this tutorial via Entra ID SCIM group.
 
 === ":octicons-image-16: Code"
 
@@ -72,14 +72,14 @@ Now that we have our provisioning role, engineer role and integration we will ju
 
 
 ## Azure
-Now for the fun / long part of setting azure. Lets start in azure by logging into our [azure](https://portal.azure.com/) and navigate to Microsoft Entra ID.
+Now for the fun / long part of setting up azure. Lets start in azure by logging into our [azure portal](https://portal.azure.com/) and navigate to Microsoft Entra ID.
 ![Microsoft entra ID](images/01.png)
 
 Next lets click on Enterprise Applications on the left navbar.
 ![Microsoft entra ID](images/02.png)
 
 Click on new application.
-![New application](images/03.jpeg)
+![New application](images/03.png)
 
 In the Browse Azure AD Gallery search bar, search for Snowflake, and choose Snowflake for Microsoft Entra ID application. Give your Snowflake application a name, then click the Create button at the bottom.
 ![Snowflake application](images/04.png)
@@ -102,7 +102,10 @@ Next lets go to groups to create the engineer group.
 Add a new group.
 ![Update](images/11.png)  
 
-Make it a securiy group. Critically here the name of the group has to match the Snowflake role name.
+!!! warning 
+    Make sure to name the group the same as your Snowflake role.
+
+Make it a securiy group and name it engineer.
 ![Update](images/12.png)
 
 Now we'll head back to the enterprise application and click on "Assign users and groups".
@@ -111,13 +114,19 @@ Now we'll head back to the enterprise application and click on "Assign users and
 Click add a user/group.
 ![Update](images/14.png)  
 
-Lets add the engineering group. Make sure to add the group, not the user.
+!!! warning 
+    Make sure to add the group, not the user.
+
+Lets add the engineering group. 
 ![Update](images/16.png)  
 
 Once the group is added we'll go back to provisioning.
 ![Update](images/17.png)  
 
-We'll start the provisioning task. This will only start the scheduled event.
+!!! warning 
+    This will only start the scheduled event. You will need to provision ondemand in the follow up step to see results.
+
+We'll start the provisioning task. 
 ![Update](images/18.png)  
 
 Validate you want to start the provisioning scheduled task.
