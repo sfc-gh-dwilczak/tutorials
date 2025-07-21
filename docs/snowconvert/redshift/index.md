@@ -2,7 +2,7 @@ Need to update with the use of external tables now.
 
 
 1. create redshift, snowflake and s3 bucket.
-2. Download snowconvery for refshift. 
+2. Download snowconvert for refshift. 
 3. Fill in project name, source, folder path and add key 
 Key = aecbfe93-3615-4aae-bd0f-ea6ae1460b1a (Valid through: 08/06/2025)
 4. Three options to login (IAM Provision Cluster, IAM Serverless, Standard) I used standard and it work. Need to figure out other two and give them as options.

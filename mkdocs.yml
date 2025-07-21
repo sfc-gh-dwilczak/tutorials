@@ -38,6 +38,7 @@ nav:
   -  Azure:
     -   Blob / Storage: clouds/azure/storage/index.md
     -   Active Directory / SSO: clouds/azure/sso/index.md
+    -   SCIM: clouds/azure/scim/index.md
   -  Google Cloud:
     -   Cloud Storage: clouds/google/storage/index.md
     -   External Tables: clouds/google/external/index.md
