@@ -8,17 +8,17 @@ Video still in development.
 - Snowflake account, you can use a [free trial](https://signup.snowflake.com/). We also assume no complex security needs.
 
 ## Download
-- Files ([Link](https://sfc-gh-dwilczak.github.io/tutorials/apps/traditional/files/code.zip))
+- Files ([Link](https://sfc-gh-dwilczak.github.io/tutorials/apps/native/traditional/files/code.zip))
 
 ## Setup :octicons-feed-tag-16:
 This tutorial is very UI focused so we suggest to follow along with the video and use the files / code provided. 
 
 ### Example V1 - Basic funtions
-The goals in this first step is to introduce you to a native application framework and how to upload files to the stage. In this example we'll run the first block of code and then upload [V1 files](#) to the stage. Then run the second to create the application from the package.
+The goals in this first step is to introduce you to a native application framework and how to upload files to the stage. In this example we'll run the first block of code and then upload [V1 files](https://sfc-gh-dwilczak.github.io/tutorials/apps/native/traditional/#download) to the stage. Then run the second to create the application from the package.
 
 === ":octicons-image-16: Code"
 
-    ```bash linenums="1"
+    ```sql linenums="1"
     use role accountadmin;
     create application package snowflake_application_package;
     use application package snowflake_application_package;
@@ -44,11 +44,11 @@ The goals in this first step is to introduce you to a native application framewo
 
 
 ###  Example V2 - Share data
-The of this exmaple is to show how you can add data that will be shared with the application to the end consumer. In this example we'll run the first block of code and then upload [V2 files](#) to the stage. Then run the second to create the application from the package.
+The of this exmaple is to show how you can add data that will be shared with the application to the end consumer. In this example we'll run the first block of code and then upload [V2 files](https://sfc-gh-dwilczak.github.io/tutorials/apps/native/traditional/#download) to the stage. Then run the second to create the application from the package.
 
 === ":octicons-image-16: Code"
 
-    ```bash linenums="1"
+    ```sql linenums="1"
     use application package snowflake_application_package;
 
     -- Create and add data to package.
@@ -91,11 +91,11 @@ The of this exmaple is to show how you can add data that will be shared with the
     ```
 
 ###  Example V3 - Streamlit 
-For this example we'll add a streamlit application to our application so users can visulize the data we have shared with them. In this we'll upload the [V3 files](#) and then run the code.
+For this example we'll add a streamlit application to our application so users can visulize the data we have shared with them. In this we'll upload the [V3 files](https://sfc-gh-dwilczak.github.io/tutorials/apps/native/traditional/#download) and then run the code.
 
 === ":octicons-image-16: Code"
 
-    ```bash linenums="1"
+    ```sql linenums="1"
     -- Upload V3 files to the stage.
     drop application snowflake_application;
 
