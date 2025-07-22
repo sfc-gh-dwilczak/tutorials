@@ -2,7 +2,7 @@
 Goal of this tutorial is to build a traditional native application that has sql function, data that is shared, and a streamlit application that uses that shared data.
 
 ## Video
-Video still in development.
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/Z6eC2qUmoeg?si=sJVvAD10i8E6SUF7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Requirements
 - Snowflake account, you can use a [free trial](https://signup.snowflake.com/). We also assume no complex security needs.
@@ -122,3 +122,5 @@ Now we can see our streamlit application that is referencing our shared data.
 
 ### Versioning and deploying the application
 To version your application and deploy the application so it can be share to other consumers please watch the video, it is all done in the UI.
+
+
