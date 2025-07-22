@@ -1,5 +1,5 @@
 # Native Application - Traditional Streamlit
-Goal of this tutorial is to build a traditional native application that has sql functions, data that is shared, and a streamlit application that uses that shared data.
+Goal of this tutorial is to build a traditional native application that has sql function, data that is shared, and a streamlit application that uses that shared data.
 
 ## Video
 Video still in development.
