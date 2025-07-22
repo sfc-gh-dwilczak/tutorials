@@ -101,7 +101,9 @@ nav:
     -   Introduction: apps/container/introduction/index.md
     -   Streamlit: apps/container/streamlit/index.md
   -  Native App:
-    -   Container Services: apps/native/containers/intro.md
+    -   Container Services: apps/native/containers/index.md
+    -   Traditional: apps/native/traditional/index.md
+    
   
 markdown_extensions:
   - tables
