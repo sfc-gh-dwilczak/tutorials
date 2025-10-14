@@ -19,21 +19,21 @@ Sign into your aws account.
 
 #### Create S3 bucket
 Create the bucket you intend to use. In our case we'll call the bucket **danielwilczak**.
-![Create S3](images/0_create_bucket.png)
+![Create S3](images/0.png)
 
 #### Upload sample data
 Upload the [sample data](https://sfc-gh-dwilczak.github.io/tutorials/data/data.zip) to your s3 bucket (json/csv) provided in the data folder.
-![Upload example data](images/27.gif)
+![Upload example data](images/01.gif)
 
 #### Policy and role
 Copy your **ARN** name. This wil be used in the policy step.
-![Copy ARN name](images/01_get_arn_name.png)
+![Copy ARN name](images/02.png)
 
 Go to IAM:
-![Create S3](images/02_iam.png)
+![Create S3](images/03.png)
 
 Create a policy:
-![Policy](images/03_policy.png)
+![Policy](images/04.png)
 
 Copy the template policy json code below and add your buckets arn.
 
@@ -71,9 +71,9 @@ Copy the template policy json code below and add your buckets arn.
     ```
     { .annotate }
 
-    1.  ![Copy ARN name](images/01_get_arn_name.png)
+    1.  ![Copy ARN name](images/02.png)
 
-    2.  ![Copy ARN name](images/01_get_arn_name.png)
+    2.  ![Copy ARN name](images/02.png)
 
 === ":octicons-sign-out-16: Example"
 
@@ -108,34 +108,37 @@ Copy the template policy json code below and add your buckets arn.
     }
     ```
 Enter your policy using the template / example above and click next.
-![Add policy json ](images/05_enter_policy.png)
+![Add policy json ](images/05.png)
 
 Give the policy a name and then click "create policy".
-![Policy](images/04_create_policy.png)
+![Policy](images/06.png)
 
 Next lets create a role! Navigate back to **IAM**:
-![Create S3](images/02_iam.png)
+![Create S3](images/03.png)
 
 Select Roles on the navbar and then click create role:
-![Navigate to role](images/06_roles.png)
+![Navigate to role](images/07.png)
 
 Select AWS account, This account(#), Require external ID and enter 0000 for now. We will update this later.
-![Trusted entity](images/07_trusted_relationship.png)
+![Trusted entity](images/08.png)
 
 Add the policy to the role:
-![Policy to role](images/08_policy_to_role.png)
+![Policy to role](images/09.png)
 
 Add the role name and click "create role":
-![Add role name](images/09_role_name.png)
+![Add role name](images/10.png)
 
 Once created click your role:
-![Click role](images/10_click_role.png)
+![Click role](images/11.png)
 
 Copy your **role ARN**, this will be used in the next step:
-![Copy arn](images/11_copy_arn.png)
+![Copy arn](images/12.png)
 
 ### Snowflake
-Lets start the snowflake setup by creating our database and schema. Followed by creating the integration to AWS by running the code below with your [copied role arn](https://sfc-gh-dwilczak.github.io/tutorials/clouds/aws/s3/#policy-and-role) and [bucket name](https://sfc-gh-dwilczak.github.io/tutorials/clouds/aws/s3/#create-s3-bucket):
+Lets start the snowflake setup by going into a worksheet (1) and creating our database and schema. Followed by creating the integration to AWS by running the code below with your [copied role arn](https://sfc-gh-dwilczak.github.io/tutorials/clouds/aws/s3/#policy-and-role) and [bucket name](https://sfc-gh-dwilczak.github.io/tutorials/clouds/aws/s3/#create-s3-bucket):
+{ .annotate }
+
+1. ![Worksheet](images/13.png)
 
 === ":octicons-image-16: Template"
 
@@ -181,9 +184,9 @@ Lets start the snowflake setup by creating our database and schema. Followed by 
     ```
     { .annotate }
 
-    1.  ![Copy arn](images/11_copy_arn.png)
+    1.  ![Copy arn](images/12.png)
 
-    2.  ![Copy arn](images/25.png)
+    2.  ![Copy arn](images/14.png)
 
 === ":octicons-image-16: Example"
 
@@ -239,13 +242,13 @@ Note the result, it will be used in the next step.
 
 #### Grant Access in S3
 Navigate back to the role:
-![Click role](images/10_click_role.png)
+![Click role](images/11.png)
 
 Click trusted relationship:
-![Click trusted relationship](images/12_click_trusted_relationship.png)
+![Click trusted relationship](images/15.png)
 
 Click edit trust policy:
-![Edit trust policy](images/13_click_edit_trust_policy.png)
+![Edit trust policy](images/16.png)
 
 Copy the policy json template code below and add your "STORAGE_AWS_IAM_USER_ARN" and "STORAGE_AWS_EXTERNAL_ID" from prior [Snowflake](https://sfc-gh-dwilczak.github.io/tutorials/clouds/aws/s3/#snowflake) step.
 
@@ -312,7 +315,7 @@ Copy the policy json template code below and add your "STORAGE_AWS_IAM_USER_ARN"
     ```
 
 Enter your policy using the template / example above.
-![Edit trust policy](images/14_edit_trust_policy.png)
+![Edit trust policy](images/17.png)
 
 ### Load the data
 Lets setup the stage, file format, warehouse and finally load some json data.
@@ -360,7 +363,7 @@ Lets setup the stage, file format, warehouse and finally load some json data.
     ```
     { .annotate }
 
-    1.  ![Copy arn](images/25.png)
+    1.  ![Bucket name](images/14.png)
 
 === ":octicons-image-16: Example"
 
@@ -418,7 +421,7 @@ Look at the data you just loaded.
     select * from raw.aws.json; 
     ```
 
-![Results loading manually](images/22.png)
+![Results loading manually](images/18.png)
 
 
 ## Automatic Loading  :octicons-feed-tag-16:
@@ -500,16 +503,16 @@ In this case we'll load a csv file by automating the creation of the table and i
 #### Grant Access in S3 
 
 Navigate to your bucket and click properties:
-![Properties](images/16_pipe_properties.png)
+![Properties](images/19.png)
 
 Scroll down to "Create event notification":
-![Create event notification](images/17_create_event.png)
+![Create event notification](images/20.png)
 
 Add a name to the notification and select all object create notification:
-![Properties](images/18_notification_settings.png)
+![Properties](images/21.png)
 
 Scroll down and enter your [sqs queue](https://sfc-gh-dwilczak.github.io/tutorials/clouds/aws/s3/#snowflake_1) we got from our snowflake step and click "save changes":
-![Properties](images/20_enter_sqs.png)
+![Properties](images/22.png)
 
 Almost done, in snowflake lets refresh the pipe so that we ingest all the current files.
 
