@@ -32,11 +32,14 @@ Lets create the private and public key so that we can apply the public key to ou
     Writing RSA key.
     ```
 
-This will create three files files in the folder we are currently located.
+This will create three files in the folder we are currently located.
 ![Two keys](images/01.png)
 
 ### User
-Lets create the usser and apply the public key to our user in Snowflake. The public key file will end with ``.pub``.
+Lets create the user and apply the public key to our user in Snowflake a Worksheet (1). The public key file will end with ``.pub``.
+{ .annotate }
+    
+1. ![Worksheet](images/0.png)
 
 === ":octicons-image-16: Setup"
 
@@ -176,8 +179,11 @@ We'll wanted to select kinesis data stream as a source and destination being Sno
 Select our stream.
 ![select stream](images/10.png)
 
-Next we'll want to copy our Account url from Snowflake.
-![Account URL](images/11.png)
+Next we'll want to copy our Account url from Snowflake. Lets start by going to account details.
+![Account URL](images/11_1.png)
+
+Click the copy button with the URL.
+![Account URL](images/11_2.png)
 
 First, paste your Snowflake URL. Next, select "Private Key" and enter your Snowflake username along with the kinesis private key we generated earlier. For the role, choose "Customer Snowflake Role" and specify ``SYSADMIN``.
 ![configurations part 1](images/12.png)
