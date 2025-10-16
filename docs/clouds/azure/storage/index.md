@@ -53,36 +53,48 @@ Copy your **Tenant ID**. We will use this in two places.
 ![Tenant Properties](images/10.png)
 
 ### Snowflake
+Let's transition to Snowflake by creating a worksheet (1) and adding the code below with your information:
+{ .annotate }
 
-Let's transition to Snowflake by creating a worksheet and adding the code below with your information:
+1. ![Worksheet](images/00.png)
+
+??? note "If you don't have a database, schema or warehouse yet."
+
+    === ":octicons-image-16: Database, schema and warehouse"
+
+        ```sql linenums="1"
+         /*
+        We switch to "sysadmin" to create an object
+        because it will be owned by that role.
+        */
+        use role sysadmin;
+
+        -- Create a database to store our schemas.
+        create database if not exists raw ;
+
+        -- Create the schema. The schema stores all objects.
+        create schema if not exists raw.azure;
+
+        /*
+        Warehouses are synonymous with the idea of
+        compute resources in other systems.
+        */
+        create warehouse if not exists development 
+            warehouse_size = xsmall
+            auto_suspend = 30
+            initially_suspended = true;
+
+        use database raw;
+        use schema azure;
+        use warehouse development;
+        ```
 
 === ":octicons-image-16: Template"
 
     ```sql linenums="1"
     /*
-        We switch to "sysadmin" to create an object
-        because it will be owned by that role.
-    */
-    use role sysadmin;
-
-    -- Create a database to store our schemas.
-    create database if not exists raw ;
-
-    -- Create the schema. The schema stores all objects.
-    create schema if not exists raw.azure;
-
-    /*
-        Warehouses are synonymous with the idea of
-        compute resources in other systems.
-    */
-    create warehouse if not exists development 
-        warehouse_size = xsmall
-        auto_suspend = 30
-        initially_suspended = true;
-
-    /*
-        Integrations are on of those important features that account admins
-        should do because it's allowing outside snowflake connections to your data.
+    Integrations are on of those important features that account admins
+    should do because it's allowing outside snowflake connections to your data.
     */
     use role accountadmin;
 
@@ -120,31 +132,7 @@ Let's transition to Snowflake by creating a worksheet and adding the code below 
 === ":octicons-image-16: Example"
 
     ```sql linenums="1"
-    /*
-        We switch to "sysadmin" to create an object
-        because it will be owned by that role.
-    */
-    use role sysadmin;
-
-    -- Create a database to store our schemas.
-    create database if not exists raw;
-
-    -- Create the schema. The schema stores all objects.
-    create schema if not exists raw.azure;
-
-    /*
-        Warehouses are synonymous with the idea of
-        compute resources in other systems.
-    */
-    create or replace warehouse development 
-        warehouse_size = xsmall
-        auto_suspend = 30
-        initially_suspended = true;
-
-    /*
-        Integrations are on of those important features that account admins
-        should do because it's allowing outside snowflake connections to your data.
-    */
+    
     use role accountadmin;
 
     create or replace storage integration azure_integration
@@ -195,7 +183,7 @@ Once selected, click Review and Assign.
 ### Load the data
 ??? warning "If you get an error when creating the stage."
 
-    Just wait 30 seconds to a minute and try again. Sometimes it takes Azure a bit to update security.
+    Just wait 5-10 minutes and try again. Sometimes it takes Azure a bit to update security.
 
 Lets setup the stage, file format, warehouse and finally load some json data.
 
@@ -444,7 +432,7 @@ Final Azure step, select review and assign and your done with azure.
 
 ??? warning "If you get an error when creating the pipe."
 
-    Just wait 30 seconds to a minute and try again. Sometimes it takes Azure a bit to update security.
+    Just wait 5-10 minutes. Sometimes it takes Azure a bit to update security.
 
 We'll load a csv file by automating the creation of the table and infering the names in the csv pipe.
 

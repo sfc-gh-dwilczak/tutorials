@@ -140,34 +140,45 @@ Lets start the snowflake setup by going into a worksheet (1) and creating our da
 
 1. ![Worksheet](images/13.png)
 
+??? note "If you don't have a database, schema or warehouse yet."
+
+    === ":octicons-image-16: Database, schema and warehouse"
+
+        ```sql linenums="1"
+         use role sysadmin;
+
+        -- Create a database to store our schemas.
+        create database if not exists raw;
+
+        -- Create the schema. The schema stores all objects.
+        create schema if not exists raw.aws;
+
+        /*
+            Warehouses are synonymous with the idea of compute
+            resources in other systems. We will use this
+            warehouse to query our integration and to load data.
+        */
+        create warehouse if not exists development 
+            warehouse_size = xsmall
+            auto_suspend = 30
+            initially_suspended = true;
+
+        use database raw;
+        use schema aws;
+        use warehouse development;
+        ```
+
 === ":octicons-image-16: Template"
 
     ```sql linenums="1"
-    use role sysadmin;
-
-    -- Create a database to store our schemas.
-    create database if not exists raw;
-
-    -- Create the schema. The schema stores all objects.
-    create schema if not exists raw.aws;
-
-    /*
-        Warehouses are synonymous with the idea of compute
-        resources in other systems. We will use this
-        warehouse to query our integration and to load data.
-    */
-    create warehouse if not exists development 
-        warehouse_size = xsmall
-        auto_suspend = 30
-        initially_suspended = true;
-
-    /*
-        Integrations are on of those important features that
-        account admins should do because it's allowing outside 
-        snowflake connections to your data.
-    */
+   
     use role accountadmin;
 
+    /*
+    Integrations are on of those important features that
+    account admins should do because it's allowing outside 
+    snowflake connections to your data.
+    */
     create storage integration s3_integration
         type = external_stage
         storage_provider = 's3'
