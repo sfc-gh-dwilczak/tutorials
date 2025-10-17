@@ -88,6 +88,7 @@ Now for the fun / long part of setting up azure. Lets start in azure by logging 
     If you already have SSO setup you can skip to the provisioning step which is 3 images down.
 
 
+### Enterprise Application
 Next lets click on Enterprise Applications on the left navbar.
 ![Microsoft entra ID](images/02.png)
 
@@ -100,12 +101,14 @@ In the Browse Azure AD Gallery search bar, search for Snowflake, and choose Snow
 Lets navigate to provisioning on the left side menu.
 ![provisioning navigation](images/06.png)
 
+### Setup Provisioning
 Click Add configuration.
 ![Update](images/07.png)  
 
 Now enter in your tenant URL and token we got from Snowflake earlier, click test and create.
 ![Update](images/08.png)  
 
+### Groups
 Once created your ready to create a group and assign it.
 ![Update](images/09.png)  
 
@@ -121,6 +124,7 @@ Add a new group.
 Make it a securiy group and name it engineer.
 ![Update](images/12.png)
 
+#### Adding the group
 Now we'll head back to the enterprise application and click on "Assign users and groups".
 ![Update](images/13.png)  
 
@@ -139,6 +143,7 @@ Once the group is added we'll go back to provisioning.
 !!! warning 
     This will only start the scheduled event. You will need to provision ondemand in the follow up step to see results.
 
+#### Provision Group
 We'll start the provisioning task. 
 ![Update](images/18.png)  
 
@@ -152,15 +157,19 @@ Once selected we'll click the users we want to add and then click provision.
 ![Update](images/21.png)  
 
 Once completed you'll get check boxes and you can head over to Snowflake to see your new user and it's role.
-![Update](images/22.png)  
+![Update](images/22.png)
 
+### Done / Check user
 Under admin then users you can see my users has been added. We'll want to click on the user to see thier assigned role.
 ![Update](images/23.png)  
 
 We can also see the role has been assigned to the user.
 ![Update](images/24.png)  
 
+### Removing groups / users
+When you remove a group, it will delete the role and remove all users.
+![Update](images/25.png)  
 
-
-
+If you remove a user it will diable the user.
+![Update](images/26.png)  
 
