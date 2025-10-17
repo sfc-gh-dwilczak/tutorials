@@ -11,7 +11,13 @@ Video still in development.
 ## Snowflake
 Lets start with the easy part, lets get Snowflake setup. Our first goal will be to create our azure provisioning role, example engineer role and the security integration and finally grab the needed URL and token that will be used in Azure Entra ID.
 
-Lets open a worksheet and add in the code below. This will create a engineer and aad_provisioner role. We will give the engineer role to myself in this tutorial via Entra ID SCIM group.
+!!! note
+    If you plan on using your own role to be provissioned, make sure it's owned by the "aad_provisioner" role.
+
+Lets open a worksheet (1) and add in the code below. This will create a engineer and aad_provisioner role. We will give the engineer role to myself in this tutorial via Entra ID SCIM group.
+{ .annotate }
+
+1. ![Worksheet](images/0.png)
 
 === ":octicons-image-16: Code"
 
@@ -74,6 +80,10 @@ Now that we have our provisioning role, engineer role and integration we will ju
 ## Azure
 Now for the fun / long part of setting up azure. Lets start in azure by logging into our [azure portal](https://portal.azure.com/) and navigate to Microsoft Entra ID.
 ![Microsoft entra ID](images/01.png)
+
+!!! Note
+    If you already have SSO setup you can skip to the provisioning step which is 3 images down.
+
 
 Next lets click on Enterprise Applications on the left navbar.
 ![Microsoft entra ID](images/02.png)
