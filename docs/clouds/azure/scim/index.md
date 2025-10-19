@@ -2,7 +2,7 @@
 In this tutorial, we’ll walk through how to setup Azure EntraID SCIM to provision users and role to our Snowflake account.
 
 ## Video
-Video still in development.
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/Fqepg7c5YQ4?si=ymwrsliFTkT_AfwY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Requirements
 - Snowflake account, you can use a [free trial](https://signup.snowflake.com/). We also assume no complex security needs.
