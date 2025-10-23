@@ -83,9 +83,9 @@ nav:
     -   Via Notebook: engineering/sftp/index.md
 
   - Openflow: "#"
-  - BYOC:
+  -  BYOC:
     -   Google Sheet: engineering/openflow/byoc/google_sheets/index.md
-  - Container:
+  -  Container:
     -   Google Sheet: engineering/openflow/container/google_sheets/index.md
 
   - Tools: "#"
