@@ -83,10 +83,11 @@ nav:
     -   Via Notebook: engineering/sftp/index.md
 
   - Openflow: "#"
-  -  BYOC:
-    -   Google Sheet: engineering/openflow/byoc/google_sheets/index.md
-  -  Container:
-    -   Google Sheet: engineering/openflow/container/google_sheets/index.md
+  -  Deployment:
+    -   SPCS: engineering/openflow/deployment/spcs/index.md
+    -   BYOC with Snowflake VPC: engineering/openflow/deployment/byoc_snowflake_vpc/index.md
+  -  Connectors: 
+    -   Google Sheet: engineering/openflow/connectors/google_sheets/index.md
 
   - Tools: "#"
   -  DBT: tools/dbt/setup/index.md
