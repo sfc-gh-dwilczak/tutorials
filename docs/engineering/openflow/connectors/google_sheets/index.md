@@ -1,5 +1,5 @@
 # Openflow - Google Sheets
-Goal of this tutorial is to setup openflow in Snowflake container services and then add the google sheets connector to load in a sheet on a schedule.
+Goal of this tutorial is to load data from a google sheet into Snowflake via openflow.
 
 ## Video
 Video still in development
@@ -69,38 +69,14 @@ Lets create the network rule and external access that will allow openflow/snowfl
 
 
 ## Openflow
-Now that we have the nessery objects lets create our deployment and runtime for openflow. Navigate to openflow in the navbar.
-![UPDATE](images/01.png)
+In this tutorial we assume you already have a deployment. If you have not it only takes a few minutes. Please follow one of this three options.
 
-??? warning "If you get the error 'Invalid consent request'"
-    You will have to change your default role to a role that is not an admin role. Example default would be public.
-    ![UPDATE](images/00.png)
-
-
-Launch openflow and login.
-![UPDATE](images/02.png)
-
-### Deployment
-Once logged in lets click "create deployment".
-![UPDATE](images/03.png)
-
-Click next.
-![UPDATE](images/04.png)
-
-Now we'll want to select Snowflake as the deployment envirement. Give it a name and click next.
-![UPDATE](images/05.png)
-
-Click next.
-![UPDATE](images/06.png)
-
-Now your deployment will start creating. It will take between 5-15 minutes.
-![UPDATE](images/07.png)
-
-Now that your deployment is active we can move on to our runtime.
-![UPDATE](images/08.png)
+- SPCS also know as Snowflake hosted. ([Link](#))
+- BYOC with Snowflake managed VPC ([Link](#))
+- BYOC self hosted VPC ([link](#))
 
 ### Runtime
-Click runtimes.
+Inside openflow click runtimes.
 ![UPDATE](images/09.png)
 
 Click "+ Create runtime".
@@ -114,6 +90,7 @@ select the external access we create in our worksheet and finally click "Create"
 
 Now your runtime will start being created. Lets head to the connectors
 ![UPDATE](images/13.png)
+
 
 ### Install Connector
 On the connectors list, install the google sheets connector.
