@@ -252,7 +252,10 @@ Lets right click the connector, enable "All controller services" and then start 
 And we're done, once loaded you will be able to see it in your database/schema with the table name we set prior.
 ![UPDATE](images/50.png)
 
-## Multiple Spreadsheets / Sheets
+## Use cases
+Here we will cover some use cases and what if scenarios.
+
+### Multiple Spreadsheets / Sheets
 Most users will want to ingest multiple spreedsheets with potentially multiple sheets in a spreadsheet. To accomplish this you'll want to go back and add anther Google sheet connector to the runtime.
 ![UPDATE](images/14.png)
 
@@ -273,3 +276,29 @@ Next we'll go back to our "parameters" and add our next google spreadsheet which
 
 Finally we'll start the second connector by right click start and then we'll be able to see the result in our Snowflake table.
 ![UPDATE](images/56.png)
+
+### Empty Cells
+In this scenario the question is what happen when cells are empty but you include them in your range.
+![UPDATE](images/57.png)
+
+If you add the cells and they are blank it will not show up in the google table.
+![UPDATE](images/58.png)
+
+Now we'll add values to the cells and run the pipeline again.
+![UPDATE](images/59.png)
+
+You'll see the pipeline refreshes the whole table and includes the values that are not included.
+![UPDATE](images/60.png)
+
+### Schema Change
+In this scenario we'll see what will happen when we have schema changes.
+![UPDATE](images/61.png)
+
+When we change the cell range to include the cells the empty C column it will not be included.
+![UPDATE](images/62.png)
+
+Here we we fill in the C column but keep the bottom row empty.
+![UPDATE](images/63.png)
+
+We see the column get added and the cell will be set to null.
+![UPDATE](images/64.png)
