@@ -200,7 +200,7 @@ Click share anyway.
 ![UPDATE](images/36.png)
 
 
-## Openflow Connector Configuration
+## Connector Configuration
 
 Lets head back to openflow and right click the google sheet connector and then parameters.
 ![UPDATE](images/37.png)
