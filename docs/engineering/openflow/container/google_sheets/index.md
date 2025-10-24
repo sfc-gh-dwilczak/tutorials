@@ -48,21 +48,19 @@ Lets create the network rule and external access that will allow openflow/snowfl
     ```sql linenums="1"
     -- create network rule for google apis
     create or replace network rule google_api_network_rule
-    mode = egress
-    type = host_port
-    value_list = (
-        'admin.googleapis.com',
-        'oauth2.googleapis.com',
-        'www.googleapis.com',
-        'sheets.googleapis.com'
-    );
+        mode = egress
+        type = host_port
+        value_list = (
+            'admin.googleapis.com',
+            'oauth2.googleapis.com',
+            'www.googleapis.com',
+            'sheets.googleapis.com'
+        );
 
-    -- create one external access integration with all network rules
+    -- Create one external access integration with all network rules.
     create or replace external access integration openflow_external_access
-    allowed_network_rules = (
-        raw.network.google_api_network_rule
-    )
-    enabled = true;
+        allowed_network_rules = (raw.network.google_api_network_rule)
+        enabled = true;
     ```
 
 === ":octicons-sign-out-16: Result"
@@ -136,13 +134,14 @@ Now you should see the openflow canvas with the google sheets connector block. W
 ![UPDATE](images/18.png)
 
 ## Google Sheets
-To setup google make sure you have [Super Admin](https://support.google.com/a/answer/2405986?hl=en&src=supportwidget0&authuser=0) permissions, we will need this to create a service account.
+!!! note
+    To setup google make sure you have [Super Admin](https://support.google.com/a/answer/2405986?hl=en&src=supportwidget0&authuser=0) permissions, we will need this to create a service account. 
 
 Ensure that you are in the project associated with your organization, not the project in your organization.
 ![UPDATE](images/20.png)
 
 ### Orginization Policy
-Search "Orginization Policies", click in the fliter box and search "Disable service account key creation". Select the managed constraint.
+Search "Orginization Policies", next click in the fliter box and search "Disable service account key creation". Select the managed constraint.
 ![UPDATE](images/21.png)
 
 Click Mange policy.
@@ -209,6 +208,7 @@ Lets head back to openflow and right click the google sheet connector and then p
 Here we will see three sections where we will have to enter in our configiration paramaters into.
 ![UPDATE](images/38.png)
 
+### Destination Parameters
 Lets click the three dots on the right side of the destination paramters.
 ![UPDATE](images/39.png)
 
@@ -221,13 +221,14 @@ One special paramter is the "Snowflake Authentication Strategy" with container s
 This is an example input if you used the configurations given at the beginning of the tutorial.
 ![UPDATE](images/42.png)
 
-Next for the "Ingestion Paramters" we'll need the sheet name and the sheet range. You'll select the range you want and copy it and the sheet name. 
+### Ingestion Parameters
+Next for the "Ingestion Parameters" we'll need the sheet name and the sheet range. You'll select the range you want and copy it and the sheet name. 
 ![UPDATE](images/43.png)
 
 Next we'll want to copy the Spreadsheet ID from the URL.
 ![UPDATE](images/44.png)
 
-Now we'll endter in what we want the table name to be. The sheet name and range (1) in the format "<sheet_name>!<range>" and finally the speadsheet ID (2) we got from the URL. Click Apply.
+Now we'll enter in what we want the table name to be. The sheet name and range (1) in the format "Sheet_name!range" and finally the speadsheet ID (2) we got from the URL. Click Apply.
 { .annotate }
     
 1. ![Range and sheet name](images/43.png)
@@ -236,7 +237,8 @@ Now we'll endter in what we want the table name to be. The sheet name and range 
 
 ![UPDATE](images/45.png)
 
-Next we'll want to copy the contents of our service account JSON file.
+### Source Parameters
+Next we'll want to copy the contents of our service account JSON file. I opened my file by dragging it to the browser.
 ![UPDATE](images/46.png)
 
 We'll enter that in to our service account json form. Once entered it will show as "Sensitive value set".
@@ -245,6 +247,7 @@ We'll enter that in to our service account json form. Once entered it will show 
 Now we're done with the paramaters. We can go back to the process group to get it started.
 ![UPDATE](images/48.png)
 
+### Run the connector
 Lets right click the connector, enable "All controller services" and then start the connector. Now since the data is small it will load into Snowflake in seconds.
 ![UPDATE](images/49.png)
 
@@ -252,7 +255,6 @@ And we're done, once loaded you will be able to see it in your database/schema w
 ![UPDATE](images/50.png)
 
 ## Multiple Spreadsheets / Sheets
-
 Most users will want to ingest multiple spreedsheets with potentially multiple sheets in a spreadsheet. To accomplish this you'll want to go back and add anther Google sheet connector to the runtime.
 ![UPDATE](images/14.png)
 
