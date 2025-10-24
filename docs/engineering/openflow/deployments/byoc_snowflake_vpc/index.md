@@ -148,7 +148,7 @@ Now we can go back to open flow and refresh our window or use the refresh button
 ![UPDATE](images/22.png)
 
 !!! warning
-    It could take longer then the bash command leads to believe. I waited 40 minutes before it worked.
+    It can take longer then the bash command leads to believe. I waited 40 minutes before it worked.
 
 
 ### Success

@@ -71,8 +71,8 @@ Lets create the network rule and external access that will allow openflow/snowfl
 ## Openflow
 In this tutorial we assume you already have a deployment. If you have not it only takes a few minutes. Please follow one of this three options.
 
-- SPCS also know as Snowflake hosted. ([Link](#))
-- BYOC with Snowflake managed VPC ([Link](#))
+- SPCS also know as Snowflake hosted. ([Link](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/deployments/spcs/))
+- BYOC with Snowflake managed VPC ([Link](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/deployments/byoc_snowflake_vpc/))
 - BYOC self hosted VPC ([link](#))
 
 ### Runtime
