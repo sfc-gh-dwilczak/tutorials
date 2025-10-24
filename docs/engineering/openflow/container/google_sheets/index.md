@@ -173,7 +173,7 @@ We'll want the JSON key. This key will be added to openflow later. Click Create.
 It will download a JSON file.
 ![UPDATE](images/30.png)
 
-### Enable Goofle Sheets API
+### Enable Sheets API
 
 Next we'll want to enable the API so that Snowflake can talk with the API. Search "google sheets api".
 ![UPDATE](images/31.png)
@@ -184,8 +184,7 @@ Once on the API page, click enable.
 Once enabled you will be able to see usage metrics.
 ![UPDATE](images/33.png)
 
-### Share sheet with service account
-
+### Share with service account
 Next we'll share the google sheet with the service account email (1) we copied earlier. Click the share button.
 { .annotate }
     
@@ -201,7 +200,6 @@ Click share anyway.
 
 
 ## Connector Configuration
-
 Lets head back to openflow and right click the google sheet connector and then parameters.
 ![UPDATE](images/37.png)
 
