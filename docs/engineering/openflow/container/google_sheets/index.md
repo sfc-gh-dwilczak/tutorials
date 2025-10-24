@@ -80,6 +80,7 @@ Now that we have the nessery objects lets create our deployment and runtime for 
 Launch openflow and login.
 ![UPDATE](images/02.png)
 
+### Deployment
 Once logged in lets click "create deployment".
 ![UPDATE](images/03.png)
 
@@ -98,6 +99,7 @@ Now your deployment will start creating. It will take between 5-15 minutes.
 Now that your deployment is active we can move on to our runtime.
 ![UPDATE](images/08.png)
 
+### Runtime
 Click runtimes.
 ![UPDATE](images/09.png)
 
@@ -113,6 +115,7 @@ select the external access we create in our worksheet and finally click "Create"
 Now your runtime will start being created. Lets head to the connectors
 ![UPDATE](images/13.png)
 
+### Install Connector
 On the connectors list, install the google sheets connector.
 ![UPDATE](images/14.png)
 
