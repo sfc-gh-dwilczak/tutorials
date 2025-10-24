@@ -63,9 +63,6 @@ Lets create the network rule and external access that will allow openflow/snowfl
         raw.network.google_api_network_rule
     )
     enabled = true;
-
-    -- grant usage to runtime role
-    grant usage on integration openflow_external_access to role openflow;
     ```
 
 === ":octicons-sign-out-16: Result"
@@ -77,7 +74,7 @@ Lets create the network rule and external access that will allow openflow/snowfl
 Now that we have the nessery objects lets create our deployment and runtime for openflow. Navigate to openflow in the navbar.
 ![UPDATE](images/01.png)
 
-!!! warning "If you get the error 'Invalid consent request'"
+??? warning "If you get the error 'Invalid consent request'"
     You will have to change your default role to a role that is not an admin role. Example default would be public.
     ![UPDATE](images/00.png)
 
@@ -127,7 +124,8 @@ Select your runtime to install, you may have to wait for the runtime to finilize
 Once selected click "add". The connector will be added and you'll be required to login to get into the underliying container.
 ![UPDATE](images/16.png)
 
-!!! warning "If you get the error 'Invalid consent request'"
+
+??? warning "If you get the error 'Invalid consent request'"
     You will have to change your default role to a role that is not an admin role. Example default would be public.
     ![UPDATE](images/00.png)
 
@@ -252,3 +250,26 @@ Lets right click the connector, enable "All controller services" and then start 
 
 And we're done, once loaded you will be able to see it in your database/schema with the table name we set prior.
 ![UPDATE](images/50.png)
+
+## Multiple Spreadsheets / Sheets
+
+Most users will want to ingest multiple spreedsheets with potentially multiple sheets in a spreadsheet. To accomplish this you'll want to go back and add anther Google sheet connector to the runtime.
+![UPDATE](images/14.png)
+
+You'll want to right click your new connector. Click configure.
+![UPDATE](images/51.png)
+
+This is where you can rename both to give them unique names to differentiate them.
+![UPDATE](images/52.png)
+
+After we've named them we'll want to go into our new connector and go to paramaters.
+![UPDATE](images/53.png)
+
+We'll select "Inheritance" in the top menu and select the destination and google source parameters because these are going to be the same for all our google sheets connectors.
+![UPDATE](images/54.png)
+
+Next we'll go back to our "parameters" and add our next google spreadsheet which has two sheets so we'll add both names with both ranges by seperating them with a comma.
+![UPDATE](images/55.png)
+
+Finally we'll start the second connector by right click start and then we'll be able to see the result in our Snowflake table.
+![UPDATE](images/56.png)
