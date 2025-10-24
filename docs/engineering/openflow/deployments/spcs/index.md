@@ -8,33 +8,8 @@ Video still in development
 - You can NOT be on a trial account. ([Link](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview))
 - Snowflake account has to be in an AWS region.([Link](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview#available-regions))
 
-## Snowflake
-Lets start the snowflake setup by going into a worksheet (1) and creating the nesseray objects for openflow and the connector.
-{ .annotate }
-
-1. ![Worksheet](images/0.png)
-
-??? note "If you don't have a warehouse yet."
-
-    === ":octicons-image-16: Warehouse"
-
-        ```sql linenums="1"
-        use role sysadmin;
-
-        /*
-            Warehouses are synonymous with the idea of compute
-            resources in other systems. We will use this
-            warehouse to query our integration and to load data.
-        */
-        create warehouse if not exists openflow 
-            warehouse_size = xsmall
-            auto_suspend = 30
-            initially_suspended = true;
-        ```
-
-
 ## Openflow
-Now that we have the nessery objects lets create our deployment and runtime for openflow. Navigate to openflow in the navbar.
+Navigate to openflow in the navbar.
 ![UPDATE](images/01.png)
 
 ??? warning "If you get the error 'Invalid consent request'"
