@@ -252,8 +252,8 @@ Lets right click the connector, enable "All controller services" and then start 
 And we're done, once loaded you will be able to see it in your database/schema with the table name we set prior.
 ![UPDATE](images/50.png)
 
-## Use cases
-Here we will cover some use cases and what if scenarios.
+## Scenarios
+Here we will cover some what if scenarios with the data.
 
 ### Multiple Spreadsheets / Sheets
 Most users will want to ingest multiple spreedsheets with potentially multiple sheets in a spreadsheet. To accomplish this you'll want to go back and add anther Google sheet connector to the runtime.
