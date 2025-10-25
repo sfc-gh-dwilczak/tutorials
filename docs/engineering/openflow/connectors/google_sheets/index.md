@@ -190,7 +190,7 @@ Here we will see three sections where we will have to enter in our configiration
 Lets click the three dots on the right side of the destination paramters.
 ![UPDATE](images/39.png)
 
-!!! note "If your using SPCS deployment"
+??? note "If your using SPCS deployment"
 
     As an example we'll click the three dots and click edit. We'll put the database, schema, role and warehouse.
     ![UPDATE](images/40.png)
@@ -201,7 +201,7 @@ Lets click the three dots on the right side of the destination paramters.
     This is an example input if you used the configurations given at the beginning of the tutorial.
     ![UPDATE](images/42.png)
 
-!!! note "If your using BYOC deployemnt"
+??? note "If your using BYOC deployemnt"
 
     These are the paramaters you'll need to be filled out. We will see how to get them below.
     ![UPDATE](images/65.png)
