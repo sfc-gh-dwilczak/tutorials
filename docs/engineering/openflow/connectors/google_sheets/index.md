@@ -201,6 +201,7 @@ Lets click the three dots on the right side of the destination paramters.
     This is an example input if you used the configurations given at the beginning of the tutorial.
     ![UPDATE](images/42.png)
 
+
 ??? note "If your using BYOC deployemnt"
 
     These are the paramaters you'll need to be filled out. We will see how to get them below.
