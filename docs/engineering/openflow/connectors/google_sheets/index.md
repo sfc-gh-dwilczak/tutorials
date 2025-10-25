@@ -59,7 +59,7 @@ Lets create the network rule and external access that will allow openflow/snowfl
 
     -- Create one external access integration with all network rules.
     create or replace external access integration openflow_external_access
-        allowed_network_rules = (raw.network.google_api_network_rule)
+        allowed_network_rules = (google_api_network_rule)
         enabled = true;
     ```
 
