@@ -190,14 +190,74 @@ Here we will see three sections where we will have to enter in our configiration
 Lets click the three dots on the right side of the destination paramters.
 ![UPDATE](images/39.png)
 
-As an example we'll click the three dots and click edit. We'll put the database, schema, role and warehouse.
-![UPDATE](images/40.png)
+!!! note "If your using SPCS deployment"
 
-One special paramter is the "Snowflake Authentication Strategy" with container service you can put in "SNOWFLAKE_SESSION_TOKEN" and it will not require a key_pair.
-![UPDATE](images/41.png)
+    As an example we'll click the three dots and click edit. We'll put the database, schema, role and warehouse.
+    ![UPDATE](images/40.png)
 
-This is an example input if you used the configurations given at the beginning of the tutorial.
-![UPDATE](images/42.png)
+    One special paramter is the "Snowflake Authentication Strategy" with container service you can put in "SNOWFLAKE_SESSION_TOKEN" and it will not require a key_pair.
+    ![UPDATE](images/41.png)
+
+    This is an example input if you used the configurations given at the beginning of the tutorial.
+    ![UPDATE](images/42.png)
+
+!!! note "If your using BYOC deployemnt"
+
+    These are the paramaters you'll need to be filled out. We will see how to get them below.
+    ![UPDATE](images/65.png)
+
+    To get the Snowflake Account Identifier, you'll go to the bottom left of the homepage and click account details.
+    ![UPDATE](images/66.png)
+
+    You'll copy your account identifier and paste it in openflow.
+    ![UPDATE](images/67.png)
+
+    Next to get your key we'll have to generate a public and private key and apply it to our user. To generate the key run this bash script.
+    
+    === ":octicons-image-16: Code"
+
+        ```bash linenums="1"
+        openssl genrsa 2048 > rsa_key_pkcs1.pem
+        openssl pkcs8 -topk8 -inform PEM -in rsa_key_pkcs1.pem -out rsa_key.p8 -nocrypt
+        openssl rsa -in rsa_key_pkcs1.pem -pubout -out rsa_key.pub
+        ```
+
+    === ":octicons-sign-out-16: Result"
+
+        ```
+        rsa_key_pkcs1.pem
+        rsa_key.p8
+        rsa_key.pub
+        ```
+    
+    This will generate three file. We will apply the content of the .pub file to our Snowflake user using the alter user command.
+    === ":octicons-image-16: Code"
+
+        ```sql linenums="1"
+        alter user danielwilczak set rsa_public_key='PUBLIC KEY';
+        ```
+
+    === ":octicons-image-16: Example"
+
+        ```sql linenums="1"
+        alter user danielwilczak set rsa_public_key='MIIBIjANBgkqhki...6VIhVnTviwDXXcm558uMrJQIDAQAB';
+        ```
+
+    === ":octicons-sign-out-16: Result"
+
+        Statement executed successfully.
+
+    Now that we have our public key on our user we'll move to uploading the .pem file to openflow.
+    ![UPDATE](images/68.png)
+
+    Click the upload button.
+    ![UPDATE](images/69.png)
+
+    Click the upload button again and select your .pem file.
+    ![UPDATE](images/70.png)
+
+    Once uploaded select the key and click "ok".
+    ![UPDATE](images/71.png)
 
 ### Ingestion Parameters
 Next for the "Ingestion Parameters" we'll need the sheet name and the sheet range. You'll select the range you want and copy it and the sheet name. 
