@@ -144,7 +144,7 @@ Here we can watch the process.
     ![UPDATE](images/21.png)
 
 ### Waiting
-Now we can go back to open flow and refresh our window or use the refresh button.
+Now we can go back to openflow and refresh our window or use the refresh button.
 ![UPDATE](images/22.png)
 
 !!! warning
