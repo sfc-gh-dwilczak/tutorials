@@ -85,7 +85,7 @@ nav:
   - Openflow: "#"
   -  Deployment:
     -   SPCS: engineering/openflow/deployments/spcs/index.md
-    -   BYOC with Snowflake VPC: engineering/openflow/deployments/byoc_snowflake_vpc/index.md
+    - AWS with Snowflake VPC: engineering/openflow/deployments/aws_snowflake_vpc/index.md
   -  Connectors: 
     -   Google Sheet: engineering/openflow/connectors/google_sheets/index.md
 
