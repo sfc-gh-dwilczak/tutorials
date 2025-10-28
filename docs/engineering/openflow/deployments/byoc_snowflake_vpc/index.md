@@ -12,10 +12,9 @@ Video still in development
 Navigate to openflow in the navbar.
 ![UPDATE](images/01.png)
 
-??? warning "If you get the error 'Invalid consent request'"
+??? warning "If you get the error 'Invalid consent request' or 'TOTP Invalid'"
     You will have to change your default role to a role that is not an admin role. Example default would be public.
     ![UPDATE](images/00.png)
-
 
 Launch openflow and login.
 ![UPDATE](images/02.png)

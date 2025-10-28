@@ -103,9 +103,10 @@ Once selected click "add". The connector will be added and you'll be required to
 ![UPDATE](images/16.png)
 
 
-??? warning "If you get the error 'Invalid consent request'"
+??? warning "If you get the error 'Invalid consent request' or 'TOTP Invalid'"
     You will have to change your default role to a role that is not an admin role. Example default would be public.
     ![UPDATE](images/00.png)
+
 
 Click allow.
 ![UPDATE](images/17.png)
