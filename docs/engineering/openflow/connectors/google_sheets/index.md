@@ -40,32 +40,32 @@ Lets start the snowflake setup by going into a worksheet (1) and creating the ne
             initially_suspended = true;
         ```
 
+!!! warning "Only required if your hosting openflow in Snowflake SPCS"
+    Lets create the network rule and external access that will allow openflow/snowflake to talk with google sheets.
 
-Lets create the network rule and external access that will allow openflow/snowflake to talk with google sheets.
+    === ":octicons-image-16: Example"
 
-=== ":octicons-image-16: Example"
+        ```sql linenums="1"
+        -- create network rule for google apis
+        create or replace network rule google_api_network_rule
+            mode = egress
+            type = host_port
+            value_list = (
+                'admin.googleapis.com',
+                'oauth2.googleapis.com',
+                'www.googleapis.com',
+                'sheets.googleapis.com'
+            );
 
-    ```sql linenums="1"
-    -- create network rule for google apis
-    create or replace network rule google_api_network_rule
-        mode = egress
-        type = host_port
-        value_list = (
-            'admin.googleapis.com',
-            'oauth2.googleapis.com',
-            'www.googleapis.com',
-            'sheets.googleapis.com'
-        );
+        -- Create one external access integration with all network rules.
+        create or replace external access integration openflow_external_access
+            allowed_network_rules = (google_api_network_rule)
+            enabled = true;
+        ```
 
-    -- Create one external access integration with all network rules.
-    create or replace external access integration openflow_external_access
-        allowed_network_rules = (google_api_network_rule)
-        enabled = true;
-    ```
+    === ":octicons-sign-out-16: Result"
 
-=== ":octicons-sign-out-16: Result"
-
-    Statement executed successfully.
+        Statement executed successfully.
 
 
 ## Openflow
