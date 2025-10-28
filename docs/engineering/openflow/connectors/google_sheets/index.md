@@ -40,7 +40,7 @@ Lets start the snowflake setup by going into a worksheet (1) and creating the ne
             initially_suspended = true;
         ```
 
-!!! warning "Only required if your hosting openflow in Snowflake SPCS"
+!!! warning "Only required if your hosting openflow in Snowflake (SPCS)"
     Lets create the network rule and external access that will allow openflow/snowflake to talk with google sheets.
 
     === ":octicons-image-16: Example"
