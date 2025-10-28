@@ -72,8 +72,8 @@ Lets start the snowflake setup by going into a worksheet (1) and creating the ne
 In this tutorial we assume you already have a deployment. If you have not it only takes a few minutes. Please follow one of this three options.
 
 - SPCS also know as Snowflake hosted. ([Link](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/deployments/spcs/))
-- BYOC with Snowflake managed VPC ([Link](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/deployments/byoc_snowflake_vpc/))
-- BYOC self hosted VPC ([link](#))
+- AWS with Snowflake managed VPC ([Link](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/deployments/byoc_snowflake_vpc/))
+- AWS self hosted VPC ([link](#))
 
 ### Runtime
 Inside openflow click runtimes.
