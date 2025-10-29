@@ -85,8 +85,10 @@ Click "+ Create runtime".
 Select your deployment, next give your runtime a name, and select accountadmin as the role. Scroll down to extrnal acess.
 ![UPDATE](images/11.png)
 
-select the external access we create in our worksheet and finally click "Create".
-![UPDATE](images/12.png)
+!!! warning "Only required if your hosting openflow in Snowflake (SPCS)"
+
+    select the external access we create in our worksheet and finally click "Create".
+    ![UPDATE](images/12.png)
 
 Now your runtime will start being created. Lets head to the connectors
 ![UPDATE](images/13.png)
