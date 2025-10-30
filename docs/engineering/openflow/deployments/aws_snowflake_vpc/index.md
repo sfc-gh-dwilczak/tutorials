@@ -1,5 +1,5 @@
 # Openflow - Hosted in AWS with Snowflake managed VPC
-Goal of this tutorial is to setup openflow deployment in Snowflake container services. This will allow you to start adding runtimes that have connectors in them.
+Goal of this tutorial is to setup openflow deployment in AWS with the VPC configuration manged by Snowflake. This will allow you to start adding runtimes that have connectors in them.
 
 ## Video
 Video still in development
