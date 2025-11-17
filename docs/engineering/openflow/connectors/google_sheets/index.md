@@ -205,7 +205,7 @@ Lets click the three dots on the right side of the destination paramters.
     ![UPDATE](images/42.png)
 
 
-??? note "If your using BYOC deployemnt"
+??? note "If your using AWS deployemnt"
 
     These are the paramaters you'll need to be filled out. We will see how to get them below.
     ![UPDATE](images/65.png)

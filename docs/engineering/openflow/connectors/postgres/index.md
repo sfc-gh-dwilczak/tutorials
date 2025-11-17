@@ -155,7 +155,7 @@ Next we'll create a publication and replication slot by entering the code below,
     select pg_create_logical_replication_slot('openflow_pgoutput_slot', 'pgoutput');
     ```
 
-=== ":octicons-image-16: Code"
+=== ":octicons-image-16: Result"
 
     ```sql linenums="1"
     UPDATE
@@ -252,7 +252,7 @@ From there we can switch to the deployment where we can see our deployment and t
 Next we'll head to runtime and click " + Create Runtime".
 ![UPDATE](images/24.png)
 
-??? note
+!!! note
     External access will only show up if your on a [SPCS deployment](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/deployments/spcs/).
 
 We'll then select our runtime, give it a name, select accountadmin as the role and if your on [SPCS](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/deployments/spcs/) your external access integration.
@@ -270,12 +270,18 @@ We'll select our runtime and click add.
 Next head to runtime and select your runtime if not already in it.
 ![UPDATE](images/29.png)
 
+Once in we'll want to right click the process group and select paramaters.
+![UPDATE](images/51.png)
+
+
 ### Paramaters
 Now that we are in paramaters we can break it into 3 sections those being destination, Ingestion and Source.
 
 #### Destination
 Lets click the three dots of our destination and click edit.
 ![UPDATE](images/30.png)
+
+Now we can select either note option below based on our deployment.
 
 ??? note "If your using SPCS deployment"
 
@@ -289,7 +295,7 @@ Lets click the three dots of our destination and click edit.
     ![UPDATE](images/33.png)
 
 
-??? note "If your using BYOC deployemnt"
+??? note "If your using AWS deployemnt"
 
     These are the paramaters you'll need to be filled out. We will see how to get them below.
     ![UPDATE](images/34.png)
