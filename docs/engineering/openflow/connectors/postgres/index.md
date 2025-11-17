@@ -407,6 +407,7 @@ The format here is as shown below:
 
     ```txt linenums="1"
     jdbc:postgresql://<DATABASE URL>:5432/<Database Name>
+    ```
 
 === ":octicons-image-16: Example"
 
