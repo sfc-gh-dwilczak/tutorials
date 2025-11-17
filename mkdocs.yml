@@ -88,6 +88,7 @@ nav:
     -   AWS with Snowflake VPC: engineering/openflow/deployments/aws_snowflake_vpc/index.md
   -  Connectors: 
     -   Google Sheet: engineering/openflow/connectors/google_sheets/index.md
+    -   Postgres: engineering/openflow/connectors/postgres/index.md
 
   - Tools: "#"
   -  DBT: tools/dbt/setup/index.md
