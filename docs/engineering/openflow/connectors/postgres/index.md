@@ -355,22 +355,23 @@ Now we can select either note option below based on our deployment.
 
 
 #### Ingestion
-For this section it's all about selecting what data you want and how often you want the warehouse to merge the changes into the final table. In my case I'll use the regex expression "replicate\..*" to grab all tables from the replicate schema. It's a comma seperated list if you want multiple tables or multuple schemas.
+For this section it's all about selecting what data you want and how often you want the warehouse to merge the changes into the final table. In my case I'll use the regex expression ``replicate\..*`` to grab all tables from the replicate schema. It's a comma seperated list if you want multiple tables or multuple schemas.
 ![UPDATE](images/41.png)
 
 #### Source
-Next we'll head to the final paramater source, well first edit the connection URL.
+Next we'll head to the final paramater source. We'll first edit the connection URL.
 ![UPDATE](images/42.png)
 
 The format here is as shown below:
 
 === ":octicons-image-16: Code"
-    ``` linenums="1"
+
+    ```txt linenums="1"
     jdbc:postgresql://<DATABASE URL>:5432/<Database Name>
 
 === ":octicons-image-16: Example"
 
-    ``` linenums="1"
+    ```txt linenums="1"
     jdbc:postgresql://danielwilczak.cdqmaq86m7gc.us-west-2.rds.amazonaws.com:5432/daniel
     ```
 
@@ -386,7 +387,7 @@ Click upload again in the next window.
 Once uploaded you can select your driver and click "ok".
 ![UPDATE](images/46.png)
 
-Finally you'll put in your postgres password, username, publication name, and replication slot name. Clikc Apply
+Finally you'll put in your postgres password, username, publication name, and replication slot name. Click Apply.
 ![UPDATE](images/47.png)
 
 ## Run
@@ -394,7 +395,7 @@ Finally we can run our connector. Head back to the process group.
 ![UPDATE](images/48.png)
 
 Right click the process group again and click "Enable all controller services" and click start.
-![UPDATE](images/48.png)
+![UPDATE](images/49.png)
 
 Now if you don't get any errors you can go back to Snowflake and find your shema with your tables loaded.
 ![UPDATE](images/50.png)
