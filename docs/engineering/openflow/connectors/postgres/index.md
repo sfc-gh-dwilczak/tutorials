@@ -12,7 +12,44 @@ Video still in development
 ## AWS
 ??? note "If you don't have a postgres RDS database, follow here."
 
-    UPDATE
+    Search for RDS and select.
+    ![UPDATE](images/01.png)
+
+    Click "DB instances".
+    ![UPDATE](images/02.png)
+
+    Click "Create database".
+    ![UPDATE](images/52.png)
+
+    We'll select postgres for the database, select a version "I tested with 17", and free tier if your just learning.
+    ![UPDATE](images/53.png)
+
+    Select single instance since this is for learning, give your database a name, username and password.
+    ![UPDATE](images/54.png)
+
+    If your using SPCS to deploy your openflow, this will need to be public so that Snowflake can reach across the internet to connect to the database.
+    ![UPDATE](images/55.png)
+
+    Click create database.
+    ![UPDATE](images/56.png)
+
+    Next we'll select our database to change it's network configuration.
+    ![UPDATE](images/57.png)
+
+    Click it's security group.
+    ![UPDATE](images/58.png)
+
+    select the security group by clicking the check box and then going to inbound traffic and edit inbound rules.
+    ![UPDATE](images/59.png)
+    
+    Now we'll allow all traffic to access the postgres instance. We do this because pgadmin will have to connect and if your using SPCS deployment, Snowflake does not have static i.p's YET.
+    ![UPDATE](images/60.png)
+
+    Now we'll do the same thing as before but for outbound traffic.
+    ![UPDATE](images/61.png)
+
+    Select all traffic and click "Save Rules". Your done with your postgres RDS setup.
+    ![UPDATE](images/62.png)
 
 
 Lets start in AWS where we'll need to copy our RDS data base URL, port and configure the database paramaters to allow for replication. Lets start by searching for RDS.
