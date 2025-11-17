@@ -67,6 +67,7 @@ You will see the database begin to modify the configuration and then go back to 
 ## PGAdmin
 Lets stat by [downloading PgAdmin](https://www.pgadmin.org/download/). After that we'll connect add sample data and configure a "publication" and a "replication slot".
 
+### Example Data
 Once installed we'll right click servers, hover over "Register" and click "Server".
 ![UPDATE](images/17.png)
 
@@ -140,6 +141,7 @@ Next add the code to first create the objects and then enter data into them.
     UPDATE
     ```
 
+### Pub / Replication Slot
 Next we'll create a publication and replication slot by entering the code below, you can also edit it to be only for certian tables.
 
 === ":octicons-image-16: Code"
