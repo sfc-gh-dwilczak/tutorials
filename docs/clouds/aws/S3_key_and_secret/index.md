@@ -214,12 +214,12 @@ From here we'll add our stage code and paste in our bucket name, key and secret.
 
         ```sql linenums="1"
         create or alter stage s3
-    url='s3://danielwilczak/'
-    credentials=(
-        aws_key_id='AKIARH....BWUZ7Q'
-        aws_secret_key='Vh597QKZqMX....sdoAAK4GD90M'
-    )
-    directory=(enable=true);
+            url='s3://danielwilczak/'
+            credentials=(
+                aws_key_id='AKIARH....BWUZ7Q'
+                aws_secret_key='Vh597QKZqMX....sdoAAK4GD90M'
+            )
+            directory=(enable=true);
         ```
 
 === ":octicons-image-16: Result"
