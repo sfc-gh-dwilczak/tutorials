@@ -34,6 +34,7 @@ nav:
   - Clouds: "#"
   -  AWS:  # 1 em space (U+2003)
     -   S3: clouds/aws/s3/index.md  # 2 em spaces (U+2003 x2)
+    -   S3 with Key/Secret: clouds/aws/S3_key_and_secret/index.md
     -   Kinesis: clouds/aws/kinesis/index.md
   -  Azure:
     -   Blob / Storage: clouds/azure/storage/index.md
