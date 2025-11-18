@@ -200,33 +200,33 @@ From here we'll add our stage code and paste in our bucket name, key and secret.
 
 === ":octicons-image-16: Code"
 
-        ```sql linenums="1"
-        create or alter stage s3
-            url='s3://<BUCKET NAME>/'
-            credentials=(
-                aws_key_id='<KEY>'
-                aws_secret_key='<Secret>'
-            )
-            directory=(enable=true);
-        ```
+    ```sql linenums="1"
+    create or alter stage s3
+        url='s3://<BUCKET NAME>/'
+        credentials=(
+            aws_key_id='<KEY>'
+            aws_secret_key='<Secret>'
+        )
+        directory=(enable=true);
+    ```
 
 === ":octicons-image-16: Example"
 
-        ```sql linenums="1"
-        create or alter stage s3
-            url='s3://danielwilczak/'
-            credentials=(
-                aws_key_id='AKIARH....BWUZ7Q'
-                aws_secret_key='Vh597QKZqMX....sdoAAK4GD90M'
-            )
-            directory=(enable=true);
-        ```
+    ```sql linenums="1"
+    create or alter stage s3
+        url='s3://danielwilczak/'
+        credentials=(
+            aws_key_id='AKIARH....BWUZ7Q'
+            aws_secret_key='Vh597QKZqMX....sdoAAK4GD90M'
+        )
+        directory=(enable=true);
+    ```
 
 === ":octicons-image-16: Result"
 
-        ```sql linenums="1"
-        Stage area S3 successfully created.
-        ```
+    ```sql linenums="1"
+    Stage area S3 successfully created.
+    ```
 
 Now that we have created our stage we can go view the files in it. If you don't see the file right away, hit refresh. From here we can start loading data. But the process is the same as our [S3 tutorial](https://sfc-gh-dwilczak.github.io/tutorials/clouds/aws/s3/#load-the-data) and not need to repeat here.
 ![UPDATE](images/25.png)
