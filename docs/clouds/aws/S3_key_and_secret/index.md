@@ -14,7 +14,7 @@ Video in development.
 ## AWS
 Sign into your aws account.
 
-!!! note "If you don't have a bucket yet follow here"
+??? note "If you don't have a bucket yet follow here"
 
     Search S3 in the navigation bar.
     ![UPDATE](images/1.png)
