@@ -228,5 +228,9 @@ From here we'll add our stage code and paste in our bucket name, key and secret.
     Stage area S3 successfully created.
     ```
 
-Now that we have created our stage we can go view the files in it. If you don't see the file right away, hit refresh. From here we can start loading data. But the process is the same as our [S3 tutorial](https://sfc-gh-dwilczak.github.io/tutorials/clouds/aws/s3/#load-the-data) and not need to repeat here.
+This is what it will look like once ran.
 ![UPDATE](images/25.png)
+
+
+Now that we have created our stage we can go view the files in it. If you don't see the file right away, hit refresh. From here we can start loading data. But the process is the same as our [S3 tutorial](https://sfc-gh-dwilczak.github.io/tutorials/clouds/aws/s3/#load-the-data) and not need to repeat here.
+![UPDATE](images/26.png)
