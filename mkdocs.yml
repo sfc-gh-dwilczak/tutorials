@@ -85,7 +85,7 @@ nav:
 
   - Openflow: "#"
   -  Deployment:
-    -   SPCS: engineering/openflow/deployments/spcs/index.md
+    -   SPCS: engineering/openflow/deployments/Snowflake/index.md
     -   AWS: engineering/openflow/deployments/aws/index.md
   -  Connectors: 
     -   Google Sheet: engineering/openflow/connectors/google_sheets/index.md

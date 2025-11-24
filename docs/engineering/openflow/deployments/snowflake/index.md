@@ -1,4 +1,4 @@
-# Openflow - Hosted in SPCS
+# Openflow - Hosted in Snowflake
 Goal of this tutorial is to setup openflow deployment in Snowflake container services. This will allow you to start adding runtimes that have connectors in them.
 
 ## Video
