@@ -1,4 +1,4 @@
-# Openflow - Hosted in AWS with Snowflake managed VPC
+# Openflow - Hosted in AWS
 Goal of this tutorial is to setup openflow deployment in AWS with the VPC configuration manged by Snowflake. This will allow you to start adding runtimes that have connectors in them.
 
 ## Video
