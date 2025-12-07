@@ -2,7 +2,7 @@
 Goal of this tutorial is to load data from SFTP into Snowflake stage via openflow.
 
 ## Video
-Video still in development
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/vn5hDidwxGQ?si=Amd5WzvKulrBRgIO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Requirements 
 - You can NOT be on a trial account. ([Link](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview))
