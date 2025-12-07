@@ -1,5 +1,5 @@
 # Openflow - RDS Postgres
-Goal of this tutorial is to load data from a RDS Postgres into Snowflake via openflow. This tutorial will not cover how to setup a deployment, there are two other tutorials on the left to show how to do that.
+Goal of this tutorial is to load data from a RDS Postgres into Snowflake via openflow. This tutorial will not cover how to setup a deployment in [Snowflake](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/deployments/snowflake/) or [AWS](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/deployments/aws).
 
 ## Video
 Video still in development

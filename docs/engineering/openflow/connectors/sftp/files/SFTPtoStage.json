@@ -1,0 +1,1066 @@
+{
+  "externalControllerServices" : { },
+  "flow" : {
+    "createdTimestamp" : 1765039004615,
+    "description" : "This flow will load data from an SFTP and put it into a Snowflake stage.",
+    "identifier" : "SFTPtoStage",
+    "lastModifiedTimestamp" : 1765039004615,
+    "name" : "SFTP_to_Stage",
+    "versionCount" : 0
+  },
+  "flowContents" : {
+    "comments" : "",
+    "componentType" : "PROCESS_GROUP",
+    "connections" : [ {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "cdf2dea4-6841-3fa2-bb8c-d3884e1f9a01",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "02909c99-a351-3ba5-a997-b40454ceb5fa",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "failure" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "bf39e8be-1100-3f89-a887-3044602d7ec6",
+        "name" : "PutSnowflakeInternalStageFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 4
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "05b99190-f5f5-3a0c-8890-d9073f1da724",
+        "name" : "FetchSFTP",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "1b2226ac-6d5c-32e5-bbfc-369e6197ab19",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "30f8e672-2c6c-3ec1-bbd1-80e7ae401e36",
+        "name" : "ListSFTP",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 2
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "3887e2ba-0b1b-3365-a450-3029fca6d61d",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "352f3d33-2bfc-321d-a9e4-ddc55729239a",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "bf39e8be-1100-3f89-a887-3044602d7ec6",
+        "name" : "PutSnowflakeInternalStageFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 5
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "cdf2dea4-6841-3fa2-bb8c-d3884e1f9a01",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "3b380ef8-bfd3-389b-93c3-80f8dd899349",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "comms.failure", "not.found", "permission.denied" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "05b99190-f5f5-3a0c-8890-d9073f1da724",
+        "name" : "FetchSFTP",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 3
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "bf39e8be-1100-3f89-a887-3044602d7ec6",
+        "name" : "PutSnowflakeInternalStageFile",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "f6f603b3-27e4-3015-9e16-686eb77fc416",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "05b99190-f5f5-3a0c-8890-d9073f1da724",
+        "name" : "FetchSFTP",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 1
+    } ],
+    "controllerServices" : [ {
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "runtime-snowflake-connection-service-nar",
+        "group" : "com.snowflake.openflow.runtime",
+        "version" : "2025.11.20.19"
+      },
+      "comments" : "",
+      "componentType" : "CONTROLLER_SERVICE",
+      "controllerServiceApis" : [ {
+        "bundle" : {
+          "artifact" : "nifi-standard-services-api-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2025.11.20.20"
+        },
+        "type" : "org.apache.nifi.dbcp.DBCPService"
+      } ],
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "092baeeb-f6ea-3768-88c9-368eb5d9db24",
+      "name" : "SnowflakeConnectionService",
+      "properties" : {
+        "Account" : "#{snowflake_7_account_identifier}",
+        "Warehouse" : "#{snowflake_3_warehouse}",
+        "User" : "#{snowflake_8_username}",
+        "Maximum Connections" : "10",
+        "Maximum Lifetime" : "30 minutes",
+        "Schema" : "#{snowflake_5_schema}",
+        "Private Key Service" : "#{snowflake_9_private_key}",
+        "Connection Strategy" : "STANDARD",
+        "Connection Timeout" : "30 seconds",
+        "Role" : "#{snowflake_2_role}",
+        "Idle Timeout" : "10 minutes",
+        "Authentication Strategy" : "#{snowflake_1_connection_strategy}",
+        "Database Name" : "#{snowflake_4_database}"
+      },
+      "propertyDescriptors" : {
+        "Account" : {
+          "displayName" : "Account",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Account",
+          "sensitive" : false
+        },
+        "Warehouse" : {
+          "displayName" : "Warehouse",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Warehouse",
+          "sensitive" : false
+        },
+        "User" : {
+          "displayName" : "User",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "User",
+          "sensitive" : false
+        },
+        "Maximum Connections" : {
+          "displayName" : "Maximum Connections",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Maximum Connections",
+          "sensitive" : false
+        },
+        "Maximum Lifetime" : {
+          "displayName" : "Maximum Lifetime",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Maximum Lifetime",
+          "sensitive" : false
+        },
+        "Schema" : {
+          "displayName" : "Schema",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Schema",
+          "sensitive" : false
+        },
+        "Connection Strategy" : {
+          "displayName" : "Connection Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Connection Strategy",
+          "sensitive" : false
+        },
+        "Connection Timeout" : {
+          "displayName" : "Connection Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Connection Timeout",
+          "sensitive" : false
+        },
+        "Role" : {
+          "displayName" : "Role",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Role",
+          "sensitive" : false
+        },
+        "Idle Timeout" : {
+          "displayName" : "Idle Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Idle Timeout",
+          "sensitive" : false
+        },
+        "Authentication Strategy" : {
+          "displayName" : "Authentication Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Authentication Strategy",
+          "sensitive" : false
+        },
+        "Database Name" : {
+          "displayName" : "Database Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Database Name",
+          "sensitive" : false
+        },
+        "Password" : {
+          "displayName" : "Password",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Password",
+          "sensitive" : true
+        }
+      },
+      "scheduledState" : "DISABLED",
+      "type" : "com.snowflake.openflow.runtime.services.snowflake.SnowflakeConnectionService"
+    } ],
+    "defaultBackPressureDataSizeThreshold" : "1 GB",
+    "defaultBackPressureObjectThreshold" : 10000,
+    "defaultFlowFileExpiration" : "0 sec",
+    "executionEngine" : "INHERITED",
+    "externalControllerServiceReferences" : { },
+    "flowFileConcurrency" : "UNBOUNDED",
+    "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+    "funnels" : [ {
+      "componentType" : "FUNNEL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "3887e2ba-0b1b-3365-a450-3029fca6d61d",
+      "position" : {
+        "x" : -509.79794554928714,
+        "y" : 348.2048466486535
+      }
+    }, {
+      "componentType" : "FUNNEL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "cdf2dea4-6841-3fa2-bb8c-d3884e1f9a01",
+      "position" : {
+        "x" : -544.0,
+        "y" : 24.0
+      }
+    } ],
+    "identifier" : "flow-contents-group",
+    "inputPorts" : [ ],
+    "labels" : [ ],
+    "maxConcurrentTasks" : 1,
+    "name" : "SFTP to Stage",
+    "outputPorts" : [ ],
+    "parameterContextName" : "1_SFTP",
+    "position" : {
+      "x" : 0.0,
+      "y" : 0.0
+    },
+    "processGroups" : [ ],
+    "processors" : [ {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2025.11.20.19"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "05b99190-f5f5-3a0c-8890-d9073f1da724",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "FetchSFTP",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -128.0,
+        "y" : -8.0
+      },
+      "properties" : {
+        "Port" : "22",
+        "Remote File" : "${path}/${filename}",
+        "Log Level When File Not Found" : "ERROR",
+        "Hostname" : "#{sftp_1_url}",
+        "Create Directory" : "false",
+        "Use Compression" : "false",
+        "Disable Directory Listing" : "false",
+        "Send Keep Alive On Timeout" : "true",
+        "Completion Strategy" : "None",
+        "Connection Timeout" : "30 sec",
+        "Data Timeout" : "30 sec",
+        "Private Key Path" : "#{sftp_3_key}",
+        "Username" : "#{sftp_2_username}",
+        "Algorithm Negotiation" : "DEFAULT",
+        "Strict Host Key Checking" : "false"
+      },
+      "propertyDescriptors" : {
+        "Port" : {
+          "displayName" : "Port",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Port",
+          "sensitive" : false
+        },
+        "Remote File" : {
+          "displayName" : "Remote File",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Remote File",
+          "sensitive" : false
+        },
+        "Log Level When File Not Found" : {
+          "displayName" : "Log Level When File Not Found",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Log Level When File Not Found",
+          "sensitive" : false
+        },
+        "Hostname" : {
+          "displayName" : "Hostname",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Hostname",
+          "sensitive" : false
+        },
+        "Create Directory" : {
+          "displayName" : "Create Directory",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Create Directory",
+          "sensitive" : false
+        },
+        "Host Key File" : {
+          "displayName" : "Host Key File",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Host Key File",
+          "resourceDefinition" : {
+            "cardinality" : "SINGLE",
+            "resourceTypes" : [ "FILE" ]
+          },
+          "sensitive" : false
+        },
+        "Use Compression" : {
+          "displayName" : "Use Compression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Use Compression",
+          "sensitive" : false
+        },
+        "Ciphers Allowed" : {
+          "displayName" : "Ciphers Allowed",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Ciphers Allowed",
+          "sensitive" : false
+        },
+        "Message Authentication Codes Allowed" : {
+          "displayName" : "Message Authentication Codes Allowed",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Message Authentication Codes Allowed",
+          "sensitive" : false
+        },
+        "Disable Directory Listing" : {
+          "displayName" : "Disable Directory Listing",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Disable Directory Listing",
+          "sensitive" : false
+        },
+        "Send Keep Alive On Timeout" : {
+          "displayName" : "Send Keep Alive On Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Send Keep Alive On Timeout",
+          "sensitive" : false
+        },
+        "Completion Strategy" : {
+          "displayName" : "Completion Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Completion Strategy",
+          "sensitive" : false
+        },
+        "Private Key Passphrase" : {
+          "displayName" : "Private Key Passphrase",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Private Key Passphrase",
+          "sensitive" : true
+        },
+        "Proxy Configuration Service" : {
+          "displayName" : "Proxy Configuration Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Proxy Configuration Service",
+          "sensitive" : false
+        },
+        "Connection Timeout" : {
+          "displayName" : "Connection Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Connection Timeout",
+          "sensitive" : false
+        },
+        "Data Timeout" : {
+          "displayName" : "Data Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Data Timeout",
+          "sensitive" : false
+        },
+        "Private Key Path" : {
+          "displayName" : "Private Key Path",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Private Key Path",
+          "resourceDefinition" : {
+            "cardinality" : "SINGLE",
+            "resourceTypes" : [ "FILE" ]
+          },
+          "sensitive" : false
+        },
+        "Username" : {
+          "displayName" : "Username",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Username",
+          "sensitive" : false
+        },
+        "Move Destination Directory" : {
+          "displayName" : "Move Destination Directory",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Move Destination Directory",
+          "sensitive" : false
+        },
+        "Algorithm Negotiation" : {
+          "displayName" : "Algorithm Negotiation",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Algorithm Negotiation",
+          "sensitive" : false
+        },
+        "Key Exchange Algorithms Allowed" : {
+          "displayName" : "Key Exchange Algorithms Allowed",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Key Exchange Algorithms Allowed",
+          "sensitive" : false
+        },
+        "Strict Host Key Checking" : {
+          "displayName" : "Strict Host Key Checking",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Strict Host Key Checking",
+          "sensitive" : false
+        },
+        "Key Algorithms Allowed" : {
+          "displayName" : "Key Algorithms Allowed",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Key Algorithms Allowed",
+          "sensitive" : false
+        },
+        "Password" : {
+          "displayName" : "Password",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Password",
+          "sensitive" : true
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.FetchSFTP",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2025.11.20.19"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "PRIMARY",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "30f8e672-2c6c-3ec1-bbd1-80e7ae401e36",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "ListSFTP",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -131.5,
+        "y" : -217.5
+      },
+      "properties" : {
+        "Minimum File Age" : "0 sec",
+        "Entity Tracking Initial Listing Target" : "all",
+        "Ignore Dotted Files" : "true",
+        "Port" : "22",
+        "Connection Timeout" : "30 sec",
+        "Follow Symbolic Links" : "false",
+        "Minimum File Size" : "0 B",
+        "Search Recursively" : "true",
+        "Entity Tracking Time Window" : "3 hours",
+        "Strict Host Key Checking" : "false",
+        "Hostname" : "#{sftp_1_url}",
+        "Remote Path" : "/",
+        "Use Compression" : "false",
+        "Send Keep Alive On Timeout" : "true",
+        "Data Timeout" : "30 sec",
+        "Private Key Path" : "#{sftp_3_key}",
+        "Target System Timestamp Precision" : "auto-detect",
+        "Username" : "#{sftp_2_username}",
+        "Algorithm Negotiation" : "DEFAULT",
+        "Listing Strategy" : "none"
+      },
+      "propertyDescriptors" : {
+        "Minimum File Age" : {
+          "displayName" : "Minimum File Age",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Minimum File Age",
+          "sensitive" : false
+        },
+        "Entity Tracking Initial Listing Target" : {
+          "displayName" : "Entity Tracking Initial Listing Target",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Entity Tracking Initial Listing Target",
+          "sensitive" : false
+        },
+        "Ignore Dotted Files" : {
+          "displayName" : "Ignore Dotted Files",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Ignore Dotted Files",
+          "sensitive" : false
+        },
+        "Entity Tracking State Cache" : {
+          "displayName" : "Entity Tracking State Cache",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Entity Tracking State Cache",
+          "sensitive" : false
+        },
+        "Port" : {
+          "displayName" : "Port",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Port",
+          "sensitive" : false
+        },
+        "Ciphers Allowed" : {
+          "displayName" : "Ciphers Allowed",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Ciphers Allowed",
+          "sensitive" : false
+        },
+        "Private Key Passphrase" : {
+          "displayName" : "Private Key Passphrase",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Private Key Passphrase",
+          "sensitive" : true
+        },
+        "Proxy Configuration Service" : {
+          "displayName" : "Proxy Configuration Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Proxy Configuration Service",
+          "sensitive" : false
+        },
+        "Connection Timeout" : {
+          "displayName" : "Connection Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Connection Timeout",
+          "sensitive" : false
+        },
+        "Follow Symbolic Links" : {
+          "displayName" : "Follow Symbolic Links",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Follow Symbolic Links",
+          "sensitive" : false
+        },
+        "Path Filter Regex" : {
+          "displayName" : "Path Filter Regex",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Path Filter Regex",
+          "sensitive" : false
+        },
+        "Record Writer" : {
+          "displayName" : "Record Writer",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Record Writer",
+          "sensitive" : false
+        },
+        "Minimum File Size" : {
+          "displayName" : "Minimum File Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Minimum File Size",
+          "sensitive" : false
+        },
+        "Search Recursively" : {
+          "displayName" : "Search Recursively",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Search Recursively",
+          "sensitive" : false
+        },
+        "Entity Tracking Time Window" : {
+          "displayName" : "Entity Tracking Time Window",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Entity Tracking Time Window",
+          "sensitive" : false
+        },
+        "Strict Host Key Checking" : {
+          "displayName" : "Strict Host Key Checking",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Strict Host Key Checking",
+          "sensitive" : false
+        },
+        "Password" : {
+          "displayName" : "Password",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Password",
+          "sensitive" : true
+        },
+        "File Filter Regex" : {
+          "displayName" : "File Filter Regex",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "File Filter Regex",
+          "sensitive" : false
+        },
+        "Maximum File Age" : {
+          "displayName" : "Maximum File Age",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Maximum File Age",
+          "sensitive" : false
+        },
+        "Hostname" : {
+          "displayName" : "Hostname",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Hostname",
+          "sensitive" : false
+        },
+        "Maximum File Size" : {
+          "displayName" : "Maximum File Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Maximum File Size",
+          "sensitive" : false
+        },
+        "Remote Path" : {
+          "displayName" : "Remote Path",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Remote Path",
+          "sensitive" : false
+        },
+        "Host Key File" : {
+          "displayName" : "Host Key File",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Host Key File",
+          "resourceDefinition" : {
+            "cardinality" : "SINGLE",
+            "resourceTypes" : [ "FILE" ]
+          },
+          "sensitive" : false
+        },
+        "Use Compression" : {
+          "displayName" : "Use Compression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Use Compression",
+          "sensitive" : false
+        },
+        "Message Authentication Codes Allowed" : {
+          "displayName" : "Message Authentication Codes Allowed",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Message Authentication Codes Allowed",
+          "sensitive" : false
+        },
+        "Send Keep Alive On Timeout" : {
+          "displayName" : "Send Keep Alive On Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Send Keep Alive On Timeout",
+          "sensitive" : false
+        },
+        "Data Timeout" : {
+          "displayName" : "Data Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Data Timeout",
+          "sensitive" : false
+        },
+        "Private Key Path" : {
+          "displayName" : "Private Key Path",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Private Key Path",
+          "resourceDefinition" : {
+            "cardinality" : "SINGLE",
+            "resourceTypes" : [ "FILE" ]
+          },
+          "sensitive" : false
+        },
+        "Target System Timestamp Precision" : {
+          "displayName" : "Target System Timestamp Precision",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Target System Timestamp Precision",
+          "sensitive" : false
+        },
+        "Username" : {
+          "displayName" : "Username",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Username",
+          "sensitive" : false
+        },
+        "Algorithm Negotiation" : {
+          "displayName" : "Algorithm Negotiation",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Algorithm Negotiation",
+          "sensitive" : false
+        },
+        "Key Exchange Algorithms Allowed" : {
+          "displayName" : "Key Exchange Algorithms Allowed",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Key Exchange Algorithms Allowed",
+          "sensitive" : false
+        },
+        "Listing Strategy" : {
+          "displayName" : "Listing Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Listing Strategy",
+          "sensitive" : false
+        },
+        "Key Algorithms Allowed" : {
+          "displayName" : "Key Algorithms Allowed",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Key Algorithms Allowed",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "#{sftp_4_run_schedule}",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.ListSFTP",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "runtime-snowflake-processors-nar",
+        "group" : "com.snowflake.openflow.runtime",
+        "version" : "2025.11.20.19"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "bf39e8be-1100-3f89-a887-3044602d7ec6",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "PutSnowflakeInternalStageFile",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -128.0,
+        "y" : 192.0
+      },
+      "properties" : {
+        "Compression Enabled" : "false",
+        "Schema" : "#{snowflake_5_schema}",
+        "Snowflake Connection Service" : "092baeeb-f6ea-3768-88c9-368eb5d9db24",
+        "Database" : "#{snowflake_4_database}",
+        "Stage" : "#{snowflake_6_stage}",
+        "File Name" : "${filename}",
+        "Internal Stage Type" : "named"
+      },
+      "propertyDescriptors" : {
+        "Compression Enabled" : {
+          "displayName" : "Compression Enabled",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Compression Enabled",
+          "sensitive" : false
+        },
+        "Table" : {
+          "displayName" : "Table",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Table",
+          "sensitive" : false
+        },
+        "Schema" : {
+          "displayName" : "Schema",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Schema",
+          "sensitive" : false
+        },
+        "Snowflake Connection Service" : {
+          "displayName" : "Snowflake Connection Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Snowflake Connection Service",
+          "sensitive" : false
+        },
+        "Database" : {
+          "displayName" : "Database",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Database",
+          "sensitive" : false
+        },
+        "File Prefix" : {
+          "displayName" : "File Prefix",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "File Prefix",
+          "sensitive" : false
+        },
+        "Stage" : {
+          "displayName" : "Stage",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Stage",
+          "sensitive" : false
+        },
+        "File Name" : {
+          "displayName" : "File Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "File Name",
+          "sensitive" : false
+        },
+        "Internal Stage Type" : {
+          "displayName" : "Internal Stage Type",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Internal Stage Type",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "com.snowflake.openflow.runtime.processors.snowflake.PutSnowflakeInternalStageFile",
+      "yieldDuration" : "1 sec"
+    } ],
+    "remoteProcessGroups" : [ ],
+    "scheduledState" : "ENABLED",
+    "statelessFlowTimeout" : "1 min"
+  },
+  "flowEncodingVersion" : "1.0",
+  "latest" : false,
+  "parameterContexts" : {
+    "1_SFTP" : {
+      "componentType" : "PARAMETER_CONTEXT",
+      "description" : "Your SFTP configurations.",
+      "inheritedParameterContexts" : [ "2_Snowflake", "If deployed in AWS" ],
+      "name" : "1_SFTP",
+      "parameters" : [ {
+        "description" : "The SFTP URL to login to.",
+        "name" : "sftp_1_url",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "The user to login with.",
+        "name" : "sftp_2_username",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "The key to use when logging into the SFTP. This is a file.",
+        "name" : "sftp_3_key",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "The amount of time that should elapse between task executions. This can be in the form sec, min, hours, days or CRON.",
+        "name" : "sftp_4_run_schedule",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "1 hour"
+      } ]
+    },
+    "2_Snowflake" : {
+      "componentType" : "PARAMETER_CONTEXT",
+      "description" : "Required Snowflake parameters.",
+      "inheritedParameterContexts" : [ ],
+      "name" : "2_Snowflake",
+      "parameters" : [ {
+        "description" : "If deployed on Snowflake - SNOWFLAKE_SESSION_TOKEN\n\nif deployed on AWS - KEY_PAIR",
+        "name" : "snowflake_1_connection_strategy",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "The snowflake role to use to perform any snowflake operations.",
+        "name" : "snowflake_2_role",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "Snowflake warehouse to use when uploading the file.",
+        "name" : "snowflake_3_warehouse",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "This is the database for where the file will be dropped into.",
+        "name" : "snowflake_4_database",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "This is the schema for where the file will be dropped into.",
+        "name" : "snowflake_5_schema",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "This is the stage for where the file will be dropped into.",
+        "name" : "snowflake_6_stage",
+        "provided" : false,
+        "sensitive" : false
+      } ]
+    },
+    "If deployed in AWS" : {
+      "componentType" : "PARAMETER_CONTEXT",
+      "description" : "Remove if hosted in Snowflake.",
+      "inheritedParameterContexts" : [ ],
+      "name" : "If deployed in AWS",
+      "parameters" : [ {
+        "description" : "This can be found by clicking on your profile in the bottom left corner, hovering over the account, and clicking account details.",
+        "name" : "snowflake_7_account_identifier",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "The user that will be used to login to.",
+        "name" : "snowflake_8_username",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "The private key to login into the user.",
+        "name" : "snowflake_9_private_key",
+        "provided" : false,
+        "sensitive" : false
+      } ]
+    }
+  },
+  "parameterProviders" : { },
+  "snapshotMetadata" : {
+    "author" : "DANIELWILCZAK",
+    "flowIdentifier" : "SFTPtoStage",
+    "timestamp" : 1765039005233
+  }
+}
