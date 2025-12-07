@@ -9,7 +9,7 @@ Video still in development
 - Snowflake account has to be in an AWS region.([Link](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview#available-regions))
 
 ## Download  :octicons-feed-tag-16:
-- Connector ([Link](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/connectors/sftp/files/files.zip))
+- Connector ([Link](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/connectors/api/files/files.zip))
 
 ## Snowflake
 Lets start the snowflake setup by going into a workspace worksheet (1) and creating the nesseray objects for openflow and the connector.
@@ -41,7 +41,7 @@ Lets start the snowflake setup by going into a workspace worksheet (1) and creat
         ```
 
 !!! warning "Only required if your hosting openflow in Snowflake (SPCS)"
-    Lets create the network rule and external access that will allow openflow/snowflake to talk with google sheets.
+    Lets create the network rule and external access that will allow openflow/snowflake to talk with our API.
 
     === ":octicons-image-16: Code"
 
@@ -113,4 +113,3 @@ We'll click "Browse" button and upload our [connector](https://sfc-gh-dwilczak.g
 
 
 
-select * from weather;

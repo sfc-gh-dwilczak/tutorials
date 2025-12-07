@@ -41,7 +41,7 @@ Lets start the snowflake setup by going into a workspace worksheet (1) and creat
         ```
 
 !!! warning "Only required if your hosting openflow in Snowflake (SPCS)"
-    Lets create the network rule and external access that will allow openflow/snowflake to talk with google sheets.
+    Lets create the network rule and external access that will allow openflow/snowflake to talk with our SFTP.
 
     === ":octicons-image-16: Code"
 
@@ -162,7 +162,7 @@ Once everything has been edited, click apply.
 ![UPDATE](images/18.png)
 
 #### Snowflake Credentials
-Now we will do the same for our Snowflake credentials.
+Now we will do the same for our Snowflake credentials. If your hosting Openflow in AWS make sure your authentication strategy is "KEY_PAIR".
 ![UPDATE](images/19.png)
 
 #### (Optional) Snowflake for AWS
