@@ -46,7 +46,7 @@ Lets start the snowflake setup by going into a workspace worksheet (1) and creat
     === ":octicons-image-16: Code"
 
         ```sql linenums="1"
-        -- create network rule for google apis
+        -- Create network rule for the api
         create or replace network rule api_network_rule
             mode = egress
             type = host_port
