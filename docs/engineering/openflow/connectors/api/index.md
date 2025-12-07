@@ -9,7 +9,7 @@ Video still in development
 - Snowflake account has to be in an AWS region.([Link](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview#available-regions))
 
 ## Download  :octicons-feed-tag-16:
-- Connector ([Link](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/connectors/sftp/files/APItotable.json))
+- Connector ([Link](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/connectors/sftp/files/files.zip))
 
 ## Snowflake
 Lets start the snowflake setup by going into a workspace worksheet (1) and creating the nesseray objects for openflow and the connector.
@@ -65,7 +65,6 @@ Lets start the snowflake setup by going into a workspace worksheet (1) and creat
         Integration OPENFLOW_EXTERNAL_ACCESS successfully created.
 
 Now we will need a table to store the contents of our API call.
-
 === ":octicons-image-16: Code"
 
     ```sql linenums="1"
@@ -78,9 +77,39 @@ Now we will need a table to store the contents of our API call.
 
     Table WEATHER successfully created.
 
-
+## Openflow
 Next we'll head into openflow to setup our runtime and add the connector.
+![UPDATE](images/01.png)
 
+??? warning "If you get the error 'Invalid consent request' or 'TOTP Invalid'"
+    You will have to change your default role to a role that is not an admin role. Example default would be public.
+    ![UPDATE](images/00.png)
+
+Click "Launch openflow".
+![UPDATE](images/02.png)
+
+### Add the connector
+We'll create a new runtime.
+![UPDATE](images/03.png)
+
+We'll select our deployment, give the runtime a name, select our snowflake role and if deployed in Snowflake our external access intergration.
+![UPDATE](images/04.png)
+
+Now we'll wait 5-10 minutes for our runtime to become usable.
+![UPDATE](images/05.png)
+
+??? warning "If you get the error 'Invalid consent request' or 'TOTP Invalid'"
+    You will have to change your default role to a role that is not an admin role. Example default would be public.
+    ![UPDATE](images/00.png)
+
+Once the runtime is "Active" we can click to go into it.
+![UPDATE](images/06.png)
+
+Next we'll drag a process group to the canvas.
+![UPDATE](images/07.png)
+
+We'll click "Browse" button and upload our [connector](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/connectors/sftp/files/files.zip) we downloaded at the start of the tutorial.
+![UPDATE](images/08.png)
 
 
 

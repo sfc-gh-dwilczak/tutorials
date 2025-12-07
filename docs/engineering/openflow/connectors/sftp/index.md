@@ -9,7 +9,7 @@ Video still in development
 - Snowflake account has to be in an AWS region.([Link](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview#available-regions))
 
 ## Download  :octicons-feed-tag-16:
-- Connector ([Link](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/connectors/sftp/files/SFTPtoStage.json))
+- Connector ([Link](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/connectors/sftp/files/files.zip))
 
 ## Snowflake
 Lets start the snowflake setup by going into a workspace worksheet (1) and creating the nesseray objects for openflow and the connector.
@@ -22,7 +22,7 @@ Lets start the snowflake setup by going into a workspace worksheet (1) and creat
     === ":octicons-image-16: Database, schema and warehouse"
 
         ```sql linenums="1"
-       -- Create a database to store our schemas.
+        -- Create a database to store our schemas.
         create database if not exists raw;
 
         -- Create the schema. The schema stores all objects.
@@ -86,8 +86,8 @@ Now we will need a stage to store the files we pull from our SFTP.
 === ":octicons-image-16: Code"
 
     ```sql linenums="1"
-    -- create network rule for google apis
-    CREATE STAGE files DIRECTORY = ( ENABLE = true );
+    -- Stage to store files in.
+    create stage files directory = ( enable = true );
     ```
 
 === ":octicons-sign-out-16: Result"
@@ -95,6 +95,7 @@ Now we will need a stage to store the files we pull from our SFTP.
     Stage area FILES successfully created.
 
 
+## Openflow
 Next we'll head into openflow to setup our runtime and add the connector.
 ![UPDATE](images/01.png)
 
@@ -104,10 +105,6 @@ Next we'll head into openflow to setup our runtime and add the connector.
 
 Click "Launch openflow".
 ![UPDATE](images/02.png)
-
-## Openflow
-Now lets move to openflow.
-
 
 ### Add the connector
 We'll create a new runtime.
@@ -129,7 +126,7 @@ Once the runtime is "Active" we can click to go into it.
 Next we'll drag a process group to the canvas.
 ![UPDATE](images/07.png)
 
-We'll click "Browse" button and upload our [connector](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/connectors/sftp/files/SFTPtoStage.json) we downloaded at the start of the tutorial.
+We'll click "Browse" button and upload our [connector](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/connectors/sftp/files/files.zip) we downloaded at the start of the tutorial.
 ![UPDATE](images/08.png)
 
 We'll click "Add".
