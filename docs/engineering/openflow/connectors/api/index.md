@@ -1,5 +1,5 @@
-# Openflow - SFTP
-Goal of this tutorial is to load data from SFTP into Snowflake stage via openflow.
+# Openflow - API
+Goal of this tutorial is to load data from an API into Snowflake table via openflow.
 
 ## Video
 Video still in development
@@ -22,7 +22,7 @@ Lets start the snowflake setup by going into a workspace worksheet (1) and creat
     === ":octicons-image-16: Database, schema and warehouse"
 
         ```sql linenums="1"
-       -- Create a database to store our schemas.
+        -- Create a database to store our schemas.
         create database if not exists raw;
 
         -- Create the schema. The schema stores all objects.
