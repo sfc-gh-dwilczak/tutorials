@@ -51,7 +51,7 @@ Lets start the snowflake setup by going into a workspace worksheet (1) and creat
             mode = egress
             type = host_port
             value_list = (
-                '<SFTP URL>:22',
+                '<SFTP URL>:22'
             );
 
         -- Create one external access integration with all network rules.

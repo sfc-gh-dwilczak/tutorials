@@ -92,6 +92,9 @@ nav:
     -   Google Sheet: engineering/openflow/connectors/google_sheets/index.md
     -   Postgres: engineering/openflow/connectors/postgres/index.md
     -   SFTP: engineering/openflow/connectors/sftp/index.md
+  -  Other:
+    -   Github: engineering/openflow/other/github/index.md
+       
 
 
   - Tools: "#"
