@@ -5,8 +5,7 @@ In this tutorial we will show how you can takes files from an sftp and load them
 <iframe width="850px" height="478px" src="https://www.youtube.com/embed/y4LkQ70mRKQ?si=ScrXdnPFkcxuDAyf" style="display:block;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Requirement
-You must have a Snowflake account that is not on a trial. This is a requirement of [container services](https://docs.snowflake.com/developer-guide/snowpark-container-services/working-with-compute-pool), not the tutorial.
-
+- Snowflake account, you can use a [free trial](https://signup.snowflake.com/). We also assume no complex security needs.
 
 ## Download needed files:
 - Notebook ([Link](https://sfc-gh-dwilczak.github.io/tutorials/engineering/sftp/files/notebook.ipynb))
