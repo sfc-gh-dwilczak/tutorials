@@ -2,7 +2,7 @@
 Goal of this tutorial is to load data from a RDS Postgres into Snowflake via openflow. This tutorial will not cover how to setup a deployment in [Snowflake](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/deployments/snowflake/) or [AWS](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/deployments/aws).
 
 ## Video
-Video still in development
+<iframe width="850px" height="478px" src="https://www.youtube.com/embed/ogiyCjpgNng?si=50umN4we13I1-V1h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Requirements 
 - You can NOT be on a trial account. ([Link](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/overview))
@@ -79,7 +79,7 @@ Select your paramater group.
 Click edit.
 ![UPDATE](images/09.png)
 
-Search "rds.logical_replication" and dit the value to be "1". Click save changes.
+Search "rds.logical_replication" and enter the value to be "1". Click save changes.
 ![UPDATE](images/10.png)
 
 Next search "wal_sender_timeout" set this value to "0". Click save changes.
@@ -172,11 +172,7 @@ Next add the code to first create the objects and then enter data into them.
     (1, 99.99),   -- Order by alice_k
     (2, 45.00);   -- Order by bob_s
     ```
-=== ":octicons-image-16: Result"
 
-    ```sql linenums="1"
-    UPDATE
-    ```
 
 ### Pub / Replication Slot
 Next we'll create a publication and replication slot by entering the code below, you can also edit it to be only for certian tables.
@@ -192,12 +188,6 @@ Next we'll create a publication and replication slot by entering the code below,
 
     -- Create the replication group
     select pg_create_logical_replication_slot('openflow_pgoutput_slot', 'pgoutput');
-    ```
-
-=== ":octicons-image-16: Result"
-
-    ```sql linenums="1"
-    UPDATE
     ```
 
 
