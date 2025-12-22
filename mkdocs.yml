@@ -89,14 +89,13 @@ nav:
     -   AWS: engineering/openflow/deployments/aws/index.md
   -  Connectors: 
     -   API: engineering/openflow/connectors/api/index.md 
+    -   Box: engineering/openflow/connectors/box/index.md 
     -   Google Sheet: engineering/openflow/connectors/google_sheets/index.md
     -   Postgres: engineering/openflow/connectors/postgres/index.md
     -   SFTP: engineering/openflow/connectors/sftp/index.md
   -  Other:
     -   Github: engineering/openflow/other/github/index.md
        
-
-
   - Tools: "#"
   -  DBT: tools/dbt/setup/index.md
   -  Fivetran:

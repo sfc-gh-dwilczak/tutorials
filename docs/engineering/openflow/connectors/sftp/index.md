@@ -12,7 +12,7 @@ Goal of this tutorial is to load data from SFTP into Snowflake stage via openflo
 - Connector ([Link](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/connectors/sftp/files/files.zip))
 
 ## Snowflake
-Lets start the snowflake setup by going into a workspace worksheet (1) and creating the nesseray objects for openflow and the connector.
+Lets start the snowflake setup by going into a workspace worksheet (1) and creating the necessary objects for openflow and the connector.
 { .annotate }
 
 1. ![Worksheet](images/0.png)
