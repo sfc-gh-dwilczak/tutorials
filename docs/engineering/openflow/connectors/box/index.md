@@ -28,7 +28,7 @@ We'll give our sandbox a name and select our email as the admin. Click "Create".
 Now that the sandbox is created we will login to it.
 ![UPDATE](images/04.png)
 
-### Development App
+### Box Platform App
 Once we are in the accoount or sandbox account, we'll go to [https://app.box.com/developers/console](https://app.box.com/developers/console)
 ![UPDATE](images/05.png)
 
