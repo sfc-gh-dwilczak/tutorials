@@ -30,20 +30,20 @@ Now that the sandbox is created we will login to it.
 
 ### Development App
 Once we are in the accoount or sandbox account, we'll go to [https://app.box.com/developers/console](https://app.box.com/developers/console)
-![UPDATE](images/5.png)
+![UPDATE](images/05.png)
 
 We'll need to create an app so that our Openflow can connected to the account via the app. Click "Create Platform App".
-![UPDATE](images/6.png)
+![UPDATE](images/06.png)
 
 We'll give our app a name and select "Server Auth -JWT" as app type.
-![UPDATE](images/7.png)
+![UPDATE](images/07.png)
 
 ### App Configuration
 Once created we'll be launched into Configurations were we'll need to make changes. To start lets update "App Access Level" to App + Enterprise Access.
-![UPDATE](images/8.png)
+![UPDATE](images/08.png)
 
 Make sure your application scope [follows Snowflake requirements](https://docs.snowflake.com/en/user-guide/data-integration/openflow/connectors/box/setup#get-the-credentials). 
-![UPDATE](images/9.png)
+![UPDATE](images/09.png)
 
 Next we'll generate a Public / Private Key. Click this button will require you to enter your duo auth code or sign up for one.
 ![UPDATE](images/10.png)
