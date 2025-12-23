@@ -7,30 +7,8 @@ Video still in development.
 ## Requirements 
 - Snowflake account, you can use a [free trial](https://signup.snowflake.com/). We also assume no complex security needs.
 
-## Complete Setup  :octicons-feed-tag-16:
-- Connector ([Link](https://sfc-gh-dwilczak.github.io/tutorials/engineering/openflow/connectors/sftp/files/files.zip))
+## Files  :octicons-feed-tag-16:
+- Files ([Link](https://sfc-gh-dwilczak.github.io/tutorials/engineering/rbac/roles/files/files.zip))
 
 ## Overview
-
-
-### Database Objects
-- Raw
-- Bronze
-- Silver
-- Gold
-
-### Database Roles
-- Read 
-- Write
-
-### High level Roles
-- Engineer
-- Analyst
-- Service_<Application>
-
-### Grants
-- 
-
-
-### Warehouses
-- Match name of role
+Most of this tutorial is an explanation and overview that is better explained in video format. Please watch the video aboe with the tutorial files provided above.

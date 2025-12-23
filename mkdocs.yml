@@ -79,7 +79,10 @@ nav:
   -  Documents:
     -   Document AI: engineering/documents/ai/index.md
   -  Tasks:
-    -   Lineage: engineering/tasks/lineage/intro.md
+    -   Lineage: engineering/tasks/lineage/index.md
+  - RBAC:
+    -   Masking: engineering/rbac/masking/index.md
+    -   Roles: engineering/rbac/roles/index.md
   -  SFTP:
     -   Via Notebook: engineering/sftp/index.md
 
