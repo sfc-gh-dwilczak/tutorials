@@ -75,17 +75,24 @@ We want only the ENGINEER or ACCOUNTADMIN role to see the full email addresses. 
     set masking policy email_mask;
     ```
 
-    Lets see the results. Try changing your role in the sheet by using "use role sysadmin"
-    ```sql
+Lets see the results. Try changing your role in the sheet by using "use role sysadmin".
+
+=== ":octicons-image-16: Code"
+
+    ```sql linenums="1"
     -- Test your results
+    use role sysadmin;
+    select * from sales_performance;
+
+    use role accountadmin;
     select * from sales_performance;
     ```
+
 === ":octicons-image-16: Result"
 
     ```sql linenums="1"
     UPDATED
     ```
-
 
 # Row Level Masking
 We want users to only see rows belonging to their assigned region based on the user_region_map.
@@ -119,7 +126,11 @@ Lets see the results. Try changing your role in the sheet by using "use role sys
 === ":octicons-image-16: Code"
 
     ```sql linenums="1"
-    -- Test your results
+    -- Test your results 
+    use role sysadmin;
+    select * from sales_performance;
+
+    use role accountadmin;
     select * from sales_performance;
     ```
 
