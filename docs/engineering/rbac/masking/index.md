@@ -128,7 +128,7 @@ We want users to only see rows belonging to their assigned region based on the u
     add row access policy region_access_policy on (sales_region);
     ```
 
-=== ":octicons-image-16: Result - Masked"
+=== ":octicons-image-16: Result"
 
     | status                           |
     |----------------------------------|
