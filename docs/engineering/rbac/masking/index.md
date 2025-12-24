@@ -49,9 +49,9 @@ Please Update the "YOUR_USER_EMAIL" section for row level masking to work.
 
 === ":octicons-image-16: Result"
 
-    ```sql linenums="1"
-    UPDATED
-    ```
+    | number of rows inserted |
+    |-------------------------|
+    | 3                       |
 
 
 ### Column Level Masking
@@ -75,6 +75,14 @@ We want only the ENGINEER or ACCOUNTADMIN role to see the full email addresses. 
     set masking policy email_mask;
     ```
 
+=== ":octicons-image-16: Result"
+
+    | status                           |
+    |----------------------------------|
+    | Statement executed successfully. |
+
+
+
 Lets see the results. Try changing your role in the sheet by using "use role sysadmin".
 
 === ":octicons-image-16: Code"
@@ -88,11 +96,16 @@ Lets see the results. Try changing your role in the sheet by using "use role sys
     select * from sales_performance;
     ```
 
-=== ":octicons-image-16: Result"
+=== ":octicons-image-16: Result - Masked"
 
-    ```sql linenums="1"
-    UPDATED
-    ```
+    | ORDER_ID | EMPLOYEE_NAME | EMPLOYEE_EMAIL | SALES_REGION | SALE_AMOUNT |
+    |----------|---------------|----------------|--------------|-------------|
+    | 1001     | Jane Doe      | *********      | West         | 1500        |
+    | 1002     | Mike Smith    | *********      | East         | 2200.5      |
+    | 1003     | Sara Lee      | *********      | Central      | 950         |
+    | 1004     | Admin User    | *********      | West         | 3100.25     |
+
+
 
 # Row Level Masking
 We want users to only see rows belonging to their assigned region based on the user_region_map.
@@ -115,11 +128,11 @@ We want users to only see rows belonging to their assigned region based on the u
     add row access policy region_access_policy on (sales_region);
     ```
 
-=== ":octicons-image-16: Result"
+=== ":octicons-image-16: Result - Masked"
 
-    ```sql linenums="1"
-    UPDATED
-    ```
+    | status                           |
+    |----------------------------------|
+    | Statement executed successfully. |
 
 Lets see the results. Try changing your role in the sheet by using "use role sysadmin"
 
@@ -134,9 +147,10 @@ Lets see the results. Try changing your role in the sheet by using "use role sys
     select * from sales_performance;
     ```
 
-=== ":octicons-image-16: Result"
+=== ":octicons-image-16: Result - Masked"
 
-    ```sql linenums="1"
-    UPDATED
-    ```
+    | ORDER_ID | EMPLOYEE_NAME | EMPLOYEE_EMAIL | SALES_REGION | SALE_AMOUNT |
+    |----------|---------------|----------------|--------------|-------------|
+    | 1001     | Jane Doe      | *********      | West         | 1500        |
+    | 1004     | Admin User    | *********      | West         | 3100.25     |
 
