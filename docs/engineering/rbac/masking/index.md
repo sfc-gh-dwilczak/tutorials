@@ -107,7 +107,7 @@ Lets see the results. Try changing your role in the sheet by using "use role sys
 
 
 
-# Row Level Masking
+### Row Level Masking
 We want users to only see rows belonging to their assigned region based on the user_region_map.
 
 === ":octicons-image-16: Code"
