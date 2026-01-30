@@ -5,12 +5,15 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   logo: assets/logo.png
+  custom_dir: material/overrides
   features:
+    - navigation.tabs
     - content.code.select
     - content.code.copy
     - content.action.edit
     - content.action.view
     - content.code.annotate
+    - navigation.sections
     
   palette: 
     # Palette toggle for light mode
@@ -29,97 +32,117 @@ theme:
         name: Switch to light mode
 
 nav:
-  - index.md
+  - Home: index.md
 
-  - Clouds: "#"
-  -  AWS:  # 1 em space (U+2003)
-    -   S3: clouds/aws/s3/index.md  # 2 em spaces (U+2003 x2)
-    -   S3 with Key/Secret: clouds/aws/S3_key_and_secret/index.md
-    -   Kinesis: clouds/aws/kinesis/index.md
-  -  Azure:
-    -   Blob / Storage: clouds/azure/storage/index.md
-    -   Active Directory / SSO: clouds/azure/sso/index.md
-    -   SCIM: clouds/azure/scim/index.md
-  -  Google Cloud:
-    -   Cloud Storage: clouds/google/storage/index.md
-    -   External Tables: clouds/google/external/index.md
-    -   Fivetran Data Lake: clouds/google/fivetran/index.md
-    -   Iceberg: clouds/google/iceberg/index.md
-    -   SSO: clouds/google/sso/index.md
+  - Account:
+    -  Configurations:
+      -   Add account to Org: account/configurations/add/index.md
+      -   Change Edition Level: account/configurations/service_level/index.md
+      -   Org / Account name: account/configurations/name/index.md
+    -  Support:
+      -   Ticket: account/support/index.md
+    -  Backup / Migration:
+      -   Replication: account/backup/replication/index.md
+
+  - AI / ML:
+    -  Snowflake Intelligence:
+      -   Cortex Analyst: science/analyst/index.md
+    -  Models:
+      -   Registry: science/models/registry/index.md
+    -  Notebooks:
+      -   Intro to Containerized : science/notebooks/containers/index.md
+      -   Intro to Local Jupyter: science/notebooks/jupyter/index.md
+
+  - Apps:
+    -  Container Services:
+      -   Introduction: apps/container/introduction/index.md
+      -   Streamlit: apps/container/streamlit/index.md
+    -  Native App:
+      -   Container Services: apps/native/containers/index.md
+      -   Traditional: apps/native/traditional/index.md
+
+  - Clouds:
+    -  AWS:
+      -   S3: clouds/aws/s3/index.md
+      -   S3 with Key/Secret: clouds/aws/S3_key_and_secret/index.md
+      -   Kinesis: clouds/aws/kinesis/index.md
+    -  Azure:
+      -   Blob / Storage: clouds/azure/storage/index.md
+      -   Active Directory / SSO: clouds/azure/sso/index.md
+      -   SCIM: clouds/azure/scim/index.md
+    -  Google Cloud:
+      -   Cloud Storage: clouds/google/storage/index.md
+      -   External Tables: clouds/google/external/index.md
+      -   Fivetran Data Lake: clouds/google/fivetran/index.md
+      -   Iceberg: clouds/google/iceberg/index.md
+      -   SSO: clouds/google/sso/index.md
   
-  - Configurations: "#"
-  -  Account:
-    -   Add account to Org: configurations/account/add/index.md
-    -   Change Service Level: configurations/account/service_level/index.md
-    -   Org / Account name: configurations/account/name/index.md
-    -   Replication: configurations/account/replication/index.md
-    -   Support Ticket: configurations/account/support/index.md
-  -  Security:
-    -   Key Pair Authentication: configurations/security/key_pair/index.md
-    -   Python with Key Pair: configurations/security/python/index.md
-    -   Network Policy - User: configurations/security/network_policy/user/index.md
-  - Data Sharing: "#"
-  -  Direct: sharing/direct/index.md
-  -  Listings: sharing/listing/index.md
-#  -  Reader Account: sharing/reader/index.md
-#  -  Marketplace: sharing/reader/index.md
+  - Ingestion:
+    -  Openflow Deployment:
+      -   Snowflake: ingestion/deployments/snowflake/index.md
+      -   AWS: ingestion/deployments/aws/index.md
+    -  Openflow Connectors: 
+      -   API: ingestion/connectors/api/index.md 
+      -   Box: ingestion/connectors/box/index.md 
+      -   Google Sheet: ingestion/connectors/google_sheets/index.md
+      -   Postgres: ingestion/connectors/postgres/index.md
+      -   SFTP: ingestion/connectors/sftp/index.md
+    -  Openflow Version Control:
+      -   Github: ingestion/other/github/index.md
+    -  Notebook:
+      -   API: ingestion/notebook/api/index.md
+      -   SFTP: ingestion/notebook/sftp/index.md
 
-  - Data Science / ML: "#"
-  -  Cortex Analyst: science/analyst/index.md
-  -  Models:
-    -   Registry: science/models/registry/index.md
-  -  Notebooks:
-    -   Intro to Containerized : science/notebooks/containers/index.md
-    -   Intro to Local Jupyter: science/notebooks/jupyter/index.md
 
-  - Engineering: "#"
-  -  API's:
-    -   Intoduction via Notebook: engineering/api/introduction/index.md
-    -   Chatgpt: engineering/api/chatgpt/index.md
-  -  Documents:
-    -   Document AI: engineering/documents/ai/index.md
-  -  Tasks:
-    -   Lineage: engineering/tasks/lineage/index.md
-  -  RBAC:
-    -   Masking: engineering/rbac/masking/index.md
-    -   Roles: engineering/rbac/roles/index.md
-  -  SFTP:
-    -   Via Notebook: engineering/sftp/index.md
+  - Engineering:
+    -  Data Sharing:
+      -   Direct: engineering/sharing/direct/index.md
+      -   Listings: engineering/sharing/listing/index.md
+  #   -  Reader Account: engineering/sharing/reader/index.md
+  #   -  Marketplace: engineering/sharing/reader/index.md
+    -  Functions:
+      -   Chatgpt: engineering/functions/chatgpt/index.md
+    -  Orchestration:
+      -   Lineage: engineering/orchestration/task/index.md
+    -  Parse:
+      -   Document AI: engineering/parse/unstructured/index.md
+    -  RBAC:
+      -   Masking: engineering/rbac/masking/index.md
+      -   Roles: engineering/rbac/roles/index.md
 
-  - Openflow: "#"
-  -  Deployment:
-    -   Snowflake: engineering/openflow/deployments/snowflake/index.md
-    -   AWS: engineering/openflow/deployments/aws/index.md
-  -  Connectors: 
-    -   API: engineering/openflow/connectors/api/index.md 
-    -   Box: engineering/openflow/connectors/box/index.md 
-    -   Google Sheet: engineering/openflow/connectors/google_sheets/index.md
-    -   Postgres: engineering/openflow/connectors/postgres/index.md
-    -   SFTP: engineering/openflow/connectors/sftp/index.md
-  -  Other:
-    -   Github: engineering/openflow/other/github/index.md
-       
-  - Tools: "#"
-  -  DBT: tools/dbt/setup/index.md
-  -  Fivetran:
-    -   Introduction: tools/fivetran/introduction/index.md
- #   - Key-Pair: tools/fivetran/key_pair/index.md
-    -   Sources:
-        -    Google Analytics: tools/fivetran/sources/google_analytics/index.md
-  -  Git: tools/git/index.md
-  -  Tableau:
-    -   Key Pair: tools/tableau/key_pair/index.md
-    -   OAuth - Snowflake: tools/tableau/oauth_snowflake/index.md
-  -  Zapier: tools/zapier/index.md
-
-  - Apps: "#"
-  -  Container Services:
-    -   Introduction: apps/container/introduction/index.md
-    -   Streamlit: apps/container/streamlit/index.md
-  -  Native App:
-    -   Container Services: apps/native/containers/index.md
-    -   Traditional: apps/native/traditional/index.md
+  - Security:
+    -  Authentication:
+      -   Key Pair: security/authentication/pair/index.md
+    -  Code: 
+      -   Python: security/code/python/index.md
+    -  Network Policy:
+      -   User: security/networking/user/index.md
+    -  Single Sign On:
+      -   Active Directory / Entra: /clouds/azure/sso/
+      -   Google: /clouds/google/sso/
+    -  SCIM Management:
+      -   Azure: /clouds/azure/scim/
     
+  - 3rd Party Tools:
+    -  DBT: 
+      -   Cloud: tools/dbt/setup/index.md
+    -  Fivetran:
+      -   Setup: tools/fivetran/introduction/index.md
+      -   Sources:
+        -    Google Analytics: tools/fivetran/sources/google_analytics/index.md
+    -  Version Control:
+      -   Github: tools/git/index.md
+    -  Tableau:
+      -   Key Pair: tools/tableau/key_pair/index.md
+      -   OAuth - Snowflake: tools/tableau/oauth_snowflake/index.md
+    -  Zapier: tools/zapier/index.md
+
+validation:
+  nav:
+    omitted_files: ignore   # Ignores "The following pages are not in the nav"
+    absolute_links: ignore  # Ignores absolute links in nav
+  links:
+    absolute_links: ignore  # Ignores absolute links in content
   
 markdown_extensions:
   - tables
@@ -131,13 +154,14 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - abbr
+  - attr_list
   - pymdownx.highlight:
       anchor_linenums: true
   
   # Icons
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+        emoji_index: !!python/name:material.extensions.emoji.twemoji
+        emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
   # Content Tabs
   - pymdownx.tabbed:

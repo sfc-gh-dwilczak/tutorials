@@ -1,4 +1,4 @@
-# RBAC - Database roles and orginization
+# RBAC - Data Masking
 Goal of this tutorial is to show examples of both column level masking and row level masking in Snowflake.
 
 ## Video
@@ -9,7 +9,7 @@ Video still in development.
 - Snowflake account needs to Enterprise Edition or higher.
 
 ## Sample data
-Please Update the "YOUR_USER_EMAIL" section for row level masking to work.
+Please update the "YOUR_USER_EMAIL" section for row level masking to work.
 
 === ":octicons-image-16: Code"
 
@@ -127,7 +127,7 @@ We want users to only see rows belonging to their assigned region based on the u
     alter table sales_performance 
     add row access policy region_access_policy on (sales_region);
     ```
-
+h
 === ":octicons-image-16: Result"
 
     | status                           |

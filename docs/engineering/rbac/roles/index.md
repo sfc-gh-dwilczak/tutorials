@@ -1,4 +1,4 @@
-# RBAC - Database roles and orginization
+# RBAC - Database Roles and Orginization
 Goal of this tutorial is to explain how I would setup Snowflake from a governance perspective for commercial customers. The scope of this tutorial is basic and I do not want to go too deep into any one topic but show how best to orginize everthing to start successfully.
 
 ## Video

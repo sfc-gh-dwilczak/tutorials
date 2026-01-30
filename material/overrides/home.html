@@ -1,0 +1,156 @@
+{#-
+  This file was automatically generated - do not edit
+-#}
+{% extends "main.html" %}
+{% block tabs %}
+  {{ super() }}
+  <style>
+    /* Force header and hero to top */
+    .md-header { position: sticky; } 
+    .md-main__inner { margin-top: 0 !important; }
+    
+    /* Remove the 3.5rem margin-top on the content container */
+    .mdx-hero__content { 
+      margin-top: 0 !important; 
+    }
+
+    /* Layout & Width */
+    .md-content { display: none; }
+    @media screen and (min-width: 60em) { .md-sidebar--secondary { display: none; } }
+    @media screen and (min-width: 76.25em) { .md-sidebar--primary { display: none; } }
+    
+    /* --- HERO LAYOUT FIXES --- */
+    
+    /* 1. Master Container */
+    .mdx-hero {
+      display: flex;
+      align-items: flex-start;    
+      justify-content: center; /* Center the content if it doesn't hit max-width */                 
+      padding: 1rem 2rem;         
+      max-width: 80rem; /* Keeps lines from getting too long on 4k screens */          
+      margin: 0 auto;
+    }
+
+    /* 2. Text Section - UPDATED FOR FULL WIDTH */
+    .mdx-hero__content {
+      /* Changed from 60% to 1 to fill available space */
+      flex: 1;              
+      order: 1;
+      /* Changed from 60rem to 100% */
+      max-width: 100%;           
+      width: 100%;
+    }
+
+    /* 3. Image Section - Kept just in case you add an image back later, 
+       but currently unused in your HTML */
+    .mdx-hero__image {
+      flex: 1;                    
+      min-width: 0;               
+      order: 2;
+      display: flex;              
+      justify-content: center;    
+      align-items: flex-start;    
+      margin-top: 0.5rem;         
+    }
+    
+    .mdx-hero__image img {
+      width: 100%;                
+      height: auto;
+      display: block;
+      min-width: 300px;           
+    }
+
+    /* 4. Mobile Responsiveness */
+    @media screen and (max-width: 60em) {
+      .mdx-hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+        gap: 3rem;
+        align-items: center; 
+      }
+      .mdx-hero__content {
+        flex: auto;               
+        max-width: 100%;
+        width: 100%;
+        order: 2;
+      }
+      .mdx-hero__image {
+        order: 1;
+        width: 80%;
+        margin-top: 0;
+      }
+      .mdx-hero__content .md-button {
+        margin: 0.5rem;
+      }
+    }
+
+    /* --- BUTTON STYLES --- */
+    .mdx-hero .md-button--primary {
+      background-color: #ffffff !important;
+      color: #2196f3 !important;             
+      border-color: #ffffff !important;
+      margin-right: 0.5rem;
+    }
+
+    .mdx-hero .md-button--primary:hover {
+      background-color: rgba(255, 255, 255, 0.9) !important; 
+      color: #1976d2 !important;             
+    }
+
+    .mdx-hero .md-button:not(.md-button--primary) {
+      color: #ffffff !important;             
+      border-color: rgba(255, 255, 255, 0.6) !important; 
+    }
+
+    .mdx-hero .md-button:not(.md-button--primary):hover {
+      background-color: rgba(255, 255, 255, 0.1) !important; 
+      border-color: #ffffff !important;
+      color: #ffffff !important;
+    }
+  </style>
+
+  <section class="mdx-container">
+    <div class="md-grid md-typeset">
+      <div class="mdx-hero">
+        
+        <div class="mdx-hero__content">
+          <h1>Everything Snowflake Documentation</h1>
+          
+          <p>
+             Please use or share any of the available material. Each page includes a video tutorial for visual learners. 
+          </p>
+
+          <p>
+            <strong>Find these tutorials useful?</strong> 
+            <p>If you'd like to support this work, please like the videos on YouTube or consider sending an appreciation email to 
+            <a href="#" style="color:inherit; text-decoration:underline;">daniel.wilczk@snowflake.com</a> 
+            and/or my manager <a href="#" style="color:inherit; text-decoration:underline;">ben.earley@snowflake.com</a>. 
+            It can never hurt with promotions right around the corner!
+            </p>
+          </p>
+
+          <div style="margin-top: 1.5rem;">
+            <a target="_blank" href="https://www.linkedin.com/in/danielwilczak/" class="md-button md-button--primary">
+              Linkedin
+            </a>
+            <a target="_blank" href="https://youtube.com/playlist?list=PLLkZURAihrOMVctG1HRr-ljjPO7I4Gk_O&si=cl2WYzAsvS726ttV" class="md-button">
+              Youtube
+            </a>
+          </div>
+
+          <div class="mdx-hero__note">
+            <p>
+              <strong>Note:</strong> These tutorials are not Snowflake official. 
+              Please refer to the <a href="https://docs.snowflake.com/" style="color:inherit; text-decoration:underline;">Official Snowflake Documentation</a> for primary guidance.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </section>
+{% endblock %}
+{% block content %}{% endblock %}
+{% block footer %}{% endblock %}
