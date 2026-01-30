@@ -68,14 +68,11 @@ nav:
       -   Kinesis: clouds/aws/kinesis/index.md
     -  Azure:
       -   Blob / Storage: clouds/azure/storage/index.md
-      -   Active Directory / SSO: clouds/azure/sso/index.md
-      -   SCIM: clouds/azure/scim/index.md
     -  Google Cloud:
       -   Cloud Storage: clouds/google/storage/index.md
       -   External Tables: clouds/google/external/index.md
       -   Fivetran Data Lake: clouds/google/fivetran/index.md
       -   Iceberg: clouds/google/iceberg/index.md
-      -   SSO: clouds/google/sso/index.md
   
   - Ingestion:
     -  Openflow Deployment:
@@ -118,10 +115,10 @@ nav:
     -  Network Policy:
       -   User: security/networking/user/index.md
     -  Single Sign On:
-      -   Active Directory / Entra: /clouds/azure/sso/
-      -   Google: /clouds/google/sso/
+      -   Active Directory / Entra: security/sso/azure/index.md
+      -   Google: security/sso/google/index.md
     -  SCIM Management:
-      -   Azure: /clouds/azure/scim/
+      -   Azure: security/scim/azure/index.md
     
   - 3rd Party Tools:
     -  DBT: 
