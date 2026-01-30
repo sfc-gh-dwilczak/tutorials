@@ -1,0 +1,91 @@
+name: Support
+description: Semantic model for customer support data analysis.
+tables:
+  - name: agent_dim
+    description: Support agent dimension table.
+    base_table:
+      database: raw
+      schema: cortex
+      table: agent_dim
+    primary_key:
+      columns:
+        - agent_id
+    dimensions:
+      - name: agent_id
+        expr: agent_id
+        data_type: string
+        description: Unique identifier for the support agent.
+      - name: agent_name
+        expr: agent_name
+        data_type: string
+        description: Name of the support agent.
+      - name: team
+        expr: team
+        data_type: string
+        description: Team or group the agent belongs to.
+      - name: region
+        expr: region
+        data_type: string
+        description: Region of the agent.
+
+  - name: ticket_fact
+    description: Support ticket fact table.
+    base_table:
+      database: raw
+      schema: cortex
+      table: ticket_fact
+    primary_key:
+      columns:
+        - ticket_id
+    dimensions:
+      - name: ticket_id
+        expr: ticket_id
+        data_type: string
+        description: Unique identifier for the support ticket.
+      - name: agent_id
+        expr: agent_id
+        data_type: string
+        description: Assigned support agent.
+      - name: issue_type
+        expr: issue_type
+        data_type: string
+        description: Type of support issue.
+      - name: status
+        expr: status
+        data_type: string
+        description: Current status of the ticket.
+    time_dimensions:
+      - name: created_at
+        expr: created_at
+        data_type: timestamp
+        description: Time the ticket was created.
+      - name: resolved_at
+        expr: resolved_at
+        data_type: timestamp
+        description: Time the ticket was resolved.
+    facts:
+      - name: resolution_time_minutes
+        expr: DATEDIFF(minute, created_at, resolved_at)
+        data_type: integer
+        description: Time taken to resolve the ticket in minutes.
+
+relationships:
+  - name: ticket_to_agent
+    left_table: ticket_fact
+    right_table: agent_dim
+    relationship_columns:
+      - left_column: agent_id
+        right_column: agent_id
+    join_type: left_outer
+    relationship_type: many_to_one
+
+verified_queries:
+  - name: avg resolution time by agent
+    question: What is the average resolution time by agent?
+    sql: |
+      SELECT
+        a.agent_name,
+        AVG(DATEDIFF(minute, t.created_at, t.resolved_at)) AS avg_resolution_time
+      FROM __ticket_fact t
+      JOIN __agent_dim a ON t.agent_id = a.agent_id
+      GROUP BY a.agent_name;
