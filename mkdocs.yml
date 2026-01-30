@@ -131,7 +131,7 @@ nav:
       -   Github: tools/git/index.md
     -  Tableau:
       -   Key Pair: tools/tableau/key_pair/index.md
-      -   OAuth - Snowflake: tools/tableau/oauth_snowflake/index.md
+      -   OAuth: tools/tableau/oauth_snowflake/index.md
     -  Zapier: tools/zapier/index.md
 
 validation:
