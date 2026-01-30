@@ -55,7 +55,7 @@ nav:
 
   - Apps:
     -  Container Services:
-      -   Introduction: apps/container/introduction/index.md
+      -   Flask: apps/container/flask/index.md
       -   Streamlit: apps/container/streamlit/index.md
     -  Native App:
       -   Container Services: apps/native/containers/index.md
