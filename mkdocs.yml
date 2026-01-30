@@ -115,7 +115,7 @@ nav:
     -  Network Policy:
       -   User: security/networking/user/index.md
     -  Single Sign On:
-      -   Active Directory / Entra: security/sso/azure/index.md
+      -   Active Directory / Entra ID: security/sso/azure/index.md
       -   Google: security/sso/google/index.md
     -  SCIM Management:
       -   Azure: security/scim/azure/index.md
@@ -131,7 +131,7 @@ nav:
       -   Github: tools/git/index.md
     -  Tableau:
       -   Key Pair: tools/tableau/key_pair/index.md
-      -   OAuth: tools/tableau/oauth_snowflake/index.md
+      -   OAuth: tools/tableau/oauth/index.md
     -  Zapier: tools/zapier/index.md
 
 validation:
