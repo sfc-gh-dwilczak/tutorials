@@ -1,0 +1,91 @@
+name: Marketing
+description: Semantic model for marketing data analysis.
+tables:
+  - name: campaign_dim
+    description: Marketing campaign dimension table.
+    base_table:
+      database: raw
+      schema: cortex
+      table: campaign_dim
+    primary_key:
+      columns:
+        - campaign_id
+    dimensions:
+      - name: campaign_id
+        expr: campaign_id
+        data_type: string
+        description: Unique identifier for the campaign.
+      - name: campaign_name
+        expr: campaign_name
+        data_type: string
+        description: Name of the marketing campaign.
+      - name: channel
+        expr: channel
+        data_type: string
+        description: Marketing channel (e.g., email, social, search).
+      - name: start_date
+        expr: start_date
+        data_type: date
+        description: Campaign start date.
+      - name: end_date
+        expr: end_date
+        data_type: date
+        description: Campaign end date.
+
+  - name: ad_fact
+    description: Advertising performance fact table.
+    base_table:
+      database: raw
+      schema: cortex
+      table: ad_fact
+    primary_key:
+      columns:
+        - ad_id
+    dimensions:
+      - name: ad_id
+        expr: ad_id
+        data_type: string
+        description: Unique identifier for the ad.
+      - name: campaign_id
+        expr: campaign_id
+        data_type: string
+        description: Campaign associated with the ad.
+    time_dimensions:
+      - name: date_id
+        expr: date_id
+        data_type: date
+        description: Date of ad activity.
+    facts:
+      - name: impressions
+        expr: impressions
+        data_type: integer
+        description: Number of ad impressions.
+      - name: clicks
+        expr: clicks
+        data_type: integer
+        description: Number of ad clicks.
+      - name: cost
+        expr: cost
+        data_type: float
+        description: Cost of the ad campaign.
+
+relationships:
+  - name: ads_to_campaign
+    left_table: ad_fact
+    right_table: campaign_dim
+    relationship_columns:
+      - left_column: campaign_id
+        right_column: campaign_id
+    join_type: left_outer
+    relationship_type: many_to_one
+
+verified_queries:
+  - name: cost per click by campaign
+    question: What is the cost per click for each campaign?
+    sql: |
+      SELECT
+        c.campaign_name,
+        SUM(a.cost) / NULLIF(SUM(a.clicks), 0) AS cost_per_click
+      FROM __ad_fact a
+      JOIN __campaign_dim c ON a.campaign_id = c.campaign_id
+      GROUP BY c.campaign_name;

@@ -1,0 +1,6 @@
+Flask
+snowflake-connector-python
+pandas
+snowflake-snowpark-python
+snowflake-connector-python[pandas]
+streamlit

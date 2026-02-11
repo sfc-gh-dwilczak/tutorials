@@ -1,0 +1,48 @@
+{
+  "id": "ersjMBamRBDMoQW",
+  "name": "ITEMTE-12",
+  "type": "item",
+  "properties": {
+    "createdService": "entityManageService",
+    "createdBy": "daniel.wilczak@snowflake.com",
+    "createdDate": "2023-11-08T02:27:45.815-0600",
+    "modifiedService": "entityManageService",
+    "modifiedBy": "system",
+    "modifiedDate": "2023-11-08T03:27:02.218-0600"
+  },
+  "data": {
+    "attributes": {
+      "thgidentifier": {
+        "values": [
+          {
+            "id": "9_0_0",
+            "value": "ITEMTE-12",
+            "locale": "en-US",
+            "source": "internal"
+          }
+        ]
+      },
+      "thgdisplayname": {
+        "values": [
+          {
+            "id": "9_0_0",
+            "value": "ITEMTE-12",
+            "locale": "en-US",
+            "source": "internal"
+          }
+        ]
+      }
+    },
+     "relationships": {
+      "hasimages": [
+        {
+          "id": "1_0",
+          "relTo": {
+            "id": "986C10D8-4A15-402E-A8A3-C866066FA7D2",
+            "type": "classification"
+          }
+        }
+      ]
+    }
+  }
+}

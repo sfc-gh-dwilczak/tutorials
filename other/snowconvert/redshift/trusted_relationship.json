@@ -1,0 +1,30 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowCrisUser",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::585008083954:user/cris0000-s"
+            },
+            "Action": "sts:AssumeRole",
+            "Condition": {
+                "StringEquals": {
+                    "sts:ExternalId": "VPB00288_SFCRole=3_H09jDL4f0MDwUgm8ZbmbtyF8WNk="
+                }
+            }
+        },
+        {
+            "Sid": "AllowRedshiftAndSageMaker",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": [
+                    "sagemaker.amazonaws.com",
+                    "redshift-serverless.amazonaws.com",
+                    "redshift.amazonaws.com"
+                ]
+            },
+            "Action": "sts:AssumeRole"
+        }
+    ]
+}
